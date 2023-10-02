@@ -1,0 +1,56 @@
+{
+  "project_info": {
+    "project_number": "826309155293",
+    "firebase_url": "https://nit-student-default-rtdb.firebaseio.com",
+    "project_id": "nit-student",
+    "storage_bucket": "nit-student.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:826309155293:android:c9fbf7b976d5157ac03e34",
+        "android_client_info": {
+          "package_name": "com.nitstudent.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "826309155293-r6gdt3e6hu3gujnhhs839e7eskunljfv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.nitstudent.app",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "826309155293-gu9t7n82hl8omo2705brng8g91upgivc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDAvEVS_jlmBjQzL33-M883bOF2lP5gVzA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "826309155293-gu9t7n82hl8omo2705brng8g91upgivc.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "826309155293-3n5glnhsnk92rpetqo6s7u2t2f2c12e8.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.nitstudent.app"
+              }
+            }
+          ]
+        }
+      },
+      "admob_app_id": "ca-app-pub-3991707481593664~2639085404"
+    }
+  ],
+  "configuration_version": "1"
+}
