@@ -200,7 +200,7 @@ class _EcehWidgetState extends State<EcehWidget> {
                                             fadeOutDuration:
                                                 Duration(milliseconds: 0),
                                             imageUrl:
-                                                'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/student-portal-wmpu59/assets/3c0fsc11hmfd/kirankumar.jpg',
+                                                'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/student-portal-wmpu59/assets/mfcns9jhbbyk/yuvaraj.jpg',
                                             fit: BoxFit.contain,
                                           ),
                                           allowRotation: false,
@@ -226,7 +226,7 @@ class _EcehWidgetState extends State<EcehWidget> {
                                         fadeOutDuration:
                                             Duration(milliseconds: 0),
                                         imageUrl:
-                                            'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/student-portal-wmpu59/assets/3c0fsc11hmfd/kirankumar.jpg',
+                                            'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/student-portal-wmpu59/assets/mfcns9jhbbyk/yuvaraj.jpg',
                                         fit: BoxFit.cover,
                                       ),
                                     ),
@@ -241,7 +241,7 @@ class _EcehWidgetState extends State<EcehWidget> {
                                         CrossAxisAlignment.start,
                                     children: [
                                       Text(
-                                        'Dr. Kiran Kumar G',
+                                        'Dr. S. Yuvaraj',
                                         style: FlutterFlowTheme.of(context)
                                             .titleMedium
                                             .override(
@@ -257,7 +257,7 @@ class _EcehWidgetState extends State<EcehWidget> {
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 2.0, 0.0, 0.0),
                                         child: Text(
-                                          'Head - Dept. of ECE',
+                                          'HoD - ECE',
                                           style: FlutterFlowTheme.of(context)
                                               .bodySmall
                                               .override(

@@ -179,7 +179,7 @@ class _ProfileSectionWidgetState extends State<ProfileSectionWidget> {
                         padding:
                             EdgeInsetsDirectional.fromSTEB(15.0, 0.0, 0.0, 0.0),
                         child: Column(
-                          mainAxisSize: MainAxisSize.max,
+                          mainAxisSize: MainAxisSize.min,
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [

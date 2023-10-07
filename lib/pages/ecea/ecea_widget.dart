@@ -203,7 +203,7 @@ class _EceaWidgetState extends State<EceaWidget> {
                                             fadeOutDuration:
                                                 Duration(milliseconds: 0),
                                             imageUrl:
-                                                'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/student-portal-wmpu59/assets/3c0fsc11hmfd/kirankumar.jpg',
+                                                'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/student-portal-wmpu59/assets/mfcns9jhbbyk/yuvaraj.jpg',
                                             fit: BoxFit.contain,
                                           ),
                                           allowRotation: false,
@@ -229,7 +229,7 @@ class _EceaWidgetState extends State<EceaWidget> {
                                         fadeOutDuration:
                                             Duration(milliseconds: 0),
                                         imageUrl:
-                                            'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/student-portal-wmpu59/assets/3c0fsc11hmfd/kirankumar.jpg',
+                                            'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/student-portal-wmpu59/assets/mfcns9jhbbyk/yuvaraj.jpg',
                                         fit: BoxFit.cover,
                                       ),
                                     ),
@@ -244,7 +244,7 @@ class _EceaWidgetState extends State<EceaWidget> {
                                         CrossAxisAlignment.start,
                                     children: [
                                       Text(
-                                        'Dr. Kiran Kumar G',
+                                        'Dr. S. Yuvaraj',
                                         style: FlutterFlowTheme.of(context)
                                             .titleMedium
                                             .override(
@@ -260,7 +260,7 @@ class _EceaWidgetState extends State<EceaWidget> {
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 2.0, 0.0, 0.0),
                                         child: Text(
-                                          'Head - Dept. of ECE',
+                                          'HoD - ECE',
                                           style: FlutterFlowTheme.of(context)
                                               .bodySmall
                                               .override(
@@ -373,118 +373,6 @@ class _EceaWidgetState extends State<EceaWidget> {
                                             0.0, 2.0, 0.0, 0.0),
                                         child: Text(
                                           'Faculty Advisor - ECEA',
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodySmall
-                                              .override(
-                                                fontFamily: 'Poppins',
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondaryText,
-                                                fontSize: 14.0,
-                                                fontWeight: FontWeight.normal,
-                                              ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
-                            16.0, 8.0, 16.0, 0.0),
-                        child: Container(
-                          width: double.infinity,
-                          decoration: BoxDecoration(
-                            color: FlutterFlowTheme.of(context)
-                                .secondaryBackground,
-                            borderRadius: BorderRadius.circular(8.0),
-                          ),
-                          child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                8.0, 8.0, 12.0, 8.0),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.max,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                InkWell(
-                                  splashColor: Colors.transparent,
-                                  focusColor: Colors.transparent,
-                                  hoverColor: Colors.transparent,
-                                  highlightColor: Colors.transparent,
-                                  onTap: () async {
-                                    await Navigator.push(
-                                      context,
-                                      PageTransition(
-                                        type: PageTransitionType.fade,
-                                        child: FlutterFlowExpandedImageView(
-                                          image: CachedNetworkImage(
-                                            fadeInDuration:
-                                                Duration(milliseconds: 0),
-                                            fadeOutDuration:
-                                                Duration(milliseconds: 0),
-                                            imageUrl:
-                                                'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/student-portal-wmpu59/assets/mfcns9jhbbyk/yuvaraj.jpg',
-                                            fit: BoxFit.contain,
-                                          ),
-                                          allowRotation: false,
-                                          tag: 'circleImageTag3',
-                                          useHeroAnimation: true,
-                                        ),
-                                      ),
-                                    );
-                                  },
-                                  child: Hero(
-                                    tag: 'circleImageTag3',
-                                    transitionOnUserGestures: true,
-                                    child: Container(
-                                      width: 50.0,
-                                      height: 50.0,
-                                      clipBehavior: Clip.antiAlias,
-                                      decoration: BoxDecoration(
-                                        shape: BoxShape.circle,
-                                      ),
-                                      child: CachedNetworkImage(
-                                        fadeInDuration:
-                                            Duration(milliseconds: 0),
-                                        fadeOutDuration:
-                                            Duration(milliseconds: 0),
-                                        imageUrl:
-                                            'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/student-portal-wmpu59/assets/mfcns9jhbbyk/yuvaraj.jpg',
-                                        fit: BoxFit.cover,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      15.0, 0.0, 0.0, 0.0),
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.max,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Text(
-                                        'Dr. S. Yuvaraj',
-                                        style: FlutterFlowTheme.of(context)
-                                            .titleMedium
-                                            .override(
-                                              fontFamily: 'Poppins',
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primaryText,
-                                              fontSize: 18.0,
-                                              fontWeight: FontWeight.w500,
-                                            ),
-                                      ),
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 2.0, 0.0, 0.0),
-                                        child: Text(
-                                          'Treasurer - ECEA',
                                           style: FlutterFlowTheme.of(context)
                                               .bodySmall
                                               .override(
