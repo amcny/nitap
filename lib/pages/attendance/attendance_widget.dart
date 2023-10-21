@@ -2,6 +2,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -30,6 +31,8 @@ class _AttendanceWidgetState extends State<AttendanceWidget> {
     _model = createModel(context, () => AttendanceModel());
 
     _model.courseController ??= TextEditingController();
+    _model.courseFocusNode ??= FocusNode();
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override
@@ -78,6 +81,7 @@ class _AttendanceWidgetState extends State<AttendanceWidget> {
                     width: 370.0,
                     child: TextFormField(
                       controller: _model.courseController,
+                      focusNode: _model.courseFocusNode,
                       obscureText: false,
                       decoration: InputDecoration(
                         labelText: 'Course name',
@@ -164,8 +168,8 @@ class _AttendanceWidgetState extends State<AttendanceWidget> {
                       ),
                     ),
                     FFButtonWidget(
-                      onPressed: () {
-                        print('Button pressed ...');
+                      onPressed: () async {
+                        Navigator.pop(context);
                       },
                       text: 'Confirm',
                       options: FFButtonOptions(

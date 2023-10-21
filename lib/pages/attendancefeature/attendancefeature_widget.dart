@@ -4,8 +4,8 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/pages/attendance/attendance_widget.dart';
 import 'package:aligned_dialog/aligned_dialog.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -29,6 +29,8 @@ class _AttendancefeatureWidgetState extends State<AttendancefeatureWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => AttendancefeatureModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override
@@ -40,6 +42,15 @@ class _AttendancefeatureWidgetState extends State<AttendancefeatureWidget> {
 
   @override
   Widget build(BuildContext context) {
+    if (isiOS) {
+      SystemChrome.setSystemUIOverlayStyle(
+        SystemUiOverlayStyle(
+          statusBarBrightness: Theme.of(context).brightness,
+          systemStatusBarContrastEnforced: true,
+        ),
+      );
+    }
+
     context.watch<FFAppState>();
 
     return Scaffold(
@@ -110,47 +121,7 @@ class _AttendancefeatureWidgetState extends State<AttendancefeatureWidget> {
         top: true,
         child: Column(
           mainAxisSize: MainAxisSize.max,
-          children: [
-            Row(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                Text(
-                  'Subject Code',
-                  style: FlutterFlowTheme.of(context).bodyMedium,
-                ),
-                InkWell(
-                  splashColor: Colors.transparent,
-                  focusColor: Colors.transparent,
-                  hoverColor: Colors.transparent,
-                  highlightColor: Colors.transparent,
-                  onTap: () async {
-                    final _datePickedDate = await showDatePicker(
-                      context: context,
-                      initialDate: getCurrentTimestamp,
-                      firstDate: DateTime(1900),
-                      lastDate: DateTime(2050),
-                    );
-
-                    if (_datePickedDate != null) {
-                      safeSetState(() {
-                        _model.datePicked = DateTime(
-                          _datePickedDate.year,
-                          _datePickedDate.month,
-                          _datePickedDate.day,
-                        );
-                      });
-                    }
-                  },
-                  child: Icon(
-                    Icons.edit_calendar,
-                    color: FlutterFlowTheme.of(context).secondaryText,
-                    size: 24.0,
-                  ),
-                ),
-              ],
-            ),
-          ],
+          children: [],
         ),
       ),
     );
