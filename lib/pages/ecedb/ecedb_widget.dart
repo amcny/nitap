@@ -75,7 +75,7 @@ class _EcedbWidgetState extends State<EcedbWidget> {
           top: true,
           child: FlutterFlowWebView(
             content:
-                'https://drive.google.com/drive/folders/17NQ424HqeLTYIK_w3P8VwpRwNMwGn88q',
+                'https://drive.google.com/drive/folders/1vWl9vsvlkJlZnD4CI011gNaTU0gH0pOG',
             bypass: true,
             height: MediaQuery.sizeOf(context).height * 1.0,
             verticalScroll: true,

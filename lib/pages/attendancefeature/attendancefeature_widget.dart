@@ -1,9 +1,13 @@
+import '/auth/firebase_auth/auth_util.dart';
+import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/pages/attendance/attendance_widget.dart';
+import '/pages/attendclass/attendclass_widget.dart';
 import 'package:aligned_dialog/aligned_dialog.dart';
+import 'package:data_table_2/data_table_2.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -71,7 +75,7 @@ class _AttendancefeatureWidgetState extends State<AttendancefeatureWidget> {
                 return Material(
                   color: Colors.transparent,
                   child: Container(
-                    height: 210.0,
+                    height: 215.0,
                     width: 345.0,
                     child: AttendanceWidget(),
                   ),
@@ -119,9 +123,158 @@ class _AttendancefeatureWidgetState extends State<AttendancefeatureWidget> {
       ),
       body: SafeArea(
         top: true,
-        child: Column(
-          mainAxisSize: MainAxisSize.max,
-          children: [],
+        child: StreamBuilder<List<AttendanceRecord>>(
+          stream: queryAttendanceRecord(
+            queryBuilder: (attendanceRecord) => attendanceRecord.where(
+              'user',
+              isEqualTo: currentUserReference,
+            ),
+          ),
+          builder: (context, snapshot) {
+            // Customize what your widget looks like when it's loading.
+            if (!snapshot.hasData) {
+              return Center(
+                child: SizedBox(
+                  width: 30.0,
+                  height: 30.0,
+                  child: SpinKitThreeBounce(
+                    color: FlutterFlowTheme.of(context).primary,
+                    size: 30.0,
+                  ),
+                ),
+              );
+            }
+            List<AttendanceRecord> dataTableAttendanceRecordList =
+                snapshot.data!;
+            if (dataTableAttendanceRecordList.isEmpty) {
+              return Center(
+                child: Image.asset(
+                  'https://www.nicepng.com/png/detail/73-734648_slideshow-arrow-line-to-find-your-silc-five.png',
+                  fit: BoxFit.cover,
+                ),
+              );
+            }
+            return DataTable2(
+              columns: [
+                DataColumn2(
+                  label: DefaultTextStyle.merge(
+                    softWrap: true,
+                    child: Text(
+                      'Course Name',
+                      style: FlutterFlowTheme.of(context).labelLarge,
+                    ),
+                  ),
+                ),
+                DataColumn2(
+                  label: DefaultTextStyle.merge(
+                    softWrap: true,
+                    child: Text(
+                      'Classes Missed',
+                      style: FlutterFlowTheme.of(context).labelLarge,
+                    ),
+                  ),
+                ),
+                DataColumn2(
+                  label: DefaultTextStyle.merge(
+                    softWrap: true,
+                    child: Text(
+                      'Edit/Delete',
+                      style: FlutterFlowTheme.of(context).labelLarge,
+                    ),
+                  ),
+                ),
+              ],
+              rows: dataTableAttendanceRecordList
+                  .mapIndexed((dataTableIndex, dataTableAttendanceRecord) => [
+                        Text(
+                          dataTableAttendanceRecord.courseName,
+                          style: FlutterFlowTheme.of(context).bodyMedium,
+                        ),
+                        Text(
+                          valueOrDefault<String>(
+                            dataTableAttendanceRecord.noClasses.toString(),
+                            '0',
+                          ),
+                          style: FlutterFlowTheme.of(context).bodyMedium,
+                        ),
+                        Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            Builder(
+                              builder: (context) => InkWell(
+                                splashColor: Colors.transparent,
+                                focusColor: Colors.transparent,
+                                hoverColor: Colors.transparent,
+                                highlightColor: Colors.transparent,
+                                onTap: () async {
+                                  await showAlignedDialog(
+                                    context: context,
+                                    isGlobal: true,
+                                    avoidOverflow: false,
+                                    targetAnchor: AlignmentDirectional(0.0, 0.0)
+                                        .resolve(Directionality.of(context)),
+                                    followerAnchor: AlignmentDirectional(
+                                            0.0, 0.0)
+                                        .resolve(Directionality.of(context)),
+                                    builder: (dialogContext) {
+                                      return Material(
+                                        color: Colors.transparent,
+                                        child: Container(
+                                          height: 215.0,
+                                          width: 345.0,
+                                          child: AttendclassWidget(
+                                            classref: dataTableAttendanceRecord
+                                                .reference,
+                                          ),
+                                        ),
+                                      );
+                                    },
+                                  ).then((value) => setState(() {}));
+                                },
+                                child: Icon(
+                                  Icons.edit_calendar,
+                                  color: FlutterFlowTheme.of(context).primary,
+                                  size: 24.0,
+                                ),
+                              ),
+                            ),
+                            InkWell(
+                              splashColor: Colors.transparent,
+                              focusColor: Colors.transparent,
+                              hoverColor: Colors.transparent,
+                              highlightColor: Colors.transparent,
+                              onTap: () async {
+                                await dataTableAttendanceRecord.reference
+                                    .delete();
+                              },
+                              child: Icon(
+                                Icons.delete_sweep_outlined,
+                                color: FlutterFlowTheme.of(context).error,
+                                size: 24.0,
+                              ),
+                            ),
+                          ].divide(SizedBox(width: 5.0)),
+                        ),
+                      ].map((c) => DataCell(c)).toList())
+                  .map((e) => DataRow(cells: e))
+                  .toList(),
+              headingRowColor: MaterialStateProperty.all(
+                FlutterFlowTheme.of(context).primaryBackground,
+              ),
+              headingRowHeight: 56.0,
+              dataRowColor: MaterialStateProperty.all(
+                FlutterFlowTheme.of(context).secondaryBackground,
+              ),
+              dataRowHeight: 56.0,
+              border: TableBorder(
+                borderRadius: BorderRadius.circular(0.0),
+              ),
+              dividerThickness: 1.0,
+              showBottomBorder: true,
+              minWidth: 49.0,
+            );
+          },
         ),
       ),
     );

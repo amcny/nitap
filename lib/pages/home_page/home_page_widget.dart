@@ -11,6 +11,7 @@ import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:aligned_dialog/aligned_dialog.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
@@ -213,6 +214,233 @@ class _HomePageWidgetState extends State<HomePageWidget>
                         ),
                       ],
                     ),
+                  ),
+                ),
+                if (!((dateTimeFormat('EEEE', getCurrentTimestamp) ==
+                        'Saturday') ||
+                    (dateTimeFormat('EEEE', getCurrentTimestamp) == 'Sunday')))
+                  Align(
+                    alignment: AlignmentDirectional(-1.00, 0.00),
+                    child: Padding(
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(20.0, 15.0, 0.0, 0.0),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Text(
+                            'Today\'s Class',
+                            style: FlutterFlowTheme.of(context)
+                                .headlineSmall
+                                .override(
+                                  fontFamily: 'Poppins',
+                                  fontWeight: FontWeight.w600,
+                                ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                  child: StreamBuilder<List<TimetableRecord>>(
+                    stream: queryTimetableRecord(
+                      queryBuilder: (timetableRecord) => timetableRecord
+                          .where(
+                            'secname',
+                            isEqualTo: FFAppState().secname,
+                          )
+                          .where(
+                            'day',
+                            isEqualTo:
+                                dateTimeFormat('EEEE', getCurrentTimestamp),
+                          ),
+                      singleRecord: true,
+                    ),
+                    builder: (context, snapshot) {
+                      // Customize what your widget looks like when it's loading.
+                      if (!snapshot.hasData) {
+                        return Center(
+                          child: SizedBox(
+                            width: 30.0,
+                            height: 30.0,
+                            child: SpinKitThreeBounce(
+                              color: FlutterFlowTheme.of(context).primary,
+                              size: 30.0,
+                            ),
+                          ),
+                        );
+                      }
+                      List<TimetableRecord> rowTimetableRecordList =
+                          snapshot.data!;
+                      // Return an empty Container when the item does not exist.
+                      if (snapshot.data!.isEmpty) {
+                        return Container();
+                      }
+                      final rowTimetableRecord =
+                          rowTimetableRecordList.isNotEmpty
+                              ? rowTimetableRecordList.first
+                              : null;
+                      return SingleChildScrollView(
+                        scrollDirection: Axis.horizontal,
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Builder(
+                              builder: (context) {
+                                final data =
+                                    rowTimetableRecord?.data?.toList() ?? [];
+                                return Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children:
+                                      List.generate(data.length, (dataIndex) {
+                                    final dataItem = data[dataIndex];
+                                    return Container(
+                                      width: 280.0,
+                                      height: 150.0,
+                                      decoration: BoxDecoration(
+                                        gradient: LinearGradient(
+                                          colors: [
+                                            Color(0xCB1A73E8),
+                                            FlutterFlowTheme.of(context).primary
+                                          ],
+                                          stops: [0.0, 1.0],
+                                          begin:
+                                              AlignmentDirectional(-1.0, -1.0),
+                                          end: AlignmentDirectional(1.0, 1.0),
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(8.0),
+                                      ),
+                                      child: Column(
+                                        mainAxisSize: MainAxisSize.max,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    10.0, 15.0, 0.0, 0.0),
+                                            child: Text(
+                                              dataItem.course,
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        color: Colors.white,
+                                                        fontWeight:
+                                                            FontWeight.w500,
+                                                      ),
+                                            ),
+                                          ),
+                                          Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    10.0, 10.0, 0.0, 0.0),
+                                            child: Text(
+                                              dataItem.instructor,
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        color: Colors.white,
+                                                      ),
+                                            ),
+                                          ),
+                                          Flexible(
+                                            child: Align(
+                                              alignment: AlignmentDirectional(
+                                                  0.00, 1.00),
+                                              child: Container(
+                                                width:
+                                                    MediaQuery.sizeOf(context)
+                                                            .width *
+                                                        1.0,
+                                                height: 40.0,
+                                                decoration: BoxDecoration(
+                                                  color: Color(0x6DF9F9F9),
+                                                  borderRadius:
+                                                      BorderRadius.only(
+                                                    bottomLeft:
+                                                        Radius.circular(8.0),
+                                                    bottomRight:
+                                                        Radius.circular(8.0),
+                                                    topLeft:
+                                                        Radius.circular(0.0),
+                                                    topRight:
+                                                        Radius.circular(0.0),
+                                                  ),
+                                                ),
+                                                child: Row(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  children: [
+                                                    Padding(
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  10.0,
+                                                                  0.0,
+                                                                  0.0,
+                                                                  0.0),
+                                                      child: RichText(
+                                                        textScaleFactor:
+                                                            MediaQuery.of(
+                                                                    context)
+                                                                .textScaleFactor,
+                                                        text: TextSpan(
+                                                          children: [
+                                                            TextSpan(
+                                                              text: dataItem
+                                                                  .start,
+                                                              style: TextStyle(
+                                                                color: Colors
+                                                                    .white,
+                                                              ),
+                                                            ),
+                                                            TextSpan(
+                                                              text: ' - ',
+                                                              style: TextStyle(
+                                                                color: Colors
+                                                                    .white,
+                                                              ),
+                                                            ),
+                                                            TextSpan(
+                                                              text:
+                                                                  dataItem.end,
+                                                              style: TextStyle(
+                                                                color: Colors
+                                                                    .white,
+                                                              ),
+                                                            )
+                                                          ],
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .bodyMedium,
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    );
+                                  })
+                                          .divide(SizedBox(width: 15.0))
+                                          .around(SizedBox(width: 15.0)),
+                                );
+                              },
+                            ),
+                          ],
+                        ),
+                      );
+                    },
                   ),
                 ),
                 if (homePageForyouRecordList.length > 0)
@@ -1254,7 +1482,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                     ],
                   ),
                 ),
-              ].addToEnd(SizedBox(height: 20.0)),
+              ],
             ),
           ),
         );

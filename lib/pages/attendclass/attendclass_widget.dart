@@ -9,18 +9,23 @@ import 'package:flutter/services.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'attendance_model.dart';
-export 'attendance_model.dart';
+import 'attendclass_model.dart';
+export 'attendclass_model.dart';
 
-class AttendanceWidget extends StatefulWidget {
-  const AttendanceWidget({Key? key}) : super(key: key);
+class AttendclassWidget extends StatefulWidget {
+  const AttendclassWidget({
+    Key? key,
+    required this.classref,
+  }) : super(key: key);
+
+  final DocumentReference? classref;
 
   @override
-  _AttendanceWidgetState createState() => _AttendanceWidgetState();
+  _AttendclassWidgetState createState() => _AttendclassWidgetState();
 }
 
-class _AttendanceWidgetState extends State<AttendanceWidget> {
-  late AttendanceModel _model;
+class _AttendclassWidgetState extends State<AttendclassWidget> {
+  late AttendclassModel _model;
 
   @override
   void setState(VoidCallback callback) {
@@ -31,7 +36,7 @@ class _AttendanceWidgetState extends State<AttendanceWidget> {
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => AttendanceModel());
+    _model = createModel(context, () => AttendclassModel());
 
     _model.courseController ??= TextEditingController();
     _model.courseFocusNode ??= FocusNode();
@@ -68,7 +73,7 @@ class _AttendanceWidgetState extends State<AttendanceWidget> {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Text(
-                  'Add Subject',
+                  'No. of Classes Missed',
                   style: FlutterFlowTheme.of(context).titleLarge,
                 ),
               ],
@@ -87,7 +92,7 @@ class _AttendanceWidgetState extends State<AttendanceWidget> {
                       focusNode: _model.courseFocusNode,
                       obscureText: false,
                       decoration: InputDecoration(
-                        labelText: 'Course name',
+                        labelText: 'Enter Number',
                         labelStyle: FlutterFlowTheme.of(context).labelMedium,
                         enabledBorder: UnderlineInputBorder(
                           borderSide: BorderSide(
@@ -121,7 +126,7 @@ class _AttendanceWidgetState extends State<AttendanceWidget> {
                         fillColor:
                             FlutterFlowTheme.of(context).primaryBackground,
                         suffixIcon: Icon(
-                          Icons.book_outlined,
+                          Icons.format_list_numbered_rtl_rounded,
                           color: Color(0xFF757575),
                           size: 22.0,
                         ),
@@ -172,23 +177,11 @@ class _AttendanceWidgetState extends State<AttendanceWidget> {
                     ),
                     FFButtonWidget(
                       onPressed: () async {
-                        var attendanceRecordReference =
-                            AttendanceRecord.collection.doc();
-                        await attendanceRecordReference
-                            .set(createAttendanceRecordData(
-                          courseName: _model.courseController.text,
-                          user: currentUserReference,
+                        await widget.classref!
+                            .update(createAttendanceRecordData(
+                          noClasses: int.tryParse(_model.courseController.text),
                         ));
-                        _model.addedClasses =
-                            AttendanceRecord.getDocumentFromData(
-                                createAttendanceRecordData(
-                                  courseName: _model.courseController.text,
-                                  user: currentUserReference,
-                                ),
-                                attendanceRecordReference);
                         Navigator.pop(context);
-
-                        setState(() {});
                       },
                       text: 'Confirm',
                       options: FFButtonOptions(

@@ -225,6 +225,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                 pass: params.getParam(
                     'pass', ParamType.DocumentReference, false, ['foryou']),
               ),
+            ),
+            FFRoute(
+              name: 'test',
+              path: 'test',
+              builder: (context, params) => TestWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),
