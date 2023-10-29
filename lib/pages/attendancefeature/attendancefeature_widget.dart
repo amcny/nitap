@@ -75,7 +75,7 @@ class _AttendancefeatureWidgetState extends State<AttendancefeatureWidget> {
                 return Material(
                   color: Colors.transparent,
                   child: Container(
-                    height: 240.0,
+                    height: 245.0,
                     width: 345.0,
                     child: AttendanceWidget(),
                   ),
@@ -221,7 +221,7 @@ class _AttendancefeatureWidgetState extends State<AttendancefeatureWidget> {
                                       return Material(
                                         color: Colors.transparent,
                                         child: Container(
-                                          height: 240.0,
+                                          height: 245.0,
                                           width: 345.0,
                                           child: AttendclassWidget(
                                             classref: dataTableAttendanceRecord

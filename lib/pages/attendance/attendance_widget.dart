@@ -88,6 +88,8 @@ class _AttendanceWidgetState extends State<AttendanceWidget> {
                       child: TextFormField(
                         controller: _model.courseController,
                         focusNode: _model.courseFocusNode,
+                        autofocus: true,
+                        textCapitalization: TextCapitalization.characters,
                         obscureText: false,
                         decoration: InputDecoration(
                           labelText: 'Course name',

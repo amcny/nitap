@@ -93,6 +93,7 @@ class _AttendclassWidgetState extends State<AttendclassWidget> {
                       child: TextFormField(
                         controller: _model.numberController,
                         focusNode: _model.numberFocusNode,
+                        autofocus: true,
                         obscureText: false,
                         decoration: InputDecoration(
                           labelText: 'Enter Number',
@@ -135,6 +136,7 @@ class _AttendclassWidgetState extends State<AttendclassWidget> {
                           ),
                         ),
                         style: FlutterFlowTheme.of(context).bodyMedium,
+                        keyboardType: TextInputType.number,
                         validator: _model.numberControllerValidator
                             .asValidator(context),
                       ),
