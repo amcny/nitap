@@ -75,7 +75,7 @@ class _AttendancefeatureWidgetState extends State<AttendancefeatureWidget> {
                 return Material(
                   color: Colors.transparent,
                   child: Container(
-                    height: 215.0,
+                    height: 240.0,
                     width: 345.0,
                     child: AttendanceWidget(),
                   ),
@@ -93,7 +93,7 @@ class _AttendancefeatureWidgetState extends State<AttendancefeatureWidget> {
         ),
       ),
       appBar: AppBar(
-        backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+        backgroundColor: FlutterFlowTheme.of(context).appbar,
         automaticallyImplyLeading: false,
         leading: FlutterFlowIconButton(
           borderColor: Colors.transparent,
@@ -221,7 +221,7 @@ class _AttendancefeatureWidgetState extends State<AttendancefeatureWidget> {
                                       return Material(
                                         color: Colors.transparent,
                                         child: Container(
-                                          height: 215.0,
+                                          height: 240.0,
                                           width: 345.0,
                                           child: AttendclassWidget(
                                             classref: dataTableAttendanceRecord
@@ -260,7 +260,7 @@ class _AttendancefeatureWidgetState extends State<AttendancefeatureWidget> {
                   .map((e) => DataRow(cells: e))
                   .toList(),
               headingRowColor: MaterialStateProperty.all(
-                FlutterFlowTheme.of(context).primaryBackground,
+                FlutterFlowTheme.of(context).secondaryBackground,
               ),
               headingRowHeight: 56.0,
               dataRowColor: MaterialStateProperty.all(

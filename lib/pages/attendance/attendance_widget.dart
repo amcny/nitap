@@ -80,55 +80,59 @@ class _AttendanceWidgetState extends State<AttendanceWidget> {
               mainAxisSize: MainAxisSize.min,
               children: [
                 Expanded(
-                  child: Container(
-                    width: 370.0,
-                    child: TextFormField(
-                      controller: _model.courseController,
-                      focusNode: _model.courseFocusNode,
-                      obscureText: false,
-                      decoration: InputDecoration(
-                        labelText: 'Course name',
-                        labelStyle: FlutterFlowTheme.of(context).labelMedium,
-                        enabledBorder: UnderlineInputBorder(
-                          borderSide: BorderSide(
-                            color: FlutterFlowTheme.of(context).accent3,
-                            width: 2.0,
+                  child: Form(
+                    key: _model.formKey,
+                    autovalidateMode: AutovalidateMode.disabled,
+                    child: Container(
+                      width: 370.0,
+                      child: TextFormField(
+                        controller: _model.courseController,
+                        focusNode: _model.courseFocusNode,
+                        obscureText: false,
+                        decoration: InputDecoration(
+                          labelText: 'Course name',
+                          labelStyle: FlutterFlowTheme.of(context).labelMedium,
+                          enabledBorder: UnderlineInputBorder(
+                            borderSide: BorderSide(
+                              color: FlutterFlowTheme.of(context).accent3,
+                              width: 2.0,
+                            ),
+                            borderRadius: BorderRadius.circular(12.0),
                           ),
-                          borderRadius: BorderRadius.circular(12.0),
-                        ),
-                        focusedBorder: UnderlineInputBorder(
-                          borderSide: BorderSide(
-                            color: FlutterFlowTheme.of(context).primary,
-                            width: 2.0,
+                          focusedBorder: UnderlineInputBorder(
+                            borderSide: BorderSide(
+                              color: FlutterFlowTheme.of(context).primary,
+                              width: 2.0,
+                            ),
+                            borderRadius: BorderRadius.circular(12.0),
                           ),
-                          borderRadius: BorderRadius.circular(12.0),
-                        ),
-                        errorBorder: UnderlineInputBorder(
-                          borderSide: BorderSide(
-                            color: FlutterFlowTheme.of(context).alternate,
-                            width: 2.0,
+                          errorBorder: UnderlineInputBorder(
+                            borderSide: BorderSide(
+                              color: FlutterFlowTheme.of(context).alternate,
+                              width: 2.0,
+                            ),
+                            borderRadius: BorderRadius.circular(12.0),
                           ),
-                          borderRadius: BorderRadius.circular(12.0),
-                        ),
-                        focusedErrorBorder: UnderlineInputBorder(
-                          borderSide: BorderSide(
-                            color: FlutterFlowTheme.of(context).alternate,
-                            width: 2.0,
+                          focusedErrorBorder: UnderlineInputBorder(
+                            borderSide: BorderSide(
+                              color: FlutterFlowTheme.of(context).alternate,
+                              width: 2.0,
+                            ),
+                            borderRadius: BorderRadius.circular(12.0),
                           ),
-                          borderRadius: BorderRadius.circular(12.0),
+                          filled: true,
+                          fillColor:
+                              FlutterFlowTheme.of(context).primaryBackground,
+                          suffixIcon: Icon(
+                            Icons.book_outlined,
+                            color: Color(0xFF757575),
+                            size: 22.0,
+                          ),
                         ),
-                        filled: true,
-                        fillColor:
-                            FlutterFlowTheme.of(context).primaryBackground,
-                        suffixIcon: Icon(
-                          Icons.book_outlined,
-                          color: Color(0xFF757575),
-                          size: 22.0,
-                        ),
+                        style: FlutterFlowTheme.of(context).bodyMedium,
+                        validator: _model.courseControllerValidator
+                            .asValidator(context),
                       ),
-                      style: FlutterFlowTheme.of(context).bodyMedium,
-                      validator:
-                          _model.courseControllerValidator.asValidator(context),
                     ),
                   ),
                 ),
@@ -151,7 +155,7 @@ class _AttendanceWidgetState extends State<AttendanceWidget> {
                       },
                       text: 'Dismiss',
                       options: FFButtonOptions(
-                        height: 55.0,
+                        height: 45.0,
                         padding: EdgeInsetsDirectional.fromSTEB(
                             24.0, 0.0, 24.0, 0.0),
                         iconPadding:
@@ -172,6 +176,11 @@ class _AttendanceWidgetState extends State<AttendanceWidget> {
                     ),
                     FFButtonWidget(
                       onPressed: () async {
+                        if (_model.formKey.currentState == null ||
+                            !_model.formKey.currentState!.validate()) {
+                          return;
+                        }
+
                         var attendanceRecordReference =
                             AttendanceRecord.collection.doc();
                         await attendanceRecordReference
@@ -192,7 +201,7 @@ class _AttendanceWidgetState extends State<AttendanceWidget> {
                       },
                       text: 'Confirm',
                       options: FFButtonOptions(
-                        height: 55.0,
+                        height: 45.0,
                         padding: EdgeInsetsDirectional.fromSTEB(
                             24.0, 0.0, 24.0, 0.0),
                         iconPadding:

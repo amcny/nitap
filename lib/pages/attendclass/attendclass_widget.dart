@@ -38,8 +38,8 @@ class _AttendclassWidgetState extends State<AttendclassWidget> {
     super.initState();
     _model = createModel(context, () => AttendclassModel());
 
-    _model.courseController ??= TextEditingController();
-    _model.courseFocusNode ??= FocusNode();
+    _model.numberController ??= TextEditingController();
+    _model.numberFocusNode ??= FocusNode();
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
@@ -85,55 +85,59 @@ class _AttendclassWidgetState extends State<AttendclassWidget> {
               mainAxisSize: MainAxisSize.min,
               children: [
                 Expanded(
-                  child: Container(
-                    width: 370.0,
-                    child: TextFormField(
-                      controller: _model.courseController,
-                      focusNode: _model.courseFocusNode,
-                      obscureText: false,
-                      decoration: InputDecoration(
-                        labelText: 'Enter Number',
-                        labelStyle: FlutterFlowTheme.of(context).labelMedium,
-                        enabledBorder: UnderlineInputBorder(
-                          borderSide: BorderSide(
-                            color: FlutterFlowTheme.of(context).accent3,
-                            width: 2.0,
+                  child: Form(
+                    key: _model.formKey,
+                    autovalidateMode: AutovalidateMode.disabled,
+                    child: Container(
+                      width: 370.0,
+                      child: TextFormField(
+                        controller: _model.numberController,
+                        focusNode: _model.numberFocusNode,
+                        obscureText: false,
+                        decoration: InputDecoration(
+                          labelText: 'Enter Number',
+                          labelStyle: FlutterFlowTheme.of(context).labelMedium,
+                          enabledBorder: UnderlineInputBorder(
+                            borderSide: BorderSide(
+                              color: FlutterFlowTheme.of(context).accent3,
+                              width: 2.0,
+                            ),
+                            borderRadius: BorderRadius.circular(12.0),
                           ),
-                          borderRadius: BorderRadius.circular(12.0),
-                        ),
-                        focusedBorder: UnderlineInputBorder(
-                          borderSide: BorderSide(
-                            color: FlutterFlowTheme.of(context).primary,
-                            width: 2.0,
+                          focusedBorder: UnderlineInputBorder(
+                            borderSide: BorderSide(
+                              color: FlutterFlowTheme.of(context).primary,
+                              width: 2.0,
+                            ),
+                            borderRadius: BorderRadius.circular(12.0),
                           ),
-                          borderRadius: BorderRadius.circular(12.0),
-                        ),
-                        errorBorder: UnderlineInputBorder(
-                          borderSide: BorderSide(
-                            color: FlutterFlowTheme.of(context).alternate,
-                            width: 2.0,
+                          errorBorder: UnderlineInputBorder(
+                            borderSide: BorderSide(
+                              color: FlutterFlowTheme.of(context).alternate,
+                              width: 2.0,
+                            ),
+                            borderRadius: BorderRadius.circular(12.0),
                           ),
-                          borderRadius: BorderRadius.circular(12.0),
-                        ),
-                        focusedErrorBorder: UnderlineInputBorder(
-                          borderSide: BorderSide(
-                            color: FlutterFlowTheme.of(context).alternate,
-                            width: 2.0,
+                          focusedErrorBorder: UnderlineInputBorder(
+                            borderSide: BorderSide(
+                              color: FlutterFlowTheme.of(context).alternate,
+                              width: 2.0,
+                            ),
+                            borderRadius: BorderRadius.circular(12.0),
                           ),
-                          borderRadius: BorderRadius.circular(12.0),
+                          filled: true,
+                          fillColor:
+                              FlutterFlowTheme.of(context).primaryBackground,
+                          suffixIcon: Icon(
+                            Icons.format_list_numbered_rtl_rounded,
+                            color: Color(0xFF757575),
+                            size: 22.0,
+                          ),
                         ),
-                        filled: true,
-                        fillColor:
-                            FlutterFlowTheme.of(context).primaryBackground,
-                        suffixIcon: Icon(
-                          Icons.format_list_numbered_rtl_rounded,
-                          color: Color(0xFF757575),
-                          size: 22.0,
-                        ),
+                        style: FlutterFlowTheme.of(context).bodyMedium,
+                        validator: _model.numberControllerValidator
+                            .asValidator(context),
                       ),
-                      style: FlutterFlowTheme.of(context).bodyMedium,
-                      validator:
-                          _model.courseControllerValidator.asValidator(context),
                     ),
                   ),
                 ),
@@ -156,7 +160,7 @@ class _AttendclassWidgetState extends State<AttendclassWidget> {
                       },
                       text: 'Dismiss',
                       options: FFButtonOptions(
-                        height: 55.0,
+                        height: 45.0,
                         padding: EdgeInsetsDirectional.fromSTEB(
                             24.0, 0.0, 24.0, 0.0),
                         iconPadding:
@@ -177,15 +181,20 @@ class _AttendclassWidgetState extends State<AttendclassWidget> {
                     ),
                     FFButtonWidget(
                       onPressed: () async {
+                        if (_model.formKey.currentState == null ||
+                            !_model.formKey.currentState!.validate()) {
+                          return;
+                        }
+
                         await widget.classref!
                             .update(createAttendanceRecordData(
-                          noClasses: int.tryParse(_model.courseController.text),
+                          noClasses: int.tryParse(_model.numberController.text),
                         ));
                         Navigator.pop(context);
                       },
                       text: 'Confirm',
                       options: FFButtonOptions(
-                        height: 55.0,
+                        height: 45.0,
                         padding: EdgeInsetsDirectional.fromSTEB(
                             24.0, 0.0, 24.0, 0.0),
                         iconPadding:

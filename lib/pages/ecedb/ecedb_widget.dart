@@ -1,6 +1,5 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_web_view.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -70,17 +69,6 @@ class _EcedbWidgetState extends State<EcedbWidget> {
           actions: [],
           centerTitle: false,
           elevation: 0.0,
-        ),
-        body: SafeArea(
-          top: true,
-          child: FlutterFlowWebView(
-            content:
-                'https://drive.google.com/drive/folders/1vWl9vsvlkJlZnD4CI011gNaTU0gH0pOG',
-            bypass: true,
-            height: MediaQuery.sizeOf(context).height * 1.0,
-            verticalScroll: true,
-            horizontalScroll: true,
-          ),
         ),
       ),
     );

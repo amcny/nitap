@@ -14,18 +14,28 @@ import 'package:provider/provider.dart';
 class AttendclassModel extends FlutterFlowModel<AttendclassWidget> {
   ///  State fields for stateful widgets in this component.
 
-  // State field(s) for course widget.
-  FocusNode? courseFocusNode;
-  TextEditingController? courseController;
-  String? Function(BuildContext, String?)? courseControllerValidator;
+  final formKey = GlobalKey<FormState>();
+  // State field(s) for number widget.
+  FocusNode? numberFocusNode;
+  TextEditingController? numberController;
+  String? Function(BuildContext, String?)? numberControllerValidator;
+  String? _numberControllerValidator(BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return 'Field is required';
+    }
+
+    return null;
+  }
 
   /// Initialization and disposal methods.
 
-  void initState(BuildContext context) {}
+  void initState(BuildContext context) {
+    numberControllerValidator = _numberControllerValidator;
+  }
 
   void dispose() {
-    courseFocusNode?.dispose();
-    courseController?.dispose();
+    numberFocusNode?.dispose();
+    numberController?.dispose();
   }
 
   /// Action blocks are added here.
