@@ -227,9 +227,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ),
             ),
             FFRoute(
-              name: 'test',
-              path: 'test',
-              builder: (context, params) => TestWidget(),
+              name: 'alumni',
+              path: 'alumni',
+              builder: (context, params) => AlumniWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),

@@ -149,8 +149,9 @@ class _AttendancefeatureWidgetState extends State<AttendancefeatureWidget> {
             if (dataTableAttendanceRecordList.isEmpty) {
               return Center(
                 child: Image.asset(
-                  'https://www.nicepng.com/png/detail/73-734648_slideshow-arrow-line-to-find-your-silc-five.png',
-                  fit: BoxFit.cover,
+                  'assets/images/dot.png',
+                  width: 200.0,
+                  fit: BoxFit.contain,
                 ),
               );
             }

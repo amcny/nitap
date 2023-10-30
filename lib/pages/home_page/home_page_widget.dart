@@ -323,13 +323,16 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                 EdgeInsetsDirectional.fromSTEB(
                                                     10.0, 15.0, 0.0, 0.0),
                                             child: Text(
-                                              dataItem.course,
+                                              dataItem.course
+                                                  .maybeHandleOverflow(
+                                                      maxChars: 6),
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .override(
                                                         fontFamily: 'Poppins',
                                                         color: Colors.white,
+                                                        fontSize: 15.0,
                                                         fontWeight:
                                                             FontWeight.w500,
                                                       ),
@@ -347,6 +350,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                       .override(
                                                         fontFamily: 'Poppins',
                                                         color: Colors.white,
+                                                        fontSize: 15.0,
                                                       ),
                                             ),
                                           ),
@@ -419,7 +423,15 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                           ],
                                                           style: FlutterFlowTheme
                                                                   .of(context)
-                                                              .bodyMedium,
+                                                              .bodyMedium
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Poppins',
+                                                                fontSize: 15.0,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .w500,
+                                                              ),
                                                         ),
                                                       ),
                                                     ),
@@ -682,12 +694,14 @@ class _HomePageWidgetState extends State<HomePageWidget>
                 Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(10.0, 5.0, 10.0, 5.0),
                   child: Container(
+                    height: 250.0,
                     decoration: BoxDecoration(
                       color: FlutterFlowTheme.of(context).secondaryBackground,
                       borderRadius: BorderRadius.circular(16.0),
                     ),
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
@@ -721,14 +735,61 @@ class _HomePageWidgetState extends State<HomePageWidget>
                             ],
                           ),
                         ),
-                        Column(
+                        Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            Row(
+                            Column(
                               mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
+                                InkWell(
+                                  splashColor: Colors.transparent,
+                                  focusColor: Colors.transparent,
+                                  hoverColor: Colors.transparent,
+                                  highlightColor: Colors.transparent,
+                                  onTap: () async {
+                                    context.pushNamed('Attendancefeature');
+                                  },
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
+                                    children: [
+                                      Container(
+                                        width: 50.0,
+                                        height: 50.0,
+                                        decoration: BoxDecoration(
+                                          color: Color(0x251A73E8),
+                                          borderRadius:
+                                              BorderRadius.circular(12.0),
+                                        ),
+                                        alignment:
+                                            AlignmentDirectional(0.00, 0.00),
+                                        child: Icon(
+                                          Icons.pie_chart_rounded,
+                                          color: FlutterFlowTheme.of(context)
+                                              .primary,
+                                          size: 24.0,
+                                        ),
+                                      ),
+                                      Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 5.0, 0.0, 0.0),
+                                        child: Text(
+                                          'Attendance',
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodySmall
+                                              .override(
+                                                fontFamily: 'Poppins',
+                                                fontSize: 10.0,
+                                                fontWeight: FontWeight.normal,
+                                              ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
                                 InkWell(
                                   splashColor: Colors.transparent,
                                   focusColor: Colors.transparent,
@@ -763,6 +824,84 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                             0.0, 5.0, 0.0, 0.0),
                                         child: Text(
                                           'Faculties',
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodySmall
+                                              .override(
+                                                fontFamily: 'Poppins',
+                                                fontSize: 10.0,
+                                                fontWeight: FontWeight.normal,
+                                              ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ]
+                                  .divide(SizedBox(height: 20.0))
+                                  .around(SizedBox(height: 20.0)),
+                            ),
+                            Column(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                InkWell(
+                                  splashColor: Colors.transparent,
+                                  focusColor: Colors.transparent,
+                                  hoverColor: Colors.transparent,
+                                  highlightColor: Colors.transparent,
+                                  onTap: () async {
+                                    ScaffoldMessenger.of(context).showSnackBar(
+                                      SnackBar(
+                                        content: Text(
+                                          'Feature Currently under Development',
+                                          style: GoogleFonts.getFont(
+                                            'Poppins',
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryText,
+                                          ),
+                                        ),
+                                        duration: Duration(milliseconds: 4000),
+                                        backgroundColor:
+                                            FlutterFlowTheme.of(context)
+                                                .secondaryBackground,
+                                        action: SnackBarAction(
+                                          label: 'Dismiss',
+                                          textColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .primaryText,
+                                          onPressed: () async {
+                                            ScaffoldMessenger.of(context)
+                                                .hideCurrentSnackBar();
+                                          },
+                                        ),
+                                      ),
+                                    );
+                                  },
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children: [
+                                      Container(
+                                        width: 50.0,
+                                        height: 50.0,
+                                        decoration: BoxDecoration(
+                                          color: Color(0x251A73E8),
+                                          borderRadius:
+                                              BorderRadius.circular(12.0),
+                                        ),
+                                        alignment:
+                                            AlignmentDirectional(0.00, 0.00),
+                                        child: FaIcon(
+                                          FontAwesomeIcons.pencilAlt,
+                                          color: FlutterFlowTheme.of(context)
+                                              .primary,
+                                          size: 20.0,
+                                        ),
+                                      ),
+                                      Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 5.0, 0.0, 0.0),
+                                        child: Text(
+                                          'Marks',
                                           style: FlutterFlowTheme.of(context)
                                               .bodySmall
                                               .override(
@@ -821,6 +960,13 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                     ],
                                   ),
                                 ),
+                              ]
+                                  .divide(SizedBox(height: 20.0))
+                                  .around(SizedBox(height: 20.0)),
+                            ),
+                            Column(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
                                 InkWell(
                                   splashColor: Colors.transparent,
                                   focusColor: Colors.transparent,
@@ -873,58 +1019,6 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                   hoverColor: Colors.transparent,
                                   highlightColor: Colors.transparent,
                                   onTap: () async {
-                                    context.pushNamed('ManageIDCard');
-                                  },
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.min,
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    children: [
-                                      Container(
-                                        width: 50.0,
-                                        height: 50.0,
-                                        decoration: BoxDecoration(
-                                          color: Color(0x251A73E8),
-                                          borderRadius:
-                                              BorderRadius.circular(12.0),
-                                        ),
-                                        alignment:
-                                            AlignmentDirectional(0.00, 0.00),
-                                        child: FaIcon(
-                                          FontAwesomeIcons.solidIdCard,
-                                          color: FlutterFlowTheme.of(context)
-                                              .primary,
-                                          size: 20.0,
-                                        ),
-                                      ),
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 5.0, 0.0, 0.0),
-                                        child: Text(
-                                          'ID Card',
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodySmall
-                                              .override(
-                                                fontFamily: 'Poppins',
-                                                fontSize: 10.0,
-                                                fontWeight: FontWeight.normal,
-                                              ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ],
-                            ),
-                            Row(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: [
-                                InkWell(
-                                  splashColor: Colors.transparent,
-                                  focusColor: Colors.transparent,
-                                  hoverColor: Colors.transparent,
-                                  highlightColor: Colors.transparent,
-                                  onTap: () async {
                                     context.pushNamed('StudentPortal');
                                   },
                                   child: Column(
@@ -954,6 +1048,60 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                         child: Text(
                                           'Portal',
                                           textAlign: TextAlign.center,
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodySmall
+                                              .override(
+                                                fontFamily: 'Poppins',
+                                                fontSize: 10.0,
+                                                fontWeight: FontWeight.normal,
+                                              ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ]
+                                  .divide(SizedBox(height: 20.0))
+                                  .around(SizedBox(height: 20.0)),
+                            ),
+                            Column(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                InkWell(
+                                  splashColor: Colors.transparent,
+                                  focusColor: Colors.transparent,
+                                  hoverColor: Colors.transparent,
+                                  highlightColor: Colors.transparent,
+                                  onTap: () async {
+                                    context.pushNamed('ManageIDCard');
+                                  },
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children: [
+                                      Container(
+                                        width: 50.0,
+                                        height: 50.0,
+                                        decoration: BoxDecoration(
+                                          color: Color(0x251A73E8),
+                                          borderRadius:
+                                              BorderRadius.circular(12.0),
+                                        ),
+                                        alignment:
+                                            AlignmentDirectional(0.00, 0.00),
+                                        child: FaIcon(
+                                          FontAwesomeIcons.solidIdCard,
+                                          color: FlutterFlowTheme.of(context)
+                                              .primary,
+                                          size: 20.0,
+                                        ),
+                                      ),
+                                      Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 5.0, 0.0, 0.0),
+                                        child: Text(
+                                          'ID Card',
                                           style: FlutterFlowTheme.of(context)
                                               .bodySmall
                                               .override(
@@ -1012,106 +1160,11 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                     ],
                                   ),
                                 ),
-                                InkWell(
-                                  splashColor: Colors.transparent,
-                                  focusColor: Colors.transparent,
-                                  hoverColor: Colors.transparent,
-                                  highlightColor: Colors.transparent,
-                                  onTap: () async {
-                                    context.pushNamed('Attendancefeature');
-                                  },
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.min,
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.center,
-                                    children: [
-                                      Container(
-                                        width: 50.0,
-                                        height: 50.0,
-                                        decoration: BoxDecoration(
-                                          color: Color(0x251A73E8),
-                                          borderRadius:
-                                              BorderRadius.circular(12.0),
-                                        ),
-                                        alignment:
-                                            AlignmentDirectional(0.00, 0.00),
-                                        child: Icon(
-                                          Icons.pie_chart_rounded,
-                                          color: FlutterFlowTheme.of(context)
-                                              .primary,
-                                          size: 24.0,
-                                        ),
-                                      ),
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 5.0, 0.0, 0.0),
-                                        child: Text(
-                                          'Attendance',
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodySmall
-                                              .override(
-                                                fontFamily: 'Poppins',
-                                                fontSize: 10.0,
-                                                fontWeight: FontWeight.normal,
-                                              ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                InkWell(
-                                  splashColor: Colors.transparent,
-                                  focusColor: Colors.transparent,
-                                  hoverColor: Colors.transparent,
-                                  highlightColor: Colors.transparent,
-                                  onTap: () async {
-                                    await launchURL(
-                                        'https://www.nitandhra.ac.in/');
-                                  },
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.min,
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    children: [
-                                      Container(
-                                        width: 50.0,
-                                        height: 50.0,
-                                        decoration: BoxDecoration(
-                                          color: Color(0x251A73E8),
-                                          borderRadius:
-                                              BorderRadius.circular(12.0),
-                                        ),
-                                        alignment:
-                                            AlignmentDirectional(0.00, 0.00),
-                                        child: FaIcon(
-                                          FontAwesomeIcons.globe,
-                                          color: FlutterFlowTheme.of(context)
-                                              .primary,
-                                          size: 20.0,
-                                        ),
-                                      ),
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 5.0, 0.0, 0.0),
-                                        child: Text(
-                                          'NIT Web',
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodySmall
-                                              .override(
-                                                fontFamily: 'Poppins',
-                                                fontSize: 10.0,
-                                                fontWeight: FontWeight.normal,
-                                              ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ],
+                              ]
+                                  .divide(SizedBox(height: 20.0))
+                                  .around(SizedBox(height: 20.0)),
                             ),
-                          ]
-                              .divide(SizedBox(height: 25.0))
-                              .around(SizedBox(height: 25.0)),
+                          ],
                         ),
                       ],
                     ),
@@ -1186,30 +1239,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                           hoverColor: Colors.transparent,
                           highlightColor: Colors.transparent,
                           onTap: () async {
-                            ScaffoldMessenger.of(context).showSnackBar(
-                              SnackBar(
-                                content: Text(
-                                  'Feature Currently under Development',
-                                  style: GoogleFonts.getFont(
-                                    'Poppins',
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryText,
-                                  ),
-                                ),
-                                duration: Duration(milliseconds: 4000),
-                                backgroundColor: FlutterFlowTheme.of(context)
-                                    .secondaryBackground,
-                                action: SnackBarAction(
-                                  label: 'Dismiss',
-                                  textColor:
-                                      FlutterFlowTheme.of(context).primaryText,
-                                  onPressed: () async {
-                                    ScaffoldMessenger.of(context)
-                                        .hideCurrentSnackBar();
-                                  },
-                                ),
-                              ),
-                            );
+                            context.pushNamed('alumni');
                           },
                           child: Container(
                             width: 230.0,
@@ -1245,7 +1275,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                         ),
                                   ),
                                   Text(
-                                    'Resources Hub',
+                                    'Alumni Connect',
                                     style: FlutterFlowTheme.of(context)
                                         .titleMedium
                                         .override(
