@@ -295,8 +295,8 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                       List.generate(data.length, (dataIndex) {
                                     final dataItem = data[dataIndex];
                                     return Container(
-                                      width: 280.0,
-                                      height: 150.0,
+                                      width: 285.0,
+                                      height: 155.0,
                                       decoration: BoxDecoration(
                                         gradient: LinearGradient(
                                           colors: [
