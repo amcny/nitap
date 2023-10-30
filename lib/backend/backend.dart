@@ -12,6 +12,7 @@ import 'schema/foryou_record.dart';
 import 'schema/timetable_record.dart';
 import 'schema/faculty_record.dart';
 import 'schema/attendance_record.dart';
+import 'schema/marks_record.dart';
 
 export 'dart:async' show StreamSubscription;
 export 'package:cloud_firestore/cloud_firestore.dart';
@@ -26,6 +27,7 @@ export 'schema/foryou_record.dart';
 export 'schema/timetable_record.dart';
 export 'schema/faculty_record.dart';
 export 'schema/attendance_record.dart';
+export 'schema/marks_record.dart';
 
 /// Functions to query UserIdRecords (as a Stream and as a Future).
 Future<int> queryUserIdRecordCount({
@@ -281,6 +283,43 @@ Future<List<AttendanceRecord>> queryAttendanceRecordOnce({
     queryCollectionOnce(
       AttendanceRecord.collection,
       AttendanceRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+/// Functions to query MarksRecords (as a Stream and as a Future).
+Future<int> queryMarksRecordCount({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+}) =>
+    queryCollectionCount(
+      MarksRecord.collection,
+      queryBuilder: queryBuilder,
+      limit: limit,
+    );
+
+Stream<List<MarksRecord>> queryMarksRecord({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollection(
+      MarksRecord.collection,
+      MarksRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<List<MarksRecord>> queryMarksRecordOnce({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollectionOnce(
+      MarksRecord.collection,
+      MarksRecord.fromSnapshot,
       queryBuilder: queryBuilder,
       limit: limit,
       singleRecord: singleRecord,

@@ -241,7 +241,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                     ),
                   ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 5.0),
                   child: StreamBuilder<List<TimetableRecord>>(
                     stream: queryTimetableRecord(
                       queryBuilder: (timetableRecord) => timetableRecord
@@ -460,7 +460,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                     alignment: AlignmentDirectional(-1.00, 0.00),
                     child: Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(20.0, 10.0, 0.0, 10.0),
+                          EdgeInsetsDirectional.fromSTEB(20.0, 5.0, 0.0, 10.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.min,
                         children: [

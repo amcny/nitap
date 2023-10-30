@@ -125,10 +125,12 @@ class _AttendancefeatureWidgetState extends State<AttendancefeatureWidget> {
         top: true,
         child: StreamBuilder<List<AttendanceRecord>>(
           stream: queryAttendanceRecord(
-            queryBuilder: (attendanceRecord) => attendanceRecord.where(
-              'user',
-              isEqualTo: currentUserReference,
-            ),
+            queryBuilder: (attendanceRecord) => attendanceRecord
+                .where(
+                  'user',
+                  isEqualTo: currentUserReference,
+                )
+                .orderBy('created_time'),
           ),
           builder: (context, snapshot) {
             // Customize what your widget looks like when it's loading.

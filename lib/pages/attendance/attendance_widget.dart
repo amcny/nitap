@@ -189,12 +189,14 @@ class _AttendanceWidgetState extends State<AttendanceWidget> {
                             .set(createAttendanceRecordData(
                           courseName: _model.courseController.text,
                           user: currentUserReference,
+                          createdTime: getCurrentTimestamp,
                         ));
                         _model.addedClasses =
                             AttendanceRecord.getDocumentFromData(
                                 createAttendanceRecordData(
                                   courseName: _model.courseController.text,
                                   user: currentUserReference,
+                                  createdTime: getCurrentTimestamp,
                                 ),
                                 attendanceRecordReference);
                         Navigator.pop(context);

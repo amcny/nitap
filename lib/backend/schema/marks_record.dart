@@ -8,8 +8,8 @@ import '/backend/schema/util/schema_util.dart';
 import 'index.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 
-class AttendanceRecord extends FirestoreRecord {
-  AttendanceRecord._(
+class MarksRecord extends FirestoreRecord {
+  MarksRecord._(
     DocumentReference reference,
     Map<String, dynamic> data,
   ) : super(reference, data) {
@@ -21,11 +21,6 @@ class AttendanceRecord extends FirestoreRecord {
   String get courseName => _courseName ?? '';
   bool hasCourseName() => _courseName != null;
 
-  // "no_classes" field.
-  int? _noClasses;
-  int get noClasses => _noClasses ?? 0;
-  bool hasNoClasses() => _noClasses != null;
-
   // "user" field.
   DocumentReference? _user;
   DocumentReference? get user => _user;
@@ -36,80 +31,84 @@ class AttendanceRecord extends FirestoreRecord {
   DateTime? get createdTime => _createdTime;
   bool hasCreatedTime() => _createdTime != null;
 
+  // "marks" field.
+  String? _marks;
+  String get marks => _marks ?? '';
+  bool hasMarks() => _marks != null;
+
   void _initializeFields() {
     _courseName = snapshotData['course_name'] as String?;
-    _noClasses = castToType<int>(snapshotData['no_classes']);
     _user = snapshotData['user'] as DocumentReference?;
     _createdTime = snapshotData['created_time'] as DateTime?;
+    _marks = snapshotData['marks'] as String?;
   }
 
   static CollectionReference get collection =>
-      FirebaseFirestore.instance.collection('attendance');
+      FirebaseFirestore.instance.collection('marks');
 
-  static Stream<AttendanceRecord> getDocument(DocumentReference ref) =>
-      ref.snapshots().map((s) => AttendanceRecord.fromSnapshot(s));
+  static Stream<MarksRecord> getDocument(DocumentReference ref) =>
+      ref.snapshots().map((s) => MarksRecord.fromSnapshot(s));
 
-  static Future<AttendanceRecord> getDocumentOnce(DocumentReference ref) =>
-      ref.get().then((s) => AttendanceRecord.fromSnapshot(s));
+  static Future<MarksRecord> getDocumentOnce(DocumentReference ref) =>
+      ref.get().then((s) => MarksRecord.fromSnapshot(s));
 
-  static AttendanceRecord fromSnapshot(DocumentSnapshot snapshot) =>
-      AttendanceRecord._(
+  static MarksRecord fromSnapshot(DocumentSnapshot snapshot) => MarksRecord._(
         snapshot.reference,
         mapFromFirestore(snapshot.data() as Map<String, dynamic>),
       );
 
-  static AttendanceRecord getDocumentFromData(
+  static MarksRecord getDocumentFromData(
     Map<String, dynamic> data,
     DocumentReference reference,
   ) =>
-      AttendanceRecord._(reference, mapFromFirestore(data));
+      MarksRecord._(reference, mapFromFirestore(data));
 
   @override
   String toString() =>
-      'AttendanceRecord(reference: ${reference.path}, data: $snapshotData)';
+      'MarksRecord(reference: ${reference.path}, data: $snapshotData)';
 
   @override
   int get hashCode => reference.path.hashCode;
 
   @override
   bool operator ==(other) =>
-      other is AttendanceRecord &&
+      other is MarksRecord &&
       reference.path.hashCode == other.reference.path.hashCode;
 }
 
-Map<String, dynamic> createAttendanceRecordData({
+Map<String, dynamic> createMarksRecordData({
   String? courseName,
-  int? noClasses,
   DocumentReference? user,
   DateTime? createdTime,
+  String? marks,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
       'course_name': courseName,
-      'no_classes': noClasses,
       'user': user,
       'created_time': createdTime,
+      'marks': marks,
     }.withoutNulls,
   );
 
   return firestoreData;
 }
 
-class AttendanceRecordDocumentEquality implements Equality<AttendanceRecord> {
-  const AttendanceRecordDocumentEquality();
+class MarksRecordDocumentEquality implements Equality<MarksRecord> {
+  const MarksRecordDocumentEquality();
 
   @override
-  bool equals(AttendanceRecord? e1, AttendanceRecord? e2) {
+  bool equals(MarksRecord? e1, MarksRecord? e2) {
     return e1?.courseName == e2?.courseName &&
-        e1?.noClasses == e2?.noClasses &&
         e1?.user == e2?.user &&
-        e1?.createdTime == e2?.createdTime;
+        e1?.createdTime == e2?.createdTime &&
+        e1?.marks == e2?.marks;
   }
 
   @override
-  int hash(AttendanceRecord? e) => const ListEquality()
-      .hash([e?.courseName, e?.noClasses, e?.user, e?.createdTime]);
+  int hash(MarksRecord? e) => const ListEquality()
+      .hash([e?.courseName, e?.user, e?.createdTime, e?.marks]);
 
   @override
-  bool isValidKey(Object? o) => o is AttendanceRecord;
+  bool isValidKey(Object? o) => o is MarksRecord;
 }
