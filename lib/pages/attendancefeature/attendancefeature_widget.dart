@@ -274,6 +274,7 @@ class _AttendancefeatureWidgetState extends State<AttendancefeatureWidget> {
                 borderRadius: BorderRadius.circular(0.0),
               ),
               dividerThickness: 1.0,
+              columnSpacing: 40.0,
               showBottomBorder: true,
               minWidth: 49.0,
             );
