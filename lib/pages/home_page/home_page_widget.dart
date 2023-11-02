@@ -20,6 +20,7 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'home_page_model.dart';
 export 'home_page_model.dart';
 
@@ -147,7 +148,8 @@ class _HomePageWidgetState extends State<HomePageWidget>
                               builder: (dialogContext) {
                                 return Material(
                                   color: Colors.transparent,
-                                  child: ProfilepopupWidget(),
+                                  child:
+                                      WebViewAware(child: ProfilepopupWidget()),
                                 );
                               },
                             ).then((value) => setState(() {}));
@@ -295,8 +297,8 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                       List.generate(data.length, (dataIndex) {
                                     final dataItem = data[dataIndex];
                                     return Container(
-                                      width: 285.0,
-                                      height: 155.0,
+                                      width: 290.0,
+                                      height: 170.0,
                                       decoration: BoxDecoration(
                                         gradient: LinearGradient(
                                           colors: [
@@ -309,7 +311,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                           end: AlignmentDirectional(1.0, 1.0),
                                         ),
                                         borderRadius:
-                                            BorderRadius.circular(8.0),
+                                            BorderRadius.circular(12.0),
                                       ),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,

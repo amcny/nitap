@@ -13,6 +13,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'attendancefeature_model.dart';
 export 'attendancefeature_model.dart';
 
@@ -74,11 +75,12 @@ class _AttendancefeatureWidgetState extends State<AttendancefeatureWidget> {
               builder: (dialogContext) {
                 return Material(
                   color: Colors.transparent,
-                  child: Container(
+                  child: WebViewAware(
+                      child: Container(
                     height: 245.0,
                     width: 345.0,
                     child: AttendanceWidget(),
-                  ),
+                  )),
                 );
               },
             ).then((value) => setState(() {}));
@@ -223,20 +225,21 @@ class _AttendancefeatureWidgetState extends State<AttendancefeatureWidget> {
                                     builder: (dialogContext) {
                                       return Material(
                                         color: Colors.transparent,
-                                        child: Container(
+                                        child: WebViewAware(
+                                            child: Container(
                                           height: 245.0,
                                           width: 345.0,
                                           child: AttendclassWidget(
                                             classref: dataTableAttendanceRecord
                                                 .reference,
                                           ),
-                                        ),
+                                        )),
                                       );
                                     },
                                   ).then((value) => setState(() {}));
                                 },
                                 child: Icon(
-                                  Icons.edit_calendar,
+                                  Icons.edit_calendar_rounded,
                                   color: FlutterFlowTheme.of(context).primary,
                                   size: 24.0,
                                 ),

@@ -40,6 +40,7 @@ class _AttendclassWidgetState extends State<AttendclassWidget> {
 
     _model.numberController ??= TextEditingController();
     _model.numberFocusNode ??= FocusNode();
+
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 

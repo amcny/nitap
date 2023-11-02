@@ -21,6 +21,7 @@ import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'profile_section_model.dart';
 export 'profile_section_model.dart';
 
@@ -105,11 +106,12 @@ class _ProfileSectionWidgetState extends State<ProfileSectionWidget> {
                     builder: (dialogContext) {
                       return Material(
                         color: Colors.transparent,
-                        child: Container(
+                        child: WebViewAware(
+                            child: Container(
                           height: 210.0,
                           width: 345.0,
                           child: AlertLogoutWidget(),
-                        ),
+                        )),
                       );
                     },
                   ).then((value) => setState(() {}));
@@ -378,10 +380,11 @@ class _ProfileSectionWidgetState extends State<ProfileSectionWidget> {
                             backgroundColor: Colors.transparent,
                             context: context,
                             builder: (context) {
-                              return Padding(
+                              return WebViewAware(
+                                  child: Padding(
                                 padding: MediaQuery.viewInsetsOf(context),
                                 child: SupportWidget(),
-                              );
+                              ));
                             },
                           ).then((value) => safeSetState(() {}));
                         },
@@ -552,10 +555,11 @@ class _ProfileSectionWidgetState extends State<ProfileSectionWidget> {
                             backgroundColor: Colors.transparent,
                             context: context,
                             builder: (context) {
-                              return Padding(
+                              return WebViewAware(
+                                  child: Padding(
                                 padding: MediaQuery.viewInsetsOf(context),
                                 child: PrivacyWidget(),
-                              );
+                              ));
                             },
                           ).then((value) => safeSetState(() {}));
                         },
@@ -684,10 +688,11 @@ class _ProfileSectionWidgetState extends State<ProfileSectionWidget> {
                             backgroundColor: Colors.transparent,
                             context: context,
                             builder: (context) {
-                              return Padding(
+                              return WebViewAware(
+                                  child: Padding(
                                 padding: MediaQuery.viewInsetsOf(context),
                                 child: DevcnyWidget(),
-                              );
+                              ));
                             },
                           ).then((value) => safeSetState(() {}));
                         },
@@ -758,10 +763,11 @@ class _ProfileSectionWidgetState extends State<ProfileSectionWidget> {
                             backgroundColor: Colors.transparent,
                             context: context,
                             builder: (context) {
-                              return Padding(
+                              return WebViewAware(
+                                  child: Padding(
                                 padding: MediaQuery.viewInsetsOf(context),
                                 child: DevVamsiWidget(),
-                              );
+                              ));
                             },
                           ).then((value) => safeSetState(() {}));
                         },

@@ -35,6 +35,7 @@ class _AttendanceWidgetState extends State<AttendanceWidget> {
 
     _model.courseController ??= TextEditingController();
     _model.courseFocusNode ??= FocusNode();
+
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
