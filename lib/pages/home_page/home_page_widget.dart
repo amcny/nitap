@@ -323,7 +323,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                           Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    10.0, 15.0, 0.0, 0.0),
+                                                    15.0, 15.0, 0.0, 0.0),
                                             child: Text(
                                               dataItem.course
                                                   .maybeHandleOverflow(
@@ -334,7 +334,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                       .override(
                                                         fontFamily: 'Poppins',
                                                         color: Colors.white,
-                                                        fontSize: 15.0,
+                                                        fontSize: 16.0,
                                                         fontWeight:
                                                             FontWeight.w500,
                                                       ),
@@ -343,7 +343,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                           Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    10.0, 10.0, 0.0, 0.0),
+                                                    15.0, 10.0, 0.0, 0.0),
                                             child: Text(
                                               dataItem.instructor,
                                               style:
@@ -352,7 +352,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                       .override(
                                                         fontFamily: 'Poppins',
                                                         color: Colors.white,
-                                                        fontSize: 15.0,
+                                                        fontSize: 16.0,
                                                       ),
                                             ),
                                           ),
@@ -388,7 +388,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                       padding:
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
-                                                                  10.0,
+                                                                  15.0,
                                                                   0.0,
                                                                   0.0,
                                                                   0.0),
@@ -429,7 +429,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                               .override(
                                                                 fontFamily:
                                                                     'Poppins',
-                                                                fontSize: 15.0,
+                                                                fontSize: 16.0,
                                                                 fontWeight:
                                                                     FontWeight
                                                                         .w500,
