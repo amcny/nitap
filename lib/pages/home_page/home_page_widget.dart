@@ -94,7 +94,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
         // Customize what your widget looks like when it's loading.
         if (!snapshot.hasData) {
           return Scaffold(
-            backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+            backgroundColor: FlutterFlowTheme.of(context).appbar,
             body: Center(
               child: SizedBox(
                 width: 30.0,
@@ -110,7 +110,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
         List<ForyouRecord> homePageForyouRecordList = snapshot.data!;
         return Scaffold(
           key: scaffoldKey,
-          backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+          backgroundColor: FlutterFlowTheme.of(context).appbar,
           body: SingleChildScrollView(
             primary: false,
             child: Column(
@@ -123,12 +123,40 @@ class _HomePageWidgetState extends State<HomePageWidget>
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Image.asset(
-                        Theme.of(context).brightness == Brightness.dark
-                            ? 'assets/images/LOGO.png'
-                            : 'assets/images/LOGOlightmodefull.png',
-                        width: 135.0,
-                        fit: BoxFit.cover,
+                      Align(
+                        alignment: AlignmentDirectional(-1.00, 0.00),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.max,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              valueOrDefault<String>(
+                                functions.wishes(),
+                                'Wishes',
+                              ),
+                              style: FlutterFlowTheme.of(context)
+                                  .headlineMedium
+                                  .override(
+                                    fontFamily: 'Poppins',
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryText,
+                                    fontSize: 23.0,
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                            ),
+                            AutoSizeText(
+                              currentUserEmail.maybeHandleOverflow(maxChars: 6),
+                              style: FlutterFlowTheme.of(context)
+                                  .headlineSmall
+                                  .override(
+                                    fontFamily: 'Poppins',
+                                    color: FlutterFlowTheme.of(context).primary,
+                                    fontSize: 21.0,
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                            ),
+                          ],
+                        ),
                       ),
                       Builder(
                         builder: (context) => InkWell(
@@ -178,44 +206,6 @@ class _HomePageWidgetState extends State<HomePageWidget>
                         ),
                       ),
                     ],
-                  ),
-                ),
-                Align(
-                  alignment: AlignmentDirectional(-1.00, 0.00),
-                  child: Padding(
-                    padding:
-                        EdgeInsetsDirectional.fromSTEB(20.0, 15.0, 20.0, 0.0),
-                    child: Column(
-                      mainAxisSize: MainAxisSize.max,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          valueOrDefault<String>(
-                            functions.wishes(),
-                            'Wishes',
-                          ),
-                          style: FlutterFlowTheme.of(context)
-                              .headlineMedium
-                              .override(
-                                fontFamily: 'Poppins',
-                                color: FlutterFlowTheme.of(context).primaryText,
-                                fontSize: 23.0,
-                                fontWeight: FontWeight.w600,
-                              ),
-                        ),
-                        AutoSizeText(
-                          currentUserEmail.maybeHandleOverflow(maxChars: 6),
-                          style: FlutterFlowTheme.of(context)
-                              .headlineSmall
-                              .override(
-                                fontFamily: 'Poppins',
-                                color: FlutterFlowTheme.of(context).primary,
-                                fontSize: 21.0,
-                                fontWeight: FontWeight.w600,
-                              ),
-                        ),
-                      ],
-                    ),
                   ),
                 ),
                 if (!((dateTimeFormat('EEEE', getCurrentTimestamp) ==
@@ -482,40 +472,39 @@ class _HomePageWidgetState extends State<HomePageWidget>
                 if (homePageForyouRecordList.length > 0)
                   Align(
                     alignment: AlignmentDirectional(-1.00, 0.00),
-                    child: Padding(
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 5.0),
-                      child: StreamBuilder<List<ForyouRecord>>(
-                        stream: queryForyouRecord(
-                          queryBuilder: (foryouRecord) =>
-                              foryouRecord.orderBy('order', descending: true),
-                        ),
-                        builder: (context, snapshot) {
-                          // Customize what your widget looks like when it's loading.
-                          if (!snapshot.hasData) {
-                            return Center(
-                              child: SizedBox(
-                                width: 40.0,
-                                height: 40.0,
-                                child: SpinKitCircle(
-                                  color: FlutterFlowTheme.of(context).primary,
-                                  size: 40.0,
-                                ),
+                    child: StreamBuilder<List<ForyouRecord>>(
+                      stream: queryForyouRecord(
+                        queryBuilder: (foryouRecord) =>
+                            foryouRecord.orderBy('order', descending: true),
+                      ),
+                      builder: (context, snapshot) {
+                        // Customize what your widget looks like when it's loading.
+                        if (!snapshot.hasData) {
+                          return Center(
+                            child: SizedBox(
+                              width: 40.0,
+                              height: 40.0,
+                              child: SpinKitCircle(
+                                color: FlutterFlowTheme.of(context).primary,
+                                size: 40.0,
                               ),
-                            );
-                          }
-                          List<ForyouRecord> rowForyouRecordList =
-                              snapshot.data!;
-                          return SingleChildScrollView(
-                            scrollDirection: Axis.horizontal,
-                            child: Row(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              children: List.generate(
-                                      rowForyouRecordList.length, (rowIndex) {
-                                final rowForyouRecord =
-                                    rowForyouRecordList[rowIndex];
-                                return InkWell(
+                            ),
+                          );
+                        }
+                        List<ForyouRecord> rowForyouRecordList = snapshot.data!;
+                        return SingleChildScrollView(
+                          scrollDirection: Axis.horizontal,
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: List.generate(rowForyouRecordList.length,
+                                    (rowIndex) {
+                              final rowForyouRecord =
+                                  rowForyouRecordList[rowIndex];
+                              return Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    5.0, 5.0, 5.0, 5.0),
+                                child: InkWell(
                                   splashColor: Colors.transparent,
                                   focusColor: Colors.transparent,
                                   hoverColor: Colors.transparent,
@@ -531,157 +520,178 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                       }.withoutNulls,
                                     );
                                   },
-                                  child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(18.0),
-                                    child: Container(
-                                      width: 230.0,
-                                      height: 330.0,
-                                      decoration: BoxDecoration(
-                                        color: FlutterFlowTheme.of(context)
-                                            .whiteBg,
-                                        borderRadius:
-                                            BorderRadius.circular(18.0),
-                                      ),
-                                      child: Column(
-                                        mainAxisSize: MainAxisSize.min,
-                                        children: [
-                                          Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    10.0, 10.0, 10.0, 10.0),
-                                            child: Hero(
-                                              tag: rowForyouRecord.image,
-                                              transitionOnUserGestures: true,
-                                              child: ClipRRect(
-                                                borderRadius:
-                                                    BorderRadius.circular(18.0),
-                                                child: CachedNetworkImage(
-                                                  fadeInDuration:
-                                                      Duration(milliseconds: 0),
-                                                  fadeOutDuration:
-                                                      Duration(milliseconds: 0),
-                                                  imageUrl:
-                                                      rowForyouRecord.image,
-                                                  width: 300.0,
-                                                  height: 200.0,
-                                                  fit: BoxFit.fill,
+                                  child: Material(
+                                    color: Colors.transparent,
+                                    elevation: 2.0,
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(18.0),
+                                    ),
+                                    child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(18.0),
+                                      child: Container(
+                                        width: 230.0,
+                                        height: 330.0,
+                                        decoration: BoxDecoration(
+                                          color: FlutterFlowTheme.of(context)
+                                              .whiteBg,
+                                          borderRadius:
+                                              BorderRadius.circular(18.0),
+                                        ),
+                                        child: Column(
+                                          mainAxisSize: MainAxisSize.min,
+                                          children: [
+                                            Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      10.0, 10.0, 10.0, 10.0),
+                                              child: Hero(
+                                                tag: rowForyouRecord.image,
+                                                transitionOnUserGestures: true,
+                                                child: ClipRRect(
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          18.0),
+                                                  child: CachedNetworkImage(
+                                                    fadeInDuration: Duration(
+                                                        milliseconds: 0),
+                                                    fadeOutDuration: Duration(
+                                                        milliseconds: 0),
+                                                    imageUrl:
+                                                        rowForyouRecord.image,
+                                                    width: 300.0,
+                                                    height: 200.0,
+                                                    fit: BoxFit.fill,
+                                                  ),
                                                 ),
                                               ),
                                             ),
-                                          ),
-                                          Align(
-                                            alignment: AlignmentDirectional(
-                                                -1.00, 0.00),
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      10.0, 0.0, 10.0, 0.0),
-                                              child: Row(
-                                                mainAxisSize: MainAxisSize.min,
-                                                children: [
-                                                  Text(
-                                                    rowForyouRecord.title
-                                                        .maybeHandleOverflow(
-                                                      maxChars: 25,
-                                                      replacement: '…',
+                                            Align(
+                                              alignment: AlignmentDirectional(
+                                                  -1.00, 0.00),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        10.0, 0.0, 10.0, 0.0),
+                                                child: Row(
+                                                  mainAxisSize:
+                                                      MainAxisSize.min,
+                                                  children: [
+                                                    Text(
+                                                      rowForyouRecord.title
+                                                          .maybeHandleOverflow(
+                                                        maxChars: 25,
+                                                        replacement: '…',
+                                                      ),
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .bodyLarge
+                                                          .override(
+                                                            fontFamily:
+                                                                'Poppins',
+                                                            fontWeight:
+                                                                FontWeight.w600,
+                                                          ),
                                                     ),
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .bodyLarge
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          fontWeight:
-                                                              FontWeight.w600,
-                                                        ),
-                                                  ),
-                                                ],
+                                                  ],
+                                                ),
                                               ),
                                             ),
-                                          ),
-                                          Align(
-                                            alignment: AlignmentDirectional(
-                                                -1.00, 0.00),
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      10.0, 5.0, 10.0, 0.0),
-                                              child: Column(
-                                                mainAxisSize: MainAxisSize.max,
-                                                children: [
-                                                  Text(
-                                                    rowForyouRecord.description
-                                                        .maybeHandleOverflow(
-                                                      maxChars: 65,
-                                                      replacement: '…',
+                                            Align(
+                                              alignment: AlignmentDirectional(
+                                                  -1.00, 0.00),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        10.0, 5.0, 10.0, 0.0),
+                                                child: Column(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  children: [
+                                                    Text(
+                                                      rowForyouRecord
+                                                          .description
+                                                          .maybeHandleOverflow(
+                                                        maxChars: 65,
+                                                        replacement: '…',
+                                                      ),
+                                                      maxLines: 2,
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodySmall
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Poppins',
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .secondaryText,
+                                                                fontSize: 11.0,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .w300,
+                                                              ),
                                                     ),
-                                                    maxLines: 2,
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .bodySmall
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .secondaryText,
-                                                          fontSize: 11.0,
-                                                          fontWeight:
-                                                              FontWeight.w300,
-                                                        ),
-                                                  ),
-                                                ],
+                                                  ],
+                                                ),
                                               ),
                                             ),
-                                          ),
-                                          Align(
-                                            alignment: AlignmentDirectional(
-                                                -1.00, 0.00),
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      10.0, 5.0, 0.0, 10.0),
-                                              child: Row(
-                                                mainAxisSize: MainAxisSize.min,
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.start,
-                                                children: [
-                                                  Text(
-                                                    'Know More',
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .bodySmall
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
+                                            Align(
+                                              alignment: AlignmentDirectional(
+                                                  -1.00, 0.00),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        10.0, 5.0, 0.0, 10.0),
+                                                child: Row(
+                                                  mainAxisSize:
+                                                      MainAxisSize.min,
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.start,
+                                                  children: [
+                                                    Text(
+                                                      'Know More',
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodySmall
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Poppins',
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primary,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .w300,
+                                                              ),
+                                                    ),
+                                                    Icon(
+                                                      Icons
+                                                          .chevron_right_rounded,
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
                                                               .primary,
-                                                          fontWeight:
-                                                              FontWeight.w300,
-                                                        ),
-                                                  ),
-                                                  Icon(
-                                                    Icons.chevron_right_rounded,
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .primary,
-                                                    size: 18.0,
-                                                  ),
-                                                ],
+                                                      size: 18.0,
+                                                    ),
+                                                  ],
+                                                ),
                                               ),
                                             ),
-                                          ),
-                                        ],
+                                          ],
+                                        ),
                                       ),
                                     ),
                                   ),
-                                );
-                              })
-                                  .divide(SizedBox(width: 15.0))
-                                  .around(SizedBox(width: 15.0)),
-                            ),
-                          ).animateOnPageLoad(
-                              animationsMap['rowOnPageLoadAnimation']!);
-                        },
-                      ),
+                                ),
+                              );
+                            })
+                                .divide(SizedBox(width: 15.0))
+                                .around(SizedBox(width: 15.0)),
+                          ),
+                        ).animateOnPageLoad(
+                            animationsMap['rowOnPageLoadAnimation']!);
+                      },
                     ),
                   ),
                 if (getRemoteConfigBool('ad'))
@@ -699,6 +709,13 @@ class _HomePageWidgetState extends State<HomePageWidget>
                     height: 250.0,
                     decoration: BoxDecoration(
                       color: FlutterFlowTheme.of(context).secondaryBackground,
+                      boxShadow: [
+                        BoxShadow(
+                          blurRadius: 4.0,
+                          color: Color(0x33000000),
+                          offset: Offset(0.0, 2.0),
+                        )
+                      ],
                       borderRadius: BorderRadius.circular(16.0),
                     ),
                     child: Column(
