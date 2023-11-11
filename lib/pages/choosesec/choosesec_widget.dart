@@ -57,9 +57,9 @@ class _ChoosesecWidgetState extends State<ChoosesecWidget> {
           : FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+        backgroundColor: FlutterFlowTheme.of(context).appbar,
         appBar: AppBar(
-          backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+          backgroundColor: FlutterFlowTheme.of(context).appbar,
           automaticallyImplyLeading: false,
           title: Text(
             'Choose Section',
@@ -119,7 +119,7 @@ class _ChoosesecWidgetState extends State<ChoosesecWidget> {
                       color: FlutterFlowTheme.of(context).secondaryText,
                       size: 24.0,
                     ),
-                    fillColor: FlutterFlowTheme.of(context).secondaryBackground,
+                    fillColor: FlutterFlowTheme.of(context).bwgrey,
                     elevation: 1.0,
                     borderColor: FlutterFlowTheme.of(context).accent3,
                     borderWidth: 1.0,

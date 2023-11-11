@@ -207,6 +207,7 @@ class _ManageIDCardWidgetState extends State<ManageIDCardWidget> {
                       final selectedMedia =
                           await selectMediaWithSourceBottomSheet(
                         context: context,
+                        maxHeight: 250.00,
                         imageQuality: 30,
                         allowPhoto: true,
                         backgroundColor:

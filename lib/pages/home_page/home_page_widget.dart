@@ -7,7 +7,6 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/pages/profilepopup/profilepopup_widget.dart';
 import '/custom_code/actions/index.dart' as actions;
-import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:aligned_dialog/aligned_dialog.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:cached_network_image/cached_network_image.dart';
@@ -129,31 +128,45 @@ class _HomePageWidgetState extends State<HomePageWidget>
                           mainAxisSize: MainAxisSize.max,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text(
-                              valueOrDefault<String>(
-                                functions.wishes(),
-                                'Wishes',
-                              ),
+                            AutoSizeText(
+                              'Welcome Back,',
                               style: FlutterFlowTheme.of(context)
-                                  .headlineMedium
+                                  .titleMedium
                                   .override(
                                     fontFamily: 'Poppins',
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryText,
-                                    fontSize: 23.0,
-                                    fontWeight: FontWeight.w600,
+                                    fontSize: 18.0,
+                                    fontWeight: FontWeight.w300,
                                   ),
                             ),
-                            AutoSizeText(
-                              currentUserEmail.maybeHandleOverflow(maxChars: 6),
-                              style: FlutterFlowTheme.of(context)
-                                  .headlineSmall
-                                  .override(
-                                    fontFamily: 'Poppins',
-                                    color: FlutterFlowTheme.of(context).primary,
-                                    fontSize: 21.0,
-                                    fontWeight: FontWeight.w600,
-                                  ),
+                            Row(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                AutoSizeText(
+                                  currentUserEmail.maybeHandleOverflow(
+                                      maxChars: 6),
+                                  style: FlutterFlowTheme.of(context)
+                                      .headlineSmall
+                                      .override(
+                                        fontFamily: 'Poppins',
+                                        color: FlutterFlowTheme.of(context)
+                                            .primary,
+                                        fontSize: 21.0,
+                                        fontWeight: FontWeight.w600,
+                                      ),
+                                ),
+                                AutoSizeText(
+                                  ' ! 🤟',
+                                  style: FlutterFlowTheme.of(context)
+                                      .headlineSmall
+                                      .override(
+                                        fontFamily: 'Poppins',
+                                        color: FlutterFlowTheme.of(context)
+                                            .primary,
+                                        fontSize: 21.0,
+                                        fontWeight: FontWeight.w600,
+                                      ),
+                                ),
+                              ],
                             ),
                           ],
                         ),
@@ -183,24 +196,16 @@ class _HomePageWidgetState extends State<HomePageWidget>
                             ).then((value) => setState(() {}));
                           },
                           child: Container(
+                            width: 50.0,
+                            height: 50.0,
                             decoration: BoxDecoration(
+                              color: Color(0x251A73E8),
                               shape: BoxShape.circle,
-                              border: Border.all(
-                                color: FlutterFlowTheme.of(context).primary,
-                              ),
                             ),
-                            child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  2.0, 2.0, 2.0, 2.0),
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.circular(40.0),
-                                child: Image.asset(
-                                  'assets/images/Ellipse_74.png',
-                                  width: 40.0,
-                                  height: 40.0,
-                                  fit: BoxFit.cover,
-                                ),
-                              ),
+                            child: Icon(
+                              Icons.account_circle_rounded,
+                              color: FlutterFlowTheme.of(context).primary,
+                              size: 35.0,
                             ),
                           ),
                         ),

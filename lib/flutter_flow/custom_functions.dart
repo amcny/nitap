@@ -21,21 +21,6 @@ String? daydate() {
   return formatted;
 }
 
-String? wishes() {
-  // create me a code that shows good morning, good afternoon, good evening according to the time
-  var now = new DateTime.now();
-  var formatter = new DateFormat('HH');
-  String formatted = formatter.format(now);
-  int hour = int.parse(formatted);
-  if (hour < 12) {
-    return 'Good Morning, ';
-  } else if (hour < 16) {
-    return 'Good Afternoon, ';
-  } else {
-    return 'Good Evening, ';
-  }
-}
-
 bool? emailvalid(String? email) {
   // return true if the given email starts with 6
   if (email == null || email.isEmpty) {
