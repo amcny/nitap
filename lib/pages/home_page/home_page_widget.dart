@@ -135,7 +135,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                   .override(
                                     fontFamily: 'Poppins',
                                     fontSize: 18.0,
-                                    fontWeight: FontWeight.w300,
+                                    fontWeight: FontWeight.normal,
                                   ),
                             ),
                             Row(
@@ -155,7 +155,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                       ),
                                 ),
                                 AutoSizeText(
-                                  ' ! 🤟',
+                                  '! 🤟',
                                   style: FlutterFlowTheme.of(context)
                                       .headlineSmall
                                       .override(
