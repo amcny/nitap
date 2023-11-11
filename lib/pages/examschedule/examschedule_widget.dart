@@ -60,7 +60,7 @@ class _ExamscheduleWidgetState extends State<ExamscheduleWidget> {
         // Customize what your widget looks like when it's loading.
         if (!snapshot.hasData) {
           return Scaffold(
-            backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+            backgroundColor: FlutterFlowTheme.of(context).appbar,
             body: Center(
               child: SizedBox(
                 width: 30.0,
@@ -79,9 +79,9 @@ class _ExamscheduleWidgetState extends State<ExamscheduleWidget> {
             : null;
         return Scaffold(
           key: scaffoldKey,
-          backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+          backgroundColor: FlutterFlowTheme.of(context).appbar,
           appBar: AppBar(
-            backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+            backgroundColor: FlutterFlowTheme.of(context).appbar,
             automaticallyImplyLeading: false,
             leading: FlutterFlowIconButton(
               borderColor: Colors.transparent,
