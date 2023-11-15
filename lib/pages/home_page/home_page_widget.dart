@@ -129,8 +129,8 @@ class _HomePageWidgetState extends State<HomePageWidget>
                       end: AlignmentDirectional(0, 1.0),
                     ),
                     borderRadius: BorderRadius.only(
-                      bottomLeft: Radius.circular(32.0),
-                      bottomRight: Radius.circular(32.0),
+                      bottomLeft: Radius.circular(20.0),
+                      bottomRight: Radius.circular(20.0),
                       topLeft: Radius.circular(0.0),
                       topRight: Radius.circular(0.0),
                     ),
@@ -188,7 +188,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                   ),
                                 ],
                               ),
-                            ],
+                            ].divide(SizedBox(height: 5.0)),
                           ),
                         ),
                         Builder(
