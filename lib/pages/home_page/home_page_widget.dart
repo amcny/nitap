@@ -729,8 +729,8 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                   ),
                                 );
                               })
-                                  .divide(SizedBox(width: 5.0))
-                                  .around(SizedBox(width: 5.0)),
+                                  .divide(SizedBox(width: 10.0))
+                                  .around(SizedBox(width: 10.0)),
                             ),
                           ).animateOnPageLoad(
                               animationsMap['rowOnPageLoadAnimation']!);
@@ -1494,7 +1494,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                 ? 'assets/images/patterndark.png'
                                 : 'assets/images/pattern.png',
                             width: MediaQuery.sizeOf(context).width * 1.0,
-                            height: MediaQuery.sizeOf(context).height * 0.35,
+                            height: 290.0,
                             fit: BoxFit.cover,
                           ),
                         ),

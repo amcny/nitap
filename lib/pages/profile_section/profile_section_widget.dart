@@ -842,7 +842,7 @@ class _ProfileSectionWidgetState extends State<ProfileSectionWidget> {
                             ? 'assets/images/patterndark.png'
                             : 'assets/images/pattern.png',
                         width: MediaQuery.sizeOf(context).width * 1.0,
-                        height: MediaQuery.sizeOf(context).height * 0.35,
+                        height: 290.0,
                         fit: BoxFit.cover,
                       ),
                     ),
