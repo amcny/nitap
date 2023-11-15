@@ -6,17 +6,14 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'ecea_model.dart';
 export 'ecea_model.dart';
 
 class EceaWidget extends StatefulWidget {
-  const EceaWidget({Key? key}) : super(key: key);
+  const EceaWidget({super.key});
 
   @override
   _EceaWidgetState createState() => _EceaWidgetState();
@@ -88,7 +85,7 @@ class _EceaWidgetState extends State<EceaWidget> {
                   fontWeight: FontWeight.bold,
                 ),
           ),
-          actions: [],
+          actions: const [],
           centerTitle: false,
           elevation: 0.0,
         ),
@@ -100,7 +97,7 @@ class _EceaWidgetState extends State<EceaWidget> {
               children: [
                 Padding(
                   padding:
-                      EdgeInsetsDirectional.fromSTEB(15.0, 15.0, 15.0, 15.0),
+                      const EdgeInsetsDirectional.fromSTEB(15.0, 15.0, 15.0, 15.0),
                   child: InkWell(
                     splashColor: Colors.transparent,
                     focusColor: Colors.transparent,
@@ -113,8 +110,8 @@ class _EceaWidgetState extends State<EceaWidget> {
                           type: PageTransitionType.fade,
                           child: FlutterFlowExpandedImageView(
                             image: CachedNetworkImage(
-                              fadeInDuration: Duration(milliseconds: 0),
-                              fadeOutDuration: Duration(milliseconds: 0),
+                              fadeInDuration: const Duration(milliseconds: 0),
+                              fadeOutDuration: const Duration(milliseconds: 0),
                               imageUrl:
                                   'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/student-portal-wmpu59/assets/jrputmlux0o4/ecebanner_comp.jpg',
                               fit: BoxFit.contain,
@@ -128,8 +125,8 @@ class _EceaWidgetState extends State<EceaWidget> {
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(8.0),
                       child: CachedNetworkImage(
-                        fadeInDuration: Duration(milliseconds: 0),
-                        fadeOutDuration: Duration(milliseconds: 0),
+                        fadeInDuration: const Duration(milliseconds: 0),
+                        fadeOutDuration: const Duration(milliseconds: 0),
                         imageUrl:
                             'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/student-portal-wmpu59/assets/jrputmlux0o4/ecebanner_comp.jpg',
                         width: double.infinity,
@@ -145,7 +142,7 @@ class _EceaWidgetState extends State<EceaWidget> {
                   children: [
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
                       child: Text(
                         'Welcome',
                         style: FlutterFlowTheme.of(context).titleLarge.override(
@@ -156,7 +153,7 @@ class _EceaWidgetState extends State<EceaWidget> {
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(15.0, 0.0, 15.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(15.0, 0.0, 15.0, 0.0),
                       child: Text(
                         'ECEA is an association of students of ECE department, who actively involve in the technical and cultural events that are conducted with the support of the department faculty members and staff, to enhance the personal and managerial attributes required for framing the student’s career.',
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -168,21 +165,21 @@ class _EceaWidgetState extends State<EceaWidget> {
                   ],
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
                         child: Text(
                           'Governing Body',
                           style: FlutterFlowTheme.of(context).titleLarge,
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             16.0, 8.0, 16.0, 0.0),
                         child: Container(
                           width: double.infinity,
@@ -192,7 +189,7 @@ class _EceaWidgetState extends State<EceaWidget> {
                             borderRadius: BorderRadius.circular(8.0),
                           ),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 8.0, 8.0, 12.0, 8.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -211,9 +208,9 @@ class _EceaWidgetState extends State<EceaWidget> {
                                         child: FlutterFlowExpandedImageView(
                                           image: CachedNetworkImage(
                                             fadeInDuration:
-                                                Duration(milliseconds: 0),
+                                                const Duration(milliseconds: 0),
                                             fadeOutDuration:
-                                                Duration(milliseconds: 0),
+                                                const Duration(milliseconds: 0),
                                             imageUrl:
                                                 'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/student-portal-wmpu59/assets/mfcns9jhbbyk/yuvaraj.jpg',
                                             fit: BoxFit.contain,
@@ -232,14 +229,14 @@ class _EceaWidgetState extends State<EceaWidget> {
                                       width: 50.0,
                                       height: 50.0,
                                       clipBehavior: Clip.antiAlias,
-                                      decoration: BoxDecoration(
+                                      decoration: const BoxDecoration(
                                         shape: BoxShape.circle,
                                       ),
                                       child: CachedNetworkImage(
                                         fadeInDuration:
-                                            Duration(milliseconds: 0),
+                                            const Duration(milliseconds: 0),
                                         fadeOutDuration:
-                                            Duration(milliseconds: 0),
+                                            const Duration(milliseconds: 0),
                                         imageUrl:
                                             'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/student-portal-wmpu59/assets/mfcns9jhbbyk/yuvaraj.jpg',
                                         fit: BoxFit.cover,
@@ -248,7 +245,7 @@ class _EceaWidgetState extends State<EceaWidget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       15.0, 0.0, 0.0, 0.0),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.min,
@@ -269,7 +266,7 @@ class _EceaWidgetState extends State<EceaWidget> {
                                             ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 2.0, 0.0, 0.0),
                                         child: Text(
                                           'HoD - ECE',
@@ -294,7 +291,7 @@ class _EceaWidgetState extends State<EceaWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             16.0, 8.0, 16.0, 0.0),
                         child: Container(
                           width: double.infinity,
@@ -304,7 +301,7 @@ class _EceaWidgetState extends State<EceaWidget> {
                             borderRadius: BorderRadius.circular(8.0),
                           ),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 8.0, 8.0, 12.0, 8.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -323,9 +320,9 @@ class _EceaWidgetState extends State<EceaWidget> {
                                         child: FlutterFlowExpandedImageView(
                                           image: CachedNetworkImage(
                                             fadeInDuration:
-                                                Duration(milliseconds: 0),
+                                                const Duration(milliseconds: 0),
                                             fadeOutDuration:
-                                                Duration(milliseconds: 0),
+                                                const Duration(milliseconds: 0),
                                             imageUrl:
                                                 'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/student-portal-wmpu59/assets/6of3zrscev5u/kishorekumar.jpg',
                                             fit: BoxFit.contain,
@@ -344,14 +341,14 @@ class _EceaWidgetState extends State<EceaWidget> {
                                       width: 50.0,
                                       height: 50.0,
                                       clipBehavior: Clip.antiAlias,
-                                      decoration: BoxDecoration(
+                                      decoration: const BoxDecoration(
                                         shape: BoxShape.circle,
                                       ),
                                       child: CachedNetworkImage(
                                         fadeInDuration:
-                                            Duration(milliseconds: 0),
+                                            const Duration(milliseconds: 0),
                                         fadeOutDuration:
-                                            Duration(milliseconds: 0),
+                                            const Duration(milliseconds: 0),
                                         imageUrl:
                                             'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/student-portal-wmpu59/assets/6of3zrscev5u/kishorekumar.jpg',
                                         fit: BoxFit.cover,
@@ -360,7 +357,7 @@ class _EceaWidgetState extends State<EceaWidget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       15.0, 0.0, 0.0, 0.0),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
@@ -381,7 +378,7 @@ class _EceaWidgetState extends State<EceaWidget> {
                                             ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 2.0, 0.0, 0.0),
                                         child: Text(
                                           'Faculty Advisor - ECEA',
@@ -409,14 +406,14 @@ class _EceaWidgetState extends State<EceaWidget> {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
                         child: Text(
                           'Quick Links',
                           style: FlutterFlowTheme.of(context).titleLarge,
@@ -424,7 +421,7 @@ class _EceaWidgetState extends State<EceaWidget> {
                       ),
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(5.0, 10.0, 5.0, 5.0),
+                            const EdgeInsetsDirectional.fromSTEB(5.0, 10.0, 5.0, 5.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -436,17 +433,17 @@ class _EceaWidgetState extends State<EceaWidget> {
                                     'https://www.instagram.com/ecea__nitandhra/');
                               },
                               text: 'Instagram',
-                              icon: FaIcon(
+                              icon: const FaIcon(
                                 FontAwesomeIcons.instagram,
                               ),
                               options: FFButtonOptions(
                                 width: 150.0,
                                 height: 50.0,
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
-                                iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
-                                color: Color(0xFFD62976),
+                                color: const Color(0xFFD62976),
                                 textStyle: FlutterFlowTheme.of(context)
                                     .titleMedium
                                     .override(
@@ -454,7 +451,7 @@ class _EceaWidgetState extends State<EceaWidget> {
                                       color: Colors.white,
                                     ),
                                 elevation: 0.0,
-                                borderSide: BorderSide(
+                                borderSide: const BorderSide(
                                   color: Colors.transparent,
                                   width: 1.0,
                                 ),
@@ -467,18 +464,18 @@ class _EceaWidgetState extends State<EceaWidget> {
                                     'https://www.linkedin.com/company/the-ece-association-nit-andhra-pradesh/');
                               },
                               text: 'LinkedIn',
-                              icon: FaIcon(
+                              icon: const FaIcon(
                                 FontAwesomeIcons.linkedinIn,
                                 size: 20.0,
                               ),
                               options: FFButtonOptions(
                                 width: 150.0,
                                 height: 50.0,
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
-                                iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
-                                color: Color(0xFF0A66C2),
+                                color: const Color(0xFF0A66C2),
                                 textStyle: FlutterFlowTheme.of(context)
                                     .titleMedium
                                     .override(
@@ -486,7 +483,7 @@ class _EceaWidgetState extends State<EceaWidget> {
                                       color: Colors.white,
                                     ),
                                 elevation: 0.0,
-                                borderSide: BorderSide(
+                                borderSide: const BorderSide(
                                   color: Colors.transparent,
                                   width: 1.0,
                                 ),
@@ -498,7 +495,7 @@ class _EceaWidgetState extends State<EceaWidget> {
                       ),
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(5.0, 10.0, 5.0, 5.0),
+                            const EdgeInsetsDirectional.fromSTEB(5.0, 10.0, 5.0, 5.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -518,18 +515,18 @@ class _EceaWidgetState extends State<EceaWidget> {
                                         .join('&')));
                               },
                               text: 'Email',
-                              icon: Icon(
+                              icon: const Icon(
                                 Icons.mail_outline_rounded,
                                 size: 24.0,
                               ),
                               options: FFButtonOptions(
                                 width: 150.0,
                                 height: 50.0,
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
-                                iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
-                                color: Color(0xFFF4B400),
+                                color: const Color(0xFFF4B400),
                                 textStyle: FlutterFlowTheme.of(context)
                                     .titleMedium
                                     .override(
@@ -537,7 +534,7 @@ class _EceaWidgetState extends State<EceaWidget> {
                                       color: Colors.white,
                                     ),
                                 elevation: 0.0,
-                                borderSide: BorderSide(
+                                borderSide: const BorderSide(
                                   color: Colors.transparent,
                                   width: 1.0,
                                 ),
@@ -550,18 +547,18 @@ class _EceaWidgetState extends State<EceaWidget> {
                                     'https://youtube.com/@eceassociationnitap8882?feature=shared');
                               },
                               text: 'Youtube',
-                              icon: FaIcon(
+                              icon: const FaIcon(
                                 FontAwesomeIcons.youtube,
                                 size: 24.0,
                               ),
                               options: FFButtonOptions(
                                 width: 150.0,
                                 height: 50.0,
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
-                                iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
-                                color: Color(0xFFC4302B),
+                                color: const Color(0xFFC4302B),
                                 textStyle: FlutterFlowTheme.of(context)
                                     .titleMedium
                                     .override(
@@ -569,7 +566,7 @@ class _EceaWidgetState extends State<EceaWidget> {
                                       color: Colors.white,
                                     ),
                                 elevation: 0.0,
-                                borderSide: BorderSide(
+                                borderSide: const BorderSide(
                                   color: Colors.transparent,
                                   width: 1.0,
                                 ),
@@ -582,7 +579,7 @@ class _EceaWidgetState extends State<EceaWidget> {
                     ],
                   ),
                 ),
-              ].addToEnd(SizedBox(height: 15.0)),
+              ].addToEnd(const SizedBox(height: 15.0)),
             ),
           ),
         ),

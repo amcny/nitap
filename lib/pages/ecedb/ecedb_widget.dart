@@ -1,17 +1,14 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_web_view.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'ecedb_model.dart';
 export 'ecedb_model.dart';
 
 class EcedbWidget extends StatefulWidget {
-  const EcedbWidget({Key? key}) : super(key: key);
+  const EcedbWidget({super.key});
 
   @override
   _EcedbWidgetState createState() => _EcedbWidgetState();
@@ -67,7 +64,7 @@ class _EcedbWidgetState extends State<EcedbWidget> {
                   fontWeight: FontWeight.bold,
                 ),
           ),
-          actions: [],
+          actions: const [],
           centerTitle: false,
           elevation: 0.0,
         ),

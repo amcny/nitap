@@ -6,21 +6,18 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:ui';
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 import 'foryouinfo_model.dart';
 export 'foryouinfo_model.dart';
 
 class ForyouinfoWidget extends StatefulWidget {
   const ForyouinfoWidget({
-    Key? key,
+    super.key,
     required this.pass,
-  }) : super(key: key);
+  });
 
   final DocumentReference? pass;
 
@@ -98,7 +95,7 @@ class _ForyouinfoWidgetState extends State<ForyouinfoWidget> {
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         children: [
-                          Container(
+                          SizedBox(
                             height: 375.0,
                             child: Stack(
                               children: [
@@ -115,9 +112,9 @@ class _ForyouinfoWidgetState extends State<ForyouinfoWidget> {
                                         child: FlutterFlowExpandedImageView(
                                           image: CachedNetworkImage(
                                             fadeInDuration:
-                                                Duration(milliseconds: 0),
+                                                const Duration(milliseconds: 0),
                                             fadeOutDuration:
-                                                Duration(milliseconds: 0),
+                                                const Duration(milliseconds: 0),
                                             imageUrl:
                                                 foryouinfoForyouRecord.image,
                                             fit: BoxFit.contain,
@@ -133,9 +130,9 @@ class _ForyouinfoWidgetState extends State<ForyouinfoWidget> {
                                     tag: foryouinfoForyouRecord.image,
                                     transitionOnUserGestures: true,
                                     child: CachedNetworkImage(
-                                      fadeInDuration: Duration(milliseconds: 0),
+                                      fadeInDuration: const Duration(milliseconds: 0),
                                       fadeOutDuration:
-                                          Duration(milliseconds: 0),
+                                          const Duration(milliseconds: 0),
                                       imageUrl: foryouinfoForyouRecord.image,
                                       width: double.infinity,
                                       height: 375.0,
@@ -162,7 +159,7 @@ class _ForyouinfoWidgetState extends State<ForyouinfoWidget> {
                                                       .width *
                                                   1.0,
                                               height: 75.0,
-                                              decoration: BoxDecoration(
+                                              decoration: const BoxDecoration(
                                                 color: Color(0x1A101010),
                                               ),
                                             ),
@@ -173,7 +170,7 @@ class _ForyouinfoWidgetState extends State<ForyouinfoWidget> {
                                               MediaQuery.sizeOf(context).width *
                                                   1.0,
                                           height: 75.0,
-                                          decoration: BoxDecoration(
+                                          decoration: const BoxDecoration(
                                             color: Color(0x06FFFFFF),
                                           ),
                                           child: Column(
@@ -182,7 +179,7 @@ class _ForyouinfoWidgetState extends State<ForyouinfoWidget> {
                                                 MainAxisAlignment.center,
                                             children: [
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 5.0, 0.0, 5.0),
                                                 child: Container(
@@ -190,7 +187,7 @@ class _ForyouinfoWidgetState extends State<ForyouinfoWidget> {
                                                       MediaQuery.sizeOf(context)
                                                               .width *
                                                           0.9,
-                                                  decoration: BoxDecoration(),
+                                                  decoration: const BoxDecoration(),
                                                   child: Row(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
@@ -225,7 +222,7 @@ class _ForyouinfoWidgetState extends State<ForyouinfoWidget> {
                                   ],
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       10.0, 10.0, 0.0, 0.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.min,
@@ -237,8 +234,8 @@ class _ForyouinfoWidgetState extends State<ForyouinfoWidget> {
                                         borderRadius: 20.0,
                                         borderWidth: 1.0,
                                         buttonSize: 40.0,
-                                        fillColor: Color(0x72757575),
-                                        icon: Icon(
+                                        fillColor: const Color(0x72757575),
+                                        icon: const Icon(
                                           Icons.chevron_left_rounded,
                                           color: Colors.white,
                                           size: 24.0,
@@ -254,9 +251,9 @@ class _ForyouinfoWidgetState extends State<ForyouinfoWidget> {
                             ),
                           ),
                           Align(
-                            alignment: AlignmentDirectional(-1.00, 0.00),
+                            alignment: const AlignmentDirectional(-1.00, 0.00),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   20.0, 20.0, 20.0, 0.0),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
@@ -276,7 +273,7 @@ class _ForyouinfoWidgetState extends State<ForyouinfoWidget> {
                               ),
                             ),
                           ),
-                        ].addToEnd(SizedBox(height: 20.0)),
+                        ].addToEnd(const SizedBox(height: 20.0)),
                       ),
                     ),
                   ),
@@ -285,26 +282,25 @@ class _ForyouinfoWidgetState extends State<ForyouinfoWidget> {
                       color: FlutterFlowTheme.of(context).primaryBackground,
                     ),
                     child: Visibility(
-                      visible: foryouinfoForyouRecord.url != null &&
-                          foryouinfoForyouRecord.url != '',
+                      visible: foryouinfoForyouRecord.url != '',
                       child: Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             20.0, 10.0, 20.0, 10.0),
                         child: FFButtonWidget(
                           onPressed: () async {
                             await launchURL(foryouinfoForyouRecord.url);
                           },
                           text: 'Open Link',
-                          icon: Icon(
+                          icon: const Icon(
                             Icons.open_in_new_rounded,
                             size: 24.0,
                           ),
                           options: FFButtonOptions(
                             width: double.infinity,
                             height: 55.0,
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
-                            iconPadding: EdgeInsetsDirectional.fromSTEB(
+                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
                             color: FlutterFlowTheme.of(context).primary,
                             textStyle: FlutterFlowTheme.of(context)
@@ -314,7 +310,7 @@ class _ForyouinfoWidgetState extends State<ForyouinfoWidget> {
                                   color: Colors.white,
                                   fontSize: 16.0,
                                 ),
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                               color: Colors.transparent,
                               width: 1.0,
                             ),

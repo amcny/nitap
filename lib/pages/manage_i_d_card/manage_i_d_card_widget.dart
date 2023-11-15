@@ -8,19 +8,15 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/upload_data.dart';
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 import 'manage_i_d_card_model.dart';
 export 'manage_i_d_card_model.dart';
 
 class ManageIDCardWidget extends StatefulWidget {
-  const ManageIDCardWidget({Key? key}) : super(key: key);
+  const ManageIDCardWidget({super.key});
 
   @override
   _ManageIDCardWidgetState createState() => _ManageIDCardWidgetState();
@@ -88,7 +84,7 @@ class _ManageIDCardWidgetState extends State<ManageIDCardWidget> {
                 fontWeight: FontWeight.bold,
               ),
         ),
-        actions: [],
+        actions: const [],
         centerTitle: false,
         elevation: 0.0,
       ),
@@ -100,7 +96,7 @@ class _ManageIDCardWidgetState extends State<ManageIDCardWidget> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 0.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 0.0, 0.0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 children: [
@@ -115,7 +111,7 @@ class _ManageIDCardWidgetState extends State<ManageIDCardWidget> {
               ),
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 10.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 10.0),
               child: AuthUserStreamWidget(
                 builder: (context) => InkWell(
                   splashColor: Colors.transparent,
@@ -129,12 +125,10 @@ class _ManageIDCardWidgetState extends State<ManageIDCardWidget> {
                         type: PageTransitionType.fade,
                         child: FlutterFlowExpandedImageView(
                           image: CachedNetworkImage(
-                            fadeInDuration: Duration(milliseconds: 0),
-                            fadeOutDuration: Duration(milliseconds: 0),
+                            fadeInDuration: const Duration(milliseconds: 0),
+                            fadeOutDuration: const Duration(milliseconds: 0),
                             imageUrl: valueOrDefault<String>(
-                              valueOrDefault(currentUserDocument?.idCard, '') ==
-                                          null ||
-                                      valueOrDefault(
+                              valueOrDefault(
                                               currentUserDocument?.idCard,
                                               '') ==
                                           ''
@@ -147,9 +141,7 @@ class _ManageIDCardWidgetState extends State<ManageIDCardWidget> {
                           ),
                           allowRotation: false,
                           tag: valueOrDefault<String>(
-                            valueOrDefault(currentUserDocument?.idCard, '') ==
-                                        null ||
-                                    valueOrDefault(
+                            valueOrDefault(
                                             currentUserDocument?.idCard, '') ==
                                         ''
                                 ? 'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/student-portal-wmpu59/assets/gzielpg49bwf/upload.png'
@@ -164,8 +156,7 @@ class _ManageIDCardWidgetState extends State<ManageIDCardWidget> {
                   },
                   child: Hero(
                     tag: valueOrDefault<String>(
-                      valueOrDefault(currentUserDocument?.idCard, '') == null ||
-                              valueOrDefault(currentUserDocument?.idCard, '') ==
+                      valueOrDefault(currentUserDocument?.idCard, '') ==
                                   ''
                           ? 'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/student-portal-wmpu59/assets/gzielpg49bwf/upload.png'
                           : valueOrDefault(currentUserDocument?.idCard, ''),
@@ -175,12 +166,10 @@ class _ManageIDCardWidgetState extends State<ManageIDCardWidget> {
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(8.0),
                       child: CachedNetworkImage(
-                        fadeInDuration: Duration(milliseconds: 0),
-                        fadeOutDuration: Duration(milliseconds: 0),
+                        fadeInDuration: const Duration(milliseconds: 0),
+                        fadeOutDuration: const Duration(milliseconds: 0),
                         imageUrl: valueOrDefault<String>(
-                          valueOrDefault(currentUserDocument?.idCard, '') ==
-                                      null ||
-                                  valueOrDefault(
+                          valueOrDefault(
                                           currentUserDocument?.idCard, '') ==
                                       ''
                               ? 'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/student-portal-wmpu59/assets/gzielpg49bwf/upload.png'
@@ -197,7 +186,7 @@ class _ManageIDCardWidgetState extends State<ManageIDCardWidget> {
               ),
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -273,16 +262,16 @@ class _ManageIDCardWidgetState extends State<ManageIDCardWidget> {
                       setState(() {});
                     },
                     text: 'Upload ID',
-                    icon: FaIcon(
+                    icon: const FaIcon(
                       FontAwesomeIcons.addressCard,
                     ),
                     options: FFButtonOptions(
                       width: 130.0,
                       height: 50.0,
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                       iconPadding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                       color: FlutterFlowTheme.of(context).primary,
                       textStyle:
                           FlutterFlowTheme.of(context).titleSmall.override(
@@ -290,7 +279,7 @@ class _ManageIDCardWidgetState extends State<ManageIDCardWidget> {
                                 color: Colors.white,
                               ),
                       elevation: 0.0,
-                      borderSide: BorderSide(
+                      borderSide: const BorderSide(
                         color: Colors.transparent,
                         width: 1.0,
                       ),

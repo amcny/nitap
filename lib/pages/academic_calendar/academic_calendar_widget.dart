@@ -3,19 +3,16 @@ import '/flutter_flow/flutter_flow_expanded_image_view.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 import 'academic_calendar_model.dart';
 export 'academic_calendar_model.dart';
 
 class AcademicCalendarWidget extends StatefulWidget {
-  const AcademicCalendarWidget({Key? key}) : super(key: key);
+  const AcademicCalendarWidget({super.key});
 
   @override
   _AcademicCalendarWidgetState createState() => _AcademicCalendarWidgetState();
@@ -83,7 +80,7 @@ class _AcademicCalendarWidgetState extends State<AcademicCalendarWidget> {
                 fontWeight: FontWeight.bold,
               ),
         ),
-        actions: [],
+        actions: const [],
         centerTitle: false,
         elevation: 0.0,
       ),
@@ -116,7 +113,7 @@ class _AcademicCalendarWidgetState extends State<AcademicCalendarWidget> {
                 final listViewAcademicRecord =
                     listViewAcademicRecordList[listViewIndex];
                 return Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
                   child: InkWell(
                     splashColor: Colors.transparent,
                     focusColor: Colors.transparent,
@@ -129,8 +126,8 @@ class _AcademicCalendarWidgetState extends State<AcademicCalendarWidget> {
                           type: PageTransitionType.fade,
                           child: FlutterFlowExpandedImageView(
                             image: CachedNetworkImage(
-                              fadeInDuration: Duration(milliseconds: 0),
-                              fadeOutDuration: Duration(milliseconds: 0),
+                              fadeInDuration: const Duration(milliseconds: 0),
+                              fadeOutDuration: const Duration(milliseconds: 0),
                               imageUrl: listViewAcademicRecord.image,
                               fit: BoxFit.contain,
                             ),
@@ -147,8 +144,8 @@ class _AcademicCalendarWidgetState extends State<AcademicCalendarWidget> {
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(0.0),
                         child: CachedNetworkImage(
-                          fadeInDuration: Duration(milliseconds: 0),
-                          fadeOutDuration: Duration(milliseconds: 0),
+                          fadeInDuration: const Duration(milliseconds: 0),
+                          fadeOutDuration: const Duration(milliseconds: 0),
                           imageUrl: listViewAcademicRecord.image,
                           fit: BoxFit.cover,
                         ),

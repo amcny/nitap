@@ -1,16 +1,13 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'privacy_model.dart';
 export 'privacy_model.dart';
 
 class PrivacyWidget extends StatefulWidget {
-  const PrivacyWidget({Key? key}) : super(key: key);
+  const PrivacyWidget({super.key});
 
   @override
   _PrivacyWidgetState createState() => _PrivacyWidgetState();
@@ -49,7 +46,7 @@ class _PrivacyWidgetState extends State<PrivacyWidget> {
       height: 445.0,
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).secondaryBackground,
-        borderRadius: BorderRadius.only(
+        borderRadius: const BorderRadius.only(
           bottomLeft: Radius.circular(0.0),
           bottomRight: Radius.circular(0.0),
           topLeft: Radius.circular(16.0),
@@ -57,18 +54,18 @@ class _PrivacyWidgetState extends State<PrivacyWidget> {
         ),
       ),
       child: Padding(
-        padding: EdgeInsetsDirectional.fromSTEB(4.0, 4.0, 4.0, 4.0),
+        padding: const EdgeInsetsDirectional.fromSTEB(4.0, 4.0, 4.0, 4.0),
         child: Column(
           mainAxisSize: MainAxisSize.max,
           children: [
-            Divider(
+            const Divider(
               thickness: 3.0,
               indent: 135.0,
               endIndent: 135.0,
               color: Color(0xFFF1F4F8),
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -114,12 +111,12 @@ class _PrivacyWidgetState extends State<PrivacyWidget> {
               ],
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(15.0, 20.0, 0.0, 10.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(15.0, 20.0, 0.0, 10.0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  Padding(
+                  const Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(1.0, 0.0, 0.0, 0.0),
                     child: Icon(
                       Icons.person_rounded,
@@ -128,12 +125,12 @@ class _PrivacyWidgetState extends State<PrivacyWidget> {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(9.0, 0.0, 0.0, 0.0),
+                    padding: const EdgeInsetsDirectional.fromSTEB(9.0, 0.0, 0.0, 0.0),
                     child: Text(
                       'Personal Detail\'s including Reg.no',
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                             fontFamily: 'Poppins',
-                            color: Color(0xFF95A1AC),
+                            color: const Color(0xFF95A1AC),
                           ),
                     ),
                   ),
@@ -141,12 +138,12 @@ class _PrivacyWidgetState extends State<PrivacyWidget> {
               ),
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(15.0, 0.0, 0.0, 10.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(15.0, 0.0, 0.0, 10.0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  Padding(
+                  const Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(2.0, 0.0, 0.0, 0.0),
                     child: FaIcon(
                       FontAwesomeIcons.landmark,
@@ -156,12 +153,12 @@ class _PrivacyWidgetState extends State<PrivacyWidget> {
                   ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
                     child: Text(
                       'Academic Details',
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                             fontFamily: 'Poppins',
-                            color: Color(0xFF95A1AC),
+                            color: const Color(0xFF95A1AC),
                           ),
                     ),
                   ),
@@ -169,12 +166,12 @@ class _PrivacyWidgetState extends State<PrivacyWidget> {
               ),
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(15.0, 0.0, 0.0, 10.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(15.0, 0.0, 0.0, 10.0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  Padding(
+                  const Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(1.0, 0.0, 0.0, 0.0),
                     child: FaIcon(
                       FontAwesomeIcons.fistRaised,
@@ -183,12 +180,12 @@ class _PrivacyWidgetState extends State<PrivacyWidget> {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 0.0),
+                    padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 0.0),
                     child: Text(
                       'Attendance data',
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                             fontFamily: 'Poppins',
-                            color: Color(0xFF95A1AC),
+                            color: const Color(0xFF95A1AC),
                           ),
                     ),
                   ),
@@ -196,12 +193,12 @@ class _PrivacyWidgetState extends State<PrivacyWidget> {
               ),
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(15.0, 0.0, 0.0, 20.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(15.0, 0.0, 0.0, 20.0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  Padding(
+                  const Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(2.0, 0.0, 0.0, 0.0),
                     child: FaIcon(
                       FontAwesomeIcons.addressCard,
@@ -210,12 +207,12 @@ class _PrivacyWidgetState extends State<PrivacyWidget> {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 0.0),
+                    padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 0.0),
                     child: Text(
                       'Your institute mail',
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                             fontFamily: 'Poppins',
-                            color: Color(0xFF95A1AC),
+                            color: const Color(0xFF95A1AC),
                           ),
                     ),
                   ),

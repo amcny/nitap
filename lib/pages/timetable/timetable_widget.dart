@@ -9,15 +9,13 @@ import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
 import 'timetable_model.dart';
 export 'timetable_model.dart';
 
 class TimetableWidget extends StatefulWidget {
-  const TimetableWidget({Key? key}) : super(key: key);
+  const TimetableWidget({super.key});
 
   @override
   _TimetableWidgetState createState() => _TimetableWidgetState();
@@ -57,8 +55,8 @@ class _TimetableWidgetState extends State<TimetableWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 200.ms,
-          begin: Offset(0.0, 50.0),
-          end: Offset(0.0, 0.0),
+          begin: const Offset(0.0, 50.0),
+          end: const Offset(0.0, 0.0),
         ),
       ],
     ),
@@ -77,8 +75,8 @@ class _TimetableWidgetState extends State<TimetableWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 200.ms,
-          begin: Offset(0.0, 50.0),
-          end: Offset(0.0, 0.0),
+          begin: const Offset(0.0, 50.0),
+          end: const Offset(0.0, 0.0),
         ),
       ],
     ),
@@ -178,7 +176,7 @@ class _TimetableWidgetState extends State<TimetableWidget>
                       fontWeight: FontWeight.bold,
                     ),
               ),
-              actions: [],
+              actions: const [],
               centerTitle: true,
               elevation: 0.2,
             ),
@@ -192,7 +190,7 @@ class _TimetableWidgetState extends State<TimetableWidget>
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 20.0, 0.0, 0.0),
                           child: Builder(
                             builder: (context) {
@@ -252,7 +250,7 @@ class _TimetableWidgetState extends State<TimetableWidget>
                                         mainAxisAlignment:
                                             MainAxisAlignment.center,
                                         children: [
-                                          Icon(
+                                          const Icon(
                                             Icons.space_dashboard_rounded,
                                             color: Color(0xFFD4D4D4),
                                             size: 25.0,
@@ -291,14 +289,14 @@ class _TimetableWidgetState extends State<TimetableWidget>
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               20.0, 30.0, 20.0, 20.0),
                           child: Container(
                             width: double.infinity,
                             decoration: BoxDecoration(
                               color: FlutterFlowTheme.of(context)
                                   .secondaryBackground,
-                              boxShadow: [
+                              boxShadow: const [
                                 BoxShadow(
                                   blurRadius: 3.0,
                                   color: Color(0x33000000),
@@ -314,7 +312,7 @@ class _TimetableWidgetState extends State<TimetableWidget>
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 15.0, 0.0, 5.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -343,7 +341,7 @@ class _TimetableWidgetState extends State<TimetableWidget>
                                       Expanded(
                                         child: Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   10.0, 0.0, 0.0, 0.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
@@ -367,7 +365,7 @@ class _TimetableWidgetState extends State<TimetableWidget>
                                       Expanded(
                                         child: Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   10.0, 0.0, 0.0, 0.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
@@ -391,7 +389,7 @@ class _TimetableWidgetState extends State<TimetableWidget>
                                     ],
                                   ),
                                 ),
-                                Divider(
+                                const Divider(
                                   thickness: 1.0,
                                   indent: 5.0,
                                   endIndent: 5.0,
@@ -400,7 +398,7 @@ class _TimetableWidgetState extends State<TimetableWidget>
                                 Builder(
                                   builder: (context) {
                                     final data = timetableTimetableRecord?.data
-                                            ?.toList() ??
+                                            .toList() ??
                                         [];
                                     return Column(
                                       mainAxisSize: MainAxisSize.max,
@@ -409,7 +407,7 @@ class _TimetableWidgetState extends State<TimetableWidget>
                                         final dataItem = data[dataIndex];
                                         return Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 10.0, 0.0, 25.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -440,7 +438,7 @@ class _TimetableWidgetState extends State<TimetableWidget>
                                               ),
                                               Expanded(
                                                 child: Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           10.0, 0.0, 0.0, 0.0),
                                                   child: Column(
@@ -469,7 +467,7 @@ class _TimetableWidgetState extends State<TimetableWidget>
                                               ),
                                               Expanded(
                                                 child: Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           10.0, 0.0, 0.0, 0.0),
                                                   child: Column(
@@ -535,7 +533,7 @@ class _TimetableWidgetState extends State<TimetableWidget>
                                   hasBeenTriggered: hasContainerTriggered),
                         ),
                         if (getRemoteConfigBool('ad'))
-                          Align(
+                          const Align(
                             alignment: AlignmentDirectional(0.00, 0.97),
                             child: Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
@@ -589,7 +587,7 @@ class _TimetableWidgetState extends State<TimetableWidget>
                             ],
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 10.0, 0.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -601,7 +599,7 @@ class _TimetableWidgetState extends State<TimetableWidget>
                                     context.pushNamed(
                                       'ttpop',
                                       extra: <String, dynamic>{
-                                        kTransitionInfoKey: TransitionInfo(
+                                        kTransitionInfoKey: const TransitionInfo(
                                           hasTransition: true,
                                           transitionType:
                                               PageTransitionType.bottomToTop,
@@ -612,9 +610,9 @@ class _TimetableWidgetState extends State<TimetableWidget>
                                   text: 'View Full Timetable',
                                   options: FFButtonOptions(
                                     height: 50.0,
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         24.0, 0.0, 24.0, 0.0),
-                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
                                     color: FlutterFlowTheme.of(context).primary,
                                     textStyle: FlutterFlowTheme.of(context)
@@ -624,7 +622,7 @@ class _TimetableWidgetState extends State<TimetableWidget>
                                           color: Colors.white,
                                         ),
                                     elevation: 3.0,
-                                    borderSide: BorderSide(
+                                    borderSide: const BorderSide(
                                       color: Colors.transparent,
                                       width: 1.0,
                                     ),

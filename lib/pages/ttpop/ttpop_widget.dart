@@ -4,20 +4,17 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'ttpop_model.dart';
 export 'ttpop_model.dart';
 
 class TtpopWidget extends StatefulWidget {
-  const TtpopWidget({Key? key}) : super(key: key);
+  const TtpopWidget({super.key});
 
   @override
   _TtpopWidgetState createState() => _TtpopWidgetState();
@@ -57,8 +54,8 @@ class _TtpopWidgetState extends State<TtpopWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 200.ms,
-          begin: Offset(0.0, 50.0),
-          end: Offset(0.0, 0.0),
+          begin: const Offset(0.0, 50.0),
+          end: const Offset(0.0, 0.0),
         ),
       ],
     ),
@@ -77,8 +74,8 @@ class _TtpopWidgetState extends State<TtpopWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 200.ms,
-          begin: Offset(0.0, 50.0),
-          end: Offset(0.0, 0.0),
+          begin: const Offset(0.0, 50.0),
+          end: const Offset(0.0, 0.0),
         ),
       ],
     ),
@@ -188,7 +185,7 @@ class _TtpopWidgetState extends State<TtpopWidget>
                     fontWeight: FontWeight.bold,
                   ),
             ),
-            actions: [],
+            actions: const [],
             centerTitle: true,
             elevation: 0.2,
           ),
@@ -203,7 +200,7 @@ class _TtpopWidgetState extends State<TtpopWidget>
                     children: [
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.min,
                           children: [
@@ -222,7 +219,7 @@ class _TtpopWidgetState extends State<TtpopWidget>
                       ),
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                         child: Builder(
                           builder: (context) {
                             final days = FFAppState().days.toList();
@@ -282,7 +279,7 @@ class _TtpopWidgetState extends State<TtpopWidget>
                                         mainAxisAlignment:
                                             MainAxisAlignment.center,
                                         children: [
-                                          Icon(
+                                          const Icon(
                                             Icons.space_dashboard_rounded,
                                             color: Color(0xFFD4D4D4),
                                             size: 25.0,
@@ -323,14 +320,14 @@ class _TtpopWidgetState extends State<TtpopWidget>
                       ),
                       if (_model.day != null && _model.day != '')
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               20.0, 30.0, 20.0, 20.0),
                           child: Container(
                             width: double.infinity,
                             decoration: BoxDecoration(
                               color: FlutterFlowTheme.of(context)
                                   .secondaryBackground,
-                              boxShadow: [
+                              boxShadow: const [
                                 BoxShadow(
                                   blurRadius: 3.0,
                                   color: Color(0x33000000),
@@ -346,7 +343,7 @@ class _TtpopWidgetState extends State<TtpopWidget>
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 15.0, 0.0, 5.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -375,7 +372,7 @@ class _TtpopWidgetState extends State<TtpopWidget>
                                       Expanded(
                                         child: Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   10.0, 0.0, 0.0, 0.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
@@ -399,7 +396,7 @@ class _TtpopWidgetState extends State<TtpopWidget>
                                       Expanded(
                                         child: Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   10.0, 0.0, 0.0, 0.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
@@ -423,7 +420,7 @@ class _TtpopWidgetState extends State<TtpopWidget>
                                     ],
                                   ),
                                 ),
-                                Divider(
+                                const Divider(
                                   thickness: 1.0,
                                   indent: 5.0,
                                   endIndent: 5.0,
@@ -432,7 +429,7 @@ class _TtpopWidgetState extends State<TtpopWidget>
                                 Builder(
                                   builder: (context) {
                                     final data =
-                                        ttpopTimetableRecord?.data?.toList() ??
+                                        ttpopTimetableRecord?.data.toList() ??
                                             [];
                                     return Column(
                                       mainAxisSize: MainAxisSize.max,
@@ -441,7 +438,7 @@ class _TtpopWidgetState extends State<TtpopWidget>
                                         final dataItem = data[dataIndex];
                                         return Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 10.0, 0.0, 25.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -472,7 +469,7 @@ class _TtpopWidgetState extends State<TtpopWidget>
                                               ),
                                               Expanded(
                                                 child: Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           10.0, 0.0, 0.0, 0.0),
                                                   child: Column(
@@ -501,7 +498,7 @@ class _TtpopWidgetState extends State<TtpopWidget>
                                               ),
                                               Expanded(
                                                 child: Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           10.0, 0.0, 0.0, 0.0),
                                                   child: Column(
@@ -567,7 +564,7 @@ class _TtpopWidgetState extends State<TtpopWidget>
                                   hasBeenTriggered: hasContainerTriggered),
                         ),
                       if (getRemoteConfigBool('ad'))
-                        Align(
+                        const Align(
                           alignment: AlignmentDirectional(0.00, 0.97),
                           child: Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(

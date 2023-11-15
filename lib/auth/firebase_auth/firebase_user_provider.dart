@@ -10,6 +10,7 @@ export '../base_auth_user_provider.dart';
 class NitapFirebaseUser extends BaseAuthUser {
   NitapFirebaseUser(this.user);
   User? user;
+  @override
   bool get loggedIn => user != null;
 
   @override

@@ -3,7 +3,6 @@ import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import '/pages/attendance/attendance_widget.dart';
 import '/pages/attendclass/attendclass_widget.dart';
 import 'package:aligned_dialog/aligned_dialog.dart';
@@ -11,14 +10,13 @@ import 'package:data_table_2/data_table_2.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
 import 'attendancefeature_model.dart';
 export 'attendancefeature_model.dart';
 
 class AttendancefeatureWidget extends StatefulWidget {
-  const AttendancefeatureWidget({Key? key}) : super(key: key);
+  const AttendancefeatureWidget({super.key});
 
   @override
   _AttendancefeatureWidgetState createState() =>
@@ -68,15 +66,15 @@ class _AttendancefeatureWidgetState extends State<AttendancefeatureWidget> {
               context: context,
               isGlobal: true,
               avoidOverflow: false,
-              targetAnchor: AlignmentDirectional(0.0, 0.0)
+              targetAnchor: const AlignmentDirectional(0.0, 0.0)
                   .resolve(Directionality.of(context)),
-              followerAnchor: AlignmentDirectional(0.0, 0.0)
+              followerAnchor: const AlignmentDirectional(0.0, 0.0)
                   .resolve(Directionality.of(context)),
               builder: (dialogContext) {
-                return Material(
+                return const Material(
                   color: Colors.transparent,
                   child: WebViewAware(
-                      child: Container(
+                      child: SizedBox(
                     height: 245.0,
                     width: 345.0,
                     child: AttendanceWidget(),
@@ -87,7 +85,7 @@ class _AttendancefeatureWidgetState extends State<AttendancefeatureWidget> {
           },
           backgroundColor: FlutterFlowTheme.of(context).primary,
           elevation: 3.0,
-          child: Icon(
+          child: const Icon(
             Icons.add_rounded,
             color: Colors.white,
             size: 24.0,
@@ -119,7 +117,7 @@ class _AttendancefeatureWidgetState extends State<AttendancefeatureWidget> {
                 fontWeight: FontWeight.bold,
               ),
         ),
-        actions: [],
+        actions: const [],
         centerTitle: false,
         elevation: 0.0,
       ),
@@ -217,16 +215,16 @@ class _AttendancefeatureWidgetState extends State<AttendancefeatureWidget> {
                                     context: context,
                                     isGlobal: true,
                                     avoidOverflow: false,
-                                    targetAnchor: AlignmentDirectional(0.0, 0.0)
+                                    targetAnchor: const AlignmentDirectional(0.0, 0.0)
                                         .resolve(Directionality.of(context)),
-                                    followerAnchor: AlignmentDirectional(
+                                    followerAnchor: const AlignmentDirectional(
                                             0.0, 0.0)
                                         .resolve(Directionality.of(context)),
                                     builder: (dialogContext) {
                                       return Material(
                                         color: Colors.transparent,
                                         child: WebViewAware(
-                                            child: Container(
+                                            child: SizedBox(
                                           height: 245.0,
                                           width: 345.0,
                                           child: AttendclassWidget(
@@ -260,7 +258,7 @@ class _AttendancefeatureWidgetState extends State<AttendancefeatureWidget> {
                                 size: 24.0,
                               ),
                             ),
-                          ].divide(SizedBox(width: 5.0)),
+                          ].divide(const SizedBox(width: 5.0)),
                         ),
                       ].map((c) => DataCell(c)).toList())
                   .map((e) => DataRow(cells: e))

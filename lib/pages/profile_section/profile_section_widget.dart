@@ -26,7 +26,7 @@ import 'profile_section_model.dart';
 export 'profile_section_model.dart';
 
 class ProfileSectionWidget extends StatefulWidget {
-  const ProfileSectionWidget({Key? key}) : super(key: key);
+  const ProfileSectionWidget({super.key});
 
   @override
   _ProfileSectionWidgetState createState() => _ProfileSectionWidgetState();
@@ -77,7 +77,7 @@ class _ProfileSectionWidgetState extends State<ProfileSectionWidget> {
             'My Profile',
             style: FlutterFlowTheme.of(context).titleLarge.override(
                   fontFamily: 'Poppins',
-                  color: Color(0xFFFFFFFFF),
+                  color: const Color(0xfffffffff),
                   fontWeight: FontWeight.w600,
                 ),
           ),
@@ -88,7 +88,7 @@ class _ProfileSectionWidgetState extends State<ProfileSectionWidget> {
                 borderRadius: 30.0,
                 borderWidth: 1.0,
                 buttonSize: 50.0,
-                icon: FaIcon(
+                icon: const FaIcon(
                   FontAwesomeIcons.signOutAlt,
                   color: Colors.white,
                   size: 25.0,
@@ -99,15 +99,15 @@ class _ProfileSectionWidgetState extends State<ProfileSectionWidget> {
                     context: context,
                     isGlobal: true,
                     avoidOverflow: false,
-                    targetAnchor: AlignmentDirectional(0.0, 0.0)
+                    targetAnchor: const AlignmentDirectional(0.0, 0.0)
                         .resolve(Directionality.of(context)),
-                    followerAnchor: AlignmentDirectional(0.0, 0.0)
+                    followerAnchor: const AlignmentDirectional(0.0, 0.0)
                         .resolve(Directionality.of(context)),
                     builder: (dialogContext) {
-                      return Material(
+                      return const Material(
                         color: Colors.transparent,
                         child: WebViewAware(
-                            child: Container(
+                            child: SizedBox(
                           height: 210.0,
                           width: 345.0,
                           child: AlertLogoutWidget(),
@@ -138,7 +138,7 @@ class _ProfileSectionWidgetState extends State<ProfileSectionWidget> {
                   children: [
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(15.0, 0.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(15.0, 0.0, 0.0, 0.0),
                       child: Container(
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
@@ -147,7 +147,7 @@ class _ProfileSectionWidgetState extends State<ProfileSectionWidget> {
                           ),
                         ),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               2.0, 2.0, 2.0, 2.0),
                           child: InkWell(
                             splashColor: Colors.transparent,
@@ -191,7 +191,7 @@ class _ProfileSectionWidgetState extends State<ProfileSectionWidget> {
                     Expanded(
                       child: Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(15.0, 0.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(15.0, 0.0, 0.0, 0.0),
                         child: Column(
                           mainAxisSize: MainAxisSize.min,
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -264,7 +264,7 @@ class _ProfileSectionWidgetState extends State<ProfileSectionWidget> {
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 0.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 0.0, 0.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   children: [
@@ -280,7 +280,7 @@ class _ProfileSectionWidgetState extends State<ProfileSectionWidget> {
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 20.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 20.0),
                 child: Container(
                   width: MediaQuery.sizeOf(context).width * 1.0,
                   decoration: BoxDecoration(
@@ -302,13 +302,13 @@ class _ProfileSectionWidgetState extends State<ProfileSectionWidget> {
                           mainAxisSize: MainAxisSize.min,
                           children: [
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   12.0, 12.0, 12.0, 12.0),
                               child: Container(
                                 width: 53.0,
                                 height: 54.0,
                                 decoration: BoxDecoration(
-                                  gradient: LinearGradient(
+                                  gradient: const LinearGradient(
                                     colors: [
                                       Color(0xFFCC2B5E),
                                       Color(0xFFD31027)
@@ -319,7 +319,7 @@ class _ProfileSectionWidgetState extends State<ProfileSectionWidget> {
                                   ),
                                   borderRadius: BorderRadius.circular(8.0),
                                 ),
-                                child: Align(
+                                child: const Align(
                                   alignment: AlignmentDirectional(0.00, 0.00),
                                   child: FaIcon(
                                     FontAwesomeIcons.brush,
@@ -353,9 +353,9 @@ class _ProfileSectionWidgetState extends State<ProfileSectionWidget> {
                             ),
                             Expanded(
                               child: Align(
-                                alignment: AlignmentDirectional(1.00, 0.00),
+                                alignment: const AlignmentDirectional(1.00, 0.00),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 10.0, 0.0),
                                   child: Icon(
                                     Icons.chevron_right_rounded,
@@ -383,7 +383,7 @@ class _ProfileSectionWidgetState extends State<ProfileSectionWidget> {
                               return WebViewAware(
                                   child: Padding(
                                 padding: MediaQuery.viewInsetsOf(context),
-                                child: SupportWidget(),
+                                child: const SupportWidget(),
                               ));
                             },
                           ).then((value) => safeSetState(() {}));
@@ -392,13 +392,13 @@ class _ProfileSectionWidgetState extends State<ProfileSectionWidget> {
                           mainAxisSize: MainAxisSize.min,
                           children: [
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   12.0, 12.0, 12.0, 12.0),
                               child: Container(
                                 width: 53.0,
                                 height: 54.0,
                                 decoration: BoxDecoration(
-                                  gradient: LinearGradient(
+                                  gradient: const LinearGradient(
                                     colors: [
                                       Color(0xFFA044FF),
                                       Color(0xFF6A3093)
@@ -409,7 +409,7 @@ class _ProfileSectionWidgetState extends State<ProfileSectionWidget> {
                                   ),
                                   borderRadius: BorderRadius.circular(8.0),
                                 ),
-                                child: Align(
+                                child: const Align(
                                   alignment: AlignmentDirectional(0.00, 0.00),
                                   child: Icon(
                                     Icons.contact_support_outlined,
@@ -443,9 +443,9 @@ class _ProfileSectionWidgetState extends State<ProfileSectionWidget> {
                             ),
                             Expanded(
                               child: Align(
-                                alignment: AlignmentDirectional(1.00, 0.00),
+                                alignment: const AlignmentDirectional(1.00, 0.00),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 10.0, 0.0),
                                   child: Icon(
                                     Icons.chevron_right_rounded,
@@ -476,13 +476,13 @@ class _ProfileSectionWidgetState extends State<ProfileSectionWidget> {
                             mainAxisSize: MainAxisSize.min,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     12.0, 12.0, 12.0, 12.0),
                                 child: Container(
                                   width: 53.0,
                                   height: 54.0,
                                   decoration: BoxDecoration(
-                                    gradient: LinearGradient(
+                                    gradient: const LinearGradient(
                                       colors: [
                                         Color(0xFF1488CC),
                                         Color(0xFF2B32B2)
@@ -493,7 +493,7 @@ class _ProfileSectionWidgetState extends State<ProfileSectionWidget> {
                                     ),
                                     borderRadius: BorderRadius.circular(8.0),
                                   ),
-                                  child: Align(
+                                  child: const Align(
                                     alignment: AlignmentDirectional(0.00, 0.00),
                                     child: Icon(
                                       Icons.people_rounded,
@@ -527,9 +527,9 @@ class _ProfileSectionWidgetState extends State<ProfileSectionWidget> {
                               ),
                               Expanded(
                                 child: Align(
-                                  alignment: AlignmentDirectional(1.00, 0.00),
+                                  alignment: const AlignmentDirectional(1.00, 0.00),
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 10.0, 0.0),
                                     child: Icon(
                                       Icons.chevron_right_rounded,
@@ -558,7 +558,7 @@ class _ProfileSectionWidgetState extends State<ProfileSectionWidget> {
                               return WebViewAware(
                                   child: Padding(
                                 padding: MediaQuery.viewInsetsOf(context),
-                                child: PrivacyWidget(),
+                                child: const PrivacyWidget(),
                               ));
                             },
                           ).then((value) => safeSetState(() {}));
@@ -567,13 +567,13 @@ class _ProfileSectionWidgetState extends State<ProfileSectionWidget> {
                           mainAxisSize: MainAxisSize.min,
                           children: [
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   12.0, 12.0, 12.0, 12.0),
                               child: Container(
                                 width: 53.0,
                                 height: 54.0,
                                 decoration: BoxDecoration(
-                                  gradient: LinearGradient(
+                                  gradient: const LinearGradient(
                                     colors: [
                                       Color(0xFFF9D423),
                                       Color(0xFFE65C00)
@@ -584,7 +584,7 @@ class _ProfileSectionWidgetState extends State<ProfileSectionWidget> {
                                   ),
                                   borderRadius: BorderRadius.circular(8.0),
                                 ),
-                                child: Align(
+                                child: const Align(
                                   alignment: AlignmentDirectional(0.00, 0.00),
                                   child: Icon(
                                     Icons.privacy_tip_outlined,
@@ -618,9 +618,9 @@ class _ProfileSectionWidgetState extends State<ProfileSectionWidget> {
                             ),
                             Expanded(
                               child: Align(
-                                alignment: AlignmentDirectional(1.00, 0.00),
+                                alignment: const AlignmentDirectional(1.00, 0.00),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 10.0, 0.0),
                                   child: Icon(
                                     Icons.chevron_right_rounded,
@@ -639,7 +639,7 @@ class _ProfileSectionWidgetState extends State<ProfileSectionWidget> {
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 0.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 0.0, 0.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   children: [
@@ -652,7 +652,7 @@ class _ProfileSectionWidgetState extends State<ProfileSectionWidget> {
                           ),
                       colors: [
                         FlutterFlowTheme.of(context).primary,
-                        Color(0xFF5894E2)
+                        const Color(0xFF5894E2)
                       ],
                       gradientDirection: GradientDirection.ltr,
                       gradientType: GradientType.linear,
@@ -667,7 +667,7 @@ class _ProfileSectionWidgetState extends State<ProfileSectionWidget> {
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 20.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 20.0),
                 child: Container(
                   width: MediaQuery.sizeOf(context).width * 1.0,
                   decoration: BoxDecoration(
@@ -691,7 +691,7 @@ class _ProfileSectionWidgetState extends State<ProfileSectionWidget> {
                               return WebViewAware(
                                   child: Padding(
                                 padding: MediaQuery.viewInsetsOf(context),
-                                child: DevcnyWidget(),
+                                child: const DevcnyWidget(),
                               ));
                             },
                           ).then((value) => safeSetState(() {}));
@@ -700,7 +700,7 @@ class _ProfileSectionWidgetState extends State<ProfileSectionWidget> {
                           mainAxisSize: MainAxisSize.min,
                           children: [
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   12.0, 12.0, 12.0, 12.0),
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(40.0),
@@ -736,9 +736,9 @@ class _ProfileSectionWidgetState extends State<ProfileSectionWidget> {
                             ),
                             Expanded(
                               child: Align(
-                                alignment: AlignmentDirectional(1.00, 0.00),
+                                alignment: const AlignmentDirectional(1.00, 0.00),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 10.0, 0.0),
                                   child: Icon(
                                     Icons.chevron_right_rounded,
@@ -766,7 +766,7 @@ class _ProfileSectionWidgetState extends State<ProfileSectionWidget> {
                               return WebViewAware(
                                   child: Padding(
                                 padding: MediaQuery.viewInsetsOf(context),
-                                child: DevVamsiWidget(),
+                                child: const DevVamsiWidget(),
                               ));
                             },
                           ).then((value) => safeSetState(() {}));
@@ -775,7 +775,7 @@ class _ProfileSectionWidgetState extends State<ProfileSectionWidget> {
                           mainAxisSize: MainAxisSize.min,
                           children: [
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   12.0, 12.0, 12.0, 12.0),
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(40.0),
@@ -811,9 +811,9 @@ class _ProfileSectionWidgetState extends State<ProfileSectionWidget> {
                             ),
                             Expanded(
                               child: Align(
-                                alignment: AlignmentDirectional(1.00, 0.00),
+                                alignment: const AlignmentDirectional(1.00, 0.00),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 10.0, 0.0),
                                   child: Icon(
                                     Icons.chevron_right_rounded,
@@ -849,13 +849,13 @@ class _ProfileSectionWidgetState extends State<ProfileSectionWidget> {
                   ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(50.0, 5.0, 0.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(50.0, 5.0, 0.0, 0.0),
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 20.0, 0.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.min,
@@ -875,7 +875,7 @@ class _ProfileSectionWidgetState extends State<ProfileSectionWidget> {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 10.0, 0.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -893,7 +893,7 @@ class _ProfileSectionWidgetState extends State<ProfileSectionWidget> {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 10.0, 0.0, 0.0),
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
@@ -919,7 +919,7 @@ class _ProfileSectionWidgetState extends State<ProfileSectionWidget> {
                             ],
                           ),
                         ),
-                      ].divide(SizedBox(height: 5.0)),
+                      ].divide(const SizedBox(height: 5.0)),
                     ),
                   ),
                 ],

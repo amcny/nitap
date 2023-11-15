@@ -1,22 +1,13 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:go_router/go_router.dart';
-import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
-import '/backend/backend.dart';
-import '/backend/schema/structs/index.dart';
 
 import '/auth/base_auth_user_provider.dart';
 
 import '/index.dart';
 import '/main.dart';
-import '/flutter_flow/flutter_flow_theme.dart';
-import '/flutter_flow/lat_lng.dart';
-import '/flutter_flow/place.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'serialization_util.dart';
 
 export 'package:go_router/go_router.dart';
 export 'serialization_util.dart';
@@ -81,20 +72,20 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
       errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? NavBarPage() : OnboardingWidget(),
+          appStateNotifier.loggedIn ? const NavBarPage() : const OnboardingWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) =>
-              appStateNotifier.loggedIn ? NavBarPage() : OnboardingWidget(),
+              appStateNotifier.loggedIn ? const NavBarPage() : const OnboardingWidget(),
           routes: [
             FFRoute(
               name: 'HomePage',
               path: 'homePage',
               builder: (context, params) => params.isEmpty
-                  ? NavBarPage(initialPage: 'HomePage')
-                  : NavBarPage(
+                  ? const NavBarPage(initialPage: 'HomePage')
+                  : const NavBarPage(
                       initialPage: 'HomePage',
                       page: HomePageWidget(),
                     ),
@@ -102,46 +93,46 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             FFRoute(
               name: 'AcademicCalendar',
               path: 'academicCalendar',
-              builder: (context, params) => AcademicCalendarWidget(),
+              builder: (context, params) => const AcademicCalendarWidget(),
             ),
             FFRoute(
               name: 'ECEDB',
               path: 'ecedb',
               builder: (context, params) => params.isEmpty
-                  ? NavBarPage(initialPage: 'ECEDB')
-                  : EcedbWidget(),
+                  ? const NavBarPage(initialPage: 'ECEDB')
+                  : const EcedbWidget(),
             ),
             FFRoute(
               name: 'ProfileSection',
               path: 'profileSection',
               builder: (context, params) => params.isEmpty
-                  ? NavBarPage(initialPage: 'ProfileSection')
-                  : ProfileSectionWidget(),
+                  ? const NavBarPage(initialPage: 'ProfileSection')
+                  : const ProfileSectionWidget(),
             ),
             FFRoute(
               name: 'Appearance',
               path: 'appearance',
-              builder: (context, params) => AppearanceWidget(),
+              builder: (context, params) => const AppearanceWidget(),
             ),
             FFRoute(
               name: 'ManageIDCard',
               path: 'manageIDCard',
-              builder: (context, params) => ManageIDCardWidget(),
+              builder: (context, params) => const ManageIDCardWidget(),
             ),
             FFRoute(
               name: 'StudentPortal',
               path: 'studentPortal',
-              builder: (context, params) => StudentPortalWidget(),
+              builder: (context, params) => const StudentPortalWidget(),
             ),
             FFRoute(
               name: 'Onboarding',
               path: 'onboarding',
-              builder: (context, params) => OnboardingWidget(),
+              builder: (context, params) => const OnboardingWidget(),
             ),
             FFRoute(
               name: 'Examschedule',
               path: 'examschedule',
-              builder: (context, params) => ExamscheduleWidget(),
+              builder: (context, params) => const ExamscheduleWidget(),
             ),
             FFRoute(
               name: 'facultyweb',
@@ -154,69 +145,69 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             FFRoute(
               name: 'Attendancefeature',
               path: 'attendancefeature',
-              builder: (context, params) => AttendancefeatureWidget(),
+              builder: (context, params) => const AttendancefeatureWidget(),
             ),
             FFRoute(
               name: 'minor1',
               path: 'minor1',
-              builder: (context, params) => Minor1Widget(),
+              builder: (context, params) => const Minor1Widget(),
             ),
             FFRoute(
               name: 'minor2',
               path: 'minor2',
-              builder: (context, params) => Minor2Widget(),
+              builder: (context, params) => const Minor2Widget(),
             ),
             FFRoute(
               name: 'midsem',
               path: 'midsem',
-              builder: (context, params) => MidsemWidget(),
+              builder: (context, params) => const MidsemWidget(),
             ),
             FFRoute(
               name: 'endsem',
               path: 'endsem',
-              builder: (context, params) => EndsemWidget(),
+              builder: (context, params) => const EndsemWidget(),
             ),
             FFRoute(
               name: 'Login',
               path: 'login',
-              builder: (context, params) => LoginWidget(),
+              builder: (context, params) => const LoginWidget(),
             ),
             FFRoute(
               name: 'Timetable',
               path: 'timetable',
               builder: (context, params) => params.isEmpty
-                  ? NavBarPage(initialPage: 'Timetable')
-                  : TimetableWidget(),
+                  ? const NavBarPage(initialPage: 'Timetable')
+                  : const TimetableWidget(),
             ),
             FFRoute(
               name: 'Choosesec',
               path: 'choosesec',
-              builder: (context, params) => ChoosesecWidget(),
+              builder: (context, params) => const ChoosesecWidget(),
             ),
             FFRoute(
               name: 'ttpop',
               path: 'ttpop',
-              builder: (context, params) => TtpopWidget(),
+              builder: (context, params) => const TtpopWidget(),
             ),
             FFRoute(
               name: 'Signup',
               path: 'signup',
-              builder: (context, params) => SignupWidget(),
+              builder: (context, params) => const SignupWidget(),
             ),
             FFRoute(
               name: 'Facultypage',
               path: 'facultypage',
-              builder: (context, params) => FacultypageWidget(),
+              builder: (context, params) => const FacultypageWidget(),
             ),
             FFRoute(
               name: 'eceh',
               path: 'eceh',
-              builder: (context, params) => EcehWidget(),
+              builder: (context, params) => const EcehWidget(),
             ),
             FFRoute(
               name: 'ecea',
               path: 'ecea',
-              builder: (context, params) => EceaWidget(),
+              builder: (context, params) => const EceaWidget(),
             ),
             FFRoute(
               name: 'foryouinfo',
@@ -229,7 +220,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             FFRoute(
               name: 'alumni',
               path: 'alumni',
-              builder: (context, params) => AlumniWidget(),
+              builder: (context, params) => const AlumniWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),
@@ -453,7 +444,7 @@ class TransitionInfo {
   final Duration duration;
   final Alignment? alignment;
 
-  static TransitionInfo appDefault() => TransitionInfo(hasTransition: false);
+  static TransitionInfo appDefault() => const TransitionInfo(hasTransition: false);
 }
 
 class RootPageContext {

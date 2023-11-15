@@ -6,17 +6,14 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'eceh_model.dart';
 export 'eceh_model.dart';
 
 class EcehWidget extends StatefulWidget {
-  const EcehWidget({Key? key}) : super(key: key);
+  const EcehWidget({super.key});
 
   @override
   _EcehWidgetState createState() => _EcehWidgetState();
@@ -88,7 +85,7 @@ class _EcehWidgetState extends State<EcehWidget> {
                   fontWeight: FontWeight.bold,
                 ),
           ),
-          actions: [],
+          actions: const [],
           centerTitle: false,
           elevation: 0.0,
         ),
@@ -100,7 +97,7 @@ class _EcehWidgetState extends State<EcehWidget> {
               children: [
                 Padding(
                   padding:
-                      EdgeInsetsDirectional.fromSTEB(15.0, 15.0, 15.0, 15.0),
+                      const EdgeInsetsDirectional.fromSTEB(15.0, 15.0, 15.0, 15.0),
                   child: InkWell(
                     splashColor: Colors.transparent,
                     focusColor: Colors.transparent,
@@ -113,8 +110,8 @@ class _EcehWidgetState extends State<EcehWidget> {
                           type: PageTransitionType.fade,
                           child: FlutterFlowExpandedImageView(
                             image: CachedNetworkImage(
-                              fadeInDuration: Duration(milliseconds: 0),
-                              fadeOutDuration: Duration(milliseconds: 0),
+                              fadeInDuration: const Duration(milliseconds: 0),
+                              fadeOutDuration: const Duration(milliseconds: 0),
                               imageUrl:
                                   'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/student-portal-wmpu59/assets/nzzblob15cqb/eceh_b_comp.jpg',
                               fit: BoxFit.contain,
@@ -128,8 +125,8 @@ class _EcehWidgetState extends State<EcehWidget> {
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(8.0),
                       child: CachedNetworkImage(
-                        fadeInDuration: Duration(milliseconds: 0),
-                        fadeOutDuration: Duration(milliseconds: 0),
+                        fadeInDuration: const Duration(milliseconds: 0),
+                        fadeOutDuration: const Duration(milliseconds: 0),
                         imageUrl:
                             'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/student-portal-wmpu59/assets/nzzblob15cqb/eceh_b_comp.jpg',
                         width: double.infinity,
@@ -145,7 +142,7 @@ class _EcehWidgetState extends State<EcehWidget> {
                   children: [
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
                       child: Text(
                         'Welcome',
                         style: FlutterFlowTheme.of(context).titleLarge,
@@ -153,7 +150,7 @@ class _EcehWidgetState extends State<EcehWidget> {
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(15.0, 0.0, 15.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(15.0, 0.0, 15.0, 0.0),
                       child: Text(
                         'The ECE Herald is a biweekly magazine released by ECE Department, NIT Andhra Pradesh. The Newsletter has several contents like technical articles, non-technical articles, poems, career guidance from the department professors and placement stories from the students who got placed and more..',
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -165,21 +162,21 @@ class _EcehWidgetState extends State<EcehWidget> {
                   ],
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
                         child: Text(
                           'Governing Body',
                           style: FlutterFlowTheme.of(context).titleLarge,
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             16.0, 8.0, 16.0, 0.0),
                         child: Container(
                           width: double.infinity,
@@ -189,7 +186,7 @@ class _EcehWidgetState extends State<EcehWidget> {
                             borderRadius: BorderRadius.circular(8.0),
                           ),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 8.0, 8.0, 12.0, 8.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -208,9 +205,9 @@ class _EcehWidgetState extends State<EcehWidget> {
                                         child: FlutterFlowExpandedImageView(
                                           image: CachedNetworkImage(
                                             fadeInDuration:
-                                                Duration(milliseconds: 0),
+                                                const Duration(milliseconds: 0),
                                             fadeOutDuration:
-                                                Duration(milliseconds: 0),
+                                                const Duration(milliseconds: 0),
                                             imageUrl:
                                                 'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/student-portal-wmpu59/assets/mfcns9jhbbyk/yuvaraj.jpg',
                                             fit: BoxFit.contain,
@@ -229,14 +226,14 @@ class _EcehWidgetState extends State<EcehWidget> {
                                       width: 50.0,
                                       height: 50.0,
                                       clipBehavior: Clip.antiAlias,
-                                      decoration: BoxDecoration(
+                                      decoration: const BoxDecoration(
                                         shape: BoxShape.circle,
                                       ),
                                       child: CachedNetworkImage(
                                         fadeInDuration:
-                                            Duration(milliseconds: 0),
+                                            const Duration(milliseconds: 0),
                                         fadeOutDuration:
-                                            Duration(milliseconds: 0),
+                                            const Duration(milliseconds: 0),
                                         imageUrl:
                                             'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/student-portal-wmpu59/assets/mfcns9jhbbyk/yuvaraj.jpg',
                                         fit: BoxFit.cover,
@@ -245,7 +242,7 @@ class _EcehWidgetState extends State<EcehWidget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       15.0, 0.0, 0.0, 0.0),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
@@ -266,7 +263,7 @@ class _EcehWidgetState extends State<EcehWidget> {
                                             ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 2.0, 0.0, 0.0),
                                         child: Text(
                                           'HoD - ECE',
@@ -291,7 +288,7 @@ class _EcehWidgetState extends State<EcehWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             16.0, 8.0, 16.0, 0.0),
                         child: Container(
                           width: double.infinity,
@@ -301,7 +298,7 @@ class _EcehWidgetState extends State<EcehWidget> {
                             borderRadius: BorderRadius.circular(8.0),
                           ),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 8.0, 8.0, 12.0, 8.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -320,9 +317,9 @@ class _EcehWidgetState extends State<EcehWidget> {
                                         child: FlutterFlowExpandedImageView(
                                           image: CachedNetworkImage(
                                             fadeInDuration:
-                                                Duration(milliseconds: 0),
+                                                const Duration(milliseconds: 0),
                                             fadeOutDuration:
-                                                Duration(milliseconds: 0),
+                                                const Duration(milliseconds: 0),
                                             imageUrl:
                                                 'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/student-portal-wmpu59/assets/6of3zrscev5u/kishorekumar.jpg',
                                             fit: BoxFit.contain,
@@ -341,14 +338,14 @@ class _EcehWidgetState extends State<EcehWidget> {
                                       width: 50.0,
                                       height: 50.0,
                                       clipBehavior: Clip.antiAlias,
-                                      decoration: BoxDecoration(
+                                      decoration: const BoxDecoration(
                                         shape: BoxShape.circle,
                                       ),
                                       child: CachedNetworkImage(
                                         fadeInDuration:
-                                            Duration(milliseconds: 0),
+                                            const Duration(milliseconds: 0),
                                         fadeOutDuration:
-                                            Duration(milliseconds: 0),
+                                            const Duration(milliseconds: 0),
                                         imageUrl:
                                             'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/student-portal-wmpu59/assets/6of3zrscev5u/kishorekumar.jpg',
                                         fit: BoxFit.cover,
@@ -357,7 +354,7 @@ class _EcehWidgetState extends State<EcehWidget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       15.0, 0.0, 0.0, 0.0),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
@@ -378,7 +375,7 @@ class _EcehWidgetState extends State<EcehWidget> {
                                             ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 2.0, 0.0, 0.0),
                                         child: Text(
                                           'Faculty Advisor - ECEA',
@@ -406,14 +403,14 @@ class _EcehWidgetState extends State<EcehWidget> {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
                         child: Text(
                           'Quick Links',
                           style: FlutterFlowTheme.of(context).titleLarge,
@@ -421,7 +418,7 @@ class _EcehWidgetState extends State<EcehWidget> {
                       ),
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(5.0, 10.0, 5.0, 5.0),
+                            const EdgeInsetsDirectional.fromSTEB(5.0, 10.0, 5.0, 5.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -433,17 +430,17 @@ class _EcehWidgetState extends State<EcehWidget> {
                                     'https://www.instagram.com/the.ece.herald/');
                               },
                               text: 'Instagram',
-                              icon: FaIcon(
+                              icon: const FaIcon(
                                 FontAwesomeIcons.instagram,
                               ),
                               options: FFButtonOptions(
                                 width: 150.0,
                                 height: 50.0,
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
-                                iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
-                                color: Color(0xFFD62976),
+                                color: const Color(0xFFD62976),
                                 textStyle: FlutterFlowTheme.of(context)
                                     .titleMedium
                                     .override(
@@ -451,7 +448,7 @@ class _EcehWidgetState extends State<EcehWidget> {
                                       color: Colors.white,
                                     ),
                                 elevation: 0.0,
-                                borderSide: BorderSide(
+                                borderSide: const BorderSide(
                                   color: Colors.transparent,
                                   width: 1.0,
                                 ),
@@ -464,18 +461,18 @@ class _EcehWidgetState extends State<EcehWidget> {
                                     'https://www.linkedin.com/company/the-ece-herald/');
                               },
                               text: 'LinkedIn',
-                              icon: FaIcon(
+                              icon: const FaIcon(
                                 FontAwesomeIcons.linkedinIn,
                                 size: 20.0,
                               ),
                               options: FFButtonOptions(
                                 width: 150.0,
                                 height: 50.0,
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
-                                iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
-                                color: Color(0xFF0A66C2),
+                                color: const Color(0xFF0A66C2),
                                 textStyle: FlutterFlowTheme.of(context)
                                     .titleMedium
                                     .override(
@@ -483,7 +480,7 @@ class _EcehWidgetState extends State<EcehWidget> {
                                       color: Colors.white,
                                     ),
                                 elevation: 0.0,
-                                borderSide: BorderSide(
+                                borderSide: const BorderSide(
                                   color: Colors.transparent,
                                   width: 1.0,
                                 ),
@@ -495,7 +492,7 @@ class _EcehWidgetState extends State<EcehWidget> {
                       ),
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(5.0, 10.0, 5.0, 5.0),
+                            const EdgeInsetsDirectional.fromSTEB(5.0, 10.0, 5.0, 5.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -507,17 +504,17 @@ class _EcehWidgetState extends State<EcehWidget> {
                                     'https://drive.google.com/drive/folders/1k7E1Jqhw8K4SZ9cE6j9MGe_nRSSBBxj0');
                               },
                               text: 'Drive',
-                              icon: FaIcon(
+                              icon: const FaIcon(
                                 FontAwesomeIcons.googleDrive,
                               ),
                               options: FFButtonOptions(
                                 width: 150.0,
                                 height: 50.0,
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
-                                iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
-                                color: Color(0xFF1FA463),
+                                color: const Color(0xFF1FA463),
                                 textStyle: FlutterFlowTheme.of(context)
                                     .titleMedium
                                     .override(
@@ -525,7 +522,7 @@ class _EcehWidgetState extends State<EcehWidget> {
                                       color: Colors.white,
                                     ),
                                 elevation: 0.0,
-                                borderSide: BorderSide(
+                                borderSide: const BorderSide(
                                   color: Colors.transparent,
                                   width: 1.0,
                                 ),
@@ -546,18 +543,18 @@ class _EcehWidgetState extends State<EcehWidget> {
                                         .join('&')));
                               },
                               text: 'Email',
-                              icon: Icon(
+                              icon: const Icon(
                                 Icons.mail_outline_rounded,
                                 size: 24.0,
                               ),
                               options: FFButtonOptions(
                                 width: 150.0,
                                 height: 50.0,
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
-                                iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
-                                color: Color(0xFFBB001B),
+                                color: const Color(0xFFBB001B),
                                 textStyle: FlutterFlowTheme.of(context)
                                     .titleMedium
                                     .override(
@@ -565,7 +562,7 @@ class _EcehWidgetState extends State<EcehWidget> {
                                       color: Colors.white,
                                     ),
                                 elevation: 0.0,
-                                borderSide: BorderSide(
+                                borderSide: const BorderSide(
                                   color: Colors.transparent,
                                   width: 1.0,
                                 ),
@@ -578,7 +575,7 @@ class _EcehWidgetState extends State<EcehWidget> {
                     ],
                   ),
                 ),
-              ].addToEnd(SizedBox(height: 15.0)),
+              ].addToEnd(const SizedBox(height: 15.0)),
             ),
           ),
         ),

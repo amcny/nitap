@@ -3,20 +3,16 @@ import '/flutter_flow/flutter_flow_expanded_image_view.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 import 'minor1_model.dart';
 export 'minor1_model.dart';
 
 class Minor1Widget extends StatefulWidget {
-  const Minor1Widget({Key? key}) : super(key: key);
+  const Minor1Widget({super.key});
 
   @override
   _Minor1WidgetState createState() => _Minor1WidgetState();
@@ -84,7 +80,7 @@ class _Minor1WidgetState extends State<Minor1Widget> {
                 fontWeight: FontWeight.bold,
               ),
         ),
-        actions: [],
+        actions: const [],
         centerTitle: false,
         elevation: 0.0,
       ),
@@ -113,7 +109,7 @@ class _Minor1WidgetState extends State<Minor1Widget> {
               padding: EdgeInsets.zero,
               scrollDirection: Axis.vertical,
               itemCount: listViewExamRecordList.length,
-              separatorBuilder: (_, __) => SizedBox(height: 10.0),
+              separatorBuilder: (_, __) => const SizedBox(height: 10.0),
               itemBuilder: (context, listViewIndex) {
                 final listViewExamRecord =
                     listViewExamRecordList[listViewIndex];
@@ -132,8 +128,8 @@ class _Minor1WidgetState extends State<Minor1Widget> {
                             type: PageTransitionType.fade,
                             child: FlutterFlowExpandedImageView(
                               image: CachedNetworkImage(
-                                fadeInDuration: Duration(milliseconds: 0),
-                                fadeOutDuration: Duration(milliseconds: 0),
+                                fadeInDuration: const Duration(milliseconds: 0),
+                                fadeOutDuration: const Duration(milliseconds: 0),
                                 imageUrl: listViewExamRecord.minor1,
                                 fit: BoxFit.contain,
                               ),
@@ -149,8 +145,8 @@ class _Minor1WidgetState extends State<Minor1Widget> {
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(0.0),
                           child: CachedNetworkImage(
-                            fadeInDuration: Duration(milliseconds: 0),
-                            fadeOutDuration: Duration(milliseconds: 0),
+                            fadeInDuration: const Duration(milliseconds: 0),
+                            fadeOutDuration: const Duration(milliseconds: 0),
                             imageUrl: listViewExamRecord.minor1,
                             fit: BoxFit.cover,
                           ),

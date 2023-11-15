@@ -3,15 +3,12 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'alert_logout_model.dart';
 export 'alert_logout_model.dart';
 
 class AlertLogoutWidget extends StatefulWidget {
-  const AlertLogoutWidget({Key? key}) : super(key: key);
+  const AlertLogoutWidget({super.key});
 
   @override
   _AlertLogoutWidgetState createState() => _AlertLogoutWidgetState();
@@ -58,7 +55,7 @@ class _AlertLogoutWidgetState extends State<AlertLogoutWidget> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(20.0, 25.0, 0.0, 0.0),
+            padding: const EdgeInsetsDirectional.fromSTEB(20.0, 25.0, 0.0, 0.0),
             child: Row(
               mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.start,
@@ -71,7 +68,7 @@ class _AlertLogoutWidgetState extends State<AlertLogoutWidget> {
             ),
           ),
           Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 0.0, 0.0),
+            padding: const EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 0.0, 0.0),
             child: Row(
               mainAxisSize: MainAxisSize.min,
               children: [
@@ -84,9 +81,9 @@ class _AlertLogoutWidgetState extends State<AlertLogoutWidget> {
           ),
           Expanded(
             child: Align(
-              alignment: AlignmentDirectional(1.00, 1.00),
+              alignment: const AlignmentDirectional(1.00, 1.00),
               child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 20.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 20.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -99,10 +96,10 @@ class _AlertLogoutWidgetState extends State<AlertLogoutWidget> {
                       text: 'No',
                       options: FFButtonOptions(
                         height: 40.0,
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             24.0, 0.0, 24.0, 0.0),
                         iconPadding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                         color: FlutterFlowTheme.of(context).primary,
                         textStyle:
                             FlutterFlowTheme.of(context).titleSmall.override(
@@ -110,7 +107,7 @@ class _AlertLogoutWidgetState extends State<AlertLogoutWidget> {
                                   color: Colors.white,
                                 ),
                         elevation: 1.0,
-                        borderSide: BorderSide(
+                        borderSide: const BorderSide(
                           color: Colors.transparent,
                           width: 1.0,
                         ),
@@ -128,25 +125,25 @@ class _AlertLogoutWidgetState extends State<AlertLogoutWidget> {
                       text: 'Yes',
                       options: FFButtonOptions(
                         height: 40.0,
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             24.0, 0.0, 24.0, 0.0),
                         iconPadding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                        color: Color(0xFF757575),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                        color: const Color(0xFF757575),
                         textStyle:
                             FlutterFlowTheme.of(context).titleSmall.override(
                                   fontFamily: 'Poppins',
                                   color: Colors.white,
                                 ),
                         elevation: 1.0,
-                        borderSide: BorderSide(
+                        borderSide: const BorderSide(
                           color: Colors.transparent,
                           width: 1.0,
                         ),
                         borderRadius: BorderRadius.circular(8.0),
                       ),
                     ),
-                  ].divide(SizedBox(width: 20.0)).around(SizedBox(width: 20.0)),
+                  ].divide(const SizedBox(width: 20.0)).around(const SizedBox(width: 20.0)),
                 ),
               ),
             ),

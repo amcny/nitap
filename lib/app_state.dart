@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import '/backend/backend.dart';
-import '/backend/schema/structs/index.dart';
-import 'backend/api_requests/api_manager.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'flutter_flow/flutter_flow_util.dart';
 
@@ -37,44 +35,44 @@ class FFAppState extends ChangeNotifier {
 
   List<String> _days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
   List<String> get days => _days;
-  set days(List<String> _value) {
-    _days = _value;
-    prefs.setStringList('ff_days', _value);
+  set days(List<String> value) {
+    _days = value;
+    prefs.setStringList('ff_days', value);
   }
 
-  void addToDays(String _value) {
-    _days.add(_value);
+  void addToDays(String value) {
+    _days.add(value);
     prefs.setStringList('ff_days', _days);
   }
 
-  void removeFromDays(String _value) {
-    _days.remove(_value);
+  void removeFromDays(String value) {
+    _days.remove(value);
     prefs.setStringList('ff_days', _days);
   }
 
-  void removeAtIndexFromDays(int _index) {
-    _days.removeAt(_index);
+  void removeAtIndexFromDays(int index) {
+    _days.removeAt(index);
     prefs.setStringList('ff_days', _days);
   }
 
   void updateDaysAtIndex(
-    int _index,
+    int index,
     String Function(String) updateFn,
   ) {
-    _days[_index] = updateFn(_days[_index]);
+    _days[index] = updateFn(_days[index]);
     prefs.setStringList('ff_days', _days);
   }
 
-  void insertAtIndexInDays(int _index, String _value) {
-    _days.insert(_index, _value);
+  void insertAtIndexInDays(int index, String value) {
+    _days.insert(index, value);
     prefs.setStringList('ff_days', _days);
   }
 
   String _secname = '';
   String get secname => _secname;
-  set secname(String _value) {
-    _secname = _value;
-    prefs.setString('ff_secname', _value);
+  set secname(String value) {
+    _secname = value;
+    prefs.setString('ff_secname', value);
   }
 }
 

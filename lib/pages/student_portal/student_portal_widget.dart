@@ -2,17 +2,14 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_web_view.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'student_portal_model.dart';
 export 'student_portal_model.dart';
 
 class StudentPortalWidget extends StatefulWidget {
-  const StudentPortalWidget({Key? key}) : super(key: key);
+  const StudentPortalWidget({super.key});
 
   @override
   _StudentPortalWidgetState createState() => _StudentPortalWidgetState();
@@ -84,7 +81,7 @@ class _StudentPortalWidgetState extends State<StudentPortalWidget> {
                   fontWeight: FontWeight.bold,
                 ),
           ),
-          actions: [],
+          actions: const [],
           centerTitle: false,
           elevation: 0.0,
         ),

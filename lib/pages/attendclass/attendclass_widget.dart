@@ -1,22 +1,17 @@
-import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'attendclass_model.dart';
 export 'attendclass_model.dart';
 
 class AttendclassWidget extends StatefulWidget {
   const AttendclassWidget({
-    Key? key,
+    super.key,
     required this.classref,
-  }) : super(key: key);
+  });
 
   final DocumentReference? classref;
 
@@ -68,7 +63,7 @@ class _AttendclassWidgetState extends State<AttendclassWidget> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(20.0, 25.0, 0.0, 0.0),
+            padding: const EdgeInsetsDirectional.fromSTEB(20.0, 25.0, 0.0, 0.0),
             child: Row(
               mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.start,
@@ -81,7 +76,7 @@ class _AttendclassWidgetState extends State<AttendclassWidget> {
             ),
           ),
           Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 20.0),
+            padding: const EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 20.0),
             child: Row(
               mainAxisSize: MainAxisSize.min,
               children: [
@@ -89,7 +84,7 @@ class _AttendclassWidgetState extends State<AttendclassWidget> {
                   child: Form(
                     key: _model.formKey,
                     autovalidateMode: AutovalidateMode.disabled,
-                    child: Container(
+                    child: SizedBox(
                       width: 370.0,
                       child: TextFormField(
                         controller: _model.numberController,
@@ -130,7 +125,7 @@ class _AttendclassWidgetState extends State<AttendclassWidget> {
                           filled: true,
                           fillColor:
                               FlutterFlowTheme.of(context).primaryBackground,
-                          suffixIcon: Icon(
+                          suffixIcon: const Icon(
                             Icons.format_list_numbered_rtl_rounded,
                             color: Color(0xFF757575),
                             size: 22.0,
@@ -149,9 +144,9 @@ class _AttendclassWidgetState extends State<AttendclassWidget> {
           ),
           Expanded(
             child: Align(
-              alignment: AlignmentDirectional(1.00, 1.00),
+              alignment: const AlignmentDirectional(1.00, 1.00),
               child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 20.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 20.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -164,18 +159,18 @@ class _AttendclassWidgetState extends State<AttendclassWidget> {
                       text: 'Dismiss',
                       options: FFButtonOptions(
                         height: 45.0,
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             24.0, 0.0, 24.0, 0.0),
                         iconPadding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                        color: Color(0xFF757575),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                        color: const Color(0xFF757575),
                         textStyle:
                             FlutterFlowTheme.of(context).titleSmall.override(
                                   fontFamily: 'Poppins',
                                   color: Colors.white,
                                 ),
                         elevation: 1.0,
-                        borderSide: BorderSide(
+                        borderSide: const BorderSide(
                           color: Colors.transparent,
                           width: 1.0,
                         ),
@@ -198,10 +193,10 @@ class _AttendclassWidgetState extends State<AttendclassWidget> {
                       text: 'Confirm',
                       options: FFButtonOptions(
                         height: 45.0,
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             24.0, 0.0, 24.0, 0.0),
                         iconPadding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                         color: FlutterFlowTheme.of(context).primary,
                         textStyle:
                             FlutterFlowTheme.of(context).titleSmall.override(
@@ -209,14 +204,14 @@ class _AttendclassWidgetState extends State<AttendclassWidget> {
                                   color: Colors.white,
                                 ),
                         elevation: 1.0,
-                        borderSide: BorderSide(
+                        borderSide: const BorderSide(
                           color: Colors.transparent,
                           width: 1.0,
                         ),
                         borderRadius: BorderRadius.circular(8.0),
                       ),
                     ),
-                  ].divide(SizedBox(width: 20.0)).around(SizedBox(width: 20.0)),
+                  ].divide(const SizedBox(width: 20.0)).around(const SizedBox(width: 20.0)),
                 ),
               ),
             ),

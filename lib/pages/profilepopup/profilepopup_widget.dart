@@ -4,18 +4,14 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'profilepopup_model.dart';
 export 'profilepopup_model.dart';
 
 class ProfilepopupWidget extends StatefulWidget {
-  const ProfilepopupWidget({Key? key}) : super(key: key);
+  const ProfilepopupWidget({super.key});
 
   @override
   _ProfilepopupWidgetState createState() => _ProfilepopupWidgetState();
@@ -41,15 +37,15 @@ class _ProfilepopupWidgetState extends State<ProfilepopupWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 50.ms,
-          begin: Offset(20.0, -20.0),
-          end: Offset(0.0, 0.0),
+          begin: const Offset(20.0, -20.0),
+          end: const Offset(0.0, 0.0),
         ),
         TiltEffect(
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 50.ms,
-          begin: Offset(0.873, 0),
-          end: Offset(0, 0),
+          begin: const Offset(0.873, 0),
+          end: const Offset(0, 0),
         ),
       ],
     ),
@@ -102,7 +98,7 @@ class _ProfilepopupWidgetState extends State<ProfilepopupWidget>
                   color: FlutterFlowTheme.of(context).primary,
                   shape: BoxShape.circle,
                 ),
-                child: Icon(
+                child: const Icon(
                   Icons.security_rounded,
                   color: Colors.white,
                   size: 24.0,
@@ -112,7 +108,7 @@ class _ProfilepopupWidgetState extends State<ProfilepopupWidget>
                 onPressed: () async {
                   if (currentUserEmail.isEmpty) {
                     ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(
+                      const SnackBar(
                         content: Text(
                           'Email required!',
                         ),
@@ -130,15 +126,15 @@ class _ProfilepopupWidgetState extends State<ProfilepopupWidget>
                 options: FFButtonOptions(
                   width: 150.0,
                   height: 45.0,
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                   iconPadding:
-                      EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                      const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                   color: FlutterFlowTheme.of(context).primary,
                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                         fontFamily: 'Poppins',
                         color: Colors.white,
                       ),
-                  borderSide: BorderSide(
+                  borderSide: const BorderSide(
                     color: Colors.transparent,
                     width: 1.0,
                   ),
@@ -158,8 +154,8 @@ class _ProfilepopupWidgetState extends State<ProfilepopupWidget>
                   color: FlutterFlowTheme.of(context).primary,
                   shape: BoxShape.circle,
                 ),
-                alignment: AlignmentDirectional(0.00, 0.00),
-                child: FaIcon(
+                alignment: const AlignmentDirectional(0.00, 0.00),
+                child: const FaIcon(
                   FontAwesomeIcons.signOutAlt,
                   color: Colors.white,
                   size: 20.0,
@@ -177,15 +173,15 @@ class _ProfilepopupWidgetState extends State<ProfilepopupWidget>
                 options: FFButtonOptions(
                   width: 150.0,
                   height: 45.0,
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                   iconPadding:
-                      EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                      const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                   color: FlutterFlowTheme.of(context).primary,
                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                         fontFamily: 'Poppins',
                         color: Colors.white,
                       ),
-                  borderSide: BorderSide(
+                  borderSide: const BorderSide(
                     color: Colors.transparent,
                     width: 1.0,
                   ),

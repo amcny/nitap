@@ -1,17 +1,9 @@
 import '/backend/backend.dart';
-import '/flutter_flow/flutter_flow_icon_button.dart';
-import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/request_manager.dart';
 
 import 'facultypage_widget.dart' show FacultypageWidget;
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 
 class FacultypageModel extends FlutterFlowModel<FacultypageWidget> {
   /// Query cache managers for this widget.
@@ -33,8 +25,10 @@ class FacultypageModel extends FlutterFlowModel<FacultypageWidget> {
 
   /// Initialization and disposal methods.
 
+  @override
   void initState(BuildContext context) {}
 
+  @override
   void dispose() {
     /// Dispose query cache managers for this widget.
 

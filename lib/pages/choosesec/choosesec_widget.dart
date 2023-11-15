@@ -5,14 +5,12 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'choosesec_model.dart';
 export 'choosesec_model.dart';
 
 class ChoosesecWidget extends StatefulWidget {
-  const ChoosesecWidget({Key? key}) : super(key: key);
+  const ChoosesecWidget({super.key});
 
   @override
   _ChoosesecWidgetState createState() => _ChoosesecWidgetState();
@@ -70,7 +68,7 @@ class _ChoosesecWidgetState extends State<ChoosesecWidget> {
                   fontWeight: FontWeight.bold,
                 ),
           ),
-          actions: [],
+          actions: const [],
           centerTitle: false,
           elevation: 0.0,
         ),
@@ -80,7 +78,7 @@ class _ChoosesecWidgetState extends State<ChoosesecWidget> {
             mainAxisSize: MainAxisSize.min,
             children: [
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(20.0, 10.0, 20.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(20.0, 10.0, 20.0, 0.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   children: [
@@ -96,11 +94,11 @@ class _ChoosesecWidgetState extends State<ChoosesecWidget> {
                 autovalidateMode: AutovalidateMode.disabled,
                 child: Padding(
                   padding:
-                      EdgeInsetsDirectional.fromSTEB(20.0, 45.0, 20.0, 0.0),
+                      const EdgeInsetsDirectional.fromSTEB(20.0, 45.0, 20.0, 0.0),
                   child: FlutterFlowDropDown<String>(
                     controller: _model.dropDownValueController ??=
                         FormFieldController<String>(null),
-                    options: [
+                    options: const [
                       'II - Sec A',
                       'II - Sec B',
                       'III - Sec A',
@@ -125,7 +123,7 @@ class _ChoosesecWidgetState extends State<ChoosesecWidget> {
                     borderWidth: 1.0,
                     borderRadius: 8.0,
                     margin:
-                        EdgeInsetsDirectional.fromSTEB(16.0, 4.0, 16.0, 4.0),
+                        const EdgeInsetsDirectional.fromSTEB(16.0, 4.0, 16.0, 4.0),
                     hidesUnderline: true,
                     isSearchable: false,
                     isMultiSelect: false,
@@ -133,7 +131,7 @@ class _ChoosesecWidgetState extends State<ChoosesecWidget> {
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 25.0, 0.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 25.0, 0.0, 0.0),
                 child: FFButtonWidget(
                   onPressed: () async {
                     if (_model.formKey.currentState == null ||
@@ -150,9 +148,9 @@ class _ChoosesecWidgetState extends State<ChoosesecWidget> {
                   options: FFButtonOptions(
                     width: 190.0,
                     height: 50.0,
-                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     iconPadding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     color: FlutterFlowTheme.of(context).primary,
                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                           fontFamily: 'Poppins',
@@ -161,7 +159,7 @@ class _ChoosesecWidgetState extends State<ChoosesecWidget> {
                           fontWeight: FontWeight.w500,
                         ),
                     elevation: 3.0,
-                    borderSide: BorderSide(
+                    borderSide: const BorderSide(
                       color: Colors.transparent,
                       width: 1.0,
                     ),

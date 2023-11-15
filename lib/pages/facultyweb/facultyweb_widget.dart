@@ -3,21 +3,18 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_web_view.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'facultyweb_model.dart';
 export 'facultyweb_model.dart';
 
 class FacultywebWidget extends StatefulWidget {
   const FacultywebWidget({
-    Key? key,
+    super.key,
     required this.pass,
-  }) : super(key: key);
+  });
 
   final DocumentReference? pass;
 
@@ -107,7 +104,7 @@ class _FacultywebWidgetState extends State<FacultywebWidget> {
                     fontWeight: FontWeight.bold,
                   ),
             ),
-            actions: [],
+            actions: const [],
             centerTitle: false,
             elevation: 0.0,
           ),

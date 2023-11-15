@@ -2,16 +2,13 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'dev_vamsi_model.dart';
 export 'dev_vamsi_model.dart';
 
 class DevVamsiWidget extends StatefulWidget {
-  const DevVamsiWidget({Key? key}) : super(key: key);
+  const DevVamsiWidget({super.key});
 
   @override
   _DevVamsiWidgetState createState() => _DevVamsiWidgetState();
@@ -50,7 +47,7 @@ class _DevVamsiWidgetState extends State<DevVamsiWidget> {
       height: 400.0,
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).secondaryBackground,
-        borderRadius: BorderRadius.only(
+        borderRadius: const BorderRadius.only(
           bottomLeft: Radius.circular(0.0),
           bottomRight: Radius.circular(0.0),
           topLeft: Radius.circular(16.0),
@@ -58,19 +55,19 @@ class _DevVamsiWidgetState extends State<DevVamsiWidget> {
         ),
       ),
       child: Padding(
-        padding: EdgeInsetsDirectional.fromSTEB(4.0, 4.0, 4.0, 4.0),
+        padding: const EdgeInsetsDirectional.fromSTEB(4.0, 4.0, 4.0, 4.0),
         child: Column(
           mainAxisSize: MainAxisSize.max,
           children: [
             Expanded(
               child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(20.0, 8.0, 20.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(20.0, 8.0, 20.0, 0.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Divider(
+                    const Divider(
                       thickness: 3.0,
                       indent: 135.0,
                       endIndent: 135.0,
@@ -93,13 +90,13 @@ class _DevVamsiWidgetState extends State<DevVamsiWidget> {
                         ),
                       ],
                     ),
-                    Divider(
+                    const Divider(
                       thickness: 1.0,
                       color: Color(0xFFCCCCCC),
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 10.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 10.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -107,20 +104,20 @@ class _DevVamsiWidgetState extends State<DevVamsiWidget> {
                           Container(
                             width: 100.0,
                             height: 100.0,
-                            decoration: BoxDecoration(
+                            decoration: const BoxDecoration(
                               color: Color(0xFFDBE2E7),
                               shape: BoxShape.circle,
                             ),
                             child: Stack(
                               children: [
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       4.0, 4.0, 4.0, 4.0),
                                   child: Container(
                                     width: 120.0,
                                     height: 120.0,
                                     clipBehavior: Clip.antiAlias,
-                                    decoration: BoxDecoration(
+                                    decoration: const BoxDecoration(
                                       shape: BoxShape.circle,
                                     ),
                                     child: Image.asset(
@@ -164,13 +161,13 @@ class _DevVamsiWidgetState extends State<DevVamsiWidget> {
                         ),
                       ],
                     ),
-                    Divider(
+                    const Divider(
                       thickness: 1.0,
                       color: Color(0xFFCCCCCC),
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 15.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 15.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -198,15 +195,15 @@ class _DevVamsiWidgetState extends State<DevVamsiWidget> {
                                 'https://www.linkedin.com/in/sree-vamsi-9599a71b3');
                           },
                           text: 'Linkedin',
-                          icon: FaIcon(
+                          icon: const FaIcon(
                             FontAwesomeIcons.linkedin,
                           ),
                           options: FFButtonOptions(
                             width: 150.0,
                             height: 50.0,
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
-                            iconPadding: EdgeInsetsDirectional.fromSTEB(
+                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
                             color: FlutterFlowTheme.of(context).primary,
                             textStyle: FlutterFlowTheme.of(context)
@@ -217,7 +214,7 @@ class _DevVamsiWidgetState extends State<DevVamsiWidget> {
                                   fontSize: 16.0,
                                   fontWeight: FontWeight.normal,
                                 ),
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                               color: Colors.transparent,
                               width: 1.0,
                             ),
@@ -229,15 +226,15 @@ class _DevVamsiWidgetState extends State<DevVamsiWidget> {
                                 'https://instagram.com/v_a_m_s_i___s_r_i?igshid=MTIyMzRjYmRlZg==');
                           },
                           text: 'Instagram',
-                          icon: FaIcon(
+                          icon: const FaIcon(
                             FontAwesomeIcons.instagram,
                           ),
                           options: FFButtonOptions(
                             width: 150.0,
                             height: 50.0,
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
-                            iconPadding: EdgeInsetsDirectional.fromSTEB(
+                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
                             color: FlutterFlowTheme.of(context).primary,
                             textStyle: FlutterFlowTheme.of(context)
@@ -248,7 +245,7 @@ class _DevVamsiWidgetState extends State<DevVamsiWidget> {
                                   fontSize: 16.0,
                                   fontWeight: FontWeight.normal,
                                 ),
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                               color: Colors.transparent,
                               width: 1.0,
                             ),

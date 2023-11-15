@@ -2,18 +2,16 @@ import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'facultypage_model.dart';
 export 'facultypage_model.dart';
 
 class FacultypageWidget extends StatefulWidget {
-  const FacultypageWidget({Key? key}) : super(key: key);
+  const FacultypageWidget({super.key});
 
   @override
   _FacultypageWidgetState createState() => _FacultypageWidgetState();
@@ -80,7 +78,7 @@ class _FacultypageWidgetState extends State<FacultypageWidget> {
                 fontWeight: FontWeight.bold,
               ),
         ),
-        actions: [],
+        actions: const [],
         centerTitle: false,
         elevation: 0.0,
       ),
@@ -91,7 +89,7 @@ class _FacultypageWidgetState extends State<FacultypageWidget> {
             mainAxisSize: MainAxisSize.max,
             children: [
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16.0, 10.0, 16.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 10.0, 16.0, 0.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   children: [
@@ -103,7 +101,7 @@ class _FacultypageWidgetState extends State<FacultypageWidget> {
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
                 child: StreamBuilder<List<FacultyRecord>>(
                   stream: _model.faculty(
                     requestFn: () => queryFacultyRecord(
@@ -128,7 +126,7 @@ class _FacultypageWidgetState extends State<FacultypageWidget> {
                     List<FacultyRecord> listViewFacultyRecordList =
                         snapshot.data!;
                     return ListView.separated(
-                      padding: EdgeInsets.fromLTRB(
+                      padding: const EdgeInsets.fromLTRB(
                         0,
                         0,
                         0,
@@ -138,12 +136,12 @@ class _FacultypageWidgetState extends State<FacultypageWidget> {
                       shrinkWrap: true,
                       scrollDirection: Axis.vertical,
                       itemCount: listViewFacultyRecordList.length,
-                      separatorBuilder: (_, __) => SizedBox(height: 5.0),
+                      separatorBuilder: (_, __) => const SizedBox(height: 5.0),
                       itemBuilder: (context, listViewIndex) {
                         final listViewFacultyRecord =
                             listViewFacultyRecordList[listViewIndex];
                         return Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 8.0),
                           child: InkWell(
                             splashColor: Colors.transparent,
@@ -169,7 +167,7 @@ class _FacultypageWidgetState extends State<FacultypageWidget> {
                                 borderRadius: BorderRadius.circular(12.0),
                               ),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     8.0, 8.0, 8.0, 8.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -178,9 +176,9 @@ class _FacultypageWidgetState extends State<FacultypageWidget> {
                                       borderRadius: BorderRadius.circular(6.0),
                                       child: CachedNetworkImage(
                                         fadeInDuration:
-                                            Duration(milliseconds: 0),
+                                            const Duration(milliseconds: 0),
                                         fadeOutDuration:
-                                            Duration(milliseconds: 0),
+                                            const Duration(milliseconds: 0),
                                         imageUrl: listViewFacultyRecord.image,
                                         width: 80.0,
                                         height: 80.0,
@@ -189,7 +187,7 @@ class _FacultypageWidgetState extends State<FacultypageWidget> {
                                     ),
                                     Expanded(
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             10.0, 0.0, 0.0, 0.0),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
@@ -236,7 +234,7 @@ class _FacultypageWidgetState extends State<FacultypageWidget> {
                                         ),
                                       ),
                                     ),
-                                    Column(
+                                    const Column(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
                                           MainAxisAlignment.spaceBetween,
