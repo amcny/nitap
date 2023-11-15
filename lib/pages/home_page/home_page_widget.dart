@@ -244,20 +244,26 @@ class _HomePageWidgetState extends State<HomePageWidget>
                     alignment: AlignmentDirectional(-1.00, 0.00),
                     child: Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(20.0, 15.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(20.0, 30.0, 0.0, 0.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           Text(
                             'Today\'s Class',
-                            style: FlutterFlowTheme.of(context).titleSmall,
+                            style: FlutterFlowTheme.of(context)
+                                .titleSmall
+                                .override(
+                                  fontFamily: 'Poppins',
+                                  fontSize: 16.0,
+                                  fontWeight: FontWeight.normal,
+                                ),
                           ),
                         ],
                       ),
                     ),
                   ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 5.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 5.0),
                   child: StreamBuilder<List<TimetableRecord>>(
                     stream: queryTimetableRecord(
                       queryBuilder: (timetableRecord) => timetableRecord
@@ -311,8 +317,8 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                       List.generate(data.length, (dataIndex) {
                                     final dataItem = data[dataIndex];
                                     return Container(
-                                      width: 290.0,
-                                      height: 170.0,
+                                      width: 295.0,
+                                      height: 175.0,
                                       decoration: BoxDecoration(
                                         gradient: LinearGradient(
                                           colors: [
