@@ -108,127 +108,123 @@ class _HomePageWidgetState extends State<HomePageWidget>
         return Scaffold(
           key: scaffoldKey,
           backgroundColor: FlutterFlowTheme.of(context).appbar,
-          appBar: PreferredSize(
-            preferredSize: const Size.fromHeight(100.0),
-            child: AppBar(
-              backgroundColor: FlutterFlowTheme.of(context).primary,
-              automaticallyImplyLeading: false,
-              actions: const [],
-              flexibleSpace: FlexibleSpaceBar(
-                title: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(15.0, 0.0, 15.0, 0.0),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Flexible(
-                            child: Align(
-                              alignment: const AlignmentDirectional(-1.00, 0.00),
-                              child: Column(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  AutoSizeText(
-                                    'Welcome Back',
-                                    style: FlutterFlowTheme.of(context)
-                                        .titleMedium
-                                        .override(
-                                          fontFamily: 'Poppins',
-                                          color: Colors.white,
-                                          fontSize: 18.0,
-                                          fontWeight: FontWeight.normal,
-                                        ),
-                                  ),
-                                  Row(
-                                    mainAxisSize: MainAxisSize.max,
-                                    children: [
-                                      AutoSizeText(
-                                        currentUserEmail.maybeHandleOverflow(
-                                            maxChars: 6),
-                                        style: FlutterFlowTheme.of(context)
-                                            .headlineSmall
-                                            .override(
-                                              fontFamily: 'Poppins',
-                                              color: Colors.white,
-                                              fontSize: 21.0,
-                                              fontWeight: FontWeight.w600,
-                                            ),
+          appBar: AppBar(
+            backgroundColor: FlutterFlowTheme.of(context).primary,
+            automaticallyImplyLeading: false,
+            actions: const [],
+            flexibleSpace: FlexibleSpaceBar(
+              title: Column(
+                mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding:
+                        const EdgeInsetsDirectional.fromSTEB(15.0, 0.0, 15.0, 0.0),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Flexible(
+                          child: Align(
+                            alignment: const AlignmentDirectional(-1.00, 0.00),
+                            child: Column(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                AutoSizeText(
+                                  'Welcome Back',
+                                  style: FlutterFlowTheme.of(context)
+                                      .titleMedium
+                                      .override(
+                                        fontFamily: 'Poppins',
+                                        color: Colors.white,
+                                        fontSize: 18.0,
+                                        fontWeight: FontWeight.normal,
                                       ),
-                                      AutoSizeText(
-                                        '! 🤟',
-                                        style: FlutterFlowTheme.of(context)
-                                            .headlineSmall
-                                            .override(
-                                              fontFamily: 'Poppins',
-                                              color: Colors.white,
-                                              fontSize: 21.0,
-                                              fontWeight: FontWeight.w600,
-                                            ),
-                                      ),
-                                    ],
-                                  ),
-                                ].divide(const SizedBox(height: 5.0)),
+                                ),
+                                Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    AutoSizeText(
+                                      currentUserEmail.maybeHandleOverflow(
+                                          maxChars: 6),
+                                      style: FlutterFlowTheme.of(context)
+                                          .headlineSmall
+                                          .override(
+                                            fontFamily: 'Poppins',
+                                            color: Colors.white,
+                                            fontSize: 21.0,
+                                            fontWeight: FontWeight.w600,
+                                          ),
+                                    ),
+                                    AutoSizeText(
+                                      '! 🤟',
+                                      style: FlutterFlowTheme.of(context)
+                                          .headlineSmall
+                                          .override(
+                                            fontFamily: 'Poppins',
+                                            color: Colors.white,
+                                            fontSize: 21.0,
+                                            fontWeight: FontWeight.w600,
+                                          ),
+                                    ),
+                                  ],
+                                ),
+                              ].divide(const SizedBox(height: 5.0)),
+                            ),
+                          ),
+                        ),
+                        Builder(
+                          builder: (context) => InkWell(
+                            splashColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            onTap: () async {
+                              await showAlignedDialog(
+                                context: context,
+                                isGlobal: false,
+                                avoidOverflow: false,
+                                targetAnchor: const AlignmentDirectional(-4.3, 2.5)
+                                    .resolve(Directionality.of(context)),
+                                followerAnchor: const AlignmentDirectional(0.0, 0.0)
+                                    .resolve(Directionality.of(context)),
+                                builder: (dialogContext) {
+                                  return const Material(
+                                    color: Colors.transparent,
+                                    child: WebViewAware(
+                                        child: ProfilepopupWidget()),
+                                  );
+                                },
+                              ).then((value) => setState(() {}));
+                            },
+                            child: Container(
+                              width: 50.0,
+                              height: 50.0,
+                              decoration: const BoxDecoration(
+                                color: Color(0x6DF9F9F9),
+                                shape: BoxShape.circle,
+                              ),
+                              child: Icon(
+                                Icons.account_circle_rounded,
+                                color: FlutterFlowTheme.of(context).primary,
+                                size: 35.0,
                               ),
                             ),
                           ),
-                          Builder(
-                            builder: (context) => InkWell(
-                              splashColor: Colors.transparent,
-                              focusColor: Colors.transparent,
-                              hoverColor: Colors.transparent,
-                              highlightColor: Colors.transparent,
-                              onTap: () async {
-                                await showAlignedDialog(
-                                  context: context,
-                                  isGlobal: false,
-                                  avoidOverflow: false,
-                                  targetAnchor: const AlignmentDirectional(-4.3, 2.5)
-                                      .resolve(Directionality.of(context)),
-                                  followerAnchor: const AlignmentDirectional(0.0, 0.0)
-                                      .resolve(Directionality.of(context)),
-                                  builder: (dialogContext) {
-                                    return const Material(
-                                      color: Colors.transparent,
-                                      child: WebViewAware(
-                                          child: ProfilepopupWidget()),
-                                    );
-                                  },
-                                ).then((value) => setState(() {}));
-                              },
-                              child: Container(
-                                width: 50.0,
-                                height: 50.0,
-                                decoration: const BoxDecoration(
-                                  color: Color(0x6DF9F9F9),
-                                  shape: BoxShape.circle,
-                                ),
-                                child: Icon(
-                                  Icons.account_circle_rounded,
-                                  color: FlutterFlowTheme.of(context).primary,
-                                  size: 35.0,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
-                  ],
-                ),
-                centerTitle: true,
-                expandedTitleScale: 1.0,
-                titlePadding:
-                    const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
+                  ),
+                ],
               ),
-              elevation: 0.5,
+              centerTitle: true,
+              expandedTitleScale: 1.0,
+              titlePadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
             ),
+            elevation: 0.0,
           ),
           body: SingleChildScrollView(
             primary: false,
@@ -242,7 +238,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                     alignment: const AlignmentDirectional(-1.00, 0.00),
                     child: Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(20.0, 30.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(20.0, 25.0, 0.0, 0.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.min,
                         children: [
@@ -309,8 +305,21 @@ class _HomePageWidgetState extends State<HomePageWidget>
                               builder: (context) {
                                 final data =
                                     rowTimetableRecord?.data.toList() ?? [];
+                                if (data.isEmpty) {
+                                  return ClipRRect(
+                                    borderRadius: BorderRadius.circular(12.0),
+                                    child: Image.asset(
+                                      'https://pbs.twimg.com/media/C5cFpHgWgAIIbeu.jpg',
+                                      width: MediaQuery.sizeOf(context).width *
+                                          0.93,
+                                      height: 175.0,
+                                      fit: BoxFit.fill,
+                                    ),
+                                  );
+                                }
                                 return Row(
                                   mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment: MainAxisAlignment.start,
                                   children:
                                       List.generate(data.length, (dataIndex) {
                                     final dataItem = data[dataIndex];
