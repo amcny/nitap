@@ -116,7 +116,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
               title: Column(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   Row(
                     mainAxisSize: MainAxisSize.max,
@@ -216,7 +216,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
               ),
               actions: const [],
               centerTitle: false,
-              elevation: 0.0,
+              elevation: 0.5,
             ),
           ),
           body: SingleChildScrollView(
@@ -783,9 +783,10 @@ class _HomePageWidgetState extends State<HomePageWidget>
                       color: FlutterFlowTheme.of(context).secondaryBackground,
                       boxShadow: const [
                         BoxShadow(
-                          blurRadius: 4.0,
-                          color: Color(0x33000000),
+                          blurRadius: 5.0,
+                          color: Color(0x261A1F24),
                           offset: Offset(0.0, 2.0),
+                          spreadRadius: 1.0,
                         )
                       ],
                       borderRadius: BorderRadius.circular(16.0),
