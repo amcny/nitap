@@ -109,7 +109,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
           key: scaffoldKey,
           backgroundColor: FlutterFlowTheme.of(context).appbar,
           appBar: PreferredSize(
-            preferredSize: const Size.fromHeight(80.0),
+            preferredSize: const Size.fromHeight(90.0),
             child: AppBar(
               backgroundColor: FlutterFlowTheme.of(context).primary,
               automaticallyImplyLeading: false,
@@ -216,6 +216,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
               ),
               actions: const [],
               centerTitle: false,
+              toolbarHeight: 90.0,
               elevation: 0.5,
             ),
           ),
@@ -224,33 +225,29 @@ class _HomePageWidgetState extends State<HomePageWidget>
             child: Column(
               mainAxisSize: MainAxisSize.max,
               children: [
-                if (!((dateTimeFormat('EEEE', getCurrentTimestamp) ==
-                        'Saturday') ||
-                    (dateTimeFormat('EEEE', getCurrentTimestamp) == 'Sunday')))
-                  Align(
-                    alignment: const AlignmentDirectional(-1.00, 0.00),
-                    child: Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(20.0, 25.0, 0.0, 0.0),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Text(
-                            'Today\'s Class',
-                            style: FlutterFlowTheme.of(context)
-                                .titleSmall
-                                .override(
-                                  fontFamily: 'Poppins',
-                                  fontSize: 16.0,
-                                  fontWeight: FontWeight.normal,
-                                ),
-                          ),
-                        ],
-                      ),
+                Align(
+                  alignment: const AlignmentDirectional(-1.00, 0.00),
+                  child: Padding(
+                    padding:
+                        const EdgeInsetsDirectional.fromSTEB(20.0, 25.0, 0.0, 0.0),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Text(
+                          'Today\'s Class',
+                          style:
+                              FlutterFlowTheme.of(context).titleSmall.override(
+                                    fontFamily: 'Poppins',
+                                    fontSize: 16.0,
+                                    fontWeight: FontWeight.normal,
+                                  ),
+                        ),
+                      ],
                     ),
                   ),
+                ),
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 5.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 5.0),
                   child: StreamBuilder<List<TimetableRecord>>(
                     stream: queryTimetableRecord(
                       queryBuilder: (timetableRecord) => timetableRecord
@@ -281,10 +278,6 @@ class _HomePageWidgetState extends State<HomePageWidget>
                       }
                       List<TimetableRecord> rowTimetableRecordList =
                           snapshot.data!;
-                      // Return an empty Container when the item does not exist.
-                      if (snapshot.data!.isEmpty) {
-                        return Container();
-                      }
                       final rowTimetableRecord =
                           rowTimetableRecordList.isNotEmpty
                               ? rowTimetableRecordList.first
@@ -305,7 +298,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                       'https://pbs.twimg.com/media/C5cFpHgWgAIIbeu.jpg',
                                       width: MediaQuery.sizeOf(context).width *
                                           0.93,
-                                      height: 175.0,
+                                      height: 170.0,
                                       fit: BoxFit.fill,
                                     ),
                                   );
@@ -317,7 +310,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                       List.generate(data.length, (dataIndex) {
                                     final dataItem = data[dataIndex];
                                     return Container(
-                                      width: 295.0,
+                                      width: 315.0,
                                       height: 175.0,
                                       decoration: BoxDecoration(
                                         gradient: LinearGradient(
@@ -387,7 +380,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                         1.0,
                                                 height: 40.0,
                                                 decoration: const BoxDecoration(
-                                                  color: Color(0x6DF9F9F9),
+                                                  color: Color(0x50F9F9F9),
                                                   borderRadius:
                                                       BorderRadius.only(
                                                     bottomLeft:
@@ -565,7 +558,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                     },
                                     child: Material(
                                       color: Colors.transparent,
-                                      elevation: 2.0,
+                                      elevation: 1.5,
                                       shape: RoundedRectangleBorder(
                                         borderRadius:
                                             BorderRadius.circular(18.0),
@@ -742,15 +735,6 @@ class _HomePageWidgetState extends State<HomePageWidget>
                               animationsMap['rowOnPageLoadAnimation']!);
                         },
                       ),
-                    ),
-                  ),
-                if (getRemoteConfigBool('ad'))
-                  const Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(5.0, 5.0, 5.0, 5.0),
-                    child: FlutterFlowAdBanner(
-                      height: 60.0,
-                      showsTestAd: false,
-                      androidAdUnitID: 'ca-app-pub-3991707481593664/3272729973',
                     ),
                   ),
                 Align(
@@ -1251,6 +1235,15 @@ class _HomePageWidgetState extends State<HomePageWidget>
                     ),
                   ),
                 ),
+                if (getRemoteConfigBool('ad'))
+                  const Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(5.0, 5.0, 5.0, 5.0),
+                    child: FlutterFlowAdBanner(
+                      height: 60.0,
+                      showsTestAd: false,
+                      androidAdUnitID: 'ca-app-pub-3991707481593664/3272729973',
+                    ),
+                  ),
                 Align(
                   alignment: const AlignmentDirectional(-1.00, 0.00),
                   child: Padding(

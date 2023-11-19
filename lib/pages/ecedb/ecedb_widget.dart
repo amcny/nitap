@@ -1,8 +1,8 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_web_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'ecedb_model.dart';
 export 'ecedb_model.dart';
@@ -70,13 +70,51 @@ class _EcedbWidgetState extends State<EcedbWidget> {
         ),
         body: SafeArea(
           top: true,
-          child: FlutterFlowWebView(
-            content:
-                'https://drive.google.com/drive/folders/1vWl9vsvlkJlZnD4CI011gNaTU0gH0pOG',
-            bypass: true,
-            height: MediaQuery.sizeOf(context).height * 1.0,
-            verticalScroll: false,
-            horizontalScroll: false,
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Row(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Expanded(
+                    child: RichText(
+                      textScaleFactor: MediaQuery.of(context).textScaleFactor,
+                      text: TextSpan(
+                        children: [
+                          const TextSpan(
+                            text:
+                                'We are diligently working to implement the \nECE DATABASE feature in the app. \nWe appreciate your patience and \nunderstanding as we work towards\ndelivering this functionality to you.',
+                            style: TextStyle(),
+                          ),
+                          const TextSpan(
+                            text: '\nPlease stay tuned for further updates.',
+                            style: TextStyle(
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                          const TextSpan(
+                            text: '\n\nActively Maintained by',
+                            style: TextStyle(),
+                          ),
+                          TextSpan(
+                            text: ' \nChaitanya Pullagura',
+                            style: GoogleFonts.getFont(
+                              'Permanent Marker',
+                              fontWeight: FontWeight.normal,
+                              fontSize: 17.0,
+                            ),
+                          )
+                        ],
+                        style: FlutterFlowTheme.of(context).bodyMedium,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                ],
+              ),
+            ],
           ),
         ),
       ),
