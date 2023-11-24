@@ -154,6 +154,7 @@ class _AlumniWidgetState extends State<AlumniWidget>
                             16.0, 8.0, 16.0, 8.0),
                         child: Container(
                           width: double.infinity,
+                          height: 100.0,
                           decoration: BoxDecoration(
                             color: FlutterFlowTheme.of(context)
                                 .secondaryBackground,
@@ -181,14 +182,15 @@ class _AlumniWidgetState extends State<AlumniWidget>
                                       usersItem,
                                       r'''$.image''',
                                     ),
-                                    width: 70.0,
-                                    height: 70.0,
+                                    width: 75.0,
+                                    height: 75.0,
                                     fit: BoxFit.cover,
                                   ),
                                 ),
                                 Expanded(
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment: MainAxisAlignment.center,
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [

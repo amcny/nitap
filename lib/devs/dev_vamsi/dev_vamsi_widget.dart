@@ -187,7 +187,7 @@ class _DevVamsiWidgetState extends State<DevVamsiWidget> {
                     ),
                     Row(
                       mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         FFButtonWidget(
                           onPressed: () async {
@@ -251,7 +251,7 @@ class _DevVamsiWidgetState extends State<DevVamsiWidget> {
                             ),
                           ),
                         ),
-                      ],
+                      ].divide(const SizedBox(width: 5.0)),
                     ),
                   ],
                 ),

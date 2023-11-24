@@ -1,8 +1,8 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/custom_code/widgets/index.dart' as custom_widgets;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'ecedb_model.dart';
 export 'ecedb_model.dart';
@@ -68,53 +68,17 @@ class _EcedbWidgetState extends State<EcedbWidget> {
           centerTitle: false,
           elevation: 0.0,
         ),
-        body: SafeArea(
+        body: const SafeArea(
           top: true,
-          child: Column(
-            mainAxisSize: MainAxisSize.max,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Row(
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Expanded(
-                    child: RichText(
-                      textScaleFactor: MediaQuery.of(context).textScaleFactor,
-                      text: TextSpan(
-                        children: [
-                          const TextSpan(
-                            text:
-                                'We are diligently working to implement the \nECE DATABASE feature in the app. \nWe appreciate your patience and \nunderstanding as we work towards\ndelivering this functionality to you.',
-                            style: TextStyle(),
-                          ),
-                          const TextSpan(
-                            text: '\nPlease stay tuned for further updates.',
-                            style: TextStyle(
-                              fontWeight: FontWeight.w600,
-                            ),
-                          ),
-                          const TextSpan(
-                            text: '\n\nActively Maintained by',
-                            style: TextStyle(),
-                          ),
-                          TextSpan(
-                            text: ' \nChaitanya Pullagura',
-                            style: GoogleFonts.getFont(
-                              'Permanent Marker',
-                              fontWeight: FontWeight.normal,
-                              fontSize: 17.0,
-                            ),
-                          )
-                        ],
-                        style: FlutterFlowTheme.of(context).bodyMedium,
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
-                  ),
-                ],
-              ),
-            ],
+          child: SizedBox(
+            width: double.infinity,
+            height: double.infinity,
+            child: custom_widgets.WebBrowser(
+              width: double.infinity,
+              height: double.infinity,
+              initialUrl:
+                  'https://drive.google.com/drive/folders/1vWl9vsvlkJlZnD4CI011gNaTU0gH0pOG?usp=drive_link',
+            ),
           ),
         ),
       ),

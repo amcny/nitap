@@ -541,6 +541,8 @@ class _TimetableWidgetState extends State<TimetableWidget>
                               child: FlutterFlowAdBanner(
                                 height: 60.0,
                                 showsTestAd: false,
+                                iOSAdUnitID:
+                                    'ca-app-pub-3991707481593664/6921520622',
                                 androidAdUnitID:
                                     'ca-app-pub-3991707481593664/3272729973',
                               ),
