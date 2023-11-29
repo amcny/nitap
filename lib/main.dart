@@ -12,7 +12,6 @@ import 'flutter_flow/flutter_flow_util.dart';
 import 'flutter_flow/internationalization.dart';
 import 'package:flutter/foundation.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'index.dart';
 
 void main() async {
@@ -169,33 +168,49 @@ class _NavBarPageState extends State<NavBarPage> {
         type: BottomNavigationBarType.fixed,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: FaIcon(
-              FontAwesomeIcons.home,
-              size: 24.0,
+            icon: Icon(
+              FFIcons.khomeOutline,
+              size: 30.0,
+            ),
+            activeIcon: Icon(
+              FFIcons.khomeFilled,
+              size: 30.0,
             ),
             label: 'Home',
             tooltip: '',
           ),
           BottomNavigationBarItem(
-            icon: FaIcon(
-              FontAwesomeIcons.calendarCheck,
-              size: 24.0,
+            icon: Icon(
+              FFIcons.kttOutline,
+              size: 30.0,
+            ),
+            activeIcon: Icon(
+              FFIcons.kttFilled,
+              size: 30.0,
             ),
             label: 'Timetable',
             tooltip: '',
           ),
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.menu_book_rounded,
-              size: 25.0,
+              FFIcons.kdbOutline,
+              size: 28.0,
+            ),
+            activeIcon: Icon(
+              FFIcons.kdbFilled,
+              size: 28.0,
             ),
             label: 'ECE DB',
             tooltip: '',
           ),
           BottomNavigationBarItem(
-            icon: FaIcon(
-              FontAwesomeIcons.userCog,
-              size: 20.0,
+            icon: Icon(
+              FFIcons.kprofileOutline,
+              size: 30.0,
+            ),
+            activeIcon: Icon(
+              FFIcons.kprofileFilled,
+              size: 30.0,
             ),
             label: 'Profile',
             tooltip: '',

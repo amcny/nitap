@@ -102,7 +102,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget>
                   'assets/images/onboarding.svg',
                   width: 350.0,
                   height: MediaQuery.sizeOf(context).height * 0.5,
-                  fit: BoxFit.fitWidth,
+                  fit: BoxFit.contain,
                 ),
               ),
             ],

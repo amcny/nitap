@@ -26,6 +26,7 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   aligned_dialog: 0.0.6
+  aligned_tooltip: 0.0.1
   auto_size_text: 3.0.0
   cached_network_image: 3.2.1
   cloud_firestore: 4.8.0
@@ -161,6 +162,10 @@ flutter:
     - assets/lottie_animations/
     - assets/rive_animations/
     - assets/pdfs/
+  fonts:
+    - family: Iconpack
+      fonts:
+        - asset: assets/fonts/iconpack.ttf
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

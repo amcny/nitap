@@ -29,3 +29,4 @@ export '/pages/eceh/eceh_widget.dart' show EcehWidget;
 export '/pages/ecea/ecea_widget.dart' show EceaWidget;
 export '/pages/foryouinfo/foryouinfo_widget.dart' show ForyouinfoWidget;
 export '/pages/alumni/alumni_widget.dart' show AlumniWidget;
+export '/test/test_widget.dart' show TestWidget;

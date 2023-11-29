@@ -87,240 +87,263 @@ class _ForyouinfoWidgetState extends State<ForyouinfoWidget> {
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
             body: SafeArea(
               top: true,
-              child: Column(
-                mainAxisSize: MainAxisSize.max,
-                children: [
-                  Expanded(
-                    child: SingleChildScrollView(
-                      child: Column(
-                        mainAxisSize: MainAxisSize.max,
-                        children: [
-                          SizedBox(
-                            height: 375.0,
-                            child: Stack(
+              child: SizedBox(
+                width: double.infinity,
+                height: double.infinity,
+                child: Stack(
+                  children: [
+                    Column(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Expanded(
+                          child: SingleChildScrollView(
+                            child: Column(
+                              mainAxisSize: MainAxisSize.max,
                               children: [
-                                InkWell(
-                                  splashColor: Colors.transparent,
-                                  focusColor: Colors.transparent,
-                                  hoverColor: Colors.transparent,
-                                  highlightColor: Colors.transparent,
-                                  onTap: () async {
-                                    await Navigator.push(
-                                      context,
-                                      PageTransition(
-                                        type: PageTransitionType.fade,
-                                        child: FlutterFlowExpandedImageView(
-                                          image: CachedNetworkImage(
+                                SizedBox(
+                                  height: 375.0,
+                                  child: Stack(
+                                    children: [
+                                      InkWell(
+                                        splashColor: Colors.transparent,
+                                        focusColor: Colors.transparent,
+                                        hoverColor: Colors.transparent,
+                                        highlightColor: Colors.transparent,
+                                        onTap: () async {
+                                          await Navigator.push(
+                                            context,
+                                            PageTransition(
+                                              type: PageTransitionType.fade,
+                                              child:
+                                                  FlutterFlowExpandedImageView(
+                                                image: CachedNetworkImage(
+                                                  fadeInDuration:
+                                                      const Duration(milliseconds: 0),
+                                                  fadeOutDuration:
+                                                      const Duration(milliseconds: 0),
+                                                  imageUrl:
+                                                      foryouinfoForyouRecord
+                                                          .image,
+                                                  fit: BoxFit.contain,
+                                                ),
+                                                allowRotation: false,
+                                                tag: foryouinfoForyouRecord
+                                                    .image,
+                                                useHeroAnimation: true,
+                                              ),
+                                            ),
+                                          );
+                                        },
+                                        child: Hero(
+                                          tag: foryouinfoForyouRecord.image,
+                                          transitionOnUserGestures: true,
+                                          child: CachedNetworkImage(
                                             fadeInDuration:
                                                 const Duration(milliseconds: 0),
                                             fadeOutDuration:
                                                 const Duration(milliseconds: 0),
                                             imageUrl:
                                                 foryouinfoForyouRecord.image,
-                                            fit: BoxFit.contain,
+                                            width: double.infinity,
+                                            height: 375.0,
+                                            fit: BoxFit.fill,
                                           ),
-                                          allowRotation: false,
-                                          tag: foryouinfoForyouRecord.image,
-                                          useHeroAnimation: true,
                                         ),
                                       ),
-                                    );
-                                  },
-                                  child: Hero(
-                                    tag: foryouinfoForyouRecord.image,
-                                    transitionOnUserGestures: true,
-                                    child: CachedNetworkImage(
-                                      fadeInDuration: const Duration(milliseconds: 0),
-                                      fadeOutDuration:
-                                          const Duration(milliseconds: 0),
-                                      imageUrl: foryouinfoForyouRecord.image,
-                                      width: double.infinity,
-                                      height: 375.0,
-                                      fit: BoxFit.fill,
-                                    ),
-                                  ),
-                                ),
-                                Column(
-                                  mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment: MainAxisAlignment.end,
-                                  children: [
-                                    Stack(
-                                      children: [
-                                        ClipRRect(
-                                          borderRadius:
-                                              BorderRadius.circular(0.0),
-                                          child: BackdropFilter(
-                                            filter: ImageFilter.blur(
-                                              sigmaX: 20.0,
-                                              sigmaY: 20.0,
-                                            ),
-                                            child: Container(
-                                              width: MediaQuery.sizeOf(context)
-                                                      .width *
-                                                  1.0,
-                                              height: 75.0,
-                                              decoration: const BoxDecoration(
-                                                color: Color(0x1A101010),
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                        Container(
-                                          width:
-                                              MediaQuery.sizeOf(context).width *
-                                                  1.0,
-                                          height: 75.0,
-                                          decoration: const BoxDecoration(
-                                            color: Color(0x06FFFFFF),
-                                          ),
-                                          child: Column(
-                                            mainAxisSize: MainAxisSize.max,
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.center,
+                                      Column(
+                                        mainAxisSize: MainAxisSize.max,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.end,
+                                        children: [
+                                          Stack(
                                             children: [
-                                              Padding(
-                                                padding: const EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        0.0, 5.0, 0.0, 5.0),
-                                                child: Container(
-                                                  width:
-                                                      MediaQuery.sizeOf(context)
-                                                              .width *
-                                                          0.9,
-                                                  decoration: const BoxDecoration(),
-                                                  child: Row(
-                                                    mainAxisSize:
-                                                        MainAxisSize.max,
-                                                    children: [
-                                                      Text(
-                                                        foryouinfoForyouRecord
-                                                            .title,
-                                                        style: FlutterFlowTheme
-                                                                .of(context)
-                                                            .headlineSmall
-                                                            .override(
-                                                              fontFamily:
-                                                                  'Poppins',
-                                                              color:
-                                                                  Colors.white,
-                                                              letterSpacing:
-                                                                  0.5,
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .bold,
-                                                            ),
-                                                      ),
-                                                    ],
+                                              ClipRRect(
+                                                borderRadius:
+                                                    BorderRadius.circular(0.0),
+                                                child: BackdropFilter(
+                                                  filter: ImageFilter.blur(
+                                                    sigmaX: 20.0,
+                                                    sigmaY: 20.0,
                                                   ),
+                                                  child: Container(
+                                                    width: MediaQuery.sizeOf(
+                                                                context)
+                                                            .width *
+                                                        1.0,
+                                                    height: 75.0,
+                                                    decoration: const BoxDecoration(
+                                                      color: Color(0x1A101010),
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                              Container(
+                                                width:
+                                                    MediaQuery.sizeOf(context)
+                                                            .width *
+                                                        1.0,
+                                                height: 75.0,
+                                                decoration: const BoxDecoration(
+                                                  color: Color(0x06FFFFFF),
+                                                ),
+                                                child: Column(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.center,
+                                                  children: [
+                                                    Padding(
+                                                      padding:
+                                                          const EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  0.0,
+                                                                  5.0,
+                                                                  0.0,
+                                                                  5.0),
+                                                      child: Container(
+                                                        width:
+                                                            MediaQuery.sizeOf(
+                                                                        context)
+                                                                    .width *
+                                                                0.9,
+                                                        decoration:
+                                                            const BoxDecoration(),
+                                                        child: Row(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          children: [
+                                                            Text(
+                                                              foryouinfoForyouRecord
+                                                                  .title,
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .headlineSmall
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Poppins',
+                                                                    color: Colors
+                                                                        .white,
+                                                                    letterSpacing:
+                                                                        0.5,
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .bold,
+                                                                  ),
+                                                            ),
+                                                          ],
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ],
                                                 ),
                                               ),
                                             ],
                                           ),
-                                        ),
-                                      ],
-                                    ),
-                                  ],
-                                ),
-                                Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      10.0, 10.0, 0.0, 0.0),
-                                  child: Row(
-                                    mainAxisSize: MainAxisSize.min,
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      FlutterFlowIconButton(
-                                        borderColor: Colors.transparent,
-                                        borderRadius: 20.0,
-                                        borderWidth: 1.0,
-                                        buttonSize: 40.0,
-                                        fillColor: const Color(0x72757575),
-                                        icon: const Icon(
-                                          Icons.chevron_left_rounded,
-                                          color: Colors.white,
-                                          size: 24.0,
-                                        ),
-                                        onPressed: () async {
-                                          context.safePop();
-                                        },
+                                        ],
                                       ),
                                     ],
                                   ),
                                 ),
-                              ],
+                                Align(
+                                  alignment: const AlignmentDirectional(-1.00, 0.00),
+                                  child: Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        20.0, 20.0, 20.0, 0.0),
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        SelectionArea(
+                                            child: Text(
+                                          foryouinfoForyouRecord.description,
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Poppins',
+                                                fontSize: 15.0,
+                                                fontWeight: FontWeight.w300,
+                                              ),
+                                        )),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ].addToEnd(const SizedBox(height: 20.0)),
                             ),
                           ),
-                          Align(
-                            alignment: const AlignmentDirectional(-1.00, 0.00),
+                        ),
+                        Container(
+                          decoration: BoxDecoration(
+                            color:
+                                FlutterFlowTheme.of(context).primaryBackground,
+                          ),
+                          child: Visibility(
+                            visible: foryouinfoForyouRecord.url != '',
                             child: Padding(
                               padding: const EdgeInsetsDirectional.fromSTEB(
-                                  20.0, 20.0, 20.0, 0.0),
-                              child: Column(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  SelectionArea(
-                                      child: Text(
-                                    foryouinfoForyouRecord.description,
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily: 'Poppins',
-                                          fontSize: 15.0,
-                                          fontWeight: FontWeight.w300,
-                                        ),
-                                  )),
-                                ],
+                                  20.0, 10.0, 20.0, 10.0),
+                              child: FFButtonWidget(
+                                onPressed: () async {
+                                  await launchURL(foryouinfoForyouRecord.url);
+                                },
+                                text: 'Open Link',
+                                icon: const Icon(
+                                  Icons.open_in_new_rounded,
+                                  size: 24.0,
+                                ),
+                                options: FFButtonOptions(
+                                  width: double.infinity,
+                                  height: 55.0,
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 0.0, 0.0),
+                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 0.0, 0.0),
+                                  color: FlutterFlowTheme.of(context).primary,
+                                  textStyle: FlutterFlowTheme.of(context)
+                                      .titleSmall
+                                      .override(
+                                        fontFamily: 'Poppins',
+                                        color: Colors.white,
+                                        fontSize: 16.0,
+                                      ),
+                                  borderSide: const BorderSide(
+                                    color: Colors.transparent,
+                                    width: 1.0,
+                                  ),
+                                  borderRadius: BorderRadius.circular(12.0),
+                                ),
                               ),
                             ),
                           ),
-                        ].addToEnd(const SizedBox(height: 20.0)),
-                      ),
-                    ),
-                  ),
-                  Container(
-                    decoration: BoxDecoration(
-                      color: FlutterFlowTheme.of(context).primaryBackground,
-                    ),
-                    child: Visibility(
-                      visible: foryouinfoForyouRecord.url != '',
-                      child: Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
-                            20.0, 10.0, 20.0, 10.0),
-                        child: FFButtonWidget(
-                          onPressed: () async {
-                            await launchURL(foryouinfoForyouRecord.url);
-                          },
-                          text: 'Open Link',
-                          icon: const Icon(
-                            Icons.open_in_new_rounded,
-                            size: 24.0,
-                          ),
-                          options: FFButtonOptions(
-                            width: double.infinity,
-                            height: 55.0,
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 0.0, 0.0),
-                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 0.0, 0.0),
-                            color: FlutterFlowTheme.of(context).primary,
-                            textStyle: FlutterFlowTheme.of(context)
-                                .titleSmall
-                                .override(
-                                  fontFamily: 'Poppins',
-                                  color: Colors.white,
-                                  fontSize: 16.0,
-                                ),
-                            borderSide: const BorderSide(
-                              color: Colors.transparent,
-                              width: 1.0,
-                            ),
-                            borderRadius: BorderRadius.circular(12.0),
-                          ),
                         ),
+                      ],
+                    ),
+                    Padding(
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(15.0, 15.0, 0.0, 0.0),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          FlutterFlowIconButton(
+                            borderColor: Colors.transparent,
+                            borderRadius: 45.0,
+                            borderWidth: 1.0,
+                            buttonSize: 45.0,
+                            fillColor: const Color(0x72757575),
+                            icon: const Icon(
+                              Icons.chevron_left_rounded,
+                              color: Colors.white,
+                              size: 30.0,
+                            ),
+                            onPressed: () async {
+                              context.safePop();
+                            },
+                          ),
+                        ],
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
           ),

@@ -15,7 +15,6 @@ import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
 import 'home_page_model.dart';
@@ -286,6 +285,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                         scrollDirection: Axis.horizontal,
                         child: Row(
                           mainAxisSize: MainAxisSize.min,
+                          mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             Builder(
                               builder: (context) {
@@ -295,7 +295,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                   return ClipRRect(
                                     borderRadius: BorderRadius.circular(12.0),
                                     child: Image.asset(
-                                      'https://pbs.twimg.com/media/C5cFpHgWgAIIbeu.jpg',
+                                      'https://scontent.fvga4-1.fna.fbcdn.net/v/t1.6435-9/83969372_2529286677328220_6280113188939759616_n.jpg?stp=cp0_dst-jpg_e15_p320x320_q65&_nc_cat=108&ccb=1-7&_nc_sid=3c63d6&_nc_ohc=EUXYaSgRHloAX_VOhBo&_nc_ht=scontent.fvga4-1.fna&oh=00_AfDKMatc66M3Z4TIUwN0H4ju4XmH56eclVDDyW0BemQkyQ&oe=658EE573',
                                       width: MediaQuery.sizeOf(context).width *
                                           0.93,
                                       height: 170.0,
@@ -899,35 +899,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                     hoverColor: Colors.transparent,
                                     highlightColor: Colors.transparent,
                                     onTap: () async {
-                                      ScaffoldMessenger.of(context)
-                                          .showSnackBar(
-                                        SnackBar(
-                                          content: Text(
-                                            'Feature Currently under Development',
-                                            style: GoogleFonts.getFont(
-                                              'Poppins',
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primaryText,
-                                            ),
-                                          ),
-                                          duration:
-                                              const Duration(milliseconds: 4000),
-                                          backgroundColor:
-                                              FlutterFlowTheme.of(context)
-                                                  .secondaryBackground,
-                                          action: SnackBarAction(
-                                            label: 'Dismiss',
-                                            textColor:
-                                                FlutterFlowTheme.of(context)
-                                                    .primaryText,
-                                            onPressed: () async {
-                                              ScaffoldMessenger.of(context)
-                                                  .hideCurrentSnackBar();
-                                            },
-                                          ),
-                                        ),
-                                      );
+                                      context.pushNamed('test');
                                     },
                                     child: Column(
                                       mainAxisSize: MainAxisSize.min,
@@ -1309,8 +1281,8 @@ class _HomePageWidgetState extends State<HomePageWidget>
                             context.pushNamed('alumni');
                           },
                           child: Container(
-                            width: 230.0,
-                            height: 120.0,
+                            width: 245.0,
+                            height: 130.0,
                             decoration: BoxDecoration(
                               gradient: LinearGradient(
                                 colors: [
@@ -1366,8 +1338,8 @@ class _HomePageWidgetState extends State<HomePageWidget>
                             context.pushNamed('ecea');
                           },
                           child: Container(
-                            width: 230.0,
-                            height: 120.0,
+                            width: 245.0,
+                            height: 130.0,
                             decoration: BoxDecoration(
                               gradient: LinearGradient(
                                 colors: [
@@ -1423,8 +1395,8 @@ class _HomePageWidgetState extends State<HomePageWidget>
                             context.pushNamed('eceh');
                           },
                           child: Container(
-                            width: 230.0,
-                            height: 120.0,
+                            width: 245.0,
+                            height: 130.0,
                             decoration: BoxDecoration(
                               image: DecorationImage(
                                 fit: BoxFit.contain,
