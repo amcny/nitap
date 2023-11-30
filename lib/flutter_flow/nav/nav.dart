@@ -83,6 +83,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             FFRoute(
               name: 'HomePage',
               path: 'homePage',
+              requireAuth: true,
               builder: (context, params) => params.isEmpty
                   ? const NavBarPage(initialPage: 'HomePage')
                   : const NavBarPage(
@@ -93,11 +94,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             FFRoute(
               name: 'AcademicCalendar',
               path: 'academicCalendar',
+              requireAuth: true,
               builder: (context, params) => const AcademicCalendarWidget(),
             ),
             FFRoute(
               name: 'ECEDB',
               path: 'ecedb',
+              requireAuth: true,
               builder: (context, params) => params.isEmpty
                   ? const NavBarPage(initialPage: 'ECEDB')
                   : const EcedbWidget(),
@@ -105,6 +108,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             FFRoute(
               name: 'ProfileSection',
               path: 'profileSection',
+              requireAuth: true,
               builder: (context, params) => params.isEmpty
                   ? const NavBarPage(initialPage: 'ProfileSection')
                   : const ProfileSectionWidget(),
@@ -112,16 +116,19 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             FFRoute(
               name: 'Appearance',
               path: 'appearance',
+              requireAuth: true,
               builder: (context, params) => const AppearanceWidget(),
             ),
             FFRoute(
               name: 'ManageIDCard',
               path: 'manageIDCard',
+              requireAuth: true,
               builder: (context, params) => const ManageIDCardWidget(),
             ),
             FFRoute(
               name: 'StudentPortal',
               path: 'studentPortal',
+              requireAuth: true,
               builder: (context, params) => const StudentPortalWidget(),
             ),
             FFRoute(
@@ -132,11 +139,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             FFRoute(
               name: 'Examschedule',
               path: 'examschedule',
+              requireAuth: true,
               builder: (context, params) => const ExamscheduleWidget(),
             ),
             FFRoute(
               name: 'facultyweb',
               path: 'facultyweb',
+              requireAuth: true,
               builder: (context, params) => FacultywebWidget(
                 pass: params.getParam(
                     'pass', ParamType.DocumentReference, false, ['faculty']),
@@ -145,26 +154,31 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             FFRoute(
               name: 'Attendancefeature',
               path: 'attendancefeature',
+              requireAuth: true,
               builder: (context, params) => const AttendancefeatureWidget(),
             ),
             FFRoute(
               name: 'minor1',
               path: 'minor1',
+              requireAuth: true,
               builder: (context, params) => const Minor1Widget(),
             ),
             FFRoute(
               name: 'minor2',
               path: 'minor2',
+              requireAuth: true,
               builder: (context, params) => const Minor2Widget(),
             ),
             FFRoute(
               name: 'midsem',
               path: 'midsem',
+              requireAuth: true,
               builder: (context, params) => const MidsemWidget(),
             ),
             FFRoute(
               name: 'endsem',
               path: 'endsem',
+              requireAuth: true,
               builder: (context, params) => const EndsemWidget(),
             ),
             FFRoute(
@@ -175,6 +189,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             FFRoute(
               name: 'Timetable',
               path: 'timetable',
+              requireAuth: true,
               builder: (context, params) => params.isEmpty
                   ? const NavBarPage(initialPage: 'Timetable')
                   : const TimetableWidget(),
@@ -182,11 +197,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             FFRoute(
               name: 'Choosesec',
               path: 'choosesec',
+              requireAuth: true,
               builder: (context, params) => const ChoosesecWidget(),
             ),
             FFRoute(
               name: 'ttpop',
               path: 'ttpop',
+              requireAuth: true,
               builder: (context, params) => const TtpopWidget(),
             ),
             FFRoute(
@@ -197,21 +214,25 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             FFRoute(
               name: 'Facultypage',
               path: 'facultypage',
+              requireAuth: true,
               builder: (context, params) => const FacultypageWidget(),
             ),
             FFRoute(
               name: 'eceh',
               path: 'eceh',
+              requireAuth: true,
               builder: (context, params) => const EcehWidget(),
             ),
             FFRoute(
               name: 'ecea',
               path: 'ecea',
+              requireAuth: true,
               builder: (context, params) => const EceaWidget(),
             ),
             FFRoute(
               name: 'foryouinfo',
               path: 'foryouinfo',
+              requireAuth: true,
               builder: (context, params) => ForyouinfoWidget(
                 pass: params.getParam(
                     'pass', ParamType.DocumentReference, false, ['foryou']),
@@ -220,11 +241,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             FFRoute(
               name: 'alumni',
               path: 'alumni',
+              requireAuth: true,
               builder: (context, params) => const AlumniWidget(),
             ),
             FFRoute(
               name: 'test',
               path: 'test',
+              requireAuth: true,
               builder: (context, params) => const TestWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
