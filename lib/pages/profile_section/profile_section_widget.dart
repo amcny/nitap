@@ -1,5 +1,4 @@
 import '/auth/firebase_auth/auth_util.dart';
-import '/devs/dev_vamsi/dev_vamsi_widget.dart';
 import '/devs/devcny/devcny_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -606,7 +605,7 @@ class _ProfileSectionWidgetState extends State<ProfileSectionWidget> {
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     GradientText(
-                      'Developers',
+                      'Developer',
                       style: FlutterFlowTheme.of(context).titleMedium.override(
                             fontFamily: 'Poppins',
                             fontSize: 17.0,
@@ -636,160 +635,79 @@ class _ProfileSectionWidgetState extends State<ProfileSectionWidget> {
                     color: FlutterFlowTheme.of(context).secondaryBackground,
                     borderRadius: BorderRadius.circular(12.0),
                   ),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      InkWell(
-                        splashColor: Colors.transparent,
-                        focusColor: Colors.transparent,
-                        hoverColor: Colors.transparent,
-                        highlightColor: Colors.transparent,
-                        onTap: () async {
-                          await showModalBottomSheet(
-                            isScrollControlled: true,
-                            backgroundColor: Colors.transparent,
-                            context: context,
-                            builder: (context) {
-                              return WebViewAware(
-                                  child: Padding(
-                                padding: MediaQuery.viewInsetsOf(context),
-                                child: const DevcnyWidget(),
-                              ));
-                            },
-                          ).then((value) => safeSetState(() {}));
+                  child: InkWell(
+                    splashColor: Colors.transparent,
+                    focusColor: Colors.transparent,
+                    hoverColor: Colors.transparent,
+                    highlightColor: Colors.transparent,
+                    onTap: () async {
+                      await showModalBottomSheet(
+                        isScrollControlled: true,
+                        backgroundColor: Colors.transparent,
+                        context: context,
+                        builder: (context) {
+                          return WebViewAware(
+                              child: Padding(
+                            padding: MediaQuery.viewInsetsOf(context),
+                            child: const DevcnyWidget(),
+                          ));
                         },
-                        child: Row(
-                          mainAxisSize: MainAxisSize.min,
+                      ).then((value) => safeSetState(() {}));
+                    },
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              12.0, 12.0, 12.0, 12.0),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(40.0),
+                            child: Image.asset(
+                              'assets/images/dev.jpeg',
+                              width: 50.0,
+                              height: 50.0,
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                        ),
+                        Column(
+                          mainAxisSize: MainAxisSize.max,
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  12.0, 12.0, 12.0, 12.0),
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.circular(40.0),
-                                child: Image.asset(
-                                  'assets/images/dev.jpeg',
-                                  width: 50.0,
-                                  height: 50.0,
-                                  fit: BoxFit.cover,
-                                ),
-                              ),
+                            Text(
+                              'Chaitanya ',
+                              style: FlutterFlowTheme.of(context).bodyMedium,
                             ),
-                            Column(
-                              mainAxisSize: MainAxisSize.max,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  'Chaitanya ',
-                                  style:
-                                      FlutterFlowTheme.of(context).bodyMedium,
-                                ),
-                                Text(
-                                  'Application Developer',
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodySmall
-                                      .override(
-                                        fontFamily: 'Poppins',
-                                        color: FlutterFlowTheme.of(context)
-                                            .secondaryText,
-                                        fontWeight: FontWeight.w300,
-                                      ),
-                                ),
-                              ],
-                            ),
-                            Expanded(
-                              child: Align(
-                                alignment: const AlignmentDirectional(1.00, 0.00),
-                                child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 10.0, 0.0),
-                                  child: Icon(
-                                    Icons.chevron_right_rounded,
+                            Text(
+                              'Application Developer',
+                              style: FlutterFlowTheme.of(context)
+                                  .bodySmall
+                                  .override(
+                                    fontFamily: 'Poppins',
                                     color: FlutterFlowTheme.of(context)
                                         .secondaryText,
-                                    size: 24.0,
+                                    fontWeight: FontWeight.w300,
                                   ),
-                                ),
-                              ),
                             ),
                           ],
                         ),
-                      ),
-                      InkWell(
-                        splashColor: Colors.transparent,
-                        focusColor: Colors.transparent,
-                        hoverColor: Colors.transparent,
-                        highlightColor: Colors.transparent,
-                        onTap: () async {
-                          await showModalBottomSheet(
-                            isScrollControlled: true,
-                            backgroundColor: Colors.transparent,
-                            context: context,
-                            builder: (context) {
-                              return WebViewAware(
-                                  child: Padding(
-                                padding: MediaQuery.viewInsetsOf(context),
-                                child: const DevVamsiWidget(),
-                              ));
-                            },
-                          ).then((value) => safeSetState(() {}));
-                        },
-                        child: Row(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            Padding(
+                        Expanded(
+                          child: Align(
+                            alignment: const AlignmentDirectional(1.00, 0.00),
+                            child: Padding(
                               padding: const EdgeInsetsDirectional.fromSTEB(
-                                  12.0, 12.0, 12.0, 12.0),
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.circular(40.0),
-                                child: Image.asset(
-                                  'assets/images/dev_vamsi.jpg',
-                                  width: 50.0,
-                                  height: 50.0,
-                                  fit: BoxFit.cover,
-                                ),
+                                  0.0, 0.0, 10.0, 0.0),
+                              child: Icon(
+                                Icons.chevron_right_rounded,
+                                color:
+                                    FlutterFlowTheme.of(context).secondaryText,
+                                size: 24.0,
                               ),
                             ),
-                            Column(
-                              mainAxisSize: MainAxisSize.max,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  'Sree Vamsi',
-                                  style:
-                                      FlutterFlowTheme.of(context).bodyMedium,
-                                ),
-                                Text(
-                                  'Backend Manager',
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodySmall
-                                      .override(
-                                        fontFamily: 'Poppins',
-                                        color: FlutterFlowTheme.of(context)
-                                            .secondaryText,
-                                        fontWeight: FontWeight.w300,
-                                      ),
-                                ),
-                              ],
-                            ),
-                            Expanded(
-                              child: Align(
-                                alignment: const AlignmentDirectional(1.00, 0.00),
-                                child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 10.0, 0.0),
-                                  child: Icon(
-                                    Icons.chevron_right_rounded,
-                                    color: FlutterFlowTheme.of(context)
-                                        .secondaryText,
-                                    size: 24.0,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ],
+                          ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
               ),
