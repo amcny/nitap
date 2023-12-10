@@ -245,12 +245,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => const AlumniWidget(),
             ),
             FFRoute(
-              name: 'test',
-              path: 'test',
-              requireAuth: true,
-              builder: (context, params) => const TestWidget(),
-            ),
-            FFRoute(
               name: 'test2',
               path: 'test2',
               requireAuth: true,

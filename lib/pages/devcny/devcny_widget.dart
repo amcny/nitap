@@ -187,7 +187,7 @@ class _DevcnyWidgetState extends State<DevcnyWidget> {
                     ),
                     Row(
                       mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
                         FFButtonWidget(
                           onPressed: () async {

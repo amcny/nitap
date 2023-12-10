@@ -11,7 +11,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:provider/provider.dart';
-import 'package:webviewx_plus/webviewx_plus.dart';
 import 'attendancefeature_model.dart';
 export 'attendancefeature_model.dart';
 
@@ -73,12 +72,11 @@ class _AttendancefeatureWidgetState extends State<AttendancefeatureWidget> {
               builder: (dialogContext) {
                 return const Material(
                   color: Colors.transparent,
-                  child: WebViewAware(
-                      child: SizedBox(
+                  child: SizedBox(
                     height: 245.0,
                     width: 345.0,
                     child: AttendanceWidget(),
-                  )),
+                  ),
                 );
               },
             ).then((value) => setState(() {}));
@@ -223,15 +221,14 @@ class _AttendancefeatureWidgetState extends State<AttendancefeatureWidget> {
                                     builder: (dialogContext) {
                                       return Material(
                                         color: Colors.transparent,
-                                        child: WebViewAware(
-                                            child: SizedBox(
+                                        child: SizedBox(
                                           height: 245.0,
                                           width: 345.0,
                                           child: AttendclassWidget(
                                             classref: dataTableAttendanceRecord
                                                 .reference,
                                           ),
-                                        )),
+                                        ),
                                       );
                                     },
                                   ).then((value) => setState(() {}));

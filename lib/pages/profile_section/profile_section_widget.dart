@@ -1,10 +1,10 @@
 import '/auth/firebase_auth/auth_util.dart';
-import '/devs/devcny/devcny_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/pages/alert_logout/alert_logout_widget.dart';
+import '/pages/devcny/devcny_widget.dart';
 import '/pages/privacy/privacy_widget.dart';
 import '/pages/support/support_widget.dart';
 import 'package:aligned_dialog/aligned_dialog.dart';
@@ -17,7 +17,6 @@ import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
-import 'package:webviewx_plus/webviewx_plus.dart';
 import 'profile_section_model.dart';
 export 'profile_section_model.dart';
 
@@ -102,12 +101,11 @@ class _ProfileSectionWidgetState extends State<ProfileSectionWidget> {
                     builder: (dialogContext) {
                       return const Material(
                         color: Colors.transparent,
-                        child: WebViewAware(
-                            child: SizedBox(
+                        child: SizedBox(
                           height: 210.0,
                           width: 345.0,
                           child: AlertLogoutWidget(),
-                        )),
+                        ),
                       );
                     },
                   ).then((value) => setState(() {}));
@@ -341,11 +339,10 @@ class _ProfileSectionWidgetState extends State<ProfileSectionWidget> {
                             backgroundColor: Colors.transparent,
                             context: context,
                             builder: (context) {
-                              return WebViewAware(
-                                  child: Padding(
+                              return Padding(
                                 padding: MediaQuery.viewInsetsOf(context),
                                 child: const SupportWidget(),
-                              ));
+                              );
                             },
                           ).then((value) => safeSetState(() {}));
                         },
@@ -516,11 +513,10 @@ class _ProfileSectionWidgetState extends State<ProfileSectionWidget> {
                             backgroundColor: Colors.transparent,
                             context: context,
                             builder: (context) {
-                              return WebViewAware(
-                                  child: Padding(
+                              return Padding(
                                 padding: MediaQuery.viewInsetsOf(context),
                                 child: const PrivacyWidget(),
-                              ));
+                              );
                             },
                           ).then((value) => safeSetState(() {}));
                         },
@@ -646,11 +642,10 @@ class _ProfileSectionWidgetState extends State<ProfileSectionWidget> {
                         backgroundColor: Colors.transparent,
                         context: context,
                         builder: (context) {
-                          return WebViewAware(
-                              child: Padding(
+                          return Padding(
                             padding: MediaQuery.viewInsetsOf(context),
                             child: const DevcnyWidget(),
-                          ));
+                          );
                         },
                       ).then((value) => safeSetState(() {}));
                     },

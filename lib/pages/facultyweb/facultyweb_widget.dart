@@ -2,7 +2,7 @@ import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_web_view.dart';
+import '/custom_code/widgets/index.dart' as custom_widgets;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -108,12 +108,14 @@ class _FacultywebWidgetState extends State<FacultywebWidget> {
             centerTitle: false,
             elevation: 0.0,
           ),
-          body: FlutterFlowWebView(
-            content: facultywebFacultyRecord.url,
-            bypass: true,
+          body: SizedBox(
+            width: MediaQuery.sizeOf(context).width * 1.0,
             height: MediaQuery.sizeOf(context).height * 1.0,
-            verticalScroll: true,
-            horizontalScroll: true,
+            child: custom_widgets.WebBrowser(
+              width: MediaQuery.sizeOf(context).width * 1.0,
+              height: MediaQuery.sizeOf(context).height * 1.0,
+              initialUrl: facultywebFacultyRecord.url,
+            ),
           ),
         );
       },

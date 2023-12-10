@@ -1,7 +1,7 @@
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_web_view.dart';
+import '/custom_code/widgets/index.dart' as custom_widgets;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
@@ -87,12 +87,14 @@ class _StudentPortalWidgetState extends State<StudentPortalWidget> {
         ),
         body: SafeArea(
           top: true,
-          child: FlutterFlowWebView(
-            content: 'https://www.nitandhra.ac.in/student/auth/login',
-            bypass: true,
+          child: SizedBox(
+            width: MediaQuery.sizeOf(context).width * 1.0,
             height: MediaQuery.sizeOf(context).height * 1.0,
-            verticalScroll: true,
-            horizontalScroll: true,
+            child: custom_widgets.WebBrowser(
+              width: MediaQuery.sizeOf(context).width * 1.0,
+              height: MediaQuery.sizeOf(context).height * 1.0,
+              initialUrl: 'https://www.nitandhra.ac.in/student/auth/login',
+            ),
           ),
         ),
       ),
