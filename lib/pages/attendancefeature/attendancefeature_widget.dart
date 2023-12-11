@@ -64,19 +64,15 @@ class _AttendancefeatureWidgetState extends State<AttendancefeatureWidget> {
             await showAlignedDialog(
               context: context,
               isGlobal: true,
-              avoidOverflow: false,
+              avoidOverflow: true,
               targetAnchor: const AlignmentDirectional(0.0, 0.0)
                   .resolve(Directionality.of(context)),
-              followerAnchor: const AlignmentDirectional(0.0, 0.0)
+              followerAnchor: const AlignmentDirectional(0.0, -0.2)
                   .resolve(Directionality.of(context)),
               builder: (dialogContext) {
                 return const Material(
                   color: Colors.transparent,
-                  child: SizedBox(
-                    height: 245.0,
-                    width: 345.0,
-                    child: AttendanceWidget(),
-                  ),
+                  child: AttendanceWidget(),
                 );
               },
             ).then((value) => setState(() {}));
@@ -216,18 +212,14 @@ class _AttendancefeatureWidgetState extends State<AttendancefeatureWidget> {
                                     targetAnchor: const AlignmentDirectional(0.0, 0.0)
                                         .resolve(Directionality.of(context)),
                                     followerAnchor: const AlignmentDirectional(
-                                            0.0, 0.0)
+                                            0.0, -0.2)
                                         .resolve(Directionality.of(context)),
                                     builder: (dialogContext) {
                                       return Material(
                                         color: Colors.transparent,
-                                        child: SizedBox(
-                                          height: 245.0,
-                                          width: 345.0,
-                                          child: AttendclassWidget(
-                                            classref: dataTableAttendanceRecord
-                                                .reference,
-                                          ),
+                                        child: AttendclassWidget(
+                                          classref: dataTableAttendanceRecord
+                                              .reference,
                                         ),
                                       );
                                     },

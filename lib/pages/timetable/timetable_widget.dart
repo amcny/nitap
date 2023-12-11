@@ -41,28 +41,6 @@ class _TimetableWidgetState extends State<TimetableWidget>
     ),
     'columnOnPageLoadAnimation2': AnimationInfo(
       trigger: AnimationTrigger.onPageLoad,
-      applyInitialState: true,
-      effects: [
-        VisibilityEffect(duration: 1.ms),
-        MoveEffect(
-          curve: Curves.linear,
-          delay: 0.ms,
-          duration: 300.ms,
-          begin: const Offset(0.0, 20.0),
-          end: const Offset(0.0, 0.0),
-        ),
-        FadeEffect(
-          curve: Curves.easeInOut,
-          delay: 0.ms,
-          duration: 300.ms,
-          begin: 0.0,
-          end: 1.0,
-        ),
-      ],
-    ),
-    'columnOnActionTriggerAnimation': AnimationInfo(
-      trigger: AnimationTrigger.onActionTrigger,
-      applyInitialState: true,
       effects: [
         MoveEffect(
           curve: Curves.linear,
@@ -86,13 +64,6 @@ class _TimetableWidgetState extends State<TimetableWidget>
   void initState() {
     super.initState();
     _model = createModel(context, () => TimetableModel());
-
-    setupAnimations(
-      animationsMap.values.where((anim) =>
-          anim.trigger == AnimationTrigger.onActionTrigger ||
-          !anim.applyInitialState),
-      this,
-    );
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
@@ -205,14 +176,6 @@ class _TimetableWidgetState extends State<TimetableWidget>
                                       setState(() {
                                         _model.day = daysItem;
                                       });
-                                      if (animationsMap[
-                                              'columnOnActionTriggerAnimation'] !=
-                                          null) {
-                                        animationsMap[
-                                                'columnOnActionTriggerAnimation']!
-                                            .controller
-                                            .forward(from: 0.0);
-                                      }
                                     },
                                     child: Container(
                                       width: 60.0,
@@ -452,13 +415,8 @@ class _TimetableWidgetState extends State<TimetableWidget>
                                     ),
                                   );
                                 }),
-                              )
-                                  .animateOnPageLoad(animationsMap[
-                                      'columnOnPageLoadAnimation2']!)
-                                  .animateOnActionTrigger(
-                                    animationsMap[
-                                        'columnOnActionTriggerAnimation']!,
-                                  );
+                              ).animateOnPageLoad(
+                                  animationsMap['columnOnPageLoadAnimation2']!);
                             },
                           ),
                         ),

@@ -109,7 +109,7 @@ class _ChoosesecWidgetState extends State<ChoosesecWidget> {
                     onChanged: (val) =>
                         setState(() => _model.dropDownValue = val),
                     width: MediaQuery.sizeOf(context).width * 1.0,
-                    height: 50.0,
+                    height: 55.0,
                     textStyle: FlutterFlowTheme.of(context).bodyMedium,
                     hintText: 'Please select...',
                     icon: Icon(

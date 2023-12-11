@@ -47,8 +47,8 @@ class _AttendanceWidgetState extends State<AttendanceWidget> {
     context.watch<FFAppState>();
 
     return Container(
-      width: double.infinity,
-      height: double.infinity,
+      width: 345.0,
+      height: 245.0,
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).secondaryBackground,
         borderRadius: BorderRadius.circular(12.0),
@@ -91,6 +91,7 @@ class _AttendanceWidgetState extends State<AttendanceWidget> {
                         decoration: InputDecoration(
                           labelText: 'Course name',
                           labelStyle: FlutterFlowTheme.of(context).labelMedium,
+                          alignLabelWithHint: false,
                           enabledBorder: UnderlineInputBorder(
                             borderSide: BorderSide(
                               color: FlutterFlowTheme.of(context).accent3,

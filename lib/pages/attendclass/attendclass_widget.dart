@@ -51,8 +51,8 @@ class _AttendclassWidgetState extends State<AttendclassWidget> {
     context.watch<FFAppState>();
 
     return Container(
-      width: double.infinity,
-      height: double.infinity,
+      width: 345.0,
+      height: 245.0,
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).secondaryBackground,
         borderRadius: BorderRadius.circular(12.0),

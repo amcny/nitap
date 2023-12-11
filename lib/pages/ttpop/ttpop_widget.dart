@@ -5,7 +5,6 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -25,7 +24,7 @@ class _TtpopWidgetState extends State<TtpopWidget>
   late TtpopModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
-  var hasColumnTriggered = false;
+
   final animationsMap = {
     'columnOnPageLoadAnimation1': AnimationInfo(
       trigger: AnimationTrigger.onPageLoad,
@@ -41,28 +40,6 @@ class _TtpopWidgetState extends State<TtpopWidget>
     ),
     'columnOnPageLoadAnimation2': AnimationInfo(
       trigger: AnimationTrigger.onPageLoad,
-      applyInitialState: false,
-      effects: [
-        VisibilityEffect(duration: 1.ms),
-        MoveEffect(
-          curve: Curves.linear,
-          delay: 0.ms,
-          duration: 300.ms,
-          begin: const Offset(0.0, 20.0),
-          end: const Offset(0.0, 0.0),
-        ),
-        FadeEffect(
-          curve: Curves.easeInOut,
-          delay: 0.ms,
-          duration: 300.ms,
-          begin: 0.0,
-          end: 1.0,
-        ),
-      ],
-    ),
-    'columnOnActionTriggerAnimation': AnimationInfo(
-      trigger: AnimationTrigger.onActionTrigger,
-      applyInitialState: false,
       effects: [
         MoveEffect(
           curve: Curves.linear,
@@ -86,19 +63,6 @@ class _TtpopWidgetState extends State<TtpopWidget>
   void initState() {
     super.initState();
     _model = createModel(context, () => TtpopModel());
-
-    setupAnimations(
-      animationsMap.values.where((anim) =>
-          anim.trigger == AnimationTrigger.onActionTrigger ||
-          !anim.applyInitialState),
-      this,
-    );
-
-    SchedulerBinding.instance.addPostFrameCallback((_) {
-      animationsMap['columnOnPageLoadAnimation2']!
-          .controller
-          .forward(from: 0.0);
-    });
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
@@ -241,18 +205,6 @@ class _TtpopWidgetState extends State<TtpopWidget>
                                       setState(() {
                                         _model.day = daysItem;
                                       });
-                                      if (animationsMap[
-                                              'columnOnActionTriggerAnimation'] !=
-                                          null) {
-                                        setState(
-                                            () => hasColumnTriggered = true);
-                                        SchedulerBinding.instance
-                                            .addPostFrameCallback((_) async =>
-                                                animationsMap[
-                                                        'columnOnActionTriggerAnimation']!
-                                                    .controller
-                                                    .forward(from: 0.0));
-                                      }
                                     },
                                     child: Container(
                                       width: 60.0,
@@ -490,13 +442,8 @@ class _TtpopWidgetState extends State<TtpopWidget>
                                   ),
                                 );
                               }),
-                            )
-                                .animateOnPageLoad(animationsMap[
-                                    'columnOnPageLoadAnimation2']!)
-                                .animateOnActionTrigger(
-                                    animationsMap[
-                                        'columnOnActionTriggerAnimation']!,
-                                    hasBeenTriggered: hasColumnTriggered);
+                            ).animateOnPageLoad(
+                                animationsMap['columnOnPageLoadAnimation2']!);
                           },
                         ),
                       ),
