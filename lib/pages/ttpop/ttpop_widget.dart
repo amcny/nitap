@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -24,9 +25,9 @@ class _TtpopWidgetState extends State<TtpopWidget>
   late TtpopModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
-
+  var hasContainerTriggered = false;
   final animationsMap = {
-    'columnOnPageLoadAnimation1': AnimationInfo(
+    'columnOnPageLoadAnimation': AnimationInfo(
       trigger: AnimationTrigger.onPageLoad,
       effects: [
         FadeEffect(
@@ -38,22 +39,43 @@ class _TtpopWidgetState extends State<TtpopWidget>
         ),
       ],
     ),
-    'columnOnPageLoadAnimation2': AnimationInfo(
-      trigger: AnimationTrigger.onPageLoad,
+    'containerOnActionTriggerAnimation': AnimationInfo(
+      trigger: AnimationTrigger.onActionTrigger,
+      applyInitialState: false,
       effects: [
-        MoveEffect(
-          curve: Curves.linear,
-          delay: 0.ms,
-          duration: 300.ms,
-          begin: const Offset(0.0, 20.0),
-          end: const Offset(0.0, 0.0),
-        ),
         FadeEffect(
           curve: Curves.easeInOut,
           delay: 0.ms,
-          duration: 300.ms,
+          duration: 200.ms,
           begin: 0.0,
           end: 1.0,
+        ),
+        MoveEffect(
+          curve: Curves.easeInOut,
+          delay: 0.ms,
+          duration: 200.ms,
+          begin: const Offset(0.0, 50.0),
+          end: const Offset(0.0, 0.0),
+        ),
+      ],
+    ),
+    'containerOnPageLoadAnimation': AnimationInfo(
+      trigger: AnimationTrigger.onPageLoad,
+      applyInitialState: false,
+      effects: [
+        FadeEffect(
+          curve: Curves.easeInOut,
+          delay: 0.ms,
+          duration: 200.ms,
+          begin: 0.0,
+          end: 1.0,
+        ),
+        MoveEffect(
+          curve: Curves.easeInOut,
+          delay: 0.ms,
+          duration: 200.ms,
+          begin: const Offset(0.0, 50.0),
+          end: const Offset(0.0, 0.0),
         ),
       ],
     ),
@@ -63,6 +85,19 @@ class _TtpopWidgetState extends State<TtpopWidget>
   void initState() {
     super.initState();
     _model = createModel(context, () => TtpopModel());
+
+    setupAnimations(
+      animationsMap.values.where((anim) =>
+          anim.trigger == AnimationTrigger.onActionTrigger ||
+          !anim.applyInitialState),
+      this,
+    );
+
+    SchedulerBinding.instance.addPostFrameCallback((_) {
+      animationsMap['containerOnPageLoadAnimation']!
+          .controller
+          .forward(from: 0.0);
+    });
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
@@ -205,6 +240,18 @@ class _TtpopWidgetState extends State<TtpopWidget>
                                       setState(() {
                                         _model.day = daysItem;
                                       });
+                                      if (animationsMap[
+                                              'containerOnActionTriggerAnimation'] !=
+                                          null) {
+                                        setState(
+                                            () => hasContainerTriggered = true);
+                                        SchedulerBinding.instance
+                                            .addPostFrameCallback((_) async =>
+                                                await animationsMap[
+                                                        'containerOnActionTriggerAnimation']!
+                                                    .controller
+                                                    .forward(from: 0.0));
+                                      }
                                     },
                                     child: Container(
                                       width: 60.0,
@@ -271,182 +318,251 @@ class _TtpopWidgetState extends State<TtpopWidget>
                           },
                         ),
                       ),
-                      Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
-                            0.0, 10.0, 0.0, 10.0),
-                        child: Builder(
-                          builder: (context) {
-                            final data =
-                                ttpopTimetableRecord?.data.toList() ?? [];
-                            return Column(
-                              mainAxisSize: MainAxisSize.min,
-                              children: List.generate(data.length, (dataIndex) {
-                                final dataItem = data[dataIndex];
-                                return Padding(
+                      if (_model.day != null && _model.day != '')
+                        Padding(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              20.0, 30.0, 20.0, 20.0),
+                          child: Container(
+                            width: double.infinity,
+                            decoration: BoxDecoration(
+                              color: FlutterFlowTheme.of(context)
+                                  .secondaryBackground,
+                              boxShadow: const [
+                                BoxShadow(
+                                  blurRadius: 3.0,
+                                  color: Color(0x33000000),
+                                  offset: Offset(0.0, 1.0),
+                                )
+                              ],
+                              borderRadius: BorderRadius.circular(8.0),
+                              border: Border.all(
+                                color: FlutterFlowTheme.of(context).primary,
+                              ),
+                            ),
+                            child: Column(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Padding(
                                   padding: const EdgeInsetsDirectional.fromSTEB(
-                                      20.0, 10.0, 20.0, 10.0),
-                                  child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(12.0),
-                                    child: Container(
-                                      width: double.infinity,
-                                      height: 145.0,
-                                      decoration: BoxDecoration(
-                                        color: FlutterFlowTheme.of(context)
-                                            .secondaryBackground,
-                                        borderRadius:
-                                            BorderRadius.circular(12.0),
-                                      ),
-                                      child: Row(
-                                        mainAxisSize: MainAxisSize.max,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.start,
-                                        children: [
-                                          Container(
-                                            width: 4.0,
-                                            height: 145.0,
-                                            decoration: BoxDecoration(
-                                              color: const Color(0xFF4B39EF),
-                                              borderRadius:
-                                                  BorderRadius.circular(8.0),
-                                              border: Border.all(
-                                                color: const Color(0xFF4B39EF),
-                                                width: 2.0,
-                                              ),
-                                            ),
-                                          ),
-                                          Padding(
-                                            padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
-                                                    20.0, 0.0, 0.0, 0.0),
-                                            child: Column(
-                                              mainAxisSize: MainAxisSize.max,
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
-                                              children: [
-                                                Text(
-                                                  dataItem.course,
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .bodyMedium
+                                      0.0, 15.0, 0.0, 5.0),
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceAround,
+                                    children: [
+                                      Expanded(
+                                        child: Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          children: [
+                                            Text(
+                                              'Course',
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleSmall
                                                       .override(
                                                         fontFamily: 'Poppins',
-                                                        fontSize: 16.0,
+                                                        fontSize: 14.0,
                                                         fontWeight:
-                                                            FontWeight.w500,
+                                                            FontWeight.w600,
                                                       ),
-                                                ),
-                                                Text(
-                                                  dataItem.instructor,
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .bodyMedium,
-                                                ),
-                                              ]
-                                                  .divide(
-                                                      const SizedBox(height: 15.0))
-                                                  .around(
-                                                      const SizedBox(height: 15.0)),
                                             ),
-                                          ),
-                                          Flexible(
-                                            child: Align(
-                                              alignment: const AlignmentDirectional(
-                                                  1.00, 1.00),
-                                              child: Padding(
-                                                padding: const EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        0.0, 0.0, 10.0, 10.0),
-                                                child: Row(
-                                                  mainAxisSize:
-                                                      MainAxisSize.min,
-                                                  mainAxisAlignment:
-                                                      MainAxisAlignment.end,
-                                                  children: [
-                                                    Flexible(
-                                                      child: RichText(
-                                                        textScaleFactor:
-                                                            MediaQuery.of(
-                                                                    context)
-                                                                .textScaleFactor,
-                                                        text: TextSpan(
-                                                          children: [
-                                                            TextSpan(
-                                                              text: dataItem
-                                                                  .start,
-                                                              style: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .labelLarge
-                                                                  .override(
-                                                                    fontFamily:
-                                                                        'Poppins',
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .success,
-                                                                    fontSize:
-                                                                        15.0,
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .w500,
-                                                                  ),
-                                                            ),
-                                                            TextSpan(
-                                                              text: ' - ',
-                                                              style: TextStyle(
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .primary,
-                                                              ),
-                                                            ),
-                                                            TextSpan(
-                                                              text:
-                                                                  dataItem.end,
-                                                              style: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .bodyMedium
-                                                                  .override(
-                                                                    fontFamily:
-                                                                        'Poppins',
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .error,
-                                                                    fontSize:
-                                                                        15.0,
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .w500,
-                                                                  ),
-                                                            )
-                                                          ],
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Poppins',
-                                                                fontSize: 14.0,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .w600,
-                                                              ),
+                                          ],
+                                        ),
+                                      ),
+                                      Expanded(
+                                        child: Padding(
+                                          padding:
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  10.0, 0.0, 0.0, 0.0),
+                                          child: Column(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: [
+                                              Text(
+                                                'Instructor',
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleSmall
+                                                        .override(
+                                                          fontFamily: 'Poppins',
+                                                          fontSize: 14.0,
+                                                          fontWeight:
+                                                              FontWeight.w600,
                                                         ),
-                                                      ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                      Expanded(
+                                        child: Padding(
+                                          padding:
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  10.0, 0.0, 0.0, 0.0),
+                                          child: Column(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: [
+                                              Text(
+                                                'Time',
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleSmall
+                                                        .override(
+                                                          fontFamily: 'Poppins',
+                                                          fontSize: 14.0,
+                                                          fontWeight:
+                                                              FontWeight.w600,
+                                                        ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                const Divider(
+                                  thickness: 1.0,
+                                  indent: 5.0,
+                                  endIndent: 5.0,
+                                  color: Color(0x67616161),
+                                ),
+                                Builder(
+                                  builder: (context) {
+                                    final data =
+                                        ttpopTimetableRecord?.data.toList() ??
+                                            [];
+                                    return Column(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: List.generate(data.length,
+                                          (dataIndex) {
+                                        final dataItem = data[dataIndex];
+                                        return Padding(
+                                          padding:
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 10.0, 0.0, 25.0),
+                                          child: Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceAround,
+                                            children: [
+                                              Expanded(
+                                                child: Column(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  children: [
+                                                    Text(
+                                                      dataItem.course,
+                                                      textAlign:
+                                                          TextAlign.center,
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                'Poppins',
+                                                            fontWeight:
+                                                                FontWeight.w600,
+                                                          ),
                                                     ),
                                                   ],
                                                 ),
                                               ),
-                                            ),
+                                              Expanded(
+                                                child: Padding(
+                                                  padding: const EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          10.0, 0.0, 0.0, 0.0),
+                                                  child: Column(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    children: [
+                                                      Text(
+                                                        dataItem.instructor,
+                                                        textAlign:
+                                                            TextAlign.center,
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Poppins',
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .normal,
+                                                                ),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                ),
+                                              ),
+                                              Expanded(
+                                                child: Padding(
+                                                  padding: const EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          10.0, 0.0, 0.0, 0.0),
+                                                  child: Column(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .center,
+                                                    children: [
+                                                      Text(
+                                                        dataItem.start,
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Open Sans',
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .success,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w500,
+                                                                ),
+                                                      ),
+                                                      Text(
+                                                        dataItem.end,
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Open Sans',
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .error,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w500,
+                                                                ),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
                                           ),
-                                        ],
-                                      ),
-                                    ),
-                                  ),
-                                );
-                              }),
-                            ).animateOnPageLoad(
-                                animationsMap['columnOnPageLoadAnimation2']!);
-                          },
+                                        );
+                                      }),
+                                    );
+                                  },
+                                ),
+                              ],
+                            ),
+                          )
+                              .animateOnPageLoad(animationsMap[
+                                  'containerOnPageLoadAnimation']!)
+                              .animateOnActionTrigger(
+                                  animationsMap[
+                                      'containerOnActionTriggerAnimation']!,
+                                  hasBeenTriggered: hasContainerTriggered),
                         ),
-                      ),
                       if (getRemoteConfigBool('ad'))
                         const Align(
                           alignment: AlignmentDirectional(0.00, 0.97),
@@ -466,7 +582,7 @@ class _TtpopWidgetState extends State<TtpopWidget>
                     ],
                   ),
                 ).animateOnPageLoad(
-                    animationsMap['columnOnPageLoadAnimation1']!),
+                    animationsMap['columnOnPageLoadAnimation']!),
               ],
             ),
           ),
