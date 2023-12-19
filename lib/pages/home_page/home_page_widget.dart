@@ -115,7 +115,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
             backgroundColor: FlutterFlowTheme.of(context).primary,
             automaticallyImplyLeading: false,
             title: Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 10.0),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -141,7 +141,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                               context: context,
                               isGlobal: false,
                               avoidOverflow: false,
-                              targetAnchor: const AlignmentDirectional(-4.3, 2.5)
+                              targetAnchor: const AlignmentDirectional(-4.0, 2.5)
                                   .resolve(Directionality.of(context)),
                               followerAnchor: const AlignmentDirectional(0.0, 0.0)
                                   .resolve(Directionality.of(context)),
@@ -208,7 +208,16 @@ class _HomePageWidgetState extends State<HomePageWidget>
                           hoverColor: Colors.transparent,
                           highlightColor: Colors.transparent,
                           onTap: () async {
-                            context.pushNamed('Timetable');
+                            context.pushNamed(
+                              'Timetable',
+                              extra: <String, dynamic>{
+                                kTransitionInfoKey: const TransitionInfo(
+                                  hasTransition: true,
+                                  transitionType:
+                                      PageTransitionType.rightToLeft,
+                                ),
+                              },
+                            );
                           },
                           child: Container(
                             width: 85.0,
@@ -564,7 +573,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                             transitionType:
                                                 PageTransitionType.fade,
                                             duration:
-                                                Duration(milliseconds: 500),
+                                                Duration(milliseconds: 250),
                                           ),
                                         },
                                       );
@@ -954,7 +963,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                         admob.loadInterstitialAd(
                                           "",
                                           "ca-app-pub-3991707481593664/6828220508",
-                                          true,
+                                          false,
                                         );
                                       } else {
                                         ScaffoldMessenger.of(context)

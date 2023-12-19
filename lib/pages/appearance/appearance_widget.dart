@@ -114,7 +114,7 @@ class _AppearanceWidgetState extends State<AppearanceWidget> {
                       setDarkModeSetting(context, ThemeMode.light);
                     },
                     child: AnimatedContainer(
-                      duration: const Duration(milliseconds: 120),
+                      duration: const Duration(milliseconds: 100),
                       curve: Curves.linear,
                       width: 175.0,
                       height: 180.0,
@@ -173,7 +173,7 @@ class _AppearanceWidgetState extends State<AppearanceWidget> {
                       setDarkModeSetting(context, ThemeMode.dark);
                     },
                     child: AnimatedContainer(
-                      duration: const Duration(milliseconds: 120),
+                      duration: const Duration(milliseconds: 100),
                       curve: Curves.linear,
                       width: 175.0,
                       height: 180.0,

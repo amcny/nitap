@@ -180,6 +180,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget>
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                           fontFamily: 'Poppins',
                           color: FlutterFlowTheme.of(context).primaryText,
+                          letterSpacing: 0.5,
                           decoration: TextDecoration.underline,
                         ),
                   ),

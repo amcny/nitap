@@ -29,7 +29,7 @@ class _ProfilepopupWidgetState extends State<ProfilepopupWidget>
         FadeEffect(
           curve: Curves.easeInOut,
           delay: 40.ms,
-          duration: 400.ms,
+          duration: 250.ms,
           begin: 0.0,
           end: 1.0,
         ),

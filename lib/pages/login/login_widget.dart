@@ -2,6 +2,7 @@ import '/auth/firebase_auth/auth_util.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/pages/support/support_widget.dart';
 import 'package:aligned_tooltip/aligned_tooltip.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -349,6 +350,67 @@ class _LoginWidgetState extends State<LoginWidget> {
                               ),
                             ),
                           ),
+                          Align(
+                            alignment: const AlignmentDirectional(1.0, 0.0),
+                            child: Padding(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 16.0),
+                              child: InkWell(
+                                splashColor: Colors.transparent,
+                                focusColor: Colors.transparent,
+                                hoverColor: Colors.transparent,
+                                highlightColor: Colors.transparent,
+                                onTap: () async {
+                                  if (_model
+                                      .emailAddressController.text.isEmpty) {
+                                    ScaffoldMessenger.of(context).showSnackBar(
+                                      const SnackBar(
+                                        content: Text(
+                                          'Email required!',
+                                        ),
+                                      ),
+                                    );
+                                    return;
+                                  }
+                                  await authManager.resetPassword(
+                                    email: _model.emailAddressController.text,
+                                    context: context,
+                                  );
+                                },
+                                child: Container(
+                                  width: 162.0,
+                                  height: 35.0,
+                                  decoration: BoxDecoration(
+                                    color: () {
+                                      if (Theme.of(context).brightness ==
+                                          Brightness.light) {
+                                        return const Color(0xFFF7F7F7);
+                                      } else if (Theme.of(context).brightness ==
+                                          Brightness.dark) {
+                                        return const Color(0xFF171717);
+                                      } else {
+                                        return const Color(0x00000000);
+                                      }
+                                    }(),
+                                    borderRadius: BorderRadius.circular(15.0),
+                                  ),
+                                  alignment: const AlignmentDirectional(0.0, 0.0),
+                                  child: Text(
+                                    'Forgot Password?',
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Poppins',
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                          fontSize: 14.0,
+                                          fontWeight: FontWeight.normal,
+                                        ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
                           Padding(
                             padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 16.0),
@@ -401,31 +463,35 @@ class _LoginWidgetState extends State<LoginWidget> {
                               hoverColor: Colors.transparent,
                               highlightColor: Colors.transparent,
                               onTap: () async {
-                                if (_model
-                                    .emailAddressController.text.isEmpty) {
-                                  ScaffoldMessenger.of(context).showSnackBar(
-                                    const SnackBar(
-                                      content: Text(
-                                        'Email required!',
-                                      ),
-                                    ),
-                                  );
-                                  return;
-                                }
-                                await authManager.resetPassword(
-                                  email: _model.emailAddressController.text,
+                                await showModalBottomSheet(
+                                  isScrollControlled: true,
+                                  backgroundColor: Colors.transparent,
                                   context: context,
-                                );
+                                  builder: (context) {
+                                    return GestureDetector(
+                                      onTap: () => _model
+                                              .unfocusNode.canRequestFocus
+                                          ? FocusScope.of(context)
+                                              .requestFocus(_model.unfocusNode)
+                                          : FocusScope.of(context).unfocus(),
+                                      child: Padding(
+                                        padding:
+                                            MediaQuery.viewInsetsOf(context),
+                                        child: const SupportWidget(),
+                                      ),
+                                    );
+                                  },
+                                ).then((value) => safeSetState(() {}));
                               },
                               child: Text(
-                                'Forgot Password?',
+                                'Trouble in Login ?',
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
                                       fontFamily: 'Poppins',
-                                      color:
-                                          FlutterFlowTheme.of(context).primary,
-                                      fontWeight: FontWeight.w600,
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryText,
+                                      fontWeight: FontWeight.normal,
                                     ),
                               ),
                             ),

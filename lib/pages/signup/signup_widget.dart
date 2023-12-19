@@ -2,6 +2,7 @@ import '/auth/firebase_auth/auth_util.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/pages/support/support_widget.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:aligned_tooltip/aligned_tooltip.dart';
 import 'package:flutter/gestures.dart';
@@ -470,6 +471,52 @@ class _SignupWidgetState extends State<SignupWidget> {
                                   )
                                 ],
                                 style: FlutterFlowTheme.of(context).bodyMedium,
+                              ),
+                            ),
+                          ),
+                          Align(
+                            alignment: const AlignmentDirectional(0.0, 0.0),
+                            child: Padding(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 16.0, 0.0, 0.0),
+                              child: InkWell(
+                                splashColor: Colors.transparent,
+                                focusColor: Colors.transparent,
+                                hoverColor: Colors.transparent,
+                                highlightColor: Colors.transparent,
+                                onTap: () async {
+                                  await showModalBottomSheet(
+                                    isScrollControlled: true,
+                                    backgroundColor: Colors.transparent,
+                                    context: context,
+                                    builder: (context) {
+                                      return GestureDetector(
+                                        onTap: () => _model
+                                                .unfocusNode.canRequestFocus
+                                            ? FocusScope.of(context)
+                                                .requestFocus(
+                                                    _model.unfocusNode)
+                                            : FocusScope.of(context).unfocus(),
+                                        child: Padding(
+                                          padding:
+                                              MediaQuery.viewInsetsOf(context),
+                                          child: const SupportWidget(),
+                                        ),
+                                      );
+                                    },
+                                  ).then((value) => safeSetState(() {}));
+                                },
+                                child: Text(
+                                  'Trouble in Signup ?',
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: 'Poppins',
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryText,
+                                        fontWeight: FontWeight.normal,
+                                      ),
+                                ),
                               ),
                             ),
                           ),

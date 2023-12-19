@@ -309,14 +309,42 @@ class _TimetableWidgetState extends State<TimetableWidget>
                                   offset: Offset(0.0, 1.0),
                                 )
                               ],
-                              borderRadius: BorderRadius.circular(8.0),
-                              border: Border.all(
-                                color: FlutterFlowTheme.of(context).primary,
-                              ),
+                              borderRadius: BorderRadius.circular(12.0),
                             ),
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
                               children: [
+                                Container(
+                                  width: MediaQuery.sizeOf(context).width * 1.0,
+                                  height: 60.0,
+                                  decoration: BoxDecoration(
+                                    color: FlutterFlowTheme.of(context).primary,
+                                    borderRadius: const BorderRadius.only(
+                                      bottomLeft: Radius.circular(0.0),
+                                      bottomRight: Radius.circular(0.0),
+                                      topLeft: Radius.circular(12.0),
+                                      topRight: Radius.circular(12.0),
+                                    ),
+                                  ),
+                                  child: Align(
+                                    alignment: const AlignmentDirectional(0.0, 0.0),
+                                    child: Text(
+                                      valueOrDefault<String>(
+                                        timetableTimetableRecord?.day,
+                                        'day',
+                                      ),
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Poppins',
+                                            color: Colors.white,
+                                            fontSize: 15.0,
+                                            letterSpacing: 0.5,
+                                            fontWeight: FontWeight.w600,
+                                          ),
+                                    ),
+                                  ),
+                                ),
                                 Padding(
                                   padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 15.0, 0.0, 5.0),
@@ -396,7 +424,7 @@ class _TimetableWidgetState extends State<TimetableWidget>
                                   ),
                                 ),
                                 const Divider(
-                                  thickness: 1.0,
+                                  thickness: 0.5,
                                   indent: 5.0,
                                   endIndent: 5.0,
                                   color: Color(0x67616161),
