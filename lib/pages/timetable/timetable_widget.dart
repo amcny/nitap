@@ -224,7 +224,9 @@ class _TimetableWidgetState extends State<TimetableWidget>
                                                     .forward(from: 0.0));
                                       }
                                     },
-                                    child: Container(
+                                    child: AnimatedContainer(
+                                      duration: const Duration(milliseconds: 100),
+                                      curve: Curves.linear,
                                       width: 60.0,
                                       height: 75.0,
                                       decoration: BoxDecoration(
@@ -243,7 +245,11 @@ class _TimetableWidgetState extends State<TimetableWidget>
                                           }
                                         }(),
                                         borderRadius:
-                                            BorderRadius.circular(15.0),
+                                            BorderRadius.circular(12.0),
+                                        border: Border.all(
+                                          color: const Color(0x67616161),
+                                          width: 0.7,
+                                        ),
                                       ),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
@@ -534,10 +540,9 @@ class _TimetableWidgetState extends State<TimetableWidget>
                         ),
                         if (getRemoteConfigBool('ad'))
                           const Align(
-                            alignment: AlignmentDirectional(0.00, 0.97),
+                            alignment: AlignmentDirectional(0.0, 0.97),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  5.0, 5.0, 5.0, 5.0),
+                              padding: EdgeInsets.all(5.0),
                               child: FlutterFlowAdBanner(
                                 height: 60.0,
                                 showsTestAd: false,

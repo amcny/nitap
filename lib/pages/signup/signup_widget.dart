@@ -87,7 +87,7 @@ class _SignupWidgetState extends State<SignupWidget> {
                         topRight: Radius.circular(0.0),
                       ),
                     ),
-                    alignment: const AlignmentDirectional(0.00, 0.00),
+                    alignment: const AlignmentDirectional(0.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -125,7 +125,7 @@ class _SignupWidgetState extends State<SignupWidget> {
                                 ),
                               ),
                               child: Align(
-                                alignment: const AlignmentDirectional(0.00, 0.00),
+                                alignment: const AlignmentDirectional(0.0, 0.0),
                                 child: FaIcon(
                                   FontAwesomeIcons.arrowLeft,
                                   color: FlutterFlowTheme.of(context)
@@ -153,10 +153,9 @@ class _SignupWidgetState extends State<SignupWidget> {
                     ),
                   ),
                   Align(
-                    alignment: const AlignmentDirectional(0.00, 0.00),
+                    alignment: const AlignmentDirectional(0.0, 0.0),
                     child: Padding(
-                      padding: const EdgeInsetsDirectional.fromSTEB(
-                          32.0, 32.0, 32.0, 32.0),
+                      padding: const EdgeInsets.all(32.0),
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -186,8 +185,7 @@ class _SignupWidgetState extends State<SignupWidget> {
                                       6.0, 0.0, 0.0, 0.0),
                                   child: AlignedTooltip(
                                     content: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                            8.0, 8.0, 8.0, 8.0),
+                                        padding: const EdgeInsets.all(8.0),
                                         child: Text(
                                           'roll no@student.nitandhra.ac.in',
                                           textAlign: TextAlign.center,
@@ -428,7 +426,7 @@ class _SignupWidgetState extends State<SignupWidget> {
                             ),
                           ),
                           Align(
-                            alignment: const AlignmentDirectional(0.00, 0.00),
+                            alignment: const AlignmentDirectional(0.0, 0.0),
                             child: RichText(
                               textScaleFactor:
                                   MediaQuery.of(context).textScaleFactor,

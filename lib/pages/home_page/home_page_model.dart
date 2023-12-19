@@ -3,6 +3,13 @@ import 'home_page_widget.dart' show HomePageWidget;
 import 'package:flutter/material.dart';
 
 class HomePageModel extends FlutterFlowModel<HomePageWidget> {
+  ///  State fields for stateful widgets in this page.
+
+  // Stores action output result for [AdMob - Show Interstitial Ad] action in Column widget.
+  bool? interstitialAdSuccess;
+  // Stores action output result for [AdMob - Show Interstitial Ad] action in Column widget.
+  bool? interstitialAdSuccess2;
+
   /// Initialization and disposal methods.
 
   @override

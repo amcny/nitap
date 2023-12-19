@@ -19,14 +19,15 @@ class AlumniCall {
       encodeBodyUtf8: false,
       decodeUtf8: false,
       cache: false,
+      alwaysAllowBody: false,
     );
   }
 
-  static dynamic users(dynamic response) => getJsonField(
+  static List? users(dynamic response) => getJsonField(
         response,
         r'''$.users''',
         true,
-      );
+      ) as List?;
 }
 
 class ApiPagingParams {

@@ -81,7 +81,7 @@ class _AlertLogoutWidgetState extends State<AlertLogoutWidget> {
           ),
           Expanded(
             child: Align(
-              alignment: const AlignmentDirectional(1.00, 1.00),
+              alignment: const AlignmentDirectional(1.0, 1.0),
               child: Padding(
                 padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 20.0),
                 child: Row(

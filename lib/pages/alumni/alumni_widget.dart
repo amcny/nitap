@@ -181,7 +181,7 @@ class _AlumniWidgetState extends State<AlumniWidget>
                                     getJsonField(
                                       usersItem,
                                       r'''$.image''',
-                                    ),
+                                    ).toString(),
                                     width: 75.0,
                                     height: 75.0,
                                     fit: BoxFit.cover,

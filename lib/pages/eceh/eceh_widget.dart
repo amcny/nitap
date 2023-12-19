@@ -96,8 +96,7 @@ class _EcehWidgetState extends State<EcehWidget> {
               mainAxisSize: MainAxisSize.max,
               children: [
                 Padding(
-                  padding:
-                      const EdgeInsetsDirectional.fromSTEB(15.0, 15.0, 15.0, 15.0),
+                  padding: const EdgeInsets.all(15.0),
                   child: InkWell(
                     splashColor: Colors.transparent,
                     focusColor: Colors.transparent,
@@ -436,8 +435,7 @@ class _EcehWidgetState extends State<EcehWidget> {
                               options: FFButtonOptions(
                                 width: 150.0,
                                 height: 50.0,
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 0.0, 0.0),
+                                padding: const EdgeInsets.all(0.0),
                                 iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
                                 color: const Color(0xFFD62976),
@@ -468,8 +466,7 @@ class _EcehWidgetState extends State<EcehWidget> {
                               options: FFButtonOptions(
                                 width: 150.0,
                                 height: 50.0,
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 0.0, 0.0),
+                                padding: const EdgeInsets.all(0.0),
                                 iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
                                 color: const Color(0xFF0A66C2),
@@ -510,8 +507,7 @@ class _EcehWidgetState extends State<EcehWidget> {
                               options: FFButtonOptions(
                                 width: 150.0,
                                 height: 50.0,
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 0.0, 0.0),
+                                padding: const EdgeInsets.all(0.0),
                                 iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
                                 color: const Color(0xFF1FA463),
@@ -550,8 +546,7 @@ class _EcehWidgetState extends State<EcehWidget> {
                               options: FFButtonOptions(
                                 width: 150.0,
                                 height: 50.0,
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 0.0, 0.0),
+                                padding: const EdgeInsets.all(0.0),
                                 iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
                                 color: const Color(0xFFBB001B),

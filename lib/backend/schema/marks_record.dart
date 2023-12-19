@@ -29,16 +29,34 @@ class MarksRecord extends FirestoreRecord {
   DateTime? get createdTime => _createdTime;
   bool hasCreatedTime() => _createdTime != null;
 
-  // "marks" field.
-  String? _marks;
-  String get marks => _marks ?? '';
-  bool hasMarks() => _marks != null;
+  // "minor1" field.
+  String? _minor1;
+  String get minor1 => _minor1 ?? '';
+  bool hasMinor1() => _minor1 != null;
+
+  // "mid" field.
+  String? _mid;
+  String get mid => _mid ?? '';
+  bool hasMid() => _mid != null;
+
+  // "minor2" field.
+  String? _minor2;
+  String get minor2 => _minor2 ?? '';
+  bool hasMinor2() => _minor2 != null;
+
+  // "end" field.
+  String? _end;
+  String get end => _end ?? '';
+  bool hasEnd() => _end != null;
 
   void _initializeFields() {
     _courseName = snapshotData['course_name'] as String?;
     _user = snapshotData['user'] as DocumentReference?;
     _createdTime = snapshotData['created_time'] as DateTime?;
-    _marks = snapshotData['marks'] as String?;
+    _minor1 = snapshotData['minor1'] as String?;
+    _mid = snapshotData['mid'] as String?;
+    _minor2 = snapshotData['minor2'] as String?;
+    _end = snapshotData['end'] as String?;
   }
 
   static CollectionReference get collection =>
@@ -78,14 +96,20 @@ Map<String, dynamic> createMarksRecordData({
   String? courseName,
   DocumentReference? user,
   DateTime? createdTime,
-  String? marks,
+  String? minor1,
+  String? mid,
+  String? minor2,
+  String? end,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
       'course_name': courseName,
       'user': user,
       'created_time': createdTime,
-      'marks': marks,
+      'minor1': minor1,
+      'mid': mid,
+      'minor2': minor2,
+      'end': end,
     }.withoutNulls,
   );
 
@@ -100,12 +124,22 @@ class MarksRecordDocumentEquality implements Equality<MarksRecord> {
     return e1?.courseName == e2?.courseName &&
         e1?.user == e2?.user &&
         e1?.createdTime == e2?.createdTime &&
-        e1?.marks == e2?.marks;
+        e1?.minor1 == e2?.minor1 &&
+        e1?.mid == e2?.mid &&
+        e1?.minor2 == e2?.minor2 &&
+        e1?.end == e2?.end;
   }
 
   @override
-  int hash(MarksRecord? e) => const ListEquality()
-      .hash([e?.courseName, e?.user, e?.createdTime, e?.marks]);
+  int hash(MarksRecord? e) => const ListEquality().hash([
+        e?.courseName,
+        e?.user,
+        e?.createdTime,
+        e?.minor1,
+        e?.mid,
+        e?.minor2,
+        e?.end
+      ]);
 
   @override
   bool isValidKey(Object? o) => o is MarksRecord;

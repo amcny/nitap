@@ -245,7 +245,7 @@ class _ForyouinfoWidgetState extends State<ForyouinfoWidget> {
                                   ),
                                 ),
                                 Align(
-                                  alignment: const AlignmentDirectional(-1.00, 0.00),
+                                  alignment: const AlignmentDirectional(-1.0, 0.0),
                                   child: Padding(
                                     padding: const EdgeInsetsDirectional.fromSTEB(
                                         20.0, 20.0, 20.0, 0.0),
@@ -293,8 +293,7 @@ class _ForyouinfoWidgetState extends State<ForyouinfoWidget> {
                                 options: FFButtonOptions(
                                   width: double.infinity,
                                   height: 55.0,
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 0.0, 0.0),
+                                  padding: const EdgeInsets.all(0.0),
                                   iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
                                   color: FlutterFlowTheme.of(context).primary,

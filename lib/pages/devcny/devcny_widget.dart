@@ -55,7 +55,7 @@ class _DevcnyWidgetState extends State<DevcnyWidget> {
         ),
       ),
       child: Padding(
-        padding: const EdgeInsetsDirectional.fromSTEB(4.0, 4.0, 4.0, 4.0),
+        padding: const EdgeInsets.all(4.0),
         child: Column(
           mainAxisSize: MainAxisSize.max,
           children: [
@@ -111,8 +111,7 @@ class _DevcnyWidgetState extends State<DevcnyWidget> {
                             child: Stack(
                               children: [
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      4.0, 4.0, 4.0, 4.0),
+                                  padding: const EdgeInsets.all(4.0),
                                   child: Container(
                                     width: 120.0,
                                     height: 120.0,

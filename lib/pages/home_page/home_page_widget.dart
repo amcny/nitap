@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/pages/profilepopup/profilepopup_widget.dart';
 import '/custom_code/actions/index.dart' as actions;
+import '/flutter_flow/admob_util.dart' as admob;
 import 'package:aligned_dialog/aligned_dialog.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
@@ -54,6 +55,12 @@ class _HomePageWidgetState extends State<HomePageWidget>
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       await actions.lockOrientation();
+
+      admob.loadInterstitialAd(
+        "",
+        "ca-app-pub-3991707481593664/6828220508",
+        false,
+      );
     });
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
@@ -105,68 +112,70 @@ class _HomePageWidgetState extends State<HomePageWidget>
           key: scaffoldKey,
           backgroundColor: FlutterFlowTheme.of(context).appbar,
           appBar: AppBar(
-            backgroundColor: FlutterFlowTheme.of(context).appbar,
+            backgroundColor: FlutterFlowTheme.of(context).primary,
             automaticallyImplyLeading: false,
-            title: Column(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                Row(
-                  mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Image.asset(
-                      Theme.of(context).brightness == Brightness.dark
-                          ? 'assets/images/LOGO.png'
-                          : 'assets/images/LOGOlightmodefull.png',
-                      width: 135.0,
-                      fit: BoxFit.cover,
-                    ),
-                    Builder(
-                      builder: (context) => InkWell(
-                        splashColor: Colors.transparent,
-                        focusColor: Colors.transparent,
-                        hoverColor: Colors.transparent,
-                        highlightColor: Colors.transparent,
-                        onTap: () async {
-                          await showAlignedDialog(
-                            context: context,
-                            isGlobal: false,
-                            avoidOverflow: false,
-                            targetAnchor: const AlignmentDirectional(-4.3, 2.5)
-                                .resolve(Directionality.of(context)),
-                            followerAnchor: const AlignmentDirectional(0.0, 0.0)
-                                .resolve(Directionality.of(context)),
-                            builder: (dialogContext) {
-                              return const Material(
-                                color: Colors.transparent,
-                                child: ProfilepopupWidget(),
-                              );
-                            },
-                          ).then((value) => setState(() {}));
-                        },
-                        child: Container(
-                          width: 50.0,
-                          height: 50.0,
-                          decoration: const BoxDecoration(
-                            color: Color(0x251A73E8),
-                            shape: BoxShape.circle,
-                          ),
-                          child: Icon(
-                            Icons.account_circle_rounded,
-                            color: FlutterFlowTheme.of(context).primary,
-                            size: 35.0,
+            title: Padding(
+              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
+              child: Column(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Row(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Image.asset(
+                        'assets/images/LOGO.png',
+                        width: 135.0,
+                        fit: BoxFit.cover,
+                      ),
+                      Builder(
+                        builder: (context) => InkWell(
+                          splashColor: Colors.transparent,
+                          focusColor: Colors.transparent,
+                          hoverColor: Colors.transparent,
+                          highlightColor: Colors.transparent,
+                          onTap: () async {
+                            await showAlignedDialog(
+                              context: context,
+                              isGlobal: false,
+                              avoidOverflow: false,
+                              targetAnchor: const AlignmentDirectional(-4.3, 2.5)
+                                  .resolve(Directionality.of(context)),
+                              followerAnchor: const AlignmentDirectional(0.0, 0.0)
+                                  .resolve(Directionality.of(context)),
+                              builder: (dialogContext) {
+                                return const Material(
+                                  color: Colors.transparent,
+                                  child: ProfilepopupWidget(),
+                                );
+                              },
+                            ).then((value) => setState(() {}));
+                          },
+                          child: Container(
+                            width: 50.0,
+                            height: 50.0,
+                            decoration: const BoxDecoration(
+                              color: Color(0x6DF9F9F9),
+                              shape: BoxShape.circle,
+                            ),
+                            child: Icon(
+                              Icons.account_circle_rounded,
+                              color: FlutterFlowTheme.of(context).primary,
+                              size: 35.0,
+                            ),
                           ),
                         ),
                       ),
-                    ),
-                  ],
-                ),
-              ],
+                    ],
+                  ),
+                ],
+              ),
             ),
             actions: const [],
             centerTitle: false,
+            toolbarHeight: 70.0,
             elevation: 0.0,
           ),
           body: SingleChildScrollView(
@@ -175,12 +184,13 @@ class _HomePageWidgetState extends State<HomePageWidget>
               mainAxisSize: MainAxisSize.max,
               children: [
                 Align(
-                  alignment: const AlignmentDirectional(-1.00, 0.00),
+                  alignment: const AlignmentDirectional(-1.0, 0.0),
                   child: Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(20.0, 25.0, 0.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(15.0, 20.0, 15.0, 0.0),
                     child: Row(
-                      mainAxisSize: MainAxisSize.min,
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
                           'Today\'s Class',
@@ -188,8 +198,51 @@ class _HomePageWidgetState extends State<HomePageWidget>
                               FlutterFlowTheme.of(context).titleSmall.override(
                                     fontFamily: 'Poppins',
                                     fontSize: 16.0,
-                                    fontWeight: FontWeight.normal,
+                                    letterSpacing: 0.5,
+                                    fontWeight: FontWeight.w300,
                                   ),
+                        ),
+                        InkWell(
+                          splashColor: Colors.transparent,
+                          focusColor: Colors.transparent,
+                          hoverColor: Colors.transparent,
+                          highlightColor: Colors.transparent,
+                          onTap: () async {
+                            context.pushNamed('Timetable');
+                          },
+                          child: Container(
+                            width: 85.0,
+                            height: 40.0,
+                            decoration: BoxDecoration(
+                              color: () {
+                                if (Theme.of(context).brightness ==
+                                    Brightness.light) {
+                                  return const Color(0xFFF7F7F7);
+                                } else if (Theme.of(context).brightness ==
+                                    Brightness.dark) {
+                                  return const Color(0xFF171717);
+                                } else {
+                                  return const Color(0x00000000);
+                                }
+                              }(),
+                              borderRadius: BorderRadius.circular(24.0),
+                              shape: BoxShape.rectangle,
+                            ),
+                            child: Align(
+                              alignment: const AlignmentDirectional(0.0, 0.0),
+                              child: Text(
+                                'View All',
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: 'Poppins',
+                                      fontSize: 11.5,
+                                      letterSpacing: 0.5,
+                                      fontWeight: FontWeight.w600,
+                                    ),
+                              ),
+                            ),
+                          ),
                         ),
                       ],
                     ),
@@ -322,7 +375,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                           Flexible(
                                             child: Align(
                                               alignment: const AlignmentDirectional(
-                                                  0.00, 1.00),
+                                                  0.0, 1.0),
                                               child: Container(
                                                 width:
                                                     MediaQuery.sizeOf(context)
@@ -432,10 +485,10 @@ class _HomePageWidgetState extends State<HomePageWidget>
                   ),
                 if (homePageForyouRecordList.isNotEmpty)
                   Align(
-                    alignment: const AlignmentDirectional(-1.00, 0.00),
+                    alignment: const AlignmentDirectional(-1.0, 0.0),
                     child: Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(20.0, 5.0, 0.0, 5.0),
+                          const EdgeInsetsDirectional.fromSTEB(15.0, 5.0, 0.0, 5.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.min,
                         children: [
@@ -445,7 +498,8 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                 .headlineSmall
                                 .override(
                                   fontFamily: 'Poppins',
-                                  fontWeight: FontWeight.w600,
+                                  fontSize: 22.0,
+                                  fontWeight: FontWeight.bold,
                                 ),
                           ),
                         ],
@@ -454,7 +508,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                   ),
                 if (homePageForyouRecordList.isNotEmpty)
                   Align(
-                    alignment: const AlignmentDirectional(-1.00, 0.00),
+                    alignment: const AlignmentDirectional(-1.0, 0.0),
                     child: Padding(
                       padding:
                           const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 5.0),
@@ -489,8 +543,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                 final rowForyouRecord =
                                     rowForyouRecordList[rowIndex];
                                 return Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      5.0, 5.0, 5.0, 5.0),
+                                  padding: const EdgeInsets.all(5.0),
                                   child: InkWell(
                                     splashColor: Colors.transparent,
                                     focusColor: Colors.transparent,
@@ -505,6 +558,15 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                             ParamType.DocumentReference,
                                           ),
                                         }.withoutNulls,
+                                        extra: <String, dynamic>{
+                                          kTransitionInfoKey: const TransitionInfo(
+                                            hasTransition: true,
+                                            transitionType:
+                                                PageTransitionType.fade,
+                                            duration:
+                                                Duration(milliseconds: 500),
+                                          ),
+                                        },
                                       );
                                     },
                                     child: Material(
@@ -519,7 +581,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                             BorderRadius.circular(18.0),
                                         child: Container(
                                           width: 230.0,
-                                          height: 330.0,
+                                          height: 350.0,
                                           decoration: BoxDecoration(
                                             color: FlutterFlowTheme.of(context)
                                                 .whiteBg,
@@ -530,9 +592,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                             mainAxisSize: MainAxisSize.min,
                                             children: [
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        10.0, 10.0, 10.0, 10.0),
+                                                padding: const EdgeInsets.all(10.0),
                                                 child: Hero(
                                                   tag: rowForyouRecord.image,
                                                   transitionOnUserGestures:
@@ -549,7 +609,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                       imageUrl:
                                                           rowForyouRecord.image,
                                                       width: 300.0,
-                                                      height: 200.0,
+                                                      height: 220.0,
                                                       fit: BoxFit.fill,
                                                     ),
                                                   ),
@@ -557,7 +617,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                               ),
                                               Align(
                                                 alignment: const AlignmentDirectional(
-                                                    -1.00, 0.00),
+                                                    -1.0, 0.0),
                                                 child: Padding(
                                                   padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
@@ -590,7 +650,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                               ),
                                               Align(
                                                 alignment: const AlignmentDirectional(
-                                                    -1.00, 0.00),
+                                                    -1.0, 0.0),
                                                 child: Padding(
                                                   padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
@@ -630,7 +690,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                               ),
                                               Align(
                                                 alignment: const AlignmentDirectional(
-                                                    -1.00, 0.00),
+                                                    -1.0, 0.0),
                                                 child: Padding(
                                                   padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
@@ -689,10 +749,10 @@ class _HomePageWidgetState extends State<HomePageWidget>
                     ),
                   ),
                 Align(
-                  alignment: const AlignmentDirectional(-1.00, 0.00),
+                  alignment: const AlignmentDirectional(-1.0, 0.0),
                   child: Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(20.0, 5.0, 0.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(15.0, 5.0, 0.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
@@ -702,7 +762,8 @@ class _HomePageWidgetState extends State<HomePageWidget>
                               .headlineSmall
                               .override(
                                 fontFamily: 'Poppins',
-                                fontWeight: FontWeight.w600,
+                                fontSize: 22.0,
+                                fontWeight: FontWeight.bold,
                               ),
                         ),
                       ],
@@ -711,7 +772,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                 ),
                 Padding(
                   padding:
-                      const EdgeInsetsDirectional.fromSTEB(15.0, 15.0, 15.0, 5.0),
+                      const EdgeInsetsDirectional.fromSTEB(15.0, 10.0, 15.0, 5.0),
                   child: Container(
                     height: 225.0,
                     decoration: BoxDecoration(
@@ -744,7 +805,44 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                     hoverColor: Colors.transparent,
                                     highlightColor: Colors.transparent,
                                     onTap: () async {
+                                      _model.interstitialAdSuccess =
+                                          await admob.showInterstitialAd();
+
+                                      if (_model.interstitialAdSuccess!) {
+                                        admob.loadInterstitialAd(
+                                          "",
+                                          "ca-app-pub-3991707481593664/6828220508",
+                                          false,
+                                        );
+                                      } else {
+                                        ScaffoldMessenger.of(context)
+                                            .showSnackBar(
+                                          SnackBar(
+                                            content: Text(
+                                              'Load Failed',
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        color: Colors.white,
+                                                        fontSize: 14.0,
+                                                        fontWeight:
+                                                            FontWeight.normal,
+                                                      ),
+                                            ),
+                                            duration:
+                                                const Duration(milliseconds: 2000),
+                                            backgroundColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .primary,
+                                          ),
+                                        );
+                                      }
+
                                       context.pushNamed('Attendancefeature');
+
+                                      setState(() {});
                                     },
                                     child: Column(
                                       mainAxisSize: MainAxisSize.min,
@@ -762,7 +860,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                 BorderRadius.circular(12.0),
                                           ),
                                           alignment:
-                                              const AlignmentDirectional(0.00, 0.00),
+                                              const AlignmentDirectional(0.0, 0.0),
                                           child: Icon(
                                             Icons.pie_chart_rounded,
                                             color: FlutterFlowTheme.of(context)
@@ -810,7 +908,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                 BorderRadius.circular(12.0),
                                           ),
                                           alignment:
-                                              const AlignmentDirectional(0.00, 0.00),
+                                              const AlignmentDirectional(0.0, 0.0),
                                           child: Icon(
                                             Icons.perm_contact_cal_rounded,
                                             color: FlutterFlowTheme.of(context)
@@ -849,7 +947,44 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                     hoverColor: Colors.transparent,
                                     highlightColor: Colors.transparent,
                                     onTap: () async {
-                                      context.pushNamed('test2');
+                                      _model.interstitialAdSuccess2 =
+                                          await admob.showInterstitialAd();
+
+                                      if (_model.interstitialAdSuccess2!) {
+                                        admob.loadInterstitialAd(
+                                          "",
+                                          "ca-app-pub-3991707481593664/6828220508",
+                                          true,
+                                        );
+                                      } else {
+                                        ScaffoldMessenger.of(context)
+                                            .showSnackBar(
+                                          SnackBar(
+                                            content: Text(
+                                              'Load Failed',
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        color: Colors.white,
+                                                        fontSize: 14.0,
+                                                        fontWeight:
+                                                            FontWeight.normal,
+                                                      ),
+                                            ),
+                                            duration:
+                                                const Duration(milliseconds: 2000),
+                                            backgroundColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .primary,
+                                          ),
+                                        );
+                                      }
+
+                                      context.pushNamed('marks');
+
+                                      setState(() {});
                                     },
                                     child: Column(
                                       mainAxisSize: MainAxisSize.min,
@@ -865,7 +1000,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                 BorderRadius.circular(12.0),
                                           ),
                                           alignment:
-                                              const AlignmentDirectional(0.00, 0.00),
+                                              const AlignmentDirectional(0.0, 0.0),
                                           child: FaIcon(
                                             FontAwesomeIcons.pencilAlt,
                                             color: FlutterFlowTheme.of(context)
@@ -913,7 +1048,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                 BorderRadius.circular(12.0),
                                           ),
                                           alignment:
-                                              const AlignmentDirectional(0.00, 0.00),
+                                              const AlignmentDirectional(0.0, 0.0),
                                           child: Icon(
                                             Icons.calendar_month_rounded,
                                             color: FlutterFlowTheme.of(context)
@@ -968,7 +1103,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                 BorderRadius.circular(12.0),
                                           ),
                                           alignment:
-                                              const AlignmentDirectional(0.00, 0.00),
+                                              const AlignmentDirectional(0.0, 0.0),
                                           child: FaIcon(
                                             FontAwesomeIcons.pencilRuler,
                                             color: FlutterFlowTheme.of(context)
@@ -1016,7 +1151,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                 BorderRadius.circular(12.0),
                                           ),
                                           alignment:
-                                              const AlignmentDirectional(0.00, 0.00),
+                                              const AlignmentDirectional(0.0, 0.0),
                                           child: Icon(
                                             Icons.web,
                                             color: FlutterFlowTheme.of(context)
@@ -1073,7 +1208,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                 BorderRadius.circular(12.0),
                                           ),
                                           alignment:
-                                              const AlignmentDirectional(0.00, 0.00),
+                                              const AlignmentDirectional(0.0, 0.0),
                                           child: FaIcon(
                                             FontAwesomeIcons.solidIdCard,
                                             color: FlutterFlowTheme.of(context)
@@ -1121,7 +1256,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                 BorderRadius.circular(12.0),
                                           ),
                                           alignment:
-                                              const AlignmentDirectional(0.00, 0.00),
+                                              const AlignmentDirectional(0.0, 0.0),
                                           child: Icon(
                                             Icons.menu_book_rounded,
                                             color: FlutterFlowTheme.of(context)
@@ -1160,7 +1295,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                 ),
                 if (getRemoteConfigBool('ad'))
                   const Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(5.0, 5.0, 5.0, 5.0),
+                    padding: EdgeInsets.all(5.0),
                     child: FlutterFlowAdBanner(
                       height: 60.0,
                       showsTestAd: false,
@@ -1169,10 +1304,10 @@ class _HomePageWidgetState extends State<HomePageWidget>
                     ),
                   ),
                 Align(
-                  alignment: const AlignmentDirectional(-1.00, 0.00),
+                  alignment: const AlignmentDirectional(-1.0, 0.0),
                   child: Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(20.0, 15.0, 0.0, 10.0),
+                        const EdgeInsetsDirectional.fromSTEB(15.0, 15.0, 0.0, 10.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
@@ -1196,7 +1331,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                               borderRadius: BorderRadius.circular(12.0),
                             ),
                             child: Align(
-                              alignment: const AlignmentDirectional(0.00, 0.00),
+                              alignment: const AlignmentDirectional(0.0, 0.0),
                               child: Text(
                                 'New',
                                 textAlign: TextAlign.center,
@@ -1205,6 +1340,9 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                     .override(
                                       fontFamily: 'Poppins',
                                       color: Colors.white,
+                                      fontSize: 13.0,
+                                      letterSpacing: 0.5,
+                                      fontWeight: FontWeight.w500,
                                     ),
                               ),
                             ),
@@ -1215,7 +1353,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                   ),
                 ),
                 Align(
-                  alignment: const AlignmentDirectional(-1.00, 0.00),
+                  alignment: const AlignmentDirectional(-1.0, 0.0),
                   child: SingleChildScrollView(
                     scrollDirection: Axis.horizontal,
                     child: Row(
@@ -1400,8 +1538,8 @@ class _HomePageWidgetState extends State<HomePageWidget>
                           ),
                         ),
                       ]
-                          .divide(const SizedBox(width: 10.0))
-                          .around(const SizedBox(width: 10.0)),
+                          .divide(const SizedBox(width: 15.0))
+                          .around(const SizedBox(width: 15.0)),
                     ),
                   ),
                 ),

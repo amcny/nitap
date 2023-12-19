@@ -145,8 +145,8 @@ class _AttendancefeatureWidgetState extends State<AttendancefeatureWidget> {
             if (dataTableAttendanceRecordList.isEmpty) {
               return Center(
                 child: Image.asset(
-                  'assets/images/dot.png',
-                  width: 200.0,
+                  'assets/images/image.png',
+                  width: 270.0,
                   fit: BoxFit.contain,
                 ),
               );
@@ -188,10 +188,7 @@ class _AttendancefeatureWidgetState extends State<AttendancefeatureWidget> {
                           style: FlutterFlowTheme.of(context).bodyMedium,
                         ),
                         Text(
-                          valueOrDefault<String>(
-                            dataTableAttendanceRecord.noClasses.toString(),
-                            '0',
-                          ),
+                          dataTableAttendanceRecord.noClasses.toString(),
                           style: FlutterFlowTheme.of(context).bodyMedium,
                         ),
                         Row(
@@ -264,7 +261,6 @@ class _AttendancefeatureWidgetState extends State<AttendancefeatureWidget> {
                 borderRadius: BorderRadius.circular(0.0),
               ),
               dividerThickness: 1.0,
-              columnSpacing: 40.0,
               showBottomBorder: true,
               minWidth: 49.0,
             );

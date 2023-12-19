@@ -25,27 +25,20 @@ class _ProfilepopupWidgetState extends State<ProfilepopupWidget>
     'containerOnPageLoadAnimation': AnimationInfo(
       trigger: AnimationTrigger.onPageLoad,
       effects: [
-        VisibilityEffect(duration: 1.ms),
+        VisibilityEffect(duration: 40.ms),
         FadeEffect(
           curve: Curves.easeInOut,
-          delay: 0.ms,
-          duration: 50.ms,
+          delay: 40.ms,
+          duration: 400.ms,
           begin: 0.0,
           end: 1.0,
         ),
         MoveEffect(
           curve: Curves.easeInOut,
-          delay: 0.ms,
-          duration: 50.ms,
+          delay: 40.ms,
+          duration: 150.ms,
           begin: const Offset(20.0, -20.0),
           end: const Offset(0.0, 0.0),
-        ),
-        TiltEffect(
-          curve: Curves.easeInOut,
-          delay: 0.ms,
-          duration: 50.ms,
-          begin: const Offset(0.873, 0),
-          end: const Offset(0, 0),
         ),
       ],
     ),
@@ -77,7 +70,7 @@ class _ProfilepopupWidgetState extends State<ProfilepopupWidget>
     context.watch<FFAppState>();
 
     return Container(
-      width: 230.0,
+      width: 225.0,
       height: 150.0,
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).secondaryBackground,
@@ -154,7 +147,7 @@ class _ProfilepopupWidgetState extends State<ProfilepopupWidget>
                   color: FlutterFlowTheme.of(context).primary,
                   shape: BoxShape.circle,
                 ),
-                alignment: const AlignmentDirectional(0.00, 0.00),
+                alignment: const AlignmentDirectional(0.0, 0.0),
                 child: const FaIcon(
                   FontAwesomeIcons.signOutAlt,
                   color: Colors.white,

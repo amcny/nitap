@@ -85,7 +85,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                         topRight: Radius.circular(0.0),
                       ),
                     ),
-                    alignment: const AlignmentDirectional(0.00, 0.00),
+                    alignment: const AlignmentDirectional(0.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -123,7 +123,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                 ),
                               ),
                               child: Align(
-                                alignment: const AlignmentDirectional(0.00, 0.00),
+                                alignment: const AlignmentDirectional(0.0, 0.0),
                                 child: FaIcon(
                                   FontAwesomeIcons.arrowLeft,
                                   color: FlutterFlowTheme.of(context)
@@ -151,10 +151,9 @@ class _LoginWidgetState extends State<LoginWidget> {
                     ),
                   ),
                   Align(
-                    alignment: const AlignmentDirectional(0.00, 0.00),
+                    alignment: const AlignmentDirectional(0.0, 0.0),
                     child: Padding(
-                      padding: const EdgeInsetsDirectional.fromSTEB(
-                          32.0, 32.0, 32.0, 32.0),
+                      padding: const EdgeInsets.all(32.0),
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.start,
@@ -185,8 +184,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                       6.0, 0.0, 0.0, 0.0),
                                   child: AlignedTooltip(
                                     content: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                            8.0, 8.0, 8.0, 8.0),
+                                        padding: const EdgeInsets.all(8.0),
                                         child: Text(
                                           'roll no@student.nitandhra.ac.in',
                                           textAlign: TextAlign.center,
@@ -396,7 +394,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                             ),
                           ),
                           Align(
-                            alignment: const AlignmentDirectional(0.00, 0.00),
+                            alignment: const AlignmentDirectional(0.0, 0.0),
                             child: InkWell(
                               splashColor: Colors.transparent,
                               focusColor: Colors.transparent,
@@ -433,7 +431,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                             ),
                           ),
                           Align(
-                            alignment: const AlignmentDirectional(0.00, 0.00),
+                            alignment: const AlignmentDirectional(0.0, 0.0),
                             child: Padding(
                               padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 20.0, 0.0, 0.0),

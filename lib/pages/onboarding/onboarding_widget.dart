@@ -108,7 +108,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget>
             ],
           ).animateOnPageLoad(animationsMap['rowOnPageLoadAnimation']!),
           Align(
-            alignment: const AlignmentDirectional(-1.00, 0.00),
+            alignment: const AlignmentDirectional(-1.0, 0.0),
             child: Padding(
               padding: const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
               child: Row(

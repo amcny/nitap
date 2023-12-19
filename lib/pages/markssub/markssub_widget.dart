@@ -7,19 +7,19 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:provider/provider.dart';
-import 'attendance_model.dart';
-export 'attendance_model.dart';
+import 'markssub_model.dart';
+export 'markssub_model.dart';
 
-class AttendanceWidget extends StatefulWidget {
-  const AttendanceWidget({super.key});
+class MarkssubWidget extends StatefulWidget {
+  const MarkssubWidget({super.key});
 
   @override
-  _AttendanceWidgetState createState() => _AttendanceWidgetState();
+  _MarkssubWidgetState createState() => _MarkssubWidgetState();
 }
 
-class _AttendanceWidgetState extends State<AttendanceWidget>
+class _MarkssubWidgetState extends State<MarkssubWidget>
     with TickerProviderStateMixin {
-  late AttendanceModel _model;
+  late MarkssubModel _model;
 
   final animationsMap = {
     'containerOnPageLoadAnimation': AnimationInfo(
@@ -60,7 +60,7 @@ class _AttendanceWidgetState extends State<AttendanceWidget>
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => AttendanceModel());
+    _model = createModel(context, () => MarkssubModel());
 
     _model.courseController ??= TextEditingController();
     _model.courseFocusNode ??= FocusNode();
@@ -214,22 +214,19 @@ class _AttendanceWidgetState extends State<AttendanceWidget>
                           return;
                         }
 
-                        var attendanceRecordReference =
-                            AttendanceRecord.collection.doc();
-                        await attendanceRecordReference
-                            .set(createAttendanceRecordData(
+                        var marksRecordReference = MarksRecord.collection.doc();
+                        await marksRecordReference.set(createMarksRecordData(
                           courseName: _model.courseController.text,
                           user: currentUserReference,
                           createdTime: getCurrentTimestamp,
                         ));
-                        _model.addedClasses =
-                            AttendanceRecord.getDocumentFromData(
-                                createAttendanceRecordData(
-                                  courseName: _model.courseController.text,
-                                  user: currentUserReference,
-                                  createdTime: getCurrentTimestamp,
-                                ),
-                                attendanceRecordReference);
+                        _model.addedClasses = MarksRecord.getDocumentFromData(
+                            createMarksRecordData(
+                              courseName: _model.courseController.text,
+                              user: currentUserReference,
+                              createdTime: getCurrentTimestamp,
+                            ),
+                            marksRecordReference);
                         Navigator.pop(context);
 
                         setState(() {});

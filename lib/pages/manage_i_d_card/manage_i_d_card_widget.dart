@@ -111,7 +111,7 @@ class _ManageIDCardWidgetState extends State<ManageIDCardWidget> {
               ),
             ),
             Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 10.0),
+              padding: const EdgeInsets.all(10.0),
               child: AuthUserStreamWidget(
                 builder: (context) => InkWell(
                   splashColor: Colors.transparent,
@@ -197,7 +197,7 @@ class _ManageIDCardWidgetState extends State<ManageIDCardWidget> {
                           await selectMediaWithSourceBottomSheet(
                         context: context,
                         maxHeight: 250.00,
-                        imageQuality: 30,
+                        imageQuality: 80,
                         allowPhoto: true,
                         backgroundColor:
                             FlutterFlowTheme.of(context).primaryBackground,
