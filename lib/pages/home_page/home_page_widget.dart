@@ -215,6 +215,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                   hasTransition: true,
                                   transitionType:
                                       PageTransitionType.rightToLeft,
+                                  duration: Duration(milliseconds: 265),
                                 ),
                               },
                             );
@@ -573,7 +574,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                             transitionType:
                                                 PageTransitionType.fade,
                                             duration:
-                                                Duration(milliseconds: 250),
+                                                Duration(milliseconds: 265),
                                           ),
                                         },
                                       );
@@ -828,7 +829,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                             .showSnackBar(
                                           SnackBar(
                                             content: Text(
-                                              'Load Failed',
+                                              'Attendance',
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .labelMedium
@@ -970,7 +971,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                             .showSnackBar(
                                           SnackBar(
                                             content: Text(
-                                              'Load Failed',
+                                              'Marks',
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .labelMedium

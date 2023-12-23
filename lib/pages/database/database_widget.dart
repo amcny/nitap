@@ -4,25 +4,25 @@ import '/custom_code/widgets/index.dart' as custom_widgets;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
-import 'ecedb_model.dart';
-export 'ecedb_model.dart';
+import 'database_model.dart';
+export 'database_model.dart';
 
-class EcedbWidget extends StatefulWidget {
-  const EcedbWidget({super.key});
+class DatabaseWidget extends StatefulWidget {
+  const DatabaseWidget({super.key});
 
   @override
-  _EcedbWidgetState createState() => _EcedbWidgetState();
+  _DatabaseWidgetState createState() => _DatabaseWidgetState();
 }
 
-class _EcedbWidgetState extends State<EcedbWidget> {
-  late EcedbModel _model;
+class _DatabaseWidgetState extends State<DatabaseWidget> {
+  late DatabaseModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => EcedbModel());
+    _model = createModel(context, () => DatabaseModel());
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
@@ -56,7 +56,7 @@ class _EcedbWidgetState extends State<EcedbWidget> {
           backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
           automaticallyImplyLeading: false,
           title: Text(
-            'ECE Database',
+            'Database',
             style: FlutterFlowTheme.of(context).headlineMedium.override(
                   fontFamily: 'Poppins',
                   color: FlutterFlowTheme.of(context).primaryText,

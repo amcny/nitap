@@ -159,7 +159,7 @@ class _ExamscheduleWidgetState extends State<ExamscheduleWidget> {
                             children: [
                               Expanded(
                                 child: Text(
-                                  'Look\'s like you don\'t have any exams dates released yet. Please check back later',
+                                  'Look\'s like you don\'t have\nany exams dates released yet. \nPlease check back later',
                                   textAlign: TextAlign.center,
                                   style: FlutterFlowTheme.of(context)
                                       .titleMedium

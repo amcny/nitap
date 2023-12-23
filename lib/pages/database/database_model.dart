@@ -1,8 +1,8 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'ecedb_widget.dart' show EcedbWidget;
+import 'database_widget.dart' show DatabaseWidget;
 import 'package:flutter/material.dart';
 
-class EcedbModel extends FlutterFlowModel<EcedbWidget> {
+class DatabaseModel extends FlutterFlowModel<DatabaseWidget> {
   /// Initialization and disposal methods.
 
   @override

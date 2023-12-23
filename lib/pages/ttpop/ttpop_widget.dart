@@ -324,10 +324,26 @@ class _TtpopWidgetState extends State<TtpopWidget>
                           },
                         ),
                       ),
+                      if (getRemoteConfigBool('ad'))
+                        const Align(
+                          alignment: AlignmentDirectional(0.0, 0.97),
+                          child: Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                5.0, 10.0, 5.0, 10.0),
+                            child: FlutterFlowAdBanner(
+                              height: 60.0,
+                              showsTestAd: false,
+                              iOSAdUnitID:
+                                  'ca-app-pub-3991707481593664/6921520622',
+                              androidAdUnitID:
+                                  'ca-app-pub-3991707481593664/3272729973',
+                            ),
+                          ),
+                        ),
                       if (_model.day != null && _model.day != '')
                         Padding(
                           padding: const EdgeInsetsDirectional.fromSTEB(
-                              20.0, 30.0, 20.0, 20.0),
+                              20.0, 0.0, 20.0, 20.0),
                           child: Container(
                             width: double.infinity,
                             decoration: BoxDecoration(
@@ -596,21 +612,6 @@ class _TtpopWidgetState extends State<TtpopWidget>
                                   animationsMap[
                                       'containerOnActionTriggerAnimation']!,
                                   hasBeenTriggered: hasContainerTriggered),
-                        ),
-                      if (getRemoteConfigBool('ad'))
-                        const Align(
-                          alignment: AlignmentDirectional(0.0, 0.97),
-                          child: Padding(
-                            padding: EdgeInsets.all(5.0),
-                            child: FlutterFlowAdBanner(
-                              height: 60.0,
-                              showsTestAd: false,
-                              iOSAdUnitID:
-                                  'ca-app-pub-3991707481593664/6921520622',
-                              androidAdUnitID:
-                                  'ca-app-pub-3991707481593664/3272729973',
-                            ),
-                          ),
                         ),
                     ],
                   ),

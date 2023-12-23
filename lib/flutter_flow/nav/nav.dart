@@ -98,12 +98,12 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => const AcademicCalendarWidget(),
             ),
             FFRoute(
-              name: 'ECEDB',
-              path: 'ecedb',
+              name: 'Database',
+              path: 'database',
               requireAuth: true,
               builder: (context, params) => params.isEmpty
-                  ? const NavBarPage(initialPage: 'ECEDB')
-                  : const EcedbWidget(),
+                  ? const NavBarPage(initialPage: 'Database')
+                  : const DatabaseWidget(),
             ),
             FFRoute(
               name: 'ProfileSection',

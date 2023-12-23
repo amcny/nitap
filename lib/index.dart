@@ -2,7 +2,7 @@
 export '/pages/home_page/home_page_widget.dart' show HomePageWidget;
 export '/pages/academic_calendar/academic_calendar_widget.dart'
     show AcademicCalendarWidget;
-export '/pages/ecedb/ecedb_widget.dart' show EcedbWidget;
+export '/pages/database/database_widget.dart' show DatabaseWidget;
 export '/pages/profile_section/profile_section_widget.dart'
     show ProfileSectionWidget;
 export '/pages/appearance/appearance_widget.dart' show AppearanceWidget;

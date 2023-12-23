@@ -294,9 +294,25 @@ class _TimetableWidgetState extends State<TimetableWidget>
                             },
                           ),
                         ),
+                        if (getRemoteConfigBool('ad'))
+                          const Align(
+                            alignment: AlignmentDirectional(0.0, 0.97),
+                            child: Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  5.0, 10.0, 5.0, 10.0),
+                              child: FlutterFlowAdBanner(
+                                height: 60.0,
+                                showsTestAd: false,
+                                iOSAdUnitID:
+                                    'ca-app-pub-3991707481593664/6921520622',
+                                androidAdUnitID:
+                                    'ca-app-pub-3991707481593664/3272729973',
+                              ),
+                            ),
+                          ),
                         Padding(
                           padding: const EdgeInsetsDirectional.fromSTEB(
-                              20.0, 30.0, 20.0, 20.0),
+                              20.0, 0.0, 20.0, 20.0),
                           child: Container(
                             width: double.infinity,
                             decoration: BoxDecoration(
@@ -566,21 +582,6 @@ class _TimetableWidgetState extends State<TimetableWidget>
                                       'containerOnActionTriggerAnimation']!,
                                   hasBeenTriggered: hasContainerTriggered),
                         ),
-                        if (getRemoteConfigBool('ad'))
-                          const Align(
-                            alignment: AlignmentDirectional(0.0, 0.97),
-                            child: Padding(
-                              padding: EdgeInsets.all(5.0),
-                              child: FlutterFlowAdBanner(
-                                height: 60.0,
-                                showsTestAd: false,
-                                iOSAdUnitID:
-                                    'ca-app-pub-3991707481593664/6921520622',
-                                androidAdUnitID:
-                                    'ca-app-pub-3991707481593664/3272729973',
-                              ),
-                            ),
-                          ),
                       ],
                     ),
                   ).animateOnPageLoad(
@@ -638,6 +639,7 @@ class _TimetableWidgetState extends State<TimetableWidget>
                                           hasTransition: true,
                                           transitionType:
                                               PageTransitionType.bottomToTop,
+                                          duration: Duration(milliseconds: 265),
                                         ),
                                       },
                                     );

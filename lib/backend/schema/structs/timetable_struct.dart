@@ -50,8 +50,9 @@ class TimetableStruct extends FFFirebaseStruct {
         end: data['end'] as String?,
       );
 
-  static TimetableStruct? maybeFromMap(dynamic data) =>
-      data is Map<String, dynamic> ? TimetableStruct.fromMap(data) : null;
+  static TimetableStruct? maybeFromMap(dynamic data) => data is Map
+      ? TimetableStruct.fromMap(data.cast<String, dynamic>())
+      : null;
 
   Map<String, dynamic> toMap() => {
         'course': _course,

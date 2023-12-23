@@ -12,6 +12,7 @@ import 'flutter_flow/flutter_flow_util.dart';
 import 'flutter_flow/internationalization.dart';
 import 'package:flutter/foundation.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
+import 'package:google_nav_bar/google_nav_bar.dart';
 import 'index.dart';
 
 void main() async {
@@ -147,73 +148,53 @@ class _NavBarPageState extends State<NavBarPage> {
     final tabs = {
       'HomePage': const HomePageWidget(),
       'Timetable': const TimetableWidget(),
-      'ECEDB': const EcedbWidget(),
+      'Database': const DatabaseWidget(),
       'ProfileSection': const ProfileSectionWidget(),
     };
     final currentIndex = tabs.keys.toList().indexOf(_currentPageName);
 
     return Scaffold(
       body: _currentPage ?? tabs[_currentPageName],
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: currentIndex,
-        onTap: (i) => setState(() {
+      bottomNavigationBar: GNav(
+        selectedIndex: currentIndex,
+        onTabChange: (i) => setState(() {
           _currentPage = null;
           _currentPageName = tabs.keys.toList()[i];
         }),
         backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
-        selectedItemColor: FlutterFlowTheme.of(context).primary,
-        unselectedItemColor: FlutterFlowTheme.of(context).accent2,
-        showSelectedLabels: true,
-        showUnselectedLabels: true,
-        type: BottomNavigationBarType.fixed,
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(
-              FFIcons.khomeOutline,
-              size: 30.0,
-            ),
-            activeIcon: Icon(
-              FFIcons.khomeFilled,
-              size: 30.0,
-            ),
-            label: 'Home',
-            tooltip: '',
+        color: FlutterFlowTheme.of(context).accent2,
+        activeColor: FlutterFlowTheme.of(context).primary,
+        tabBackgroundColor: const Color(0x251A73E8),
+        tabBorderRadius: 100.0,
+        tabMargin: const EdgeInsets.all(12.0),
+        padding: const EdgeInsets.all(10.0),
+        gap: 15.0,
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        duration: const Duration(milliseconds: 500),
+        haptic: true,
+        tabs: [
+          GButton(
+            icon:
+                currentIndex == 0 ? FFIcons.khomeFilled : FFIcons.khomeOutline,
+            text: 'Home',
+            iconSize: 25.0,
           ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              FFIcons.kttOutline,
-              size: 30.0,
-            ),
-            activeIcon: Icon(
-              FFIcons.kttFilled,
-              size: 30.0,
-            ),
-            label: 'Timetable',
-            tooltip: '',
+          GButton(
+            icon: currentIndex == 1 ? FFIcons.kttFilled : FFIcons.kttOutline,
+            text: 'Timetable',
+            iconSize: 25.0,
           ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              FFIcons.kdbOutline,
-              size: 28.0,
-            ),
-            activeIcon: Icon(
-              FFIcons.kdbFilled,
-              size: 28.0,
-            ),
-            label: 'ECE DB',
-            tooltip: '',
+          GButton(
+            icon: currentIndex == 2 ? FFIcons.kdbFilled : FFIcons.kdbOutline,
+            text: 'Database',
+            iconSize: 25.0,
           ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              FFIcons.kprofileOutline,
-              size: 30.0,
-            ),
-            activeIcon: Icon(
-              FFIcons.kprofileFilled,
-              size: 30.0,
-            ),
-            label: 'Profile',
-            tooltip: '',
+          GButton(
+            icon: currentIndex == 3
+                ? FFIcons.kprofileFilled
+                : FFIcons.kprofileOutline,
+            text: 'Profile',
+            iconSize: 25.0,
           )
         ],
       ),
