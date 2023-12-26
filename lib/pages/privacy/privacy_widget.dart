@@ -58,11 +58,19 @@ class _PrivacyWidgetState extends State<PrivacyWidget> {
         child: Column(
           mainAxisSize: MainAxisSize.max,
           children: [
-            const Divider(
-              thickness: 3.0,
-              indent: 135.0,
-              endIndent: 135.0,
-              color: Color(0xFFF1F4F8),
+            Align(
+              alignment: const AlignmentDirectional(0.0, 0.0),
+              child: Padding(
+                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
+                child: Container(
+                  width: 70.0,
+                  height: 3.5,
+                  decoration: BoxDecoration(
+                    color: const Color(0x67616161),
+                    borderRadius: BorderRadius.circular(18.0),
+                  ),
+                ),
+              ),
             ),
             Padding(
               padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),

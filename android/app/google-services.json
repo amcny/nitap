@@ -8,6 +8,42 @@
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:826309155293:android:a7c18514c328d4b8c03e34",
+        "android_client_info": {
+          "package_name": "com.nitapdb.web"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "826309155293-gu9t7n82hl8omo2705brng8g91upgivc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDAvEVS_jlmBjQzL33-M883bOF2lP5gVzA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "826309155293-gu9t7n82hl8omo2705brng8g91upgivc.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "826309155293-3n5glnhsnk92rpetqo6s7u2t2f2c12e8.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.nitstudent.app"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:826309155293:android:c9fbf7b976d5157ac03e34",
         "android_client_info": {
           "package_name": "com.nitstudent.app"

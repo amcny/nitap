@@ -215,7 +215,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                   hasTransition: true,
                                   transitionType:
                                       PageTransitionType.rightToLeft,
-                                  duration: Duration(milliseconds: 265),
+                                  duration: Duration(milliseconds: 250),
                                 ),
                               },
                             );
@@ -1402,7 +1402,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
-                                    'Trending 🔥',
+                                    'Stay Connected 🤝',
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(

@@ -67,32 +67,45 @@ class _DevcnyWidgetState extends State<DevcnyWidget> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Divider(
-                      thickness: 3.0,
-                      indent: 135.0,
-                      endIndent: 135.0,
-                      color: Color(0xFFF1F4F8),
-                    ),
-                    Row(
-                      mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Text(
-                          'Developer Info',
-                          textAlign: TextAlign.center,
-                          style: FlutterFlowTheme.of(context)
-                              .titleLarge
-                              .override(
-                                fontFamily: 'Poppins',
-                                color: FlutterFlowTheme.of(context).primaryText,
-                              ),
+                    Align(
+                      alignment: const AlignmentDirectional(0.0, 0.0),
+                      child: Padding(
+                        padding:
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
+                        child: Container(
+                          width: 55.0,
+                          height: 3.5,
+                          decoration: BoxDecoration(
+                            color: const Color(0x67616161),
+                            borderRadius: BorderRadius.circular(18.0),
+                          ),
                         ),
-                      ],
+                      ),
+                    ),
+                    Align(
+                      alignment: const AlignmentDirectional(0.0, 0.0),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Text(
+                            'Developer Info',
+                            textAlign: TextAlign.center,
+                            style: FlutterFlowTheme.of(context)
+                                .titleLarge
+                                .override(
+                                  fontFamily: 'Poppins',
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryText,
+                                ),
+                          ),
+                        ],
+                      ),
                     ),
                     const Divider(
-                      thickness: 1.0,
-                      color: Color(0xFFCCCCCC),
+                      thickness: 0.5,
+                      color: Color(0x67616161),
                     ),
                     Padding(
                       padding:
@@ -161,8 +174,8 @@ class _DevcnyWidgetState extends State<DevcnyWidget> {
                       ],
                     ),
                     const Divider(
-                      thickness: 1.0,
-                      color: Color(0xFFCCCCCC),
+                      thickness: 0.5,
+                      color: Color(0x67616161),
                     ),
                     Padding(
                       padding:
