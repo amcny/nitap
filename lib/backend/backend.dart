@@ -14,6 +14,7 @@ import 'schema/faculty_record.dart';
 import 'schema/attendance_record.dart';
 import 'schema/marks_record.dart';
 import 'schema/alumni_record.dart';
+import 'schema/what_new_record.dart';
 
 export 'dart:async' show StreamSubscription;
 export 'package:cloud_firestore/cloud_firestore.dart';
@@ -30,6 +31,7 @@ export 'schema/faculty_record.dart';
 export 'schema/attendance_record.dart';
 export 'schema/marks_record.dart';
 export 'schema/alumni_record.dart';
+export 'schema/what_new_record.dart';
 
 /// Functions to query UserIdRecords (as a Stream and as a Future).
 Future<int> queryUserIdRecordCount({
@@ -359,6 +361,43 @@ Future<List<AlumniRecord>> queryAlumniRecordOnce({
     queryCollectionOnce(
       AlumniRecord.collection,
       AlumniRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+/// Functions to query WhatNewRecords (as a Stream and as a Future).
+Future<int> queryWhatNewRecordCount({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+}) =>
+    queryCollectionCount(
+      WhatNewRecord.collection,
+      queryBuilder: queryBuilder,
+      limit: limit,
+    );
+
+Stream<List<WhatNewRecord>> queryWhatNewRecord({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollection(
+      WhatNewRecord.collection,
+      WhatNewRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<List<WhatNewRecord>> queryWhatNewRecordOnce({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollectionOnce(
+      WhatNewRecord.collection,
+      WhatNewRecord.fromSnapshot,
       queryBuilder: queryBuilder,
       limit: limit,
       singleRecord: singleRecord,

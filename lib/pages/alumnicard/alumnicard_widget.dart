@@ -68,7 +68,7 @@ class _AlumnicardWidgetState extends State<AlumnicardWidget> {
         final photoUploadAlumniRecord = snapshot.data!;
         return Container(
           width: MediaQuery.sizeOf(context).width * 1.0,
-          height: 345.0,
+          height: 300.0,
           decoration: BoxDecoration(
             color: FlutterFlowTheme.of(context).secondaryBackground,
             borderRadius: const BorderRadius.only(
@@ -137,91 +137,106 @@ class _AlumnicardWidgetState extends State<AlumnicardWidget> {
                               0.0, 10.0, 0.0, 10.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
-                              Container(
-                                width: 100.0,
-                                height: 100.0,
-                                decoration: const BoxDecoration(
-                                  color: Color(0xFFDBE2E7),
-                                  shape: BoxShape.circle,
-                                ),
-                                child: Stack(
-                                  children: [
-                                    Padding(
-                                      padding: const EdgeInsets.all(4.0),
-                                      child: Container(
-                                        width: 120.0,
-                                        height: 120.0,
-                                        clipBehavior: Clip.antiAlias,
-                                        decoration: const BoxDecoration(
-                                          shape: BoxShape.circle,
-                                        ),
-                                        child: Image.network(
-                                          photoUploadAlumniRecord.image,
-                                          fit: BoxFit.cover,
-                                        ),
-                                      ),
+                              Align(
+                                alignment: const AlignmentDirectional(-1.0, 0.0),
+                                child: Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      10.0, 0.0, 0.0, 0.0),
+                                  child: Container(
+                                    width: 100.0,
+                                    height: 100.0,
+                                    decoration: const BoxDecoration(
+                                      color: Color(0xFFDBE2E7),
+                                      shape: BoxShape.circle,
                                     ),
-                                  ],
+                                    child: Stack(
+                                      children: [
+                                        Padding(
+                                          padding: const EdgeInsets.all(4.0),
+                                          child: Container(
+                                            width: 120.0,
+                                            height: 120.0,
+                                            clipBehavior: Clip.antiAlias,
+                                            decoration: const BoxDecoration(
+                                              shape: BoxShape.circle,
+                                            ),
+                                            child: Image.network(
+                                              photoUploadAlumniRecord.image,
+                                              fit: BoxFit.cover,
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    20.0, 0.0, 0.0, 0.0),
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.min,
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      photoUploadAlumniRecord.name,
+                                      textAlign: TextAlign.start,
+                                      style: FlutterFlowTheme.of(context)
+                                          .titleSmall
+                                          .override(
+                                            fontFamily: 'Poppins',
+                                            fontSize: 15.0,
+                                          ),
+                                    ),
+                                    RichText(
+                                      textScaleFactor: MediaQuery.of(context)
+                                          .textScaleFactor,
+                                      text: TextSpan(
+                                        children: [
+                                          TextSpan(
+                                            text: photoUploadAlumniRecord.batch,
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodySmall
+                                                .override(
+                                                  fontFamily: 'Poppins',
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .secondaryText,
+                                                  fontWeight: FontWeight.w500,
+                                                ),
+                                          ),
+                                          const TextSpan(
+                                            text: '\n',
+                                            style: TextStyle(),
+                                          ),
+                                          TextSpan(
+                                            text: photoUploadAlumniRecord.work,
+                                            style: const TextStyle(),
+                                          )
+                                        ],
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodySmall
+                                            .override(
+                                              fontFamily: 'Poppins',
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primary,
+                                              fontSize: 14.0,
+                                              letterSpacing: 0.2,
+                                              fontWeight: FontWeight.w500,
+                                            ),
+                                      ),
+                                      textAlign: TextAlign.start,
+                                    ),
+                                  ].divide(const SizedBox(height: 5.0)),
                                 ),
                               ),
                             ],
                           ),
-                        ),
-                        Row(
-                          mainAxisSize: MainAxisSize.max,
-                          children: [
-                            Expanded(
-                              child: Text(
-                                photoUploadAlumniRecord.name,
-                                textAlign: TextAlign.center,
-                                style: FlutterFlowTheme.of(context).titleSmall,
-                              ),
-                            ),
-                          ],
-                        ),
-                        Row(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            RichText(
-                              textScaleFactor:
-                                  MediaQuery.of(context).textScaleFactor,
-                              text: TextSpan(
-                                children: [
-                                  TextSpan(
-                                    text: photoUploadAlumniRecord.batch,
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodySmall
-                                        .override(
-                                          fontFamily: 'Poppins',
-                                          color: FlutterFlowTheme.of(context)
-                                              .secondaryText,
-                                          fontWeight: FontWeight.w500,
-                                        ),
-                                  ),
-                                  const TextSpan(
-                                    text: '\n',
-                                    style: TextStyle(),
-                                  ),
-                                  TextSpan(
-                                    text: photoUploadAlumniRecord.work,
-                                    style: const TextStyle(),
-                                  )
-                                ],
-                                style: FlutterFlowTheme.of(context)
-                                    .bodySmall
-                                    .override(
-                                      fontFamily: 'Poppins',
-                                      color:
-                                          FlutterFlowTheme.of(context).primary,
-                                      fontWeight: FontWeight.w500,
-                                    ),
-                              ),
-                              textAlign: TextAlign.center,
-                            ),
-                          ],
                         ),
                         const Divider(
                           thickness: 0.5,
@@ -229,7 +244,7 @@ class _AlumnicardWidgetState extends State<AlumnicardWidget> {
                         ),
                         Padding(
                           padding: const EdgeInsetsDirectional.fromSTEB(
-                              0.0, 5.0, 0.0, 0.0),
+                              0.0, 10.0, 0.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,

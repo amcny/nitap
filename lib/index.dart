@@ -30,3 +30,5 @@ export '/pages/ecea/ecea_widget.dart' show EceaWidget;
 export '/pages/foryouinfo/foryouinfo_widget.dart' show ForyouinfoWidget;
 export '/pages/alumni/alumni_widget.dart' show AlumniWidget;
 export '/pages/marks/marks_widget.dart' show MarksWidget;
+export '/pages/adas/adas_widget.dart' show AdasWidget;
+export '/pages/what_new/what_new_widget.dart' show WhatNewWidget;

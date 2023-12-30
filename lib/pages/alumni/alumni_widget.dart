@@ -195,7 +195,7 @@ class _AlumniWidgetState extends State<AlumniWidget>
                         ),
                         child: Padding(
                           padding: const EdgeInsetsDirectional.fromSTEB(
-                              8.0, 8.0, 12.0, 8.0),
+                              12.0, 8.0, 12.0, 8.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             crossAxisAlignment: CrossAxisAlignment.center,
@@ -236,7 +236,7 @@ class _AlumniWidgetState extends State<AlumniWidget>
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primary,
-                                              fontWeight: FontWeight.w500,
+                                              fontWeight: FontWeight.normal,
                                             ),
                                       ),
                                     ),

@@ -200,7 +200,7 @@ class _TtpopWidgetState extends State<TtpopWidget>
                     children: [
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.min,
                           children: [
@@ -343,7 +343,7 @@ class _TtpopWidgetState extends State<TtpopWidget>
                       if (_model.day != null && _model.day != '')
                         Padding(
                           padding: const EdgeInsetsDirectional.fromSTEB(
-                              20.0, 0.0, 20.0, 20.0),
+                              15.0, 0.0, 15.0, 20.0),
                           child: Container(
                             width: double.infinity,
                             decoration: BoxDecoration(
@@ -381,13 +381,12 @@ class _TtpopWidgetState extends State<TtpopWidget>
                                         'day',
                                       ),
                                       style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
+                                          .bodyLarge
                                           .override(
                                             fontFamily: 'Poppins',
                                             color: Colors.white,
-                                            fontSize: 15.0,
                                             letterSpacing: 0.5,
-                                            fontWeight: FontWeight.w600,
+                                            fontWeight: FontWeight.w500,
                                           ),
                                     ),
                                   ),
@@ -467,7 +466,9 @@ class _TtpopWidgetState extends State<TtpopWidget>
                                           ),
                                         ),
                                       ),
-                                    ],
+                                    ]
+                                        .divide(const SizedBox(width: 20.0))
+                                        .around(const SizedBox(width: 20.0)),
                                   ),
                                 ),
                                 const Divider(
@@ -503,7 +504,7 @@ class _TtpopWidgetState extends State<TtpopWidget>
                                                     Text(
                                                       dataItem.course,
                                                       textAlign:
-                                                          TextAlign.center,
+                                                          TextAlign.start,
                                                       style: FlutterFlowTheme
                                                               .of(context)
                                                           .bodyMedium
@@ -560,6 +561,8 @@ class _TtpopWidgetState extends State<TtpopWidget>
                                                     children: [
                                                       Text(
                                                         dataItem.start,
+                                                        textAlign:
+                                                            TextAlign.end,
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -577,6 +580,8 @@ class _TtpopWidgetState extends State<TtpopWidget>
                                                       ),
                                                       Text(
                                                         dataItem.end,
+                                                        textAlign:
+                                                            TextAlign.end,
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -596,7 +601,9 @@ class _TtpopWidgetState extends State<TtpopWidget>
                                                   ),
                                                 ),
                                               ),
-                                            ],
+                                            ]
+                                                .divide(const SizedBox(width: 20.0))
+                                                .around(const SizedBox(width: 20.0)),
                                           ),
                                         );
                                       }),

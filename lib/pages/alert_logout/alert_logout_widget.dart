@@ -68,13 +68,16 @@ class _AlertLogoutWidgetState extends State<AlertLogoutWidget> {
             ),
           ),
           Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 0.0, 0.0),
+            padding: const EdgeInsetsDirectional.fromSTEB(20.0, 10.0, 0.0, 0.0),
             child: Row(
               mainAxisSize: MainAxisSize.min,
               children: [
                 Text(
                   'Are you sure, do you want to logout?',
-                  style: FlutterFlowTheme.of(context).titleMedium,
+                  style: FlutterFlowTheme.of(context).titleMedium.override(
+                        fontFamily: 'Poppins',
+                        fontWeight: FontWeight.normal,
+                      ),
                 ),
               ],
             ),

@@ -19,8 +19,14 @@ class AcademicRecord extends FirestoreRecord {
   String get image => _image ?? '';
   bool hasImage() => _image != null;
 
+  // "created_time" field.
+  DateTime? _createdTime;
+  DateTime? get createdTime => _createdTime;
+  bool hasCreatedTime() => _createdTime != null;
+
   void _initializeFields() {
     _image = snapshotData['image'] as String?;
+    _createdTime = snapshotData['created_time'] as DateTime?;
   }
 
   static CollectionReference get collection =>
@@ -59,10 +65,12 @@ class AcademicRecord extends FirestoreRecord {
 
 Map<String, dynamic> createAcademicRecordData({
   String? image,
+  DateTime? createdTime,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
       'image': image,
+      'created_time': createdTime,
     }.withoutNulls,
   );
 
@@ -74,11 +82,12 @@ class AcademicRecordDocumentEquality implements Equality<AcademicRecord> {
 
   @override
   bool equals(AcademicRecord? e1, AcademicRecord? e2) {
-    return e1?.image == e2?.image;
+    return e1?.image == e2?.image && e1?.createdTime == e2?.createdTime;
   }
 
   @override
-  int hash(AcademicRecord? e) => const ListEquality().hash([e?.image]);
+  int hash(AcademicRecord? e) =>
+      const ListEquality().hash([e?.image, e?.createdTime]);
 
   @override
   bool isValidKey(Object? o) => o is AcademicRecord;

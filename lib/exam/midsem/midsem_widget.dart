@@ -113,47 +113,42 @@ class _MidsemWidgetState extends State<MidsemWidget> {
               itemBuilder: (context, listViewIndex) {
                 final listViewExamRecord =
                     listViewExamRecordList[listViewIndex];
-                return Column(
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    InkWell(
-                      splashColor: Colors.transparent,
-                      focusColor: Colors.transparent,
-                      hoverColor: Colors.transparent,
-                      highlightColor: Colors.transparent,
-                      onTap: () async {
-                        await Navigator.push(
-                          context,
-                          PageTransition(
-                            type: PageTransitionType.fade,
-                            child: FlutterFlowExpandedImageView(
-                              image: CachedNetworkImage(
-                                fadeInDuration: const Duration(milliseconds: 0),
-                                fadeOutDuration: const Duration(milliseconds: 0),
-                                imageUrl: listViewExamRecord.midsem,
-                                fit: BoxFit.contain,
-                              ),
-                              allowRotation: false,
-                              useHeroAnimation: false,
-                            ),
-                          ),
-                        );
-                      },
-                      child: Hero(
-                        tag: listViewExamRecord.midsem,
-                        transitionOnUserGestures: true,
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(0.0),
-                          child: CachedNetworkImage(
+                return InkWell(
+                  splashColor: Colors.transparent,
+                  focusColor: Colors.transparent,
+                  hoverColor: Colors.transparent,
+                  highlightColor: Colors.transparent,
+                  onTap: () async {
+                    await Navigator.push(
+                      context,
+                      PageTransition(
+                        type: PageTransitionType.fade,
+                        child: FlutterFlowExpandedImageView(
+                          image: CachedNetworkImage(
                             fadeInDuration: const Duration(milliseconds: 0),
                             fadeOutDuration: const Duration(milliseconds: 0),
                             imageUrl: listViewExamRecord.midsem,
-                            fit: BoxFit.cover,
+                            fit: BoxFit.contain,
                           ),
+                          allowRotation: false,
+                          useHeroAnimation: false,
                         ),
                       ),
+                    );
+                  },
+                  child: Hero(
+                    tag: listViewExamRecord.midsem,
+                    transitionOnUserGestures: true,
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(0.0),
+                      child: CachedNetworkImage(
+                        fadeInDuration: const Duration(milliseconds: 0),
+                        fadeOutDuration: const Duration(milliseconds: 0),
+                        imageUrl: listViewExamRecord.midsem,
+                        fit: BoxFit.cover,
+                      ),
                     ),
-                  ],
+                  ),
                 );
               },
             );

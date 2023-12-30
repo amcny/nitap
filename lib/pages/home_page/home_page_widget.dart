@@ -57,7 +57,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
       await actions.lockOrientation();
 
       admob.loadInterstitialAd(
-        "",
+        "ca-app-pub-3991707481593664/7953168711",
         "ca-app-pub-3991707481593664/6828220508",
         false,
       );
@@ -820,7 +820,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
 
                                       if (_model.interstitialAdSuccess!) {
                                         admob.loadInterstitialAd(
-                                          "",
+                                          "ca-app-pub-3991707481593664/7953168711",
                                           "ca-app-pub-3991707481593664/6828220508",
                                           false,
                                         );
@@ -962,7 +962,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
 
                                       if (_model.interstitialAdSuccess2!) {
                                         admob.loadInterstitialAd(
-                                          "",
+                                          "ca-app-pub-3991707481593664/7953168711",
                                           "ca-app-pub-3991707481593664/6828220508",
                                           false,
                                         );

@@ -312,7 +312,7 @@ class _TimetableWidgetState extends State<TimetableWidget>
                           ),
                         Padding(
                           padding: const EdgeInsetsDirectional.fromSTEB(
-                              20.0, 0.0, 20.0, 20.0),
+                              15.0, 0.0, 15.0, 20.0),
                           child: Container(
                             width: double.infinity,
                             decoration: BoxDecoration(
@@ -350,13 +350,12 @@ class _TimetableWidgetState extends State<TimetableWidget>
                                         'day',
                                       ),
                                       style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
+                                          .bodyLarge
                                           .override(
                                             fontFamily: 'Poppins',
                                             color: Colors.white,
-                                            fontSize: 15.0,
                                             letterSpacing: 0.5,
-                                            fontWeight: FontWeight.w600,
+                                            fontWeight: FontWeight.w500,
                                           ),
                                     ),
                                   ),
@@ -436,7 +435,9 @@ class _TimetableWidgetState extends State<TimetableWidget>
                                           ),
                                         ),
                                       ),
-                                    ],
+                                    ]
+                                        .divide(const SizedBox(width: 20.0))
+                                        .around(const SizedBox(width: 20.0)),
                                   ),
                                 ),
                                 const Divider(
@@ -472,7 +473,7 @@ class _TimetableWidgetState extends State<TimetableWidget>
                                                     Text(
                                                       dataItem.course,
                                                       textAlign:
-                                                          TextAlign.center,
+                                                          TextAlign.start,
                                                       style: FlutterFlowTheme
                                                               .of(context)
                                                           .bodyMedium
@@ -529,6 +530,8 @@ class _TimetableWidgetState extends State<TimetableWidget>
                                                     children: [
                                                       Text(
                                                         dataItem.start,
+                                                        textAlign:
+                                                            TextAlign.end,
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -546,6 +549,8 @@ class _TimetableWidgetState extends State<TimetableWidget>
                                                       ),
                                                       Text(
                                                         dataItem.end,
+                                                        textAlign:
+                                                            TextAlign.end,
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -565,7 +570,9 @@ class _TimetableWidgetState extends State<TimetableWidget>
                                                   ),
                                                 ),
                                               ),
-                                            ],
+                                            ]
+                                                .divide(const SizedBox(width: 20.0))
+                                                .around(const SizedBox(width: 20.0)),
                                           ),
                                         );
                                       }),
