@@ -223,7 +223,7 @@ class _WhatNewWidgetState extends State<WhatNewWidget> {
                                             MediaQuery.sizeOf(context).width *
                                                 1.0,
                                         height: 175.0,
-                                        fit: BoxFit.cover,
+                                        fit: BoxFit.fill,
                                       ),
                                     ),
                                   ),
