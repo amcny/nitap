@@ -94,7 +94,7 @@ class _ChoosesecWidgetState extends State<ChoosesecWidget> {
                 autovalidateMode: AutovalidateMode.disabled,
                 child: Padding(
                   padding:
-                      const EdgeInsetsDirectional.fromSTEB(20.0, 45.0, 20.0, 0.0),
+                      const EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 0.0),
                   child: FlutterFlowDropDown<String>(
                     controller: _model.dropDownValueController ??=
                         FormFieldController<String>(null),
@@ -125,6 +125,7 @@ class _ChoosesecWidgetState extends State<ChoosesecWidget> {
                     margin:
                         const EdgeInsetsDirectional.fromSTEB(15.0, 0.0, 15.0, 0.0),
                     hidesUnderline: true,
+                    isOverButton: false,
                     isSearchable: false,
                     isMultiSelect: false,
                   ),

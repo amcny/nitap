@@ -2,6 +2,7 @@ import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -215,8 +216,12 @@ class _WhatNewWidgetState extends State<WhatNewWidget> {
                                   Flexible(
                                     child: ClipRRect(
                                       borderRadius: BorderRadius.circular(8.0),
-                                      child: Image.network(
-                                        columnWhatNewRecord.image,
+                                      child: CachedNetworkImage(
+                                        fadeInDuration:
+                                            const Duration(milliseconds: 0),
+                                        fadeOutDuration:
+                                            const Duration(milliseconds: 0),
+                                        imageUrl: columnWhatNewRecord.image,
                                         width:
                                             MediaQuery.sizeOf(context).width *
                                                 1.0,

@@ -174,50 +174,40 @@ class _AlumnicardWidgetState extends State<AlumnicardWidget> {
                                   ),
                                 ),
                               ),
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    20.0, 0.0, 0.0, 0.0),
-                                child: Column(
-                                  mainAxisSize: MainAxisSize.min,
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      photoUploadAlumniRecord.name,
-                                      textAlign: TextAlign.start,
-                                      style: FlutterFlowTheme.of(context)
-                                          .titleSmall
-                                          .override(
-                                            fontFamily: 'Poppins',
-                                            fontSize: 15.0,
-                                          ),
-                                    ),
-                                    RichText(
-                                      textScaleFactor: MediaQuery.of(context)
-                                          .textScaleFactor,
-                                      text: TextSpan(
-                                        children: [
-                                          TextSpan(
-                                            text: photoUploadAlumniRecord.batch,
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodySmall
-                                                .override(
-                                                  fontFamily: 'Poppins',
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
+                              Expanded(
+                                child: Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      20.0, 0.0, 10.0, 0.0),
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        photoUploadAlumniRecord.name,
+                                        textAlign: TextAlign.start,
+                                        style: FlutterFlowTheme.of(context)
+                                            .titleSmall
+                                            .override(
+                                              fontFamily: 'Poppins',
+                                              fontSize: 15.0,
+                                            ),
+                                      ),
+                                      Text(
+                                        photoUploadAlumniRecord.batch,
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodySmall
+                                            .override(
+                                              fontFamily: 'Poppins',
+                                              color:
+                                                  FlutterFlowTheme.of(context)
                                                       .secondaryText,
-                                                  fontWeight: FontWeight.w500,
-                                                ),
-                                          ),
-                                          const TextSpan(
-                                            text: '\n',
-                                            style: TextStyle(),
-                                          ),
-                                          TextSpan(
-                                            text: photoUploadAlumniRecord.work,
-                                            style: const TextStyle(),
-                                          )
-                                        ],
+                                              fontWeight: FontWeight.w500,
+                                            ),
+                                      ),
+                                      Text(
+                                        photoUploadAlumniRecord.work,
                                         style: FlutterFlowTheme.of(context)
                                             .bodySmall
                                             .override(
@@ -225,14 +215,11 @@ class _AlumnicardWidgetState extends State<AlumnicardWidget> {
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primary,
-                                              fontSize: 14.0,
-                                              letterSpacing: 0.2,
                                               fontWeight: FontWeight.w500,
                                             ),
                                       ),
-                                      textAlign: TextAlign.start,
-                                    ),
-                                  ].divide(const SizedBox(height: 5.0)),
+                                    ].divide(const SizedBox(height: 5.0)),
+                                  ),
                                 ),
                               ),
                             ],
