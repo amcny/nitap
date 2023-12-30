@@ -64,6 +64,7 @@ class _WhatNewWidgetState extends State<WhatNewWidget> {
             textAlign: TextAlign.center,
             style: FlutterFlowTheme.of(context).titleMedium.override(
                   fontFamily: 'Poppins',
+                  color: Colors.white,
                   fontSize: 16.0,
                   fontWeight: FontWeight.w600,
                 ),
@@ -74,9 +75,9 @@ class _WhatNewWidgetState extends State<WhatNewWidget> {
               borderRadius: 30.0,
               borderWidth: 1.0,
               buttonSize: 60.0,
-              icon: Icon(
+              icon: const Icon(
                 Icons.close,
-                color: FlutterFlowTheme.of(context).primaryText,
+                color: Colors.white,
                 size: 24.0,
               ),
               onPressed: () async {
@@ -142,8 +143,6 @@ class _WhatNewWidgetState extends State<WhatNewWidget> {
                                 Flexible(
                                   child: Container(
                                     decoration: BoxDecoration(
-                                      color: FlutterFlowTheme.of(context)
-                                          .secondaryBackground,
                                       borderRadius: BorderRadius.circular(14.0),
                                       border: Border.all(
                                         color: () {
@@ -187,6 +186,7 @@ class _WhatNewWidgetState extends State<WhatNewWidget> {
                                             .bodyMedium
                                             .override(
                                               fontFamily: 'Poppins',
+                                              color: Colors.white,
                                               fontSize: 13.0,
                                               fontWeight: FontWeight.w600,
                                             ),
@@ -204,9 +204,7 @@ class _WhatNewWidgetState extends State<WhatNewWidget> {
                                             .bodySmall
                                             .override(
                                               fontFamily: 'Poppins',
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .secondaryText,
+                                              color: const Color(0xFF95A1AC),
                                               fontWeight: FontWeight.normal,
                                             ),
                                       ),
