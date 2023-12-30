@@ -251,12 +251,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => const MarksWidget(),
             ),
             FFRoute(
-              name: 'adas',
-              path: 'adas',
-              requireAuth: true,
-              builder: (context, params) => const AdasWidget(),
-            ),
-            FFRoute(
               name: 'what_new',
               path: 'whatNew',
               requireAuth: true,

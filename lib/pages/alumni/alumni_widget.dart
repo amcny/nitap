@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
 import 'alumni_model.dart';
 export 'alumni_model.dart';
@@ -141,6 +142,14 @@ class _AlumniWidgetState extends State<AlumniWidget>
                 );
               }
               List<AlumniRecord> listViewAlumniRecordList = snapshot.data!;
+              if (listViewAlumniRecordList.isEmpty) {
+                return Center(
+                  child: SvgPicture.asset(
+                    'assets/images/No_data.svg',
+                    fit: BoxFit.contain,
+                  ),
+                );
+              }
               return ListView.builder(
                 padding: EdgeInsets.zero,
                 scrollDirection: Axis.vertical,

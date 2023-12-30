@@ -123,7 +123,7 @@ class _ChoosesecWidgetState extends State<ChoosesecWidget> {
                     borderWidth: 1.0,
                     borderRadius: 8.0,
                     margin:
-                        const EdgeInsetsDirectional.fromSTEB(16.0, 4.0, 16.0, 4.0),
+                        const EdgeInsetsDirectional.fromSTEB(15.0, 0.0, 15.0, 0.0),
                     hidesUnderline: true,
                     isSearchable: false,
                     isMultiSelect: false,
