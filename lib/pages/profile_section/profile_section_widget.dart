@@ -7,7 +7,6 @@ import '/pages/alert_logout/alert_logout_widget.dart';
 import '/pages/devcny/devcny_widget.dart';
 import '/pages/privacy/privacy_widget.dart';
 import '/pages/support/support_widget.dart';
-import 'package:aligned_dialog/aligned_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -90,18 +89,15 @@ class _ProfileSectionWidgetState extends State<ProfileSectionWidget> {
                 ),
                 showLoadingIndicator: true,
                 onPressed: () async {
-                  await showAlignedDialog(
+                  await showDialog(
                     context: context,
-                    isGlobal: true,
-                    avoidOverflow: false,
-                    targetAnchor: const AlignmentDirectional(0.0, 0.0)
-                        .resolve(Directionality.of(context)),
-                    followerAnchor: const AlignmentDirectional(0.0, 0.0)
-                        .resolve(Directionality.of(context)),
                     builder: (dialogContext) {
-                      return const Material(
-                        color: Colors.transparent,
-                        child: SizedBox(
+                      return Dialog(
+                        insetPadding: EdgeInsets.zero,
+                        backgroundColor: Colors.transparent,
+                        alignment: const AlignmentDirectional(0.0, 0.0)
+                            .resolve(Directionality.of(context)),
+                        child: const SizedBox(
                           height: 210.0,
                           width: 345.0,
                           child: AlertLogoutWidget(),

@@ -171,6 +171,7 @@ class _WhatNewWidgetState extends State<WhatNewWidget> {
                                             .bodySmall
                                             .override(
                                               fontFamily: 'Poppins',
+                                              color: Colors.white,
                                               fontSize: 12.0,
                                             ),
                                       ),

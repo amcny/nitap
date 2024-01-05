@@ -55,12 +55,13 @@ class _HomePageWidgetState extends State<HomePageWidget>
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       await actions.lockOrientation();
-
-      admob.loadInterstitialAd(
-        "ca-app-pub-3991707481593664/7953168711",
-        "ca-app-pub-3991707481593664/6828220508",
-        false,
-      );
+      if (getRemoteConfigBool('ad')) {
+        admob.loadInterstitialAd(
+          "ca-app-pub-3991707481593664/7953168711",
+          "ca-app-pub-3991707481593664/6828220508",
+          false,
+        );
+      }
     });
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
@@ -815,44 +816,53 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                     hoverColor: Colors.transparent,
                                     highlightColor: Colors.transparent,
                                     onTap: () async {
-                                      _model.interstitialAdSuccess =
-                                          await admob.showInterstitialAd();
+                                      var shouldSetState = false;
+                                      if (getRemoteConfigBool('ad')) {
+                                        _model.interstitialAdSuccess =
+                                            await admob.showInterstitialAd();
 
-                                      if (_model.interstitialAdSuccess!) {
-                                        admob.loadInterstitialAd(
-                                          "ca-app-pub-3991707481593664/7953168711",
-                                          "ca-app-pub-3991707481593664/6828220508",
-                                          false,
-                                        );
-                                      } else {
-                                        ScaffoldMessenger.of(context)
-                                            .showSnackBar(
-                                          SnackBar(
-                                            content: Text(
-                                              'Attendance',
-                                              style:
+                                        shouldSetState = true;
+                                        if (_model.interstitialAdSuccess!) {
+                                          admob.loadInterstitialAd(
+                                            "ca-app-pub-3991707481593664/7953168711",
+                                            "ca-app-pub-3991707481593664/6828220508",
+                                            false,
+                                          );
+                                        } else {
+                                          ScaffoldMessenger.of(context)
+                                              .showSnackBar(
+                                            SnackBar(
+                                              content: Text(
+                                                'Attendance',
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .override(
+                                                          fontFamily: 'Poppins',
+                                                          color: Colors.white,
+                                                          fontSize: 14.0,
+                                                          fontWeight:
+                                                              FontWeight.normal,
+                                                        ),
+                                              ),
+                                              duration:
+                                                  const Duration(milliseconds: 2000),
+                                              backgroundColor:
                                                   FlutterFlowTheme.of(context)
-                                                      .labelMedium
-                                                      .override(
-                                                        fontFamily: 'Poppins',
-                                                        color: Colors.white,
-                                                        fontSize: 14.0,
-                                                        fontWeight:
-                                                            FontWeight.normal,
-                                                      ),
+                                                      .primary,
                                             ),
-                                            duration:
-                                                const Duration(milliseconds: 2000),
-                                            backgroundColor:
-                                                FlutterFlowTheme.of(context)
-                                                    .primary,
-                                          ),
-                                        );
+                                          );
+                                        }
+
+                                        context.pushNamed('Attendancefeature');
+                                      } else {
+                                        context.pushNamed('Attendancefeature');
+
+                                        if (shouldSetState) setState(() {});
+                                        return;
                                       }
 
-                                      context.pushNamed('Attendancefeature');
-
-                                      setState(() {});
+                                      if (shouldSetState) setState(() {});
                                     },
                                     child: Column(
                                       mainAxisSize: MainAxisSize.min,

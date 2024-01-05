@@ -100,10 +100,17 @@ class _AppearanceWidgetState extends State<AppearanceWidget> {
               ),
             ),
             Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(12.0, 15.0, 12.0, 0.0),
-              child: Row(
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              padding: const EdgeInsetsDirectional.fromSTEB(15.0, 15.0, 15.0, 0.0),
+              child: GridView(
+                padding: EdgeInsets.zero,
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  crossAxisSpacing: 15.0,
+                  mainAxisSpacing: 0.0,
+                  childAspectRatio: 0.92,
+                ),
+                shrinkWrap: true,
+                scrollDirection: Axis.vertical,
                 children: [
                   InkWell(
                     splashColor: Colors.transparent,
@@ -148,7 +155,7 @@ class _AppearanceWidgetState extends State<AppearanceWidget> {
                           ),
                           Padding(
                             padding: const EdgeInsetsDirectional.fromSTEB(
-                                10.0, 5.0, 0.0, 0.0),
+                                10.0, 0.0, 0.0, 0.0),
                             child: Text(
                               'Light',
                               style: FlutterFlowTheme.of(context)
@@ -207,7 +214,7 @@ class _AppearanceWidgetState extends State<AppearanceWidget> {
                           ),
                           Padding(
                             padding: const EdgeInsetsDirectional.fromSTEB(
-                                10.0, 5.0, 0.0, 0.0),
+                                10.0, 0.0, 0.0, 0.0),
                             child: Text(
                               'Dark',
                               style: FlutterFlowTheme.of(context)

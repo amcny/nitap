@@ -5,7 +5,6 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/pages/marksno/marksno_widget.dart';
 import '/pages/markssub/markssub_widget.dart';
-import 'package:aligned_dialog/aligned_dialog.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:data_table_2/data_table_2.dart';
 import 'package:flutter/material.dart';
@@ -65,17 +64,14 @@ class _MarksWidgetState extends State<MarksWidget> {
         floatingActionButton: Builder(
           builder: (context) => FloatingActionButton(
             onPressed: () async {
-              await showAlignedDialog(
+              await showDialog(
                 context: context,
-                isGlobal: true,
-                avoidOverflow: true,
-                targetAnchor: const AlignmentDirectional(0.0, 0.0)
-                    .resolve(Directionality.of(context)),
-                followerAnchor: const AlignmentDirectional(0.0, -0.2)
-                    .resolve(Directionality.of(context)),
                 builder: (dialogContext) {
-                  return Material(
-                    color: Colors.transparent,
+                  return Dialog(
+                    insetPadding: EdgeInsets.zero,
+                    backgroundColor: Colors.transparent,
+                    alignment: const AlignmentDirectional(0.0, -0.2)
+                        .resolve(Directionality.of(context)),
                     child: GestureDetector(
                       onTap: () => _model.unfocusNode.canRequestFocus
                           ? FocusScope.of(context)
@@ -262,19 +258,16 @@ class _MarksWidgetState extends State<MarksWidget> {
                                   hoverColor: Colors.transparent,
                                   highlightColor: Colors.transparent,
                                   onTap: () async {
-                                    await showAlignedDialog(
+                                    await showDialog(
                                       context: context,
-                                      isGlobal: true,
-                                      avoidOverflow: false,
-                                      targetAnchor: const AlignmentDirectional(
-                                              0.0, 0.0)
-                                          .resolve(Directionality.of(context)),
-                                      followerAnchor: const AlignmentDirectional(
-                                              0.0, -0.2)
-                                          .resolve(Directionality.of(context)),
                                       builder: (dialogContext) {
-                                        return Material(
-                                          color: Colors.transparent,
+                                        return Dialog(
+                                          insetPadding: EdgeInsets.zero,
+                                          backgroundColor: Colors.transparent,
+                                          alignment: const AlignmentDirectional(
+                                                  0.0, -0.2)
+                                              .resolve(
+                                                  Directionality.of(context)),
                                           child: GestureDetector(
                                             onTap: () => _model
                                                     .unfocusNode.canRequestFocus

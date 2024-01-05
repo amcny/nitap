@@ -5,7 +5,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/pages/attendance/attendance_widget.dart';
 import '/pages/attendclass/attendclass_widget.dart';
-import 'package:aligned_dialog/aligned_dialog.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:data_table_2/data_table_2.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -61,18 +61,15 @@ class _AttendancefeatureWidgetState extends State<AttendancefeatureWidget> {
       floatingActionButton: Builder(
         builder: (context) => FloatingActionButton(
           onPressed: () async {
-            await showAlignedDialog(
+            await showDialog(
               context: context,
-              isGlobal: true,
-              avoidOverflow: true,
-              targetAnchor: const AlignmentDirectional(0.0, 0.0)
-                  .resolve(Directionality.of(context)),
-              followerAnchor: const AlignmentDirectional(0.0, -0.2)
-                  .resolve(Directionality.of(context)),
               builder: (dialogContext) {
-                return const Material(
-                  color: Colors.transparent,
-                  child: AttendanceWidget(),
+                return Dialog(
+                  insetPadding: EdgeInsets.zero,
+                  backgroundColor: Colors.transparent,
+                  alignment: const AlignmentDirectional(0.0, -0.2)
+                      .resolve(Directionality.of(context)),
+                  child: const AttendanceWidget(),
                 );
               },
             ).then((value) => setState(() {}));
@@ -156,8 +153,10 @@ class _AttendancefeatureWidgetState extends State<AttendancefeatureWidget> {
                 DataColumn2(
                   label: DefaultTextStyle.merge(
                     softWrap: true,
-                    child: Text(
+                    child: AutoSizeText(
                       'Course Name',
+                      textAlign: TextAlign.start,
+                      maxLines: 2,
                       style: FlutterFlowTheme.of(context).labelLarge,
                     ),
                   ),
@@ -165,8 +164,9 @@ class _AttendancefeatureWidgetState extends State<AttendancefeatureWidget> {
                 DataColumn2(
                   label: DefaultTextStyle.merge(
                     softWrap: true,
-                    child: Text(
+                    child: AutoSizeText(
                       'Classes Missed',
+                      textAlign: TextAlign.center,
                       style: FlutterFlowTheme.of(context).labelLarge,
                     ),
                   ),
@@ -174,8 +174,10 @@ class _AttendancefeatureWidgetState extends State<AttendancefeatureWidget> {
                 DataColumn2(
                   label: DefaultTextStyle.merge(
                     softWrap: true,
-                    child: Text(
+                    child: AutoSizeText(
                       'Edit/Delete',
+                      textAlign: TextAlign.center,
+                      maxLines: 2,
                       style: FlutterFlowTheme.of(context).labelLarge,
                     ),
                   ),
@@ -202,18 +204,16 @@ class _AttendancefeatureWidgetState extends State<AttendancefeatureWidget> {
                                 hoverColor: Colors.transparent,
                                 highlightColor: Colors.transparent,
                                 onTap: () async {
-                                  await showAlignedDialog(
+                                  await showDialog(
                                     context: context,
-                                    isGlobal: true,
-                                    avoidOverflow: false,
-                                    targetAnchor: const AlignmentDirectional(0.0, 0.0)
-                                        .resolve(Directionality.of(context)),
-                                    followerAnchor: const AlignmentDirectional(
-                                            0.0, -0.2)
-                                        .resolve(Directionality.of(context)),
                                     builder: (dialogContext) {
-                                      return Material(
-                                        color: Colors.transparent,
+                                      return Dialog(
+                                        insetPadding: EdgeInsets.zero,
+                                        backgroundColor: Colors.transparent,
+                                        alignment:
+                                            const AlignmentDirectional(0.0, -0.2)
+                                                .resolve(
+                                                    Directionality.of(context)),
                                         child: AttendclassWidget(
                                           classref: dataTableAttendanceRecord
                                               .reference,

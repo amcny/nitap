@@ -124,7 +124,7 @@ class _ExamscheduleWidgetState extends State<ExamscheduleWidget> {
                     width: double.infinity,
                     height: double.infinity,
                     decoration: BoxDecoration(
-                      color: FlutterFlowTheme.of(context).primaryBackground,
+                      color: FlutterFlowTheme.of(context).appbar,
                     ),
                     alignment: const AlignmentDirectional(0.0, 0.0),
                     child: Column(

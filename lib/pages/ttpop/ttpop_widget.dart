@@ -187,7 +187,7 @@ class _TtpopWidgetState extends State<TtpopWidget>
             ),
             actions: const [],
             centerTitle: true,
-            elevation: 0.2,
+            elevation: 0.0,
           ),
           body: SafeArea(
             top: true,

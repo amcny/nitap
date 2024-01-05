@@ -178,7 +178,7 @@ class _TimetableWidgetState extends State<TimetableWidget>
               ),
               actions: const [],
               centerTitle: true,
-              elevation: 0.2,
+              elevation: 0.0,
             ),
             body: SafeArea(
               top: true,
@@ -665,7 +665,7 @@ class _TimetableWidgetState extends State<TimetableWidget>
                                           fontFamily: 'Poppins',
                                           color: Colors.white,
                                         ),
-                                    elevation: 3.0,
+                                    elevation: 2.0,
                                     borderSide: const BorderSide(
                                       color: Colors.transparent,
                                       width: 1.0,
