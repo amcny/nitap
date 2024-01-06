@@ -228,6 +228,7 @@ class _SignupWidgetState extends State<SignupWidget> {
                               child: TextFormField(
                                 controller: _model.emailAddressController,
                                 focusNode: _model.emailAddressFocusNode,
+                                autofillHints: const [AutofillHints.email],
                                 obscureText: false,
                                 decoration: InputDecoration(
                                   labelText: 'Email',

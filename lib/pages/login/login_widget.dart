@@ -227,6 +227,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                               child: TextFormField(
                                 controller: _model.emailAddressController,
                                 focusNode: _model.emailAddressFocusNode,
+                                autofillHints: const [AutofillHints.email],
                                 obscureText: false,
                                 decoration: InputDecoration(
                                   labelText: 'Email',
