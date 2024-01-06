@@ -191,6 +191,7 @@ class _AttendancefeatureWidgetState extends State<AttendancefeatureWidget> {
                         ),
                         Text(
                           dataTableAttendanceRecord.noClasses.toString(),
+                          textAlign: TextAlign.center,
                           style: FlutterFlowTheme.of(context).bodyMedium,
                         ),
                         Row(

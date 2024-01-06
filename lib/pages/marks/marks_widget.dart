@@ -220,6 +220,7 @@ class _MarksWidgetState extends State<MarksWidget> {
                       child: AutoSizeText(
                         'Edit/Delete',
                         textAlign: TextAlign.center,
+                        maxLines: 2,
                         style: FlutterFlowTheme.of(context).labelLarge,
                       ),
                     ),
@@ -233,18 +234,22 @@ class _MarksWidgetState extends State<MarksWidget> {
                           ),
                           Text(
                             dataTableMarksRecord.minor1,
+                            textAlign: TextAlign.center,
                             style: FlutterFlowTheme.of(context).bodyMedium,
                           ),
                           Text(
                             dataTableMarksRecord.mid,
+                            textAlign: TextAlign.center,
                             style: FlutterFlowTheme.of(context).bodyMedium,
                           ),
                           Text(
                             dataTableMarksRecord.minor2,
+                            textAlign: TextAlign.center,
                             style: FlutterFlowTheme.of(context).bodyMedium,
                           ),
                           Text(
                             dataTableMarksRecord.end,
+                            textAlign: TextAlign.center,
                             style: FlutterFlowTheme.of(context).bodyMedium,
                           ),
                           Row(
