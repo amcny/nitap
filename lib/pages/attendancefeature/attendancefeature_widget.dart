@@ -166,7 +166,7 @@ class _AttendancefeatureWidgetState extends State<AttendancefeatureWidget> {
                     softWrap: true,
                     child: AutoSizeText(
                       'Classes Missed',
-                      textAlign: TextAlign.center,
+                      textAlign: TextAlign.start,
                       style: FlutterFlowTheme.of(context).labelLarge,
                     ),
                   ),
