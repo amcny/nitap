@@ -3,10 +3,8 @@ import '/flutter_flow/flutter_flow_ad_banner.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/pages/profilepopup/profilepopup_widget.dart';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/admob_util.dart' as admob;
-import 'package:aligned_dialog/aligned_dialog.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -55,12 +53,21 @@ class _HomePageWidgetState extends State<HomePageWidget>
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       await actions.lockOrientation();
-      if (getRemoteConfigBool('ad')) {
-        admob.loadInterstitialAd(
-          "ca-app-pub-3991707481593664/7953168711",
-          "ca-app-pub-3991707481593664/6828220508",
-          false,
-        );
+      if ((FFAppState().secname == 'II - Sec A') ||
+          (FFAppState().secname == 'II - Sec B') ||
+          (FFAppState().secname == 'III - Sec A') ||
+          (FFAppState().secname == 'III - Sec B') ||
+          (FFAppState().secname == 'IV - Sec A') ||
+          (FFAppState().secname == 'IV - Sec B')) {
+        if (getRemoteConfigBool('ad')) {
+          admob.loadInterstitialAd(
+            "ca-app-pub-3991707481593664/7953168711",
+            "ca-app-pub-3991707481593664/6828220508",
+            false,
+          );
+        }
+      } else {
+        context.pushNamed('Choosesec');
       }
     });
 
@@ -116,7 +123,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
             backgroundColor: FlutterFlowTheme.of(context).primary,
             automaticallyImplyLeading: false,
             title: Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 10.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 10.0),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -131,42 +138,17 @@ class _HomePageWidgetState extends State<HomePageWidget>
                         width: 135.0,
                         fit: BoxFit.cover,
                       ),
-                      Builder(
-                        builder: (context) => InkWell(
-                          splashColor: Colors.transparent,
-                          focusColor: Colors.transparent,
-                          hoverColor: Colors.transparent,
-                          highlightColor: Colors.transparent,
-                          onTap: () async {
-                            await showAlignedDialog(
-                              context: context,
-                              isGlobal: false,
-                              avoidOverflow: false,
-                              targetAnchor: const AlignmentDirectional(-4.0, 2.5)
-                                  .resolve(Directionality.of(context)),
-                              followerAnchor: const AlignmentDirectional(0.0, 0.0)
-                                  .resolve(Directionality.of(context)),
-                              builder: (dialogContext) {
-                                return const Material(
-                                  color: Colors.transparent,
-                                  child: ProfilepopupWidget(),
-                                );
-                              },
-                            ).then((value) => setState(() {}));
-                          },
-                          child: Container(
-                            width: 50.0,
-                            height: 50.0,
-                            decoration: const BoxDecoration(
-                              color: Color(0x6DF9F9F9),
-                              shape: BoxShape.circle,
-                            ),
-                            child: Icon(
-                              Icons.account_circle_rounded,
-                              color: FlutterFlowTheme.of(context).primary,
-                              size: 35.0,
-                            ),
-                          ),
+                      Container(
+                        width: 50.0,
+                        height: 50.0,
+                        decoration: const BoxDecoration(
+                          color: Color(0x6DF9F9F9),
+                          shape: BoxShape.circle,
+                        ),
+                        child: Icon(
+                          Icons.account_circle_rounded,
+                          color: FlutterFlowTheme.of(context).primary,
+                          size: 40.0,
                         ),
                       ),
                     ],
@@ -176,7 +158,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
             ),
             actions: const [],
             centerTitle: false,
-            toolbarHeight: 70.0,
+            toolbarHeight: 65.0,
             elevation: 0.0,
           ),
           body: SingleChildScrollView(

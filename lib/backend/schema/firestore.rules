@@ -47,14 +47,14 @@ service cloud.firestore {
       allow create: if true;
       allow read: if true;
       allow write: if false;
-      allow delete: if false;
+      allow delete: if resource.data.user == /databases/$(database)/documents/user_id/$(request.auth.uid);
     }
 
     match /marks/{document} {
       allow create: if true;
       allow read: if true;
       allow write: if false;
-      allow delete: if false;
+      allow delete: if resource.data.user == /databases/$(database)/documents/user_id/$(request.auth.uid);
     }
 
     match /alumni/{document} {

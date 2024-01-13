@@ -106,12 +106,12 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                   : const DatabaseWidget(),
             ),
             FFRoute(
-              name: 'ProfileSection',
-              path: 'profileSection',
+              name: 'settings',
+              path: 'settings',
               requireAuth: true,
               builder: (context, params) => params.isEmpty
-                  ? const NavBarPage(initialPage: 'ProfileSection')
-                  : const ProfileSectionWidget(),
+                  ? const NavBarPage(initialPage: 'settings')
+                  : const SettingsWidget(),
             ),
             FFRoute(
               name: 'Appearance',

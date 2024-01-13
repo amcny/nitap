@@ -149,7 +149,7 @@ class _NavBarPageState extends State<NavBarPage> {
       'HomePage': const HomePageWidget(),
       'Timetable': const TimetableWidget(),
       'Database': const DatabaseWidget(),
-      'ProfileSection': const ProfileSectionWidget(),
+      'settings': const SettingsWidget(),
     };
     final currentIndex = tabs.keys.toList().indexOf(_currentPageName);
 

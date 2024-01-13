@@ -1,8 +1,8 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'profilepopup_widget.dart' show ProfilepopupWidget;
+import 'settings_widget.dart' show SettingsWidget;
 import 'package:flutter/material.dart';
 
-class ProfilepopupModel extends FlutterFlowModel<ProfilepopupWidget> {
+class SettingsModel extends FlutterFlowModel<SettingsWidget> {
   /// Initialization and disposal methods.
 
   @override

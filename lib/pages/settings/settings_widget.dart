@@ -16,25 +16,25 @@ import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
-import 'profile_section_model.dart';
-export 'profile_section_model.dart';
+import 'settings_model.dart';
+export 'settings_model.dart';
 
-class ProfileSectionWidget extends StatefulWidget {
-  const ProfileSectionWidget({super.key});
+class SettingsWidget extends StatefulWidget {
+  const SettingsWidget({super.key});
 
   @override
-  _ProfileSectionWidgetState createState() => _ProfileSectionWidgetState();
+  _SettingsWidgetState createState() => _SettingsWidgetState();
 }
 
-class _ProfileSectionWidgetState extends State<ProfileSectionWidget> {
-  late ProfileSectionModel _model;
+class _SettingsWidgetState extends State<SettingsWidget> {
+  late SettingsModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => ProfileSectionModel());
+    _model = createModel(context, () => SettingsModel());
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
@@ -128,7 +128,7 @@ class _ProfileSectionWidgetState extends State<ProfileSectionWidget> {
                   children: [
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(15.0, 0.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(19.0, 0.0, 0.0, 0.0),
                       child: Container(
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
@@ -216,6 +216,206 @@ class _ProfileSectionWidgetState extends State<ProfileSectionWidget> {
                       ),
                     ),
                   ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 0.0, 0.0),
+                child: Row(
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    Text(
+                      'Account',
+                      style: FlutterFlowTheme.of(context).titleMedium.override(
+                            fontFamily: 'Poppins',
+                            fontSize: 18.0,
+                            fontWeight: FontWeight.w600,
+                          ),
+                    ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: Container(
+                  width: MediaQuery.sizeOf(context).width * 1.0,
+                  decoration: BoxDecoration(
+                    color: FlutterFlowTheme.of(context).secondaryBackground,
+                    borderRadius: BorderRadius.circular(12.0),
+                  ),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      InkWell(
+                        splashColor: Colors.transparent,
+                        focusColor: Colors.transparent,
+                        hoverColor: Colors.transparent,
+                        highlightColor: Colors.transparent,
+                        onTap: () async {
+                          context.pushNamed('Choosesec');
+                        },
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.all(12.0),
+                              child: Container(
+                                width: 53.0,
+                                height: 54.0,
+                                decoration: BoxDecoration(
+                                  gradient: const LinearGradient(
+                                    colors: [
+                                      Color(0xFF005C97),
+                                      Color(0xFF363795)
+                                    ],
+                                    stops: [0.0, 1.0],
+                                    begin: AlignmentDirectional(-1.0, -1.0),
+                                    end: AlignmentDirectional(1.0, 1.0),
+                                  ),
+                                  borderRadius: BorderRadius.circular(8.0),
+                                ),
+                                child: const Align(
+                                  alignment: AlignmentDirectional(0.0, 0.0),
+                                  child: Icon(
+                                    Icons.published_with_changes_rounded,
+                                    color: Colors.white,
+                                    size: 21.0,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Column(
+                              mainAxisSize: MainAxisSize.max,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'Change Section',
+                                  style:
+                                      FlutterFlowTheme.of(context).bodyMedium,
+                                ),
+                                Text(
+                                  'Select your class and section',
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodySmall
+                                      .override(
+                                        fontFamily: 'Poppins',
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondaryText,
+                                        fontWeight: FontWeight.w300,
+                                      ),
+                                ),
+                              ],
+                            ),
+                            Expanded(
+                              child: Align(
+                                alignment: const AlignmentDirectional(1.0, 0.0),
+                                child: Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 10.0, 0.0),
+                                  child: Icon(
+                                    Icons.chevron_right_rounded,
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryText,
+                                    size: 24.0,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      InkWell(
+                        splashColor: Colors.transparent,
+                        focusColor: Colors.transparent,
+                        hoverColor: Colors.transparent,
+                        highlightColor: Colors.transparent,
+                        onTap: () async {
+                          if (currentUserEmail.isEmpty) {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              const SnackBar(
+                                content: Text(
+                                  'Email required!',
+                                ),
+                              ),
+                            );
+                            return;
+                          }
+                          await authManager.resetPassword(
+                            email: currentUserEmail,
+                            context: context,
+                          );
+                        },
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.all(12.0),
+                              child: Container(
+                                width: 53.0,
+                                height: 54.0,
+                                decoration: BoxDecoration(
+                                  gradient: const LinearGradient(
+                                    colors: [
+                                      Color(0xFF642B73),
+                                      Color(0xFF41295A)
+                                    ],
+                                    stops: [0.0, 1.0],
+                                    begin: AlignmentDirectional(-1.0, -1.0),
+                                    end: AlignmentDirectional(1.0, 1.0),
+                                  ),
+                                  borderRadius: BorderRadius.circular(8.0),
+                                ),
+                                child: const Align(
+                                  alignment: AlignmentDirectional(0.0, 0.0),
+                                  child: Icon(
+                                    Icons.lock_person_outlined,
+                                    color: Colors.white,
+                                    size: 21.0,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Column(
+                              mainAxisSize: MainAxisSize.max,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'Password',
+                                  style:
+                                      FlutterFlowTheme.of(context).bodyMedium,
+                                ),
+                                Text(
+                                  'Change or Reset Password',
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodySmall
+                                      .override(
+                                        fontFamily: 'Poppins',
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondaryText,
+                                        fontWeight: FontWeight.w300,
+                                      ),
+                                ),
+                              ],
+                            ),
+                            Expanded(
+                              child: Align(
+                                alignment: const AlignmentDirectional(1.0, 0.0),
+                                child: Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 10.0, 0.0),
+                                  child: Icon(
+                                    Icons.chevron_right_rounded,
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryText,
+                                    size: 24.0,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
               Padding(
@@ -505,7 +705,9 @@ class _ProfileSectionWidgetState extends State<ProfileSectionWidget> {
                           highlightColor: Colors.transparent,
                           onTap: () async {
                             await Share.share(
-                              'https://play.google.com/store/apps/details?id=com.nitstudent.app',
+                              isAndroid
+                                  ? 'https://play.google.com/store/apps/details?id=com.nitstudent.app'
+                                  : 'https://apps.apple.com/us/app/nit-ap/id6475625973',
                               sharePositionOrigin:
                                   getWidgetBoundingBox(context),
                             );
@@ -640,6 +842,89 @@ class _ProfileSectionWidgetState extends State<ProfileSectionWidget> {
                                 ),
                                 Text(
                                   'Know about security',
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodySmall
+                                      .override(
+                                        fontFamily: 'Poppins',
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondaryText,
+                                        fontWeight: FontWeight.w300,
+                                      ),
+                                ),
+                              ],
+                            ),
+                            Expanded(
+                              child: Align(
+                                alignment: const AlignmentDirectional(1.0, 0.0),
+                                child: Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 10.0, 0.0),
+                                  child: Icon(
+                                    Icons.chevron_right_rounded,
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryText,
+                                    size: 24.0,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      InkWell(
+                        splashColor: Colors.transparent,
+                        focusColor: Colors.transparent,
+                        hoverColor: Colors.transparent,
+                        highlightColor: Colors.transparent,
+                        onTap: () async {
+                          await authManager.deleteUser(context);
+                          GoRouter.of(context).prepareAuthEvent();
+                          await authManager.signOut();
+                          GoRouter.of(context).clearRedirectLocation();
+
+                          context.goNamedAuth('Onboarding', context.mounted);
+                        },
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.all(12.0),
+                              child: Container(
+                                width: 53.0,
+                                height: 54.0,
+                                decoration: BoxDecoration(
+                                  gradient: const LinearGradient(
+                                    colors: [
+                                      Color(0xFFED213A),
+                                      Color(0xFF93291E)
+                                    ],
+                                    stops: [0.0, 1.0],
+                                    begin: AlignmentDirectional(-1.0, -1.0),
+                                    end: AlignmentDirectional(1.0, 1.0),
+                                  ),
+                                  borderRadius: BorderRadius.circular(8.0),
+                                ),
+                                child: const Align(
+                                  alignment: AlignmentDirectional(0.0, 0.0),
+                                  child: Icon(
+                                    Icons.security_rounded,
+                                    color: Colors.white,
+                                    size: 21.0,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Column(
+                              mainAxisSize: MainAxisSize.max,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'Delete Account',
+                                  style:
+                                      FlutterFlowTheme.of(context).bodyMedium,
+                                ),
+                                Text(
+                                  'Removes the user account',
                                   style: FlutterFlowTheme.of(context)
                                       .bodySmall
                                       .override(
