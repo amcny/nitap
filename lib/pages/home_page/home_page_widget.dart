@@ -122,43 +122,40 @@ class _HomePageWidgetState extends State<HomePageWidget>
           appBar: AppBar(
             backgroundColor: FlutterFlowTheme.of(context).primary,
             automaticallyImplyLeading: false,
-            title: Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 10.0),
-              child: Column(
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  Row(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Image.asset(
-                        'assets/images/LOGO.png',
-                        width: 135.0,
-                        fit: BoxFit.cover,
+            title: Column(
+              mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Row(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Image.asset(
+                      'assets/images/LOGO.png',
+                      width: 135.0,
+                      fit: BoxFit.cover,
+                    ),
+                    Container(
+                      width: 45.0,
+                      height: 45.0,
+                      decoration: const BoxDecoration(
+                        color: Color(0x6DF9F9F9),
+                        shape: BoxShape.circle,
                       ),
-                      Container(
-                        width: 50.0,
-                        height: 50.0,
-                        decoration: const BoxDecoration(
-                          color: Color(0x6DF9F9F9),
-                          shape: BoxShape.circle,
-                        ),
-                        child: Icon(
-                          Icons.account_circle_rounded,
-                          color: FlutterFlowTheme.of(context).primary,
-                          size: 40.0,
-                        ),
+                      child: Icon(
+                        Icons.account_circle_rounded,
+                        color: FlutterFlowTheme.of(context).primary,
+                        size: 35.0,
                       ),
-                    ],
-                  ),
-                ],
-              ),
+                    ),
+                  ],
+                ),
+              ],
             ),
             actions: const [],
             centerTitle: false,
-            toolbarHeight: 65.0,
+            toolbarHeight: 70.0,
             elevation: 0.0,
           ),
           body: SingleChildScrollView(
