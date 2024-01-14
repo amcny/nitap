@@ -1,10 +1,12 @@
 import '/backend/backend.dart';
+import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:provider/provider.dart';
 import 'what_new_model.dart';
@@ -17,10 +19,26 @@ class WhatNewWidget extends StatefulWidget {
   _WhatNewWidgetState createState() => _WhatNewWidgetState();
 }
 
-class _WhatNewWidgetState extends State<WhatNewWidget> {
+class _WhatNewWidgetState extends State<WhatNewWidget>
+    with TickerProviderStateMixin {
   late WhatNewModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
+
+  final animationsMap = {
+    'imageOnPageLoadAnimation': AnimationInfo(
+      trigger: AnimationTrigger.onPageLoad,
+      effects: [
+        ShimmerEffect(
+          curve: Curves.easeInOut,
+          delay: 0.ms,
+          duration: 600.ms,
+          color: const Color(0x80FFFFFF),
+          angle: 0.524,
+        ),
+      ],
+    ),
+  };
 
   @override
   void initState() {
@@ -229,7 +247,8 @@ class _WhatNewWidgetState extends State<WhatNewWidget> {
                                         height: 175.0,
                                         fit: BoxFit.fill,
                                       ),
-                                    ),
+                                    ).animateOnPageLoad(animationsMap[
+                                        'imageOnPageLoadAnimation']!),
                                   ),
                               ].divide(const SizedBox(height: 6.0)),
                             ),

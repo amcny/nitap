@@ -43,6 +43,18 @@ class _HomePageWidgetState extends State<HomePageWidget>
         ),
       ],
     ),
+    'containerOnPageLoadAnimation': AnimationInfo(
+      trigger: AnimationTrigger.onPageLoad,
+      effects: [
+        ShimmerEffect(
+          curve: Curves.easeInOut,
+          delay: 0.ms,
+          duration: 600.ms,
+          color: const Color(0x80FFFFFF),
+          angle: 0.524,
+        ),
+      ],
+    ),
   };
 
   @override
@@ -726,7 +738,8 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                         ),
                                       ),
                                     ),
-                                  ),
+                                  ).animateOnPageLoad(animationsMap[
+                                      'containerOnPageLoadAnimation']!),
                                 );
                               })
                                   .divide(const SizedBox(width: 10.0))
