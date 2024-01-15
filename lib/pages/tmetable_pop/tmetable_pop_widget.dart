@@ -10,19 +10,19 @@ import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:provider/provider.dart';
-import 'ttpop_model.dart';
-export 'ttpop_model.dart';
+import 'tmetable_pop_model.dart';
+export 'tmetable_pop_model.dart';
 
-class TtpopWidget extends StatefulWidget {
-  const TtpopWidget({super.key});
+class TmetablePopWidget extends StatefulWidget {
+  const TmetablePopWidget({super.key});
 
   @override
-  _TtpopWidgetState createState() => _TtpopWidgetState();
+  _TmetablePopWidgetState createState() => _TmetablePopWidgetState();
 }
 
-class _TtpopWidgetState extends State<TtpopWidget>
+class _TmetablePopWidgetState extends State<TmetablePopWidget>
     with TickerProviderStateMixin {
-  late TtpopModel _model;
+  late TmetablePopModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
   var hasContainerTriggered = false;
@@ -84,7 +84,7 @@ class _TtpopWidgetState extends State<TtpopWidget>
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => TtpopModel());
+    _model = createModel(context, () => TmetablePopModel());
 
     setupAnimations(
       animationsMap.values.where((anim) =>
@@ -152,10 +152,11 @@ class _TtpopWidgetState extends State<TtpopWidget>
             ),
           );
         }
-        List<TimetableRecord> ttpopTimetableRecordList = snapshot.data!;
-        final ttpopTimetableRecord = ttpopTimetableRecordList.isNotEmpty
-            ? ttpopTimetableRecordList.first
-            : null;
+        List<TimetableRecord> tmetablePopTimetableRecordList = snapshot.data!;
+        final tmetablePopTimetableRecord =
+            tmetablePopTimetableRecordList.isNotEmpty
+                ? tmetablePopTimetableRecordList.first
+                : null;
         return Scaffold(
           key: scaffoldKey,
           backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -377,7 +378,7 @@ class _TtpopWidgetState extends State<TtpopWidget>
                                     alignment: const AlignmentDirectional(0.0, 0.0),
                                     child: Text(
                                       valueOrDefault<String>(
-                                        ttpopTimetableRecord?.day,
+                                        tmetablePopTimetableRecord?.day,
                                         'day',
                                       ),
                                       style: FlutterFlowTheme.of(context)
@@ -479,9 +480,10 @@ class _TtpopWidgetState extends State<TtpopWidget>
                                 ),
                                 Builder(
                                   builder: (context) {
-                                    final data =
-                                        ttpopTimetableRecord?.data.toList() ??
-                                            [];
+                                    final data = tmetablePopTimetableRecord
+                                            ?.data
+                                            .toList() ??
+                                        [];
                                     return Column(
                                       mainAxisSize: MainAxisSize.max,
                                       children: List.generate(data.length,

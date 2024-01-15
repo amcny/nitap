@@ -21,7 +21,7 @@ export '/exam/endsem/endsem_widget.dart' show EndsemWidget;
 export '/pages/login/login_widget.dart' show LoginWidget;
 export '/pages/timetable/timetable_widget.dart' show TimetableWidget;
 export '/pages/choosesec/choosesec_widget.dart' show ChoosesecWidget;
-export '/pages/ttpop/ttpop_widget.dart' show TtpopWidget;
+export '/pages/tmetable_pop/tmetable_pop_widget.dart' show TmetablePopWidget;
 export '/pages/signup/signup_widget.dart' show SignupWidget;
 export '/pages/facultypage/facultypage_widget.dart' show FacultypageWidget;
 export '/pages/eceh/eceh_widget.dart' show EcehWidget;

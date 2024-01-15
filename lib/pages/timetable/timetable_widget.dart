@@ -640,7 +640,7 @@ class _TimetableWidgetState extends State<TimetableWidget>
                                 FFButtonWidget(
                                   onPressed: () async {
                                     context.pushNamed(
-                                      'ttpop',
+                                      'Tmetable_Pop',
                                       extra: <String, dynamic>{
                                         kTransitionInfoKey: const TransitionInfo(
                                           hasTransition: true,
