@@ -6,7 +6,6 @@ import 'package:flutter/material.dart';
 class ChoosesecModel extends FlutterFlowModel<ChoosesecWidget> {
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   final formKey = GlobalKey<FormState>();
   // State field(s) for DropDown widget.
   String? dropDownValue;
@@ -18,9 +17,7 @@ class ChoosesecModel extends FlutterFlowModel<ChoosesecWidget> {
   void initState(BuildContext context) {}
 
   @override
-  void dispose() {
-    unfocusNode.dispose();
-  }
+  void dispose() {}
 
   /// Action blocks are added here.
 
