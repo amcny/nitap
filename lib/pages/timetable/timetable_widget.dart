@@ -164,6 +164,38 @@ class _TimetableWidgetState extends State<TimetableWidget>
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+            floatingActionButton: Visibility(
+              visible:
+                  (dateTimeFormat('EEEE', getCurrentTimestamp) == 'Saturday') ||
+                      (dateTimeFormat('EEEE', getCurrentTimestamp) == 'Sunday'),
+              child: FloatingActionButton.extended(
+                onPressed: () async {
+                  context.pushNamed(
+                    'Tmetable_Pop',
+                    extra: <String, dynamic>{
+                      kTransitionInfoKey: const TransitionInfo(
+                        hasTransition: true,
+                        transitionType: PageTransitionType.bottomToTop,
+                        duration: Duration(milliseconds: 265),
+                      ),
+                    },
+                  );
+                },
+                backgroundColor: FlutterFlowTheme.of(context).primary,
+                icon: const Icon(
+                  FFIcons.kttFilled,
+                  color: Colors.white,
+                ),
+                elevation: 0.0,
+                label: Text(
+                  'Timetable',
+                  style: FlutterFlowTheme.of(context).bodyMedium.override(
+                        fontFamily: 'Poppins',
+                        color: Colors.white,
+                      ),
+                ),
+              ),
+            ),
             appBar: AppBar(
               backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
               automaticallyImplyLeading: false,
@@ -608,12 +640,20 @@ class _TimetableWidgetState extends State<TimetableWidget>
                         children: [
                           Padding(
                             padding: const EdgeInsetsDirectional.fromSTEB(
-                                20.0, 20.0, 20.0, 0.0),
+                                15.0, 15.0, 15.0, 0.0),
                             child: Container(
                               width: MediaQuery.sizeOf(context).width * 1.0,
                               height: 175.0,
                               decoration: BoxDecoration(
-                                color: FlutterFlowTheme.of(context).primary,
+                                gradient: LinearGradient(
+                                  colors: [
+                                    const Color(0xCB1A73E8),
+                                    FlutterFlowTheme.of(context).primary
+                                  ],
+                                  stops: const [0.0, 1.0],
+                                  begin: const AlignmentDirectional(-1.0, -1.0),
+                                  end: const AlignmentDirectional(1.0, 1.0),
+                                ),
                                 borderRadius: BorderRadius.circular(12.0),
                               ),
                               child: Column(
@@ -665,7 +705,7 @@ class _TimetableWidgetState extends State<TimetableWidget>
                           ),
                           Padding(
                             padding: const EdgeInsetsDirectional.fromSTEB(
-                                0.0, 15.0, 0.0, 0.0),
+                                15.0, 15.0, 15.0, 0.0),
                             child: FFButtonWidget(
                               onPressed: () async {
                                 context.pushNamed(
@@ -682,24 +722,26 @@ class _TimetableWidgetState extends State<TimetableWidget>
                               },
                               text: 'View Full Timetable',
                               options: FFButtonOptions(
-                                height: 50.0,
+                                width: double.infinity,
+                                height: 60.0,
                                 padding: const EdgeInsetsDirectional.fromSTEB(
                                     24.0, 0.0, 24.0, 0.0),
                                 iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
                                 color: FlutterFlowTheme.of(context).primary,
                                 textStyle: FlutterFlowTheme.of(context)
-                                    .titleSmall
+                                    .titleMedium
                                     .override(
                                       fontFamily: 'Poppins',
                                       color: Colors.white,
+                                      fontSize: 16.0,
                                     ),
                                 elevation: 2.0,
                                 borderSide: const BorderSide(
                                   color: Colors.transparent,
                                   width: 1.0,
                                 ),
-                                borderRadius: BorderRadius.circular(8.0),
+                                borderRadius: BorderRadius.circular(24.0),
                               ),
                             ),
                           ),
