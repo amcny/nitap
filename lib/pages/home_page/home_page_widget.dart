@@ -3,7 +3,6 @@ import '/flutter_flow/flutter_flow_ad_banner.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/admob_util.dart' as admob;
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
@@ -64,7 +63,6 @@ class _HomePageWidgetState extends State<HomePageWidget>
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      await actions.lockOrientation();
       if ((FFAppState().secname == 'II - Sec A') ||
           (FFAppState().secname == 'II - Sec B') ||
           (FFAppState().secname == 'III - Sec A') ||

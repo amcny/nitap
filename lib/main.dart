@@ -24,6 +24,7 @@ void main() async {
   // Start initial custom actions code
   await actions.inAppUpdate();
   await actions.setHighRefreshRate();
+  await actions.lockOrientation();
   // End initial custom actions code
 
   await FlutterFlowTheme.initialize();
