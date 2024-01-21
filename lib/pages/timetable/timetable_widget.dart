@@ -631,6 +631,7 @@ class _TimetableWidgetState extends State<TimetableWidget>
                                             .titleLarge
                                             .override(
                                               fontFamily: 'Montserrat',
+                                              color: Colors.white,
                                             ),
                                       ),
                                       Lottie.asset(
@@ -653,6 +654,7 @@ class _TimetableWidgetState extends State<TimetableWidget>
                                             .titleLarge
                                             .override(
                                               fontFamily: 'Montserrat',
+                                              color: Colors.white,
                                             ),
                                       ),
                                     ],

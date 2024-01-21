@@ -28,7 +28,6 @@ class _AcademicCalendarWidgetState extends State<AcademicCalendarWidget>
 
   final animationsMap = {
     'imageOnPageLoadAnimation': AnimationInfo(
-      loop: true,
       trigger: AnimationTrigger.onPageLoad,
       effects: [
         ShimmerEffect(
