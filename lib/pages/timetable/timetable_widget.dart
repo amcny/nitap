@@ -164,38 +164,6 @@ class _TimetableWidgetState extends State<TimetableWidget>
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-            floatingActionButton: Visibility(
-              visible:
-                  (dateTimeFormat('EEEE', getCurrentTimestamp) == 'Saturday') ||
-                      (dateTimeFormat('EEEE', getCurrentTimestamp) == 'Sunday'),
-              child: FloatingActionButton.extended(
-                onPressed: () async {
-                  context.pushNamed(
-                    'Tmetable_Pop',
-                    extra: <String, dynamic>{
-                      kTransitionInfoKey: const TransitionInfo(
-                        hasTransition: true,
-                        transitionType: PageTransitionType.bottomToTop,
-                        duration: Duration(milliseconds: 265),
-                      ),
-                    },
-                  );
-                },
-                backgroundColor: FlutterFlowTheme.of(context).primary,
-                icon: const Icon(
-                  FFIcons.kttFilled,
-                  color: Colors.white,
-                ),
-                elevation: 0.0,
-                label: Text(
-                  'Timetable',
-                  style: FlutterFlowTheme.of(context).bodyMedium.override(
-                        fontFamily: 'Poppins',
-                        color: Colors.white,
-                      ),
-                ),
-              ),
-            ),
             appBar: AppBar(
               backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
               automaticallyImplyLeading: false,
@@ -721,6 +689,10 @@ class _TimetableWidgetState extends State<TimetableWidget>
                                 );
                               },
                               text: 'View Full Timetable',
+                              icon: const Icon(
+                                FFIcons.kttFilled,
+                                size: 15.0,
+                              ),
                               options: FFButtonOptions(
                                 width: double.infinity,
                                 height: 60.0,
