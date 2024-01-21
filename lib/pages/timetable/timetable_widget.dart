@@ -611,7 +611,7 @@ class _TimetableWidgetState extends State<TimetableWidget>
                                 20.0, 20.0, 20.0, 0.0),
                             child: Container(
                               width: MediaQuery.sizeOf(context).width * 1.0,
-                              height: 195.0,
+                              height: 175.0,
                               decoration: BoxDecoration(
                                 color: FlutterFlowTheme.of(context).primary,
                                 borderRadius: BorderRadius.circular(12.0),

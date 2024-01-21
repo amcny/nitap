@@ -22,8 +22,6 @@ void main() async {
   await initFirebase();
 
   // Start initial custom actions code
-  await actions.inAppUpdate();
-  await actions.setHighRefreshRate();
   await actions.lockOrientation();
   // End initial custom actions code
 
@@ -36,10 +34,6 @@ void main() async {
     FlutterError.onError = FirebaseCrashlytics.instance.recordFlutterFatalError;
   }
   await initializeFirebaseRemoteConfig();
-
-  // Start final custom actions code
-  await actions.setHighRefreshRate();
-  // End final custom actions code
 
   runApp(ChangeNotifierProvider(
     create: (context) => appState,

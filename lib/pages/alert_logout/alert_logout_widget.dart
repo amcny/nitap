@@ -3,6 +3,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'alert_logout_model.dart';
 export 'alert_logout_model.dart';
@@ -119,6 +120,7 @@ class _AlertLogoutWidgetState extends State<AlertLogoutWidget> {
                     ),
                     FFButtonWidget(
                       onPressed: () async {
+                        HapticFeedback.selectionClick();
                         GoRouter.of(context).prepareAuthEvent();
                         await authManager.signOut();
                         GoRouter.of(context).clearRedirectLocation();
