@@ -691,7 +691,8 @@ class _TimetableWidgetState extends State<TimetableWidget>
                               text: 'View Full Timetable',
                               icon: const Icon(
                                 FFIcons.kttFilled,
-                                size: 15.0,
+                                color: Colors.white,
+                                size: 23.0,
                               ),
                               options: FFButtonOptions(
                                 width: double.infinity,
@@ -708,7 +709,7 @@ class _TimetableWidgetState extends State<TimetableWidget>
                                       color: Colors.white,
                                       fontSize: 16.0,
                                     ),
-                                elevation: 2.0,
+                                elevation: 1.0,
                                 borderSide: const BorderSide(
                                   color: Colors.transparent,
                                   width: 1.0,
