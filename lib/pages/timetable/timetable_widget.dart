@@ -608,7 +608,7 @@ class _TimetableWidgetState extends State<TimetableWidget>
                         children: [
                           Padding(
                             padding: const EdgeInsetsDirectional.fromSTEB(
-                                15.0, 15.0, 15.0, 0.0),
+                                15.0, 0.0, 15.0, 0.0),
                             child: Container(
                               width: MediaQuery.sizeOf(context).width * 1.0,
                               height: 175.0,
@@ -676,6 +676,8 @@ class _TimetableWidgetState extends State<TimetableWidget>
                                 15.0, 15.0, 15.0, 0.0),
                             child: FFButtonWidget(
                               onPressed: () async {
+                                HapticFeedback.selectionClick();
+
                                 context.pushNamed(
                                   'Tmetable_Pop',
                                   extra: <String, dynamic>{
