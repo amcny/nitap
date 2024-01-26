@@ -44,7 +44,7 @@ class _ConfirmLogoutWidgetState extends State<ConfirmLogoutWidget> {
 
     return Container(
       width: double.infinity,
-      height: 250.0,
+      height: 275.0,
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).secondaryBackground,
         borderRadius: const BorderRadius.only(
@@ -79,7 +79,7 @@ class _ConfirmLogoutWidgetState extends State<ConfirmLogoutWidget> {
               size: 45.0,
             ),
             Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
               child: Text(
                 'You want to log out,\nare you sure?',
                 textAlign: TextAlign.center,
@@ -101,7 +101,7 @@ class _ConfirmLogoutWidgetState extends State<ConfirmLogoutWidget> {
                 },
                 text: 'Logout',
                 options: FFButtonOptions(
-                  width: double.infinity,
+                  width: MediaQuery.sizeOf(context).width * 0.85,
                   height: 50.0,
                   padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
                   iconPadding:
