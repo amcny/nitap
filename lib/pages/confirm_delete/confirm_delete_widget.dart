@@ -44,6 +44,7 @@ class _ConfirmDeleteWidgetState extends State<ConfirmDeleteWidget> {
 
     return Container(
       width: double.infinity,
+      height: 250.0,
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).secondaryBackground,
         borderRadius: const BorderRadius.only(
@@ -89,7 +90,7 @@ class _ConfirmDeleteWidgetState extends State<ConfirmDeleteWidget> {
               ),
             ),
             Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
               child: FFButtonWidget(
                 onPressed: () async {
                   GoRouter.of(context).prepareAuthEvent();
@@ -120,7 +121,7 @@ class _ConfirmDeleteWidgetState extends State<ConfirmDeleteWidget> {
               ),
             ),
             Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
               child: InkWell(
                 splashColor: Colors.transparent,
                 focusColor: Colors.transparent,

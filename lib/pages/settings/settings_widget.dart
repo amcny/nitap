@@ -8,7 +8,9 @@ import '/pages/confirm_logout/confirm_logout_widget.dart';
 import '/pages/devcny/devcny_widget.dart';
 import '/pages/privacy/privacy_widget.dart';
 import '/pages/support/support_widget.dart';
+import '/custom_code/actions/index.dart' as actions;
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -36,6 +38,14 @@ class _SettingsWidgetState extends State<SettingsWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => SettingsModel());
+
+    // On page load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      _model.versionNumber = await actions.getVersionNumber();
+      setState(() {
+        _model.versionnumber = _model.versionNumber!;
+      });
+    });
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
@@ -1073,6 +1083,17 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                         ],
                       ),
                     ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 5.0),
+                  child: Text(
+                    _model.versionnumber,
+                    style: FlutterFlowTheme.of(context).bodySmall.override(
+                          fontFamily: 'Poppins',
+                          color: FlutterFlowTheme.of(context).secondaryText,
+                          fontWeight: FontWeight.w300,
+                        ),
                   ),
                 ),
                 Stack(
