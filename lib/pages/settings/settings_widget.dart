@@ -1088,7 +1088,10 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                 Padding(
                   padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 5.0),
                   child: Text(
-                    _model.versionnumber,
+                    valueOrDefault<String>(
+                      _model.versionNumber,
+                      '1',
+                    ),
                     style: FlutterFlowTheme.of(context).bodySmall.override(
                           fontFamily: 'Poppins',
                           color: FlutterFlowTheme.of(context).secondaryText,
