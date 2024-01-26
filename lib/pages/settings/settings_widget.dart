@@ -974,33 +974,37 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                     ),
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 0.0, 0.0),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      GradientText(
-                        'Developer',
-                        style:
-                            FlutterFlowTheme.of(context).titleMedium.override(
-                                  fontFamily: 'Poppins',
-                                  fontSize: 17.0,
-                                  fontWeight: FontWeight.w600,
-                                ),
-                        colors: [
-                          FlutterFlowTheme.of(context).primary,
-                          const Color(0xFF5894E2)
-                        ],
-                        gradientDirection: GradientDirection.ltr,
-                        gradientType: GradientType.linear,
-                      ),
-                      Lottie.asset(
-                        'assets/lottie_animations/27011-sungrass-emoji.json',
-                        height: 40.0,
-                        fit: BoxFit.contain,
-                        animate: true,
-                      ),
-                    ],
+                Align(
+                  alignment: const AlignmentDirectional(-1.0, 0.0),
+                  child: Padding(
+                    padding:
+                        const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 0.0, 0.0),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        GradientText(
+                          'Developer',
+                          style:
+                              FlutterFlowTheme.of(context).titleMedium.override(
+                                    fontFamily: 'Poppins',
+                                    fontSize: 17.0,
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                          colors: [
+                            FlutterFlowTheme.of(context).primary,
+                            const Color(0xFF5894E2)
+                          ],
+                          gradientDirection: GradientDirection.ltr,
+                          gradientType: GradientType.linear,
+                        ),
+                        Lottie.asset(
+                          'assets/lottie_animations/27011-sungrass-emoji.json',
+                          height: 40.0,
+                          fit: BoxFit.contain,
+                          animate: true,
+                        ),
+                      ],
+                    ),
                   ),
                 ),
                 Padding(
