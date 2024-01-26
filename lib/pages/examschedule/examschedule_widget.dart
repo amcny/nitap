@@ -14,7 +14,7 @@ class ExamscheduleWidget extends StatefulWidget {
   const ExamscheduleWidget({super.key});
 
   @override
-  _ExamscheduleWidgetState createState() => _ExamscheduleWidgetState();
+  State<ExamscheduleWidget> createState() => _ExamscheduleWidgetState();
 }
 
 class _ExamscheduleWidgetState extends State<ExamscheduleWidget> {

@@ -21,7 +21,7 @@ class ManageIDCardWidget extends StatefulWidget {
   const ManageIDCardWidget({super.key});
 
   @override
-  _ManageIDCardWidgetState createState() => _ManageIDCardWidgetState();
+  State<ManageIDCardWidget> createState() => _ManageIDCardWidgetState();
 }
 
 class _ManageIDCardWidgetState extends State<ManageIDCardWidget>

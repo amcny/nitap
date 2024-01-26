@@ -11,7 +11,7 @@ class DatabaseWidget extends StatefulWidget {
   const DatabaseWidget({super.key});
 
   @override
-  _DatabaseWidgetState createState() => _DatabaseWidgetState();
+  State<DatabaseWidget> createState() => _DatabaseWidgetState();
 }
 
 class _DatabaseWidgetState extends State<DatabaseWidget> {

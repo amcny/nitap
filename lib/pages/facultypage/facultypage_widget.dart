@@ -16,7 +16,7 @@ class FacultypageWidget extends StatefulWidget {
   const FacultypageWidget({super.key});
 
   @override
-  _FacultypageWidgetState createState() => _FacultypageWidgetState();
+  State<FacultypageWidget> createState() => _FacultypageWidgetState();
 }
 
 class _FacultypageWidgetState extends State<FacultypageWidget>

@@ -22,7 +22,7 @@ class ForyouinfoWidget extends StatefulWidget {
   final DocumentReference? pass;
 
   @override
-  _ForyouinfoWidgetState createState() => _ForyouinfoWidgetState();
+  State<ForyouinfoWidget> createState() => _ForyouinfoWidgetState();
 }
 
 class _ForyouinfoWidgetState extends State<ForyouinfoWidget> {

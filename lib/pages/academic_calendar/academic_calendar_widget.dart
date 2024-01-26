@@ -17,7 +17,7 @@ class AcademicCalendarWidget extends StatefulWidget {
   const AcademicCalendarWidget({super.key});
 
   @override
-  _AcademicCalendarWidgetState createState() => _AcademicCalendarWidgetState();
+  State<AcademicCalendarWidget> createState() => _AcademicCalendarWidgetState();
 }
 
 class _AcademicCalendarWidgetState extends State<AcademicCalendarWidget>

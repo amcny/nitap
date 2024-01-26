@@ -17,7 +17,7 @@ class Minor1Widget extends StatefulWidget {
   const Minor1Widget({super.key});
 
   @override
-  _Minor1WidgetState createState() => _Minor1WidgetState();
+  State<Minor1Widget> createState() => _Minor1WidgetState();
 }
 
 class _Minor1WidgetState extends State<Minor1Widget>

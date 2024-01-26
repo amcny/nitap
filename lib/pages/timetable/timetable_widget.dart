@@ -18,7 +18,7 @@ class TimetableWidget extends StatefulWidget {
   const TimetableWidget({super.key});
 
   @override
-  _TimetableWidgetState createState() => _TimetableWidgetState();
+  State<TimetableWidget> createState() => _TimetableWidgetState();
 }
 
 class _TimetableWidgetState extends State<TimetableWidget>

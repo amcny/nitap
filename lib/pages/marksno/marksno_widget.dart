@@ -19,7 +19,7 @@ class MarksnoWidget extends StatefulWidget {
   final DocumentReference? marksref;
 
   @override
-  _MarksnoWidgetState createState() => _MarksnoWidgetState();
+  State<MarksnoWidget> createState() => _MarksnoWidgetState();
 }
 
 class _MarksnoWidgetState extends State<MarksnoWidget>

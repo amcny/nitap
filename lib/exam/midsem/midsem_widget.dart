@@ -17,7 +17,7 @@ class MidsemWidget extends StatefulWidget {
   const MidsemWidget({super.key});
 
   @override
-  _MidsemWidgetState createState() => _MidsemWidgetState();
+  State<MidsemWidget> createState() => _MidsemWidgetState();
 }
 
 class _MidsemWidgetState extends State<MidsemWidget>

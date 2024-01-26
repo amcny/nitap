@@ -18,7 +18,7 @@ class AlumnicardWidget extends StatefulWidget {
   final AlumniRecord? info;
 
   @override
-  _AlumnicardWidgetState createState() => _AlumnicardWidgetState();
+  State<AlumnicardWidget> createState() => _AlumnicardWidgetState();
 }
 
 class _AlumnicardWidgetState extends State<AlumnicardWidget> {

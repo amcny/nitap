@@ -13,7 +13,7 @@ class SupportWidget extends StatefulWidget {
   const SupportWidget({super.key});
 
   @override
-  _SupportWidgetState createState() => _SupportWidgetState();
+  State<SupportWidget> createState() => _SupportWidgetState();
 }
 
 class _SupportWidgetState extends State<SupportWidget> {

@@ -12,7 +12,7 @@ class StudentPortalWidget extends StatefulWidget {
   const StudentPortalWidget({super.key});
 
   @override
-  _StudentPortalWidgetState createState() => _StudentPortalWidgetState();
+  State<StudentPortalWidget> createState() => _StudentPortalWidgetState();
 }
 
 class _StudentPortalWidgetState extends State<StudentPortalWidget> {

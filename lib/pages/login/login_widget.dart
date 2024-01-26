@@ -16,7 +16,7 @@ class LoginWidget extends StatefulWidget {
   const LoginWidget({super.key});
 
   @override
-  _LoginWidgetState createState() => _LoginWidgetState();
+  State<LoginWidget> createState() => _LoginWidgetState();
 }
 
 class _LoginWidgetState extends State<LoginWidget> {

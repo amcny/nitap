@@ -17,7 +17,7 @@ class TmetablePopWidget extends StatefulWidget {
   const TmetablePopWidget({super.key});
 
   @override
-  _TmetablePopWidgetState createState() => _TmetablePopWidgetState();
+  State<TmetablePopWidget> createState() => _TmetablePopWidgetState();
 }
 
 class _TmetablePopWidgetState extends State<TmetablePopWidget>

@@ -11,7 +11,7 @@ class AppearanceWidget extends StatefulWidget {
   const AppearanceWidget({super.key});
 
   @override
-  _AppearanceWidgetState createState() => _AppearanceWidgetState();
+  State<AppearanceWidget> createState() => _AppearanceWidgetState();
 }
 
 class _AppearanceWidgetState extends State<AppearanceWidget> {

@@ -14,7 +14,7 @@ class AttendanceWidget extends StatefulWidget {
   const AttendanceWidget({super.key});
 
   @override
-  _AttendanceWidgetState createState() => _AttendanceWidgetState();
+  State<AttendanceWidget> createState() => _AttendanceWidgetState();
 }
 
 class _AttendanceWidgetState extends State<AttendanceWidget>

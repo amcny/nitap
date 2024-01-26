@@ -12,7 +12,7 @@ class AlertLogoutWidget extends StatefulWidget {
   const AlertLogoutWidget({super.key});
 
   @override
-  _AlertLogoutWidgetState createState() => _AlertLogoutWidgetState();
+  State<AlertLogoutWidget> createState() => _AlertLogoutWidgetState();
 }
 
 class _AlertLogoutWidgetState extends State<AlertLogoutWidget> {

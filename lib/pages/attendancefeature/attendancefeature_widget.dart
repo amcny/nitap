@@ -18,7 +18,7 @@ class AttendancefeatureWidget extends StatefulWidget {
   const AttendancefeatureWidget({super.key});
 
   @override
-  _AttendancefeatureWidgetState createState() =>
+  State<AttendancefeatureWidget> createState() =>
       _AttendancefeatureWidgetState();
 }
 
@@ -65,6 +65,7 @@ class _AttendancefeatureWidgetState extends State<AttendancefeatureWidget> {
               context: context,
               builder: (dialogContext) {
                 return Dialog(
+                  elevation: 0,
                   insetPadding: EdgeInsets.zero,
                   backgroundColor: Colors.transparent,
                   alignment: const AlignmentDirectional(0.0, -0.2)
@@ -209,6 +210,7 @@ class _AttendancefeatureWidgetState extends State<AttendancefeatureWidget> {
                                     context: context,
                                     builder: (dialogContext) {
                                       return Dialog(
+                                        elevation: 0,
                                         insetPadding: EdgeInsets.zero,
                                         backgroundColor: Colors.transparent,
                                         alignment:

@@ -17,7 +17,7 @@ class AlumniWidget extends StatefulWidget {
   const AlumniWidget({super.key});
 
   @override
-  _AlumniWidgetState createState() => _AlumniWidgetState();
+  State<AlumniWidget> createState() => _AlumniWidgetState();
 }
 
 class _AlumniWidgetState extends State<AlumniWidget>

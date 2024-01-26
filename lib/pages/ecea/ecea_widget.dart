@@ -16,7 +16,7 @@ class EceaWidget extends StatefulWidget {
   const EceaWidget({super.key});
 
   @override
-  _EceaWidgetState createState() => _EceaWidgetState();
+  State<EceaWidget> createState() => _EceaWidgetState();
 }
 
 class _EceaWidgetState extends State<EceaWidget> {

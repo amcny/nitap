@@ -16,7 +16,7 @@ class EcehWidget extends StatefulWidget {
   const EcehWidget({super.key});
 
   @override
-  _EcehWidgetState createState() => _EcehWidgetState();
+  State<EcehWidget> createState() => _EcehWidgetState();
 }
 
 class _EcehWidgetState extends State<EcehWidget> {

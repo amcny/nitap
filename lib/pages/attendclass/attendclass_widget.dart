@@ -19,7 +19,7 @@ class AttendclassWidget extends StatefulWidget {
   final DocumentReference? classref;
 
   @override
-  _AttendclassWidgetState createState() => _AttendclassWidgetState();
+  State<AttendclassWidget> createState() => _AttendclassWidgetState();
 }
 
 class _AttendclassWidgetState extends State<AttendclassWidget>

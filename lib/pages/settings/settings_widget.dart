@@ -3,8 +3,8 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import '/pages/alert_deleteauth/alert_deleteauth_widget.dart';
-import '/pages/alert_logout/alert_logout_widget.dart';
+import '/pages/confirm_delete/confirm_delete_widget.dart';
+import '/pages/confirm_logout/confirm_logout_widget.dart';
 import '/pages/devcny/devcny_widget.dart';
 import '/pages/privacy/privacy_widget.dart';
 import '/pages/support/support_widget.dart';
@@ -24,7 +24,7 @@ class SettingsWidget extends StatefulWidget {
   const SettingsWidget({super.key});
 
   @override
-  _SettingsWidgetState createState() => _SettingsWidgetState();
+  State<SettingsWidget> createState() => _SettingsWidgetState();
 }
 
 class _SettingsWidgetState extends State<SettingsWidget> {
@@ -77,37 +77,31 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                 ),
           ),
           actions: [
-            Builder(
-              builder: (context) => FlutterFlowIconButton(
-                borderColor: Colors.transparent,
-                borderRadius: 30.0,
-                borderWidth: 1.0,
-                buttonSize: 50.0,
-                icon: const FaIcon(
-                  FontAwesomeIcons.signOutAlt,
-                  color: Colors.white,
-                  size: 25.0,
-                ),
-                showLoadingIndicator: true,
-                onPressed: () async {
-                  await showDialog(
-                    context: context,
-                    builder: (dialogContext) {
-                      return Dialog(
-                        insetPadding: EdgeInsets.zero,
-                        backgroundColor: Colors.transparent,
-                        alignment: const AlignmentDirectional(0.0, 0.0)
-                            .resolve(Directionality.of(context)),
-                        child: const SizedBox(
-                          height: 210.0,
-                          width: 345.0,
-                          child: AlertLogoutWidget(),
-                        ),
-                      );
-                    },
-                  ).then((value) => setState(() {}));
-                },
+            FlutterFlowIconButton(
+              borderColor: Colors.transparent,
+              borderRadius: 30.0,
+              borderWidth: 1.0,
+              buttonSize: 50.0,
+              icon: const FaIcon(
+                FontAwesomeIcons.signOutAlt,
+                color: Colors.white,
+                size: 25.0,
               ),
+              showLoadingIndicator: true,
+              onPressed: () async {
+                await showModalBottomSheet(
+                  isScrollControlled: true,
+                  backgroundColor: Colors.transparent,
+                  useSafeArea: true,
+                  context: context,
+                  builder: (context) {
+                    return Padding(
+                      padding: MediaQuery.viewInsetsOf(context),
+                      child: const ConfirmLogoutWidget(),
+                    );
+                  },
+                ).then((value) => safeSetState(() {}));
+              },
             ),
           ],
           centerTitle: true,
@@ -877,99 +871,93 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                             ],
                           ),
                         ),
-                        Builder(
-                          builder: (context) => InkWell(
-                            splashColor: Colors.transparent,
-                            focusColor: Colors.transparent,
-                            hoverColor: Colors.transparent,
-                            highlightColor: Colors.transparent,
-                            onTap: () async {
-                              await showDialog(
-                                context: context,
-                                builder: (dialogContext) {
-                                  return Dialog(
-                                    insetPadding: EdgeInsets.zero,
-                                    backgroundColor: Colors.transparent,
-                                    alignment: const AlignmentDirectional(0.0, 0.0)
-                                        .resolve(Directionality.of(context)),
-                                    child: const SizedBox(
-                                      height: 210.0,
-                                      width: 345.0,
-                                      child: AlertDeleteauthWidget(),
+                        InkWell(
+                          splashColor: Colors.transparent,
+                          focusColor: Colors.transparent,
+                          hoverColor: Colors.transparent,
+                          highlightColor: Colors.transparent,
+                          onTap: () async {
+                            await showModalBottomSheet(
+                              isScrollControlled: true,
+                              backgroundColor: Colors.transparent,
+                              useSafeArea: true,
+                              context: context,
+                              builder: (context) {
+                                return Padding(
+                                  padding: MediaQuery.viewInsetsOf(context),
+                                  child: const ConfirmDeleteWidget(),
+                                );
+                              },
+                            ).then((value) => safeSetState(() {}));
+                          },
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.all(12.0),
+                                child: Container(
+                                  width: 53.0,
+                                  height: 54.0,
+                                  decoration: BoxDecoration(
+                                    gradient: const LinearGradient(
+                                      colors: [
+                                        Color(0xFFED213A),
+                                        Color(0xFF93291E)
+                                      ],
+                                      stops: [0.0, 1.0],
+                                      begin: AlignmentDirectional(-1.0, -1.0),
+                                      end: AlignmentDirectional(1.0, 1.0),
                                     ),
-                                  );
-                                },
-                              ).then((value) => setState(() {}));
-                            },
-                            child: Row(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                Padding(
-                                  padding: const EdgeInsets.all(12.0),
-                                  child: Container(
-                                    width: 53.0,
-                                    height: 54.0,
-                                    decoration: BoxDecoration(
-                                      gradient: const LinearGradient(
-                                        colors: [
-                                          Color(0xFFED213A),
-                                          Color(0xFF93291E)
-                                        ],
-                                        stops: [0.0, 1.0],
-                                        begin: AlignmentDirectional(-1.0, -1.0),
-                                        end: AlignmentDirectional(1.0, 1.0),
-                                      ),
-                                      borderRadius: BorderRadius.circular(8.0),
-                                    ),
-                                    child: const Align(
-                                      alignment: AlignmentDirectional(0.0, 0.0),
-                                      child: Icon(
-                                        Icons.security_rounded,
-                                        color: Colors.white,
-                                        size: 21.0,
-                                      ),
+                                    borderRadius: BorderRadius.circular(8.0),
+                                  ),
+                                  child: const Align(
+                                    alignment: AlignmentDirectional(0.0, 0.0),
+                                    child: Icon(
+                                      Icons.security_rounded,
+                                      color: Colors.white,
+                                      size: 21.0,
                                     ),
                                   ),
                                 ),
-                                Column(
-                                  mainAxisSize: MainAxisSize.max,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      'Delete Account',
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium,
-                                    ),
-                                    Text(
-                                      'Removes the user account',
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodySmall
-                                          .override(
-                                            fontFamily: 'Poppins',
-                                            color: FlutterFlowTheme.of(context)
-                                                .secondaryText,
-                                            fontWeight: FontWeight.w300,
-                                          ),
-                                    ),
-                                  ],
-                                ),
-                                Expanded(
-                                  child: Align(
-                                    alignment: const AlignmentDirectional(1.0, 0.0),
-                                    child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 0.0, 10.0, 0.0),
-                                      child: Icon(
-                                        Icons.chevron_right_rounded,
-                                        color: FlutterFlowTheme.of(context)
-                                            .secondaryText,
-                                        size: 24.0,
-                                      ),
+                              ),
+                              Column(
+                                mainAxisSize: MainAxisSize.max,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    'Delete Account',
+                                    style:
+                                        FlutterFlowTheme.of(context).bodyMedium,
+                                  ),
+                                  Text(
+                                    'Removes the user account',
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodySmall
+                                        .override(
+                                          fontFamily: 'Poppins',
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondaryText,
+                                          fontWeight: FontWeight.w300,
+                                        ),
+                                  ),
+                                ],
+                              ),
+                              Expanded(
+                                child: Align(
+                                  alignment: const AlignmentDirectional(1.0, 0.0),
+                                  child: Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 10.0, 0.0),
+                                    child: Icon(
+                                      Icons.chevron_right_rounded,
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondaryText,
+                                      size: 24.0,
                                     ),
                                   ),
                                 ),
-                              ],
-                            ),
+                              ),
+                            ],
                           ),
                         ),
                       ],

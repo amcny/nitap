@@ -18,7 +18,7 @@ class MarksWidget extends StatefulWidget {
   const MarksWidget({super.key});
 
   @override
-  _MarksWidgetState createState() => _MarksWidgetState();
+  State<MarksWidget> createState() => _MarksWidgetState();
 }
 
 class _MarksWidgetState extends State<MarksWidget> {
@@ -68,6 +68,7 @@ class _MarksWidgetState extends State<MarksWidget> {
                 context: context,
                 builder: (dialogContext) {
                   return Dialog(
+                    elevation: 0,
                     insetPadding: EdgeInsets.zero,
                     backgroundColor: Colors.transparent,
                     alignment: const AlignmentDirectional(0.0, -0.2)
@@ -267,6 +268,7 @@ class _MarksWidgetState extends State<MarksWidget> {
                                       context: context,
                                       builder: (dialogContext) {
                                         return Dialog(
+                                          elevation: 0,
                                           insetPadding: EdgeInsets.zero,
                                           backgroundColor: Colors.transparent,
                                           alignment: const AlignmentDirectional(

@@ -19,7 +19,7 @@ class FacultywebWidget extends StatefulWidget {
   final DocumentReference? pass;
 
   @override
-  _FacultywebWidgetState createState() => _FacultywebWidgetState();
+  State<FacultywebWidget> createState() => _FacultywebWidgetState();
 }
 
 class _FacultywebWidgetState extends State<FacultywebWidget> {

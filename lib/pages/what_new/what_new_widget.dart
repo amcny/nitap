@@ -16,7 +16,7 @@ class WhatNewWidget extends StatefulWidget {
   const WhatNewWidget({super.key});
 
   @override
-  _WhatNewWidgetState createState() => _WhatNewWidgetState();
+  State<WhatNewWidget> createState() => _WhatNewWidgetState();
 }
 
 class _WhatNewWidgetState extends State<WhatNewWidget>

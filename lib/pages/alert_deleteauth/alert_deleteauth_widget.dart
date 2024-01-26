@@ -12,7 +12,7 @@ class AlertDeleteauthWidget extends StatefulWidget {
   const AlertDeleteauthWidget({super.key});
 
   @override
-  _AlertDeleteauthWidgetState createState() => _AlertDeleteauthWidgetState();
+  State<AlertDeleteauthWidget> createState() => _AlertDeleteauthWidgetState();
 }
 
 class _AlertDeleteauthWidgetState extends State<AlertDeleteauthWidget> {

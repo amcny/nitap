@@ -17,7 +17,7 @@ class EndsemWidget extends StatefulWidget {
   const EndsemWidget({super.key});
 
   @override
-  _EndsemWidgetState createState() => _EndsemWidgetState();
+  State<EndsemWidget> createState() => _EndsemWidgetState();
 }
 
 class _EndsemWidgetState extends State<EndsemWidget>
