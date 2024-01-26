@@ -11,10 +11,12 @@ import 'package:flutter/material.dart';
 
 import 'package:package_info_plus/package_info_plus.dart';
 
-Future<String> getVersionNumber() async {
+Future<String> versionActual() async {
+  // return flutterflow version
+
   PackageInfo packageInfo = await PackageInfo.fromPlatform();
-  String versionNumber = packageInfo.version;
-  return versionNumber;
+
+  return packageInfo.version;
 }
 
 // Set your action name, define your arguments and return parameter,

@@ -41,9 +41,9 @@ class _SettingsWidgetState extends State<SettingsWidget> {
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      _model.versionNumber = await actions.getVersionNumber();
+      _model.version = await actions.versionActual();
       setState(() {
-        _model.versionnumber = _model.versionNumber!;
+        _model.versionnumber = _model.version!;
       });
     });
 
@@ -1088,10 +1088,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                 Padding(
                   padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 5.0),
                   child: Text(
-                    valueOrDefault<String>(
-                      _model.versionNumber,
-                      '1',
-                    ),
+                    _model.versionnumber,
                     style: FlutterFlowTheme.of(context).bodySmall.override(
                           fontFamily: 'Poppins',
                           color: FlutterFlowTheme.of(context).secondaryText,
