@@ -1,6 +1,7 @@
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_ad_banner.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
+import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
@@ -163,36 +164,6 @@ class _TimetableWidgetState extends State<TimetableWidget>
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-            floatingActionButton: FloatingActionButton.extended(
-              onPressed: () async {
-                HapticFeedback.selectionClick();
-
-                context.pushNamed(
-                  'Tmetable_Pop',
-                  extra: <String, dynamic>{
-                    kTransitionInfoKey: const TransitionInfo(
-                      hasTransition: true,
-                      transitionType: PageTransitionType.bottomToTop,
-                      duration: Duration(milliseconds: 265),
-                    ),
-                  },
-                );
-              },
-              backgroundColor: FlutterFlowTheme.of(context).primary,
-              icon: const Icon(
-                FFIcons.kttFilled,
-                color: Colors.white,
-                size: 24.0,
-              ),
-              elevation: 5.0,
-              label: Text(
-                'View',
-                style: FlutterFlowTheme.of(context).bodyMedium.override(
-                      fontFamily: 'Poppins',
-                      color: Colors.white,
-                    ),
-              ),
-            ),
             appBar: AppBar(
               backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
               automaticallyImplyLeading: false,
@@ -697,6 +668,41 @@ class _TimetableWidgetState extends State<TimetableWidget>
                                     ],
                                   ),
                                 ],
+                              ),
+                            ),
+                          ),
+                          Flexible(
+                            child: Align(
+                              alignment: const AlignmentDirectional(1.0, 1.0),
+                              child: Padding(
+                                padding: const EdgeInsets.all(15.0),
+                                child: FlutterFlowIconButton(
+                                  borderRadius: 24.0,
+                                  borderWidth: 1.0,
+                                  buttonSize: 65.0,
+                                  fillColor:
+                                      FlutterFlowTheme.of(context).primary,
+                                  icon: const Icon(
+                                    FFIcons.kttFilled,
+                                    color: Colors.white,
+                                    size: 26.0,
+                                  ),
+                                  onPressed: () async {
+                                    HapticFeedback.selectionClick();
+
+                                    context.pushNamed(
+                                      'Tmetable_Pop',
+                                      extra: <String, dynamic>{
+                                        kTransitionInfoKey: const TransitionInfo(
+                                          hasTransition: true,
+                                          transitionType:
+                                              PageTransitionType.bottomToTop,
+                                          duration: Duration(milliseconds: 265),
+                                        ),
+                                      },
+                                    );
+                                  },
+                                ),
                               ),
                             ),
                           ),
