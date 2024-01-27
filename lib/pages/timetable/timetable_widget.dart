@@ -3,7 +3,6 @@ import '/flutter_flow/flutter_flow_ad_banner.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
@@ -164,6 +163,36 @@ class _TimetableWidgetState extends State<TimetableWidget>
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+            floatingActionButton: FloatingActionButton.extended(
+              onPressed: () async {
+                HapticFeedback.selectionClick();
+
+                context.pushNamed(
+                  'Tmetable_Pop',
+                  extra: <String, dynamic>{
+                    kTransitionInfoKey: const TransitionInfo(
+                      hasTransition: true,
+                      transitionType: PageTransitionType.bottomToTop,
+                      duration: Duration(milliseconds: 265),
+                    ),
+                  },
+                );
+              },
+              backgroundColor: FlutterFlowTheme.of(context).primary,
+              icon: const Icon(
+                FFIcons.kttFilled,
+                color: Colors.white,
+                size: 24.0,
+              ),
+              elevation: 5.0,
+              label: Text(
+                'View',
+                style: FlutterFlowTheme.of(context).bodyMedium.override(
+                      fontFamily: 'Poppins',
+                      color: Colors.white,
+                    ),
+              ),
+            ),
             appBar: AppBar(
               backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
               automaticallyImplyLeading: false,
@@ -668,55 +697,6 @@ class _TimetableWidgetState extends State<TimetableWidget>
                                     ],
                                   ),
                                 ],
-                              ),
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                15.0, 15.0, 15.0, 0.0),
-                            child: FFButtonWidget(
-                              onPressed: () async {
-                                HapticFeedback.selectionClick();
-
-                                context.pushNamed(
-                                  'Tmetable_Pop',
-                                  extra: <String, dynamic>{
-                                    kTransitionInfoKey: const TransitionInfo(
-                                      hasTransition: true,
-                                      transitionType:
-                                          PageTransitionType.bottomToTop,
-                                      duration: Duration(milliseconds: 265),
-                                    ),
-                                  },
-                                );
-                              },
-                              text: 'View Full Timetable',
-                              icon: const Icon(
-                                FFIcons.kttFilled,
-                                color: Colors.white,
-                                size: 23.0,
-                              ),
-                              options: FFButtonOptions(
-                                width: double.infinity,
-                                height: 60.0,
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    24.0, 0.0, 24.0, 0.0),
-                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 0.0, 0.0),
-                                color: FlutterFlowTheme.of(context).primary,
-                                textStyle: FlutterFlowTheme.of(context)
-                                    .titleMedium
-                                    .override(
-                                      fontFamily: 'Poppins',
-                                      color: Colors.white,
-                                      fontSize: 16.0,
-                                    ),
-                                elevation: 1.0,
-                                borderSide: const BorderSide(
-                                  color: Colors.transparent,
-                                  width: 1.0,
-                                ),
-                                borderRadius: BorderRadius.circular(24.0),
                               ),
                             ),
                           ),
