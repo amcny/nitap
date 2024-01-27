@@ -88,12 +88,12 @@ class _ConfirmDeleteWidgetState extends State<ConfirmDeleteWidget> {
               Padding(
                 padding: const EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
                 child: Text(
-                  'You want to delete,\nare you sure?',
+                  'Are you sure,\nyou want to delete?',
                   textAlign: TextAlign.center,
                   style: FlutterFlowTheme.of(context).titleMedium.override(
-                        fontFamily: 'Open Sans',
-                        fontSize: 20.0,
-                        fontWeight: FontWeight.bold,
+                        fontFamily: 'Montserrat',
+                        fontSize: 17.0,
+                        fontWeight: FontWeight.w600,
                       ),
                 ),
               ),
@@ -101,13 +101,14 @@ class _ConfirmDeleteWidgetState extends State<ConfirmDeleteWidget> {
                 padding: const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                 child: FFButtonWidget(
                   onPressed: () async {
+                    await authManager.deleteUser(context);
                     GoRouter.of(context).prepareAuthEvent();
                     await authManager.signOut();
                     GoRouter.of(context).clearRedirectLocation();
 
                     context.goNamedAuth('Onboarding', context.mounted);
                   },
-                  text: 'Logout',
+                  text: 'Delete Account',
                   options: FFButtonOptions(
                     width: MediaQuery.sizeOf(context).width * 0.85,
                     height: 50.0,

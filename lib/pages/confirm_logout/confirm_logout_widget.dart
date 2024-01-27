@@ -88,12 +88,12 @@ class _ConfirmLogoutWidgetState extends State<ConfirmLogoutWidget> {
               Padding(
                 padding: const EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
                 child: Text(
-                  'You want to log out,\nare you sure?',
+                  'Are you sure,\nyou want to logout?',
                   textAlign: TextAlign.center,
                   style: FlutterFlowTheme.of(context).titleMedium.override(
-                        fontFamily: 'Open Sans',
-                        fontSize: 20.0,
-                        fontWeight: FontWeight.bold,
+                        fontFamily: 'Montserrat',
+                        fontSize: 17.0,
+                        fontWeight: FontWeight.w600,
                       ),
                 ),
               ),
