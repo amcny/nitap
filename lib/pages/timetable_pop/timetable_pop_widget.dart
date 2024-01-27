@@ -10,19 +10,19 @@ import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:provider/provider.dart';
-import 'tmetable_pop_model.dart';
-export 'tmetable_pop_model.dart';
+import 'timetable_pop_model.dart';
+export 'timetable_pop_model.dart';
 
-class TmetablePopWidget extends StatefulWidget {
-  const TmetablePopWidget({super.key});
+class TimetablePopWidget extends StatefulWidget {
+  const TimetablePopWidget({super.key});
 
   @override
-  State<TmetablePopWidget> createState() => _TmetablePopWidgetState();
+  State<TimetablePopWidget> createState() => _TimetablePopWidgetState();
 }
 
-class _TmetablePopWidgetState extends State<TmetablePopWidget>
+class _TimetablePopWidgetState extends State<TimetablePopWidget>
     with TickerProviderStateMixin {
-  late TmetablePopModel _model;
+  late TimetablePopModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
   var hasContainerTriggered = false;
@@ -84,7 +84,7 @@ class _TmetablePopWidgetState extends State<TmetablePopWidget>
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => TmetablePopModel());
+    _model = createModel(context, () => TimetablePopModel());
 
     setupAnimations(
       animationsMap.values.where((anim) =>
@@ -152,10 +152,10 @@ class _TmetablePopWidgetState extends State<TmetablePopWidget>
             ),
           );
         }
-        List<TimetableRecord> tmetablePopTimetableRecordList = snapshot.data!;
-        final tmetablePopTimetableRecord =
-            tmetablePopTimetableRecordList.isNotEmpty
-                ? tmetablePopTimetableRecordList.first
+        List<TimetableRecord> timetablePopTimetableRecordList = snapshot.data!;
+        final timetablePopTimetableRecord =
+            timetablePopTimetableRecordList.isNotEmpty
+                ? timetablePopTimetableRecordList.first
                 : null;
         return Scaffold(
           key: scaffoldKey,
@@ -378,7 +378,7 @@ class _TmetablePopWidgetState extends State<TmetablePopWidget>
                                     alignment: const AlignmentDirectional(0.0, 0.0),
                                     child: Text(
                                       valueOrDefault<String>(
-                                        tmetablePopTimetableRecord?.day,
+                                        timetablePopTimetableRecord?.day,
                                         'day',
                                       ),
                                       style: FlutterFlowTheme.of(context)
@@ -480,7 +480,7 @@ class _TmetablePopWidgetState extends State<TmetablePopWidget>
                                 ),
                                 Builder(
                                   builder: (context) {
-                                    final data = tmetablePopTimetableRecord
+                                    final data = timetablePopTimetableRecord
                                             ?.data
                                             .toList() ??
                                         [];

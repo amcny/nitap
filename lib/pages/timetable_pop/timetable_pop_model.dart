@@ -1,8 +1,8 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'tmetable_pop_widget.dart' show TmetablePopWidget;
+import 'timetable_pop_widget.dart' show TimetablePopWidget;
 import 'package:flutter/material.dart';
 
-class TmetablePopModel extends FlutterFlowModel<TmetablePopWidget> {
+class TimetablePopModel extends FlutterFlowModel<TimetablePopWidget> {
   ///  Local state fields for this page.
 
   String? day = '';

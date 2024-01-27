@@ -202,10 +202,10 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => const ChoosesecWidget(),
             ),
             FFRoute(
-              name: 'Tmetable_Pop',
-              path: 'tmetablePop',
+              name: 'Timetable_Pop',
+              path: 'timetablePop',
               requireAuth: true,
-              builder: (context, params) => const TmetablePopWidget(),
+              builder: (context, params) => const TimetablePopWidget(),
             ),
             FFRoute(
               name: 'Signup',

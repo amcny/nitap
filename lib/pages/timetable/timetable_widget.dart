@@ -631,7 +631,7 @@ class _TimetableWidgetState extends State<TimetableWidget>
                                     HapticFeedback.selectionClick();
 
                                     context.pushNamed(
-                                      'Tmetable_Pop',
+                                      'Timetable_Pop',
                                       extra: <String, dynamic>{
                                         kTransitionInfoKey: const TransitionInfo(
                                           hasTransition: true,
