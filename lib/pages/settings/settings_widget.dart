@@ -102,7 +102,6 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                 await showModalBottomSheet(
                   isScrollControlled: true,
                   backgroundColor: Colors.transparent,
-                  useSafeArea: true,
                   context: context,
                   builder: (context) {
                     return Padding(
@@ -890,7 +889,6 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                             await showModalBottomSheet(
                               isScrollControlled: true,
                               backgroundColor: Colors.transparent,
-                              useSafeArea: true,
                               context: context,
                               builder: (context) {
                                 return Padding(
@@ -1090,7 +1088,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 5.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 20.0),
                   child: Text(
                     _model.versionnumber,
                     style: FlutterFlowTheme.of(context).bodySmall.override(
