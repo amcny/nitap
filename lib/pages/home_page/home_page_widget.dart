@@ -43,7 +43,20 @@ class _HomePageWidgetState extends State<HomePageWidget>
         ),
       ],
     ),
-    'containerOnPageLoadAnimation': AnimationInfo(
+    'containerOnPageLoadAnimation1': AnimationInfo(
+      trigger: AnimationTrigger.onPageLoad,
+      effects: [
+        ShimmerEffect(
+          curve: Curves.easeInOut,
+          delay: 0.ms,
+          duration: 600.ms,
+          color: const Color(0x80FFFFFF),
+          angle: 0.524,
+        ),
+      ],
+    ),
+    'containerOnPageLoadAnimation2': AnimationInfo(
+      loop: true,
       trigger: AnimationTrigger.onPageLoad,
       effects: [
         ShimmerEffect(
@@ -756,7 +769,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                         ),
                                       ),
                                     ).animateOnPageLoad(animationsMap[
-                                        'containerOnPageLoadAnimation']!),
+                                        'containerOnPageLoadAnimation1']!),
                                   );
                                 })
                                     .divide(const SizedBox(width: 10.0))
@@ -1402,7 +1415,8 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                       ),
                                 ),
                               ),
-                            ),
+                            ).animateOnPageLoad(animationsMap[
+                                'containerOnPageLoadAnimation2']!),
                           ),
                         ],
                       ),
