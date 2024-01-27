@@ -108,18 +108,24 @@ class _PrivacyWidgetState extends State<PrivacyWidget> {
                 ),
               ],
             ),
-            Column(
-              mainAxisSize: MainAxisSize.max,
-              children: [
-                Text(
-                  'End-to-End encryption keeps your academic\ndata between your device and the server.\nNot even Developers can see them.\nThis includes your',
-                  textAlign: TextAlign.center,
-                  style: FlutterFlowTheme.of(context).bodyMedium,
-                ),
-              ],
+            Padding(
+              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
+              child: Column(
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  Text(
+                    'End-to-End encryption keeps your academic\ndata between your device and the server.\nNot even Developers can see them.\nThis includes your',
+                    textAlign: TextAlign.center,
+                    style: FlutterFlowTheme.of(context).bodyMedium.override(
+                          fontFamily: 'Poppins',
+                          color: FlutterFlowTheme.of(context).secondaryText,
+                        ),
+                  ),
+                ],
+              ),
             ),
             Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(15.0, 20.0, 0.0, 10.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(15.0, 15.0, 0.0, 10.0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.start,

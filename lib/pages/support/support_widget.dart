@@ -109,18 +109,24 @@ class _SupportWidgetState extends State<SupportWidget> {
               ),
             ],
           ),
-          Column(
-            mainAxisSize: MainAxisSize.max,
-            children: [
-              Text(
-                'Add a Short description of what you encountered\nand send an email by clicking the email id\nfor sure, we will fix/include as soon as possible.',
-                textAlign: TextAlign.center,
-                style: FlutterFlowTheme.of(context).bodyMedium,
-              ),
-            ],
+          Padding(
+            padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
+            child: Column(
+              mainAxisSize: MainAxisSize.max,
+              children: [
+                Text(
+                  'Add a Short description of what you encountered\nand send an email by clicking the email id\nfor sure, we will fix/include as soon as possible.',
+                  textAlign: TextAlign.center,
+                  style: FlutterFlowTheme.of(context).bodyMedium.override(
+                        fontFamily: 'Poppins',
+                        color: FlutterFlowTheme.of(context).secondaryText,
+                      ),
+                ),
+              ],
+            ),
           ),
           Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 10.0),
+            padding: const EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 10.0),
             child: InkWell(
               splashColor: Colors.transparent,
               focusColor: Colors.transparent,
