@@ -3,6 +3,7 @@ import '/flutter_flow/flutter_flow_ad_banner.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/pages/no_class/no_class_widget.dart';
 import '/flutter_flow/admob_util.dart' as admob;
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
@@ -299,15 +300,13 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                   final data =
                                       rowTimetableRecord?.data.toList() ?? [];
                                   if (data.isEmpty) {
-                                    return ClipRRect(
-                                      borderRadius: BorderRadius.circular(12.0),
-                                      child: Image.asset(
-                                        'assets/images/nct.jpg',
+                                    return Center(
+                                      child: SizedBox(
                                         width:
                                             MediaQuery.sizeOf(context).width *
-                                                0.93,
+                                                1.0,
                                         height: 170.0,
-                                        fit: BoxFit.fill,
+                                        child: const NoClassWidget(),
                                       ),
                                     );
                                   }
