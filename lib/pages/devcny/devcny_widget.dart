@@ -156,22 +156,27 @@ class _DevcnyWidgetState extends State<DevcnyWidget> {
                         ),
                       ],
                     ),
-                    Row(
-                      mainAxisSize: MainAxisSize.max,
-                      children: [
-                        Expanded(
-                          child: Text(
-                            'Application Developer · Batch of 2022\nDepartment of Electronics & Communication',
-                            textAlign: TextAlign.center,
-                            style:
-                                FlutterFlowTheme.of(context).bodySmall.override(
-                                      fontFamily: 'Poppins',
-                                      color: FlutterFlowTheme.of(context)
-                                          .secondaryText,
-                                    ),
+                    Padding(
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 5.0),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          Expanded(
+                            child: Text(
+                              'Application Developer · Batch of 2022\nDepartment of Electronics & Communication',
+                              textAlign: TextAlign.center,
+                              style: FlutterFlowTheme.of(context)
+                                  .bodySmall
+                                  .override(
+                                    fontFamily: 'Poppins',
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryText,
+                                  ),
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                     const Divider(
                       thickness: 0.5,
@@ -208,7 +213,8 @@ class _DevcnyWidgetState extends State<DevcnyWidget> {
                           },
                           text: 'Linkedin',
                           icon: const FaIcon(
-                            FontAwesomeIcons.linkedin,
+                            FontAwesomeIcons.linkedinIn,
+                            size: 24.0,
                           ),
                           options: FFButtonOptions(
                             width: 150.0,
@@ -240,6 +246,7 @@ class _DevcnyWidgetState extends State<DevcnyWidget> {
                           text: 'Instagram',
                           icon: const FaIcon(
                             FontAwesomeIcons.instagram,
+                            size: 24.0,
                           ),
                           options: FFButtonOptions(
                             width: 150.0,
@@ -263,7 +270,7 @@ class _DevcnyWidgetState extends State<DevcnyWidget> {
                             ),
                           ),
                         ),
-                      ].divide(const SizedBox(width: 5.0)),
+                      ].divide(const SizedBox(width: 2.0)),
                     ),
                   ],
                 ),
