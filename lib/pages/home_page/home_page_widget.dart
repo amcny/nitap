@@ -61,7 +61,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
       effects: [
         ShimmerEffect(
           curve: Curves.easeInOut,
-          delay: 0.ms,
+          delay: 700.ms,
           duration: 600.ms,
           color: const Color(0x80FFFFFF),
           angle: 0.524,
