@@ -217,7 +217,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                             fontFamily: 'Poppins',
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryText,
-                                            fontSize: 17.0,
+                                            fontSize: 17.5,
                                             fontWeight: FontWeight.w600,
                                           ),
                                     ),
@@ -229,7 +229,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                             fontFamily: 'Poppins',
                                             color: FlutterFlowTheme.of(context)
                                                 .success,
-                                            fontSize: 17.0,
+                                            fontSize: 17.5,
                                             fontWeight: FontWeight.w600,
                                           ),
                                     ),
@@ -1296,6 +1296,8 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                       .bodyLarge
                                       .override(
                                         fontFamily: 'Permanent Marker',
+                                        color: FlutterFlowTheme.of(context)
+                                            .primary,
                                       ),
                                 ),
                               ],
