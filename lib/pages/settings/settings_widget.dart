@@ -103,36 +103,20 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                   ),
                   child: Row(
                     mainAxisSize: MainAxisSize.min,
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      Padding(
-                        padding:
-                            const EdgeInsetsDirectional.fromSTEB(19.0, 0.0, 0.0, 0.0),
-                        child: Container(
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            border: Border.all(
-                              color: FlutterFlowTheme.of(context).primary,
-                            ),
-                          ),
-                          child: Icon(
-                            Icons.account_circle_rounded,
-                            color: FlutterFlowTheme.of(context).primary,
-                            size: 55.0,
-                          ),
-                        ),
-                      ),
-                      Expanded(
+                      Align(
+                        alignment: const AlignmentDirectional(-1.0, 0.0),
                         child: Padding(
                           padding: const EdgeInsetsDirectional.fromSTEB(
-                              15.0, 0.0, 0.0, 0.0),
+                              16.0, 0.0, 0.0, 0.0),
                           child: Column(
                             mainAxisSize: MainAxisSize.min,
                             mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Row(
-                                mainAxisSize: MainAxisSize.max,
+                                mainAxisSize: MainAxisSize.min,
                                 children: [
                                   Text(
                                     'Roll no : ',
@@ -162,7 +146,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                 ],
                               ),
                               Row(
-                                mainAxisSize: MainAxisSize.max,
+                                mainAxisSize: MainAxisSize.min,
                                 children: [
                                   Text(
                                     'Class : ',
