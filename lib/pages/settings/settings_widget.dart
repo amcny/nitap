@@ -156,8 +156,6 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                     borderRadius: BorderRadius.circular(40.0),
                                     child: Image.asset(
                                       'assets/images/nit_app_icon.png',
-                                      width: 40.0,
-                                      height: 40.0,
                                       fit: BoxFit.cover,
                                     ),
                                   ),

@@ -28,3 +28,24 @@ bool? emailvalid(String? email) {
   }
   return email.startsWith('6');
 }
+
+List<String> generatedates() {
+  // create function that generates date number from today and it should be dynamically generated
+  DateTime today = DateTime.now();
+  List<String> dates = [];
+  for (int i = 0; i < 7; i++) {
+    DateTime date = today.add(Duration(days: i));
+    String formattedDate = DateFormat('dd').format(date);
+    dates.add(formattedDate);
+  }
+  return dates;
+}
+
+int? increment() {
+  // create function that increments index value each time by 1
+  int index = 0;
+  return () {
+    index++;
+    return index;
+  }();
+}

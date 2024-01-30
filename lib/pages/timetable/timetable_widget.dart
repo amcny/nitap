@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/pages/no_class/no_class_widget.dart';
+import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
@@ -256,11 +257,6 @@ class _TimetableWidgetState extends State<TimetableWidget>
                                         mainAxisAlignment:
                                             MainAxisAlignment.center,
                                         children: [
-                                          const Icon(
-                                            Icons.space_dashboard_rounded,
-                                            color: Color(0xFFD4D4D4),
-                                            size: 25.0,
-                                          ),
                                           Text(
                                             daysItem.maybeHandleOverflow(
                                                 maxChars: 3),
@@ -284,6 +280,12 @@ class _TimetableWidgetState extends State<TimetableWidget>
                                                   }(),
                                                   fontWeight: FontWeight.w500,
                                                 ),
+                                          ),
+                                          Text(
+                                            functions.generatedates()[
+                                                functions.increment()!],
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium,
                                           ),
                                         ],
                                       ),
