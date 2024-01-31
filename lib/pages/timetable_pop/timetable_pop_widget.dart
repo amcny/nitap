@@ -274,6 +274,14 @@ class _TimetablePopWidgetState extends State<TimetablePopWidget>
                                                 .secondaryBackground;
                                           }
                                         }(),
+                                        boxShadow: [
+                                          BoxShadow(
+                                            blurRadius: 4.0,
+                                            color: FlutterFlowTheme.of(context)
+                                                .primary,
+                                            offset: const Offset(0.0, 2.0),
+                                          )
+                                        ],
                                         borderRadius:
                                             BorderRadius.circular(12.0),
                                         border: Border.all(

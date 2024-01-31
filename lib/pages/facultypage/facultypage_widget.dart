@@ -109,23 +109,11 @@ class _FacultypageWidgetState extends State<FacultypageWidget>
       ),
       body: SafeArea(
         top: true,
-        child: SingleChildScrollView(
-          child: Column(
-            mainAxisSize: MainAxisSize.max,
-            children: [
-              Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 10.0, 16.0, 0.0),
-                child: Row(
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    Text(
-                      'Click on the department name to check faculty',
-                      style: FlutterFlowTheme.of(context).bodySmall,
-                    ),
-                  ],
-                ),
-              ),
-              Padding(
+        child: Column(
+          mainAxisSize: MainAxisSize.max,
+          children: [
+            Flexible(
+              child: Padding(
                 padding: const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
                 child: StreamBuilder<List<FacultyRecord>>(
                   stream: _model.faculty(
@@ -158,7 +146,6 @@ class _FacultypageWidgetState extends State<FacultypageWidget>
                         12.0,
                       ),
                       primary: false,
-                      shrinkWrap: true,
                       scrollDirection: Axis.vertical,
                       itemCount: listViewFacultyRecordList.length,
                       separatorBuilder: (_, __) => const SizedBox(height: 5.0),
@@ -289,8 +276,8 @@ class _FacultypageWidgetState extends State<FacultypageWidget>
                   },
                 ),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
