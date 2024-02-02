@@ -9,6 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
 import 'academic_calendar_model.dart';
 export 'academic_calendar_model.dart';
@@ -124,6 +125,16 @@ class _AcademicCalendarWidgetState extends State<AcademicCalendarWidget>
               );
             }
             List<AcademicRecord> listViewAcademicRecordList = snapshot.data!;
+            if (listViewAcademicRecordList.isEmpty) {
+              return Center(
+                child: SvgPicture.asset(
+                  'assets/images/404_Error_with_a_cute_animal-pana.svg',
+                  width: MediaQuery.sizeOf(context).width * 0.8,
+                  height: MediaQuery.sizeOf(context).height * 0.8,
+                  fit: BoxFit.contain,
+                ),
+              );
+            }
             return ListView.builder(
               padding: EdgeInsets.zero,
               scrollDirection: Axis.vertical,
