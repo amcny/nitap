@@ -5,7 +5,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:lottie/lottie.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
 import 'examschedule_model.dart';
 export 'examschedule_model.dart';
@@ -127,52 +127,46 @@ class _ExamscheduleWidgetState extends State<ExamscheduleWidget> {
                       color: FlutterFlowTheme.of(context).appbar,
                     ),
                     alignment: const AlignmentDirectional(0.0, 0.0),
-                    child: Column(
-                      mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Lottie.asset(
-                          'assets/lottie_animations/no_exam.json',
-                          height: MediaQuery.sizeOf(context).height * 0.35,
-                          fit: BoxFit.cover,
-                          animate: true,
-                        ),
-                        Row(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            Text(
-                              'No Exam Schedule Found',
+                    child: Align(
+                      alignment: const AlignmentDirectional(0.0, -0.3),
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          ClipRRect(
+                            borderRadius: BorderRadius.circular(8.0),
+                            child: SvgPicture.asset(
+                              'assets/images/404.svg',
+                              width: MediaQuery.sizeOf(context).width * 0.8,
+                              height: MediaQuery.sizeOf(context).height * 0.4,
+                              fit: BoxFit.contain,
+                            ),
+                          ),
+                          Text(
+                            'No Exam Schedule Found',
+                            style: FlutterFlowTheme.of(context)
+                                .titleLarge
+                                .override(
+                                  fontFamily: 'Poppins',
+                                  fontWeight: FontWeight.w600,
+                                ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                30.0, 10.0, 30.0, 0.0),
+                            child: Text(
+                              'Look\'s like you don\'t have\nany exams dates released yet. \nPlease check back later',
+                              textAlign: TextAlign.center,
                               style: FlutterFlowTheme.of(context)
-                                  .titleLarge
+                                  .titleMedium
                                   .override(
                                     fontFamily: 'Poppins',
-                                    fontWeight: FontWeight.w600,
+                                    fontWeight: FontWeight.w200,
                                   ),
                             ),
-                          ],
-                        ),
-                        Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
-                              30.0, 10.0, 30.0, 0.0),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Expanded(
-                                child: Text(
-                                  'Look\'s like you don\'t have\nany exams dates released yet. \nPlease check back later',
-                                  textAlign: TextAlign.center,
-                                  style: FlutterFlowTheme.of(context)
-                                      .titleMedium
-                                      .override(
-                                        fontFamily: 'Poppins',
-                                        fontWeight: FontWeight.w200,
-                                      ),
-                                ),
-                              ),
-                            ],
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
                 if ((examscheduleExamRecord?.minor1 != null &&
