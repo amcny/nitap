@@ -246,12 +246,12 @@ class _TimetableWidgetState extends State<TimetableWidget>
                                         }(),
                                         boxShadow: [
                                           BoxShadow(
-                                            blurRadius: 5.0,
+                                            blurRadius: 25.0,
                                             color: () {
                                               if (_model.day == daysItem) {
                                                 return FlutterFlowTheme.of(
                                                         context)
-                                                    .primary;
+                                                    .info;
                                               } else if (daysItem ==
                                                   dateTimeFormat('EEEE',
                                                       getCurrentTimestamp)) {
@@ -264,7 +264,7 @@ class _TimetableWidgetState extends State<TimetableWidget>
                                                     .secondaryBackground;
                                               }
                                             }(),
-                                            spreadRadius: 1.0,
+                                            offset: const Offset(0.0, 15.0),
                                           )
                                         ],
                                         borderRadius:

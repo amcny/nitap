@@ -1701,6 +1701,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                             fontFamily: 'Permanent Marker',
                                             color: FlutterFlowTheme.of(context)
                                                 .primary,
+                                            fontSize: 18.0,
                                           ),
                                     ),
                                   ],

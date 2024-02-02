@@ -1296,6 +1296,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                         fontFamily: 'Permanent Marker',
                                         color: FlutterFlowTheme.of(context)
                                             .primary,
+                                        fontSize: 18.0,
                                       ),
                                 ),
                               ],
