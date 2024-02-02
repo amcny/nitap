@@ -1427,7 +1427,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                     child: SingleChildScrollView(
                       scrollDirection: Axis.horizontal,
                       child: Row(
-                        mainAxisSize: MainAxisSize.max,
+                        mainAxisSize: MainAxisSize.min,
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           InkWell(
@@ -1699,6 +1699,8 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                           .bodyLarge
                                           .override(
                                             fontFamily: 'Permanent Marker',
+                                            color: FlutterFlowTheme.of(context)
+                                                .primary,
                                           ),
                                     ),
                                   ],

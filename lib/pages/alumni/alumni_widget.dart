@@ -141,7 +141,7 @@ class _AlumniWidgetState extends State<AlumniWidget>
             if (listViewAlumniRecordList.isEmpty) {
               return Center(
                 child: SvgPicture.asset(
-                  'assets/images/No_data.svg',
+                  'assets/images/404.svg',
                   fit: BoxFit.contain,
                 ),
               );
