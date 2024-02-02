@@ -246,7 +246,7 @@ class _TimetableWidgetState extends State<TimetableWidget>
                                         }(),
                                         boxShadow: [
                                           BoxShadow(
-                                            blurRadius: 4.0,
+                                            blurRadius: 5.0,
                                             color: () {
                                               if (_model.day == daysItem) {
                                                 return FlutterFlowTheme.of(
@@ -264,14 +264,14 @@ class _TimetableWidgetState extends State<TimetableWidget>
                                                     .secondaryBackground;
                                               }
                                             }(),
-                                            offset: const Offset(0.0, 2.0),
+                                            spreadRadius: 1.0,
                                           )
                                         ],
                                         borderRadius:
                                             BorderRadius.circular(12.0),
                                         border: Border.all(
                                           color: const Color(0x67616161),
-                                          width: 0.7,
+                                          width: 0.5,
                                         ),
                                       ),
                                       child: Column(
