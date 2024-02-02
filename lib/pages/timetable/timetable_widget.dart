@@ -246,32 +246,29 @@ class _TimetableWidgetState extends State<TimetableWidget>
                                         }(),
                                         boxShadow: [
                                           BoxShadow(
-                                            blurRadius: 25.0,
+                                            blurRadius: 8.0,
                                             color: () {
                                               if (_model.day == daysItem) {
-                                                return FlutterFlowTheme.of(
-                                                        context)
-                                                    .info;
+                                                return const Color(0x321A73E8);
                                               } else if (daysItem ==
                                                   dateTimeFormat('EEEE',
                                                       getCurrentTimestamp)) {
-                                                return FlutterFlowTheme.of(
-                                                        context)
-                                                    .success;
+                                                return const Color(0x3204A24C);
                                               } else {
                                                 return FlutterFlowTheme.of(
                                                         context)
-                                                    .secondaryBackground;
+                                                    .accent3;
                                               }
                                             }(),
-                                            offset: const Offset(0.0, 15.0),
+                                            offset: const Offset(0.0, 5.0),
+                                            spreadRadius: 1.0,
                                           )
                                         ],
                                         borderRadius:
-                                            BorderRadius.circular(12.0),
+                                            BorderRadius.circular(14.0),
                                         border: Border.all(
                                           color: const Color(0x67616161),
-                                          width: 0.5,
+                                          width: 0.2,
                                         ),
                                       ),
                                       child: Column(
@@ -279,11 +276,6 @@ class _TimetableWidgetState extends State<TimetableWidget>
                                         mainAxisAlignment:
                                             MainAxisAlignment.center,
                                         children: [
-                                          const Icon(
-                                            Icons.space_dashboard_rounded,
-                                            color: Color(0xFFD4D4D4),
-                                            size: 25.0,
-                                          ),
                                           Text(
                                             daysItem.maybeHandleOverflow(
                                                 maxChars: 3),
