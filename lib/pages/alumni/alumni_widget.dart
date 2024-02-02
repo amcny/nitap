@@ -142,6 +142,8 @@ class _AlumniWidgetState extends State<AlumniWidget>
               return Center(
                 child: SvgPicture.asset(
                   'assets/images/404_Error_with_a_cute_animal-pana.svg',
+                  width: MediaQuery.sizeOf(context).width * 0.8,
+                  height: MediaQuery.sizeOf(context).height * 0.8,
                   fit: BoxFit.contain,
                 ),
               );
