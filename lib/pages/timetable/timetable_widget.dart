@@ -261,7 +261,7 @@ class _TimetableWidgetState extends State<TimetableWidget>
                                     }(),
                                     boxShadow: [
                                       BoxShadow(
-                                        blurRadius: 4.0,
+                                        blurRadius: 8.0,
                                         color: () {
                                           if (_model.day ==
                                               dateTimeFormat(
@@ -271,10 +271,10 @@ class _TimetableWidgetState extends State<TimetableWidget>
                                               getCurrentTimestamp) {
                                             return const Color(0x442DB83D);
                                           } else {
-                                            return const Color(0x38FFFFFF);
+                                            return const Color(0x27FFFFFF);
                                           }
                                         }(),
-                                        offset: const Offset(0.0, 2.0),
+                                        offset: const Offset(0.0, 5.0),
                                         spreadRadius: 1.0,
                                       )
                                     ],
