@@ -108,7 +108,7 @@ class _AcademicCalendarWidgetState extends State<AcademicCalendarWidget>
         child: StreamBuilder<List<AcademicRecord>>(
           stream: queryAcademicRecord(
             queryBuilder: (academicRecord) =>
-                academicRecord.orderBy('created_time'),
+                academicRecord.orderBy('created_time', descending: true),
           ),
           builder: (context, snapshot) {
             // Customize what your widget looks like when it's loading.
