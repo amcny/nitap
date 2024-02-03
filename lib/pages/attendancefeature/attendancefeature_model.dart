@@ -1,15 +1,20 @@
+import '/backend/backend.dart';
+import '/flutter_flow/flutter_flow_data_table.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'attendancefeature_widget.dart' show AttendancefeatureWidget;
-import 'package:data_table_2/data_table_2.dart';
 import 'package:flutter/material.dart';
 
 class AttendancefeatureModel extends FlutterFlowModel<AttendancefeatureWidget> {
+  ///  State fields for stateful widgets in this page.
+
+  // State field(s) for PaginatedDataTable widget.
+  final paginatedDataTableController =
+      FlutterFlowDataTableController<AttendanceRecord>();
+
   /// Initialization and disposal methods.
 
   @override
-  void initState(BuildContext context) {
-    dataTableShowLogs = false; // Disables noisy DataTable2 debug statements.
-  }
+  void initState(BuildContext context) {}
 
   @override
   void dispose() {}
