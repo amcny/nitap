@@ -227,8 +227,8 @@ class _TimetableWidgetState extends State<TimetableWidget>
                                       }
                                     },
                                     child: AnimatedContainer(
-                                      duration: const Duration(milliseconds: 500),
-                                      curve: Curves.bounceOut,
+                                      duration: const Duration(milliseconds: 350),
+                                      curve: Curves.linear,
                                       width: 60.0,
                                       height: 75.0,
                                       decoration: BoxDecoration(
