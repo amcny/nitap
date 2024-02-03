@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/pages/attendance/attendance_widget.dart';
+import '/pages/attendclass/attendclass_widget.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -145,6 +146,13 @@ class _AttendancefeatureWidgetState extends State<AttendancefeatureWidget> {
             child: Builder(
               builder: (context) {
                 final table1 = attendancefeatureAttendanceRecordList.toList();
+                if (table1.isEmpty) {
+                  return Image.asset(
+                    'assets/images/image.png',
+                    width: 300.0,
+                    fit: BoxFit.fill,
+                  );
+                }
                 return FlutterFlowDataTable<AttendanceRecord>(
                   controller: _model.paginatedDataTableController,
                   data: table1,
@@ -198,18 +206,34 @@ class _AttendancefeatureWidgetState extends State<AttendancefeatureWidget> {
                       Row(
                         mainAxisSize: MainAxisSize.max,
                         children: [
-                          FlutterFlowIconButton(
-                            borderRadius: 0.0,
-                            borderWidth: 0.0,
-                            icon: Icon(
-                              FFIcons.kadd,
-                              color: FlutterFlowTheme.of(context).primary,
-                              size: 25.0,
+                          Builder(
+                            builder: (context) => FlutterFlowIconButton(
+                              borderRadius: 0.0,
+                              borderWidth: 0.0,
+                              icon: Icon(
+                                FFIcons.kadd,
+                                color: FlutterFlowTheme.of(context).primary,
+                                size: 24.0,
+                              ),
+                              showLoadingIndicator: true,
+                              onPressed: () async {
+                                await showDialog(
+                                  context: context,
+                                  builder: (dialogContext) {
+                                    return Dialog(
+                                      elevation: 0,
+                                      insetPadding: EdgeInsets.zero,
+                                      backgroundColor: Colors.transparent,
+                                      alignment: const AlignmentDirectional(0.0, -0.2)
+                                          .resolve(Directionality.of(context)),
+                                      child: AttendclassWidget(
+                                        classref: table1Item.reference,
+                                      ),
+                                    );
+                                  },
+                                ).then((value) => setState(() {}));
+                              },
                             ),
-                            showLoadingIndicator: true,
-                            onPressed: () {
-                              print('IconButton pressed ...');
-                            },
                           ),
                           FlutterFlowIconButton(
                             borderColor: Colors.transparent,
@@ -219,16 +243,21 @@ class _AttendancefeatureWidgetState extends State<AttendancefeatureWidget> {
                             icon: Icon(
                               FFIcons.kdelete,
                               color: FlutterFlowTheme.of(context).error,
-                              size: 25.0,
+                              size: 24.0,
                             ),
                             showLoadingIndicator: true,
-                            onPressed: () {
-                              print('IconButton pressed ...');
+                            onPressed: () async {
+                              await table1Item.reference.delete();
                             },
                           ),
                         ],
                       ),
                     ].map((c) => DataCell(c)).toList(),
+                  ),
+                  emptyBuilder: () => Image.asset(
+                    'assets/images/image.png',
+                    width: 300.0,
+                    fit: BoxFit.fill,
                   ),
                   paginated: false,
                   selectable: false,
@@ -240,7 +269,7 @@ class _AttendancefeatureWidgetState extends State<AttendancefeatureWidget> {
                   addHorizontalDivider: false,
                   addVerticalDivider: true,
                   verticalDividerColor: FlutterFlowTheme.of(context).accent3,
-                  verticalDividerThickness: 1.0,
+                  verticalDividerThickness: 0.1,
                 );
               },
             ),
