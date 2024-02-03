@@ -213,13 +213,40 @@ class _TimetableWidgetState extends State<TimetableWidget>
                                         _model.day =
                                             dateTimeFormat('EEEE', daysItem);
                                       });
+                                      if (animationsMap[
+                                              'containerOnActionTriggerAnimation'] !=
+                                          null) {
+                                        setState(
+                                            () => hasContainerTriggered = true);
+                                        SchedulerBinding.instance
+                                            .addPostFrameCallback((_) async =>
+                                                await animationsMap[
+                                                        'containerOnActionTriggerAnimation']!
+                                                    .controller
+                                                    .forward(from: 0.0));
+                                      }
                                     },
-                                    child: Container(
+                                    child: AnimatedContainer(
+                                      duration: const Duration(milliseconds: 200),
+                                      curve: Curves.bounceOut,
                                       width: 60.0,
                                       height: 75.0,
                                       decoration: BoxDecoration(
-                                        color: FlutterFlowTheme.of(context)
-                                            .primary,
+                                        color: () {
+                                          if (_model.day ==
+                                              dateTimeFormat(
+                                                  'EEEE', daysItem)) {
+                                            return FlutterFlowTheme.of(context)
+                                                .primary;
+                                          } else if (daysItem ==
+                                              getCurrentTimestamp) {
+                                            return FlutterFlowTheme.of(context)
+                                                .success;
+                                          } else {
+                                            return FlutterFlowTheme.of(context)
+                                                .secondaryBackground;
+                                          }
+                                        }(),
                                         borderRadius:
                                             BorderRadius.circular(12.0),
                                       ),
