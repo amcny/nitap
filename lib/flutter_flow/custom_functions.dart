@@ -43,9 +43,16 @@ List<DateTime> generateFutureDates(int numberOfDays) {
 }
 
 String linearGradient() {
-  // create gradient with two colors as hex code with angle 315 and return as a string
-  final color1 = '#FFC371';
-  final color2 = '#FF5F6D';
-  final angle = 315;
-  return 'linear-gradient(${angle}deg, $color1, $color2)';
+  // create gradient with two colors with angle 315 and return as a string
+  final colors = [Color(0xFF0000FF), Color(0xFFFF0000)];
+  final stops = [0.0, 1.0];
+  final angle = 315 * (math.pi / 180);
+  final gradient = LinearGradient(
+    colors: colors,
+    stops: stops,
+    begin: Alignment.topLeft,
+    end: Alignment.bottomRight,
+    transform: GradientRotation(angle),
+  );
+  return gradient.toString();
 }
