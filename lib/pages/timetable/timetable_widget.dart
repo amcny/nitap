@@ -266,15 +266,15 @@ class _TimetableWidgetState extends State<TimetableWidget>
                                           if (_model.day ==
                                               dateTimeFormat(
                                                   'EEEE', daysItem)) {
-                                            return const Color(0x421A73E8);
+                                            return const Color(0x4D1A73E8);
                                           } else if (daysItem ==
                                               getCurrentTimestamp) {
-                                            return const Color(0x442DB83D);
+                                            return const Color(0x4C2DB83D);
                                           } else {
-                                            return const Color(0x27FFFFFF);
+                                            return const Color(0x0DFFFFFF);
                                           }
                                         }(),
-                                        offset: const Offset(0.0, 5.0),
+                                        offset: const Offset(0.0, 2.0),
                                         spreadRadius: 1.0,
                                       )
                                     ],
