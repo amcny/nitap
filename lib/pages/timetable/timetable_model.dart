@@ -1,5 +1,4 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import '/pages/no_class/no_class_widget.dart';
 import 'timetable_widget.dart' show TimetableWidget;
 import 'package:flutter/material.dart';
 
@@ -8,22 +7,13 @@ class TimetableModel extends FlutterFlowModel<TimetableWidget> {
 
   String? day = '';
 
-  ///  State fields for stateful widgets in this page.
-
-  // Model for no_class component.
-  late NoClassModel noClassModel;
-
   /// Initialization and disposal methods.
 
   @override
-  void initState(BuildContext context) {
-    noClassModel = createModel(context, () => NoClassModel());
-  }
+  void initState(BuildContext context) {}
 
   @override
-  void dispose() {
-    noClassModel.dispose();
-  }
+  void dispose() {}
 
   /// Action blocks are added here.
 

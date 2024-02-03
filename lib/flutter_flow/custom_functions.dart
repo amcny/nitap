@@ -20,3 +20,32 @@ bool? emailvalid(String? email) {
   }
   return email.startsWith('6');
 }
+
+List<DateTime> generateFutureDates(int numberOfDays) {
+  final now = DateTime.now();
+  final workdays = <DateTime>[];
+
+  // Start with the current day
+  var currentDay = now;
+
+  // Generate workdays until we reach the desired number
+  while (workdays.length < numberOfDays) {
+    // Check if the current day is not a weekend (Saturday or Sunday)
+    if (currentDay.weekday != DateTime.saturday &&
+        currentDay.weekday != DateTime.sunday) {
+      workdays.add(currentDay);
+    }
+    // Move to the next day
+    currentDay = currentDay.add(Duration(days: 1));
+  }
+
+  return workdays;
+}
+
+String linearGradient() {
+  // create gradient with two colors as hex code with angle 315 and return as a string
+  final color1 = '#FFC371';
+  final color2 = '#FF5F6D';
+  final angle = 315;
+  return 'linear-gradient(${angle}deg, $color1, $color2)';
+}

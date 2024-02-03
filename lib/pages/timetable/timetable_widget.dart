@@ -1,15 +1,15 @@
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_ad_banner.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
-import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/pages/no_class/no_class_widget.dart';
+import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
 import 'timetable_model.dart';
 export 'timetable_model.dart';
@@ -194,7 +194,8 @@ class _TimetableWidgetState extends State<TimetableWidget>
                               0.0, 20.0, 0.0, 0.0),
                           child: Builder(
                             builder: (context) {
-                              final days = FFAppState().days.toList();
+                              final days =
+                                  functions.generateFutureDates(5).toList();
                               return Row(
                                 mainAxisSize: MainAxisSize.max,
                                 mainAxisAlignment:
@@ -209,67 +210,18 @@ class _TimetableWidgetState extends State<TimetableWidget>
                                     highlightColor: Colors.transparent,
                                     onTap: () async {
                                       setState(() {
-                                        _model.day = daysItem;
+                                        _model.day =
+                                            dateTimeFormat('EEEE', daysItem);
                                       });
-                                      if (animationsMap[
-                                              'containerOnActionTriggerAnimation'] !=
-                                          null) {
-                                        setState(
-                                            () => hasContainerTriggered = true);
-                                        SchedulerBinding.instance
-                                            .addPostFrameCallback((_) async =>
-                                                await animationsMap[
-                                                        'containerOnActionTriggerAnimation']!
-                                                    .controller
-                                                    .forward(from: 0.0));
-                                      }
                                     },
-                                    child: AnimatedContainer(
-                                      duration: const Duration(milliseconds: 100),
-                                      curve: Curves.linear,
+                                    child: Container(
                                       width: 60.0,
                                       height: 75.0,
                                       decoration: BoxDecoration(
-                                        color: () {
-                                          if (_model.day == daysItem) {
-                                            return FlutterFlowTheme.of(context)
-                                                .primary;
-                                          } else if (daysItem ==
-                                              dateTimeFormat('EEEE',
-                                                  getCurrentTimestamp)) {
-                                            return FlutterFlowTheme.of(context)
-                                                .success;
-                                          } else {
-                                            return FlutterFlowTheme.of(context)
-                                                .secondaryBackground;
-                                          }
-                                        }(),
-                                        boxShadow: [
-                                          BoxShadow(
-                                            blurRadius: 8.0,
-                                            color: () {
-                                              if (_model.day == daysItem) {
-                                                return const Color(0x321A73E8);
-                                              } else if (daysItem ==
-                                                  dateTimeFormat('EEEE',
-                                                      getCurrentTimestamp)) {
-                                                return const Color(0x3204A24C);
-                                              } else {
-                                                return FlutterFlowTheme.of(
-                                                        context)
-                                                    .accent3;
-                                              }
-                                            }(),
-                                            offset: const Offset(0.0, 5.0),
-                                            spreadRadius: 1.0,
-                                          )
-                                        ],
+                                        color: FlutterFlowTheme.of(context)
+                                            .primary,
                                         borderRadius:
-                                            BorderRadius.circular(14.0),
-                                        border: Border.all(
-                                          color: const Color(0x67616161),
-                                          width: 0.2,
-                                        ),
+                                            BorderRadius.circular(12.0),
                                       ),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
@@ -277,26 +229,24 @@ class _TimetableWidgetState extends State<TimetableWidget>
                                             MainAxisAlignment.center,
                                         children: [
                                           Text(
-                                            daysItem.maybeHandleOverflow(
-                                                maxChars: 3),
+                                            dateTimeFormat('dd', daysItem),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyLarge
                                                 .override(
                                                   fontFamily: 'Poppins',
-                                                  color: () {
-                                                    if (_model.day ==
-                                                        daysItem) {
-                                                      return Colors.white;
-                                                    } else if (daysItem ==
-                                                        dateTimeFormat('EEEE',
-                                                            getCurrentTimestamp)) {
-                                                      return Colors.white;
-                                                    } else {
-                                                      return FlutterFlowTheme
-                                                              .of(context)
-                                                          .secondaryText;
-                                                    }
-                                                  }(),
+                                                  color: Colors.white,
+                                                  fontWeight: FontWeight.w500,
+                                                ),
+                                          ),
+                                          Text(
+                                            dateTimeFormat('EEEE', daysItem)
+                                                .maybeHandleOverflow(
+                                                    maxChars: 3),
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyLarge
+                                                .override(
+                                                  fontFamily: 'Poppins',
+                                                  color: Colors.white,
                                                   fontWeight: FontWeight.w500,
                                                 ),
                                           ),
@@ -466,6 +416,20 @@ class _TimetableWidgetState extends State<TimetableWidget>
                                     final data = timetableTimetableRecord?.data
                                             .toList() ??
                                         [];
+                                    if (data.isEmpty) {
+                                      return Center(
+                                        child: SvgPicture.asset(
+                                          'assets/images/404.svg',
+                                          width:
+                                              MediaQuery.sizeOf(context).width *
+                                                  0.5,
+                                          height: MediaQuery.sizeOf(context)
+                                                  .height *
+                                              0.35,
+                                          fit: BoxFit.contain,
+                                        ),
+                                      );
+                                    }
                                     return Column(
                                       mainAxisSize: MainAxisSize.max,
                                       children: List.generate(data.length,
@@ -608,62 +572,6 @@ class _TimetableWidgetState extends State<TimetableWidget>
                     ),
                   ).animateOnPageLoad(
                       animationsMap['columnOnPageLoadAnimation']!),
-                  if ((dateTimeFormat('EEEE', getCurrentTimestamp) ==
-                          'Saturday') ||
-                      (dateTimeFormat('EEEE', getCurrentTimestamp) == 'Sunday'))
-                    Container(
-                      width: double.infinity,
-                      height: MediaQuery.sizeOf(context).height * 1.0,
-                      decoration: BoxDecoration(
-                        color: FlutterFlowTheme.of(context).primaryBackground,
-                      ),
-                      child: Column(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          wrapWithModel(
-                            model: _model.noClassModel,
-                            updateCallback: () => setState(() {}),
-                            child: const NoClassWidget(),
-                          ),
-                          Flexible(
-                            child: Align(
-                              alignment: const AlignmentDirectional(1.0, 1.0),
-                              child: Padding(
-                                padding: const EdgeInsets.all(15.0),
-                                child: FlutterFlowIconButton(
-                                  borderRadius: 24.0,
-                                  borderWidth: 1.0,
-                                  buttonSize: 65.0,
-                                  fillColor:
-                                      FlutterFlowTheme.of(context).primary,
-                                  icon: const Icon(
-                                    FFIcons.kttFilled,
-                                    color: Colors.white,
-                                    size: 26.0,
-                                  ),
-                                  onPressed: () async {
-                                    HapticFeedback.selectionClick();
-
-                                    context.pushNamed(
-                                      'Timetable_Pop',
-                                      extra: <String, dynamic>{
-                                        kTransitionInfoKey: const TransitionInfo(
-                                          hasTransition: true,
-                                          transitionType:
-                                              PageTransitionType.bottomToTop,
-                                          duration: Duration(milliseconds: 265),
-                                        ),
-                                      },
-                                    );
-                                  },
-                                ),
-                              ),
-                            ),
-                          ),
-                        ].addToStart(const SizedBox(height: 50.0)),
-                      ),
-                    ),
                 ],
               ),
             ),
