@@ -42,17 +42,16 @@ List<DateTime> generateFutureDates(int numberOfDays) {
   return workdays;
 }
 
-String linearGradient() {
-  // create gradient with two colors with angle 315 and return as a string
+String createGradient() {
+  // create gradient with 2 colors with transistion points 0 to 1 with angle 315 and return as a string
   final colors = [Color(0xFF0000FF), Color(0xFFFF0000)];
   final stops = [0.0, 1.0];
-  final angle = 315 * (math.pi / 180);
   final gradient = LinearGradient(
     colors: colors,
     stops: stops,
     begin: Alignment.topLeft,
     end: Alignment.bottomRight,
-    transform: GradientRotation(angle),
+    transform: GradientRotation(math.pi / 4),
   );
   return gradient.toString();
 }

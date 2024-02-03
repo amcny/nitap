@@ -5,7 +5,6 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/pages/no_class/no_class_widget.dart';
 import '/flutter_flow/admob_util.dart' as admob;
-import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -205,9 +204,6 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                 .titleSmall
                                 .override(
                                   fontFamily: 'Poppins',
-                                  color: colorFromCssString(
-                                    functions.linearGradient(),
-                                  ),
                                   fontSize: 16.0,
                                   letterSpacing: 0.5,
                                   fontWeight: FontWeight.w300,
