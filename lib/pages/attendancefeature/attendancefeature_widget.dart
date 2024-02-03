@@ -147,10 +147,12 @@ class _AttendancefeatureWidgetState extends State<AttendancefeatureWidget> {
               builder: (context) {
                 final table1 = attendancefeatureAttendanceRecordList.toList();
                 if (table1.isEmpty) {
-                  return Image.asset(
-                    'assets/images/image.png',
-                    width: 300.0,
-                    fit: BoxFit.fill,
+                  return Center(
+                    child: Image.asset(
+                      'assets/images/image.png',
+                      width: 300.0,
+                      fit: BoxFit.contain,
+                    ),
                   );
                 }
                 return FlutterFlowDataTable<AttendanceRecord>(
@@ -210,6 +212,7 @@ class _AttendancefeatureWidgetState extends State<AttendancefeatureWidget> {
                             builder: (context) => FlutterFlowIconButton(
                               borderRadius: 0.0,
                               borderWidth: 0.0,
+                              buttonSize: 46.0,
                               icon: Icon(
                                 FFIcons.kadd,
                                 color: FlutterFlowTheme.of(context).primary,
@@ -236,7 +239,6 @@ class _AttendancefeatureWidgetState extends State<AttendancefeatureWidget> {
                             ),
                           ),
                           FlutterFlowIconButton(
-                            borderColor: Colors.transparent,
                             borderRadius: 0.0,
                             borderWidth: 0.0,
                             buttonSize: 46.0,
@@ -254,10 +256,12 @@ class _AttendancefeatureWidgetState extends State<AttendancefeatureWidget> {
                       ),
                     ].map((c) => DataCell(c)).toList(),
                   ),
-                  emptyBuilder: () => Image.asset(
-                    'assets/images/image.png',
-                    width: 300.0,
-                    fit: BoxFit.fill,
+                  emptyBuilder: () => Center(
+                    child: Image.asset(
+                      'assets/images/image.png',
+                      width: 300.0,
+                      fit: BoxFit.contain,
+                    ),
                   ),
                   paginated: false,
                   selectable: false,

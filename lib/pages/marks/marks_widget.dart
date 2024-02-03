@@ -155,10 +155,12 @@ class _MarksWidgetState extends State<MarksWidget> {
                 builder: (context) {
                   final table2 = marksMarksRecordList.toList();
                   if (table2.isEmpty) {
-                    return Image.asset(
-                      'assets/images/image.png',
-                      width: 300.0,
-                      fit: BoxFit.fill,
+                    return Center(
+                      child: Image.asset(
+                        'assets/images/image.png',
+                        width: 300.0,
+                        fit: BoxFit.contain,
+                      ),
                     );
                   }
                   return FlutterFlowDataTable<MarksRecord>(
@@ -314,10 +316,12 @@ class _MarksWidgetState extends State<MarksWidget> {
                         ),
                       ].map((c) => DataCell(c)).toList(),
                     ),
-                    emptyBuilder: () => Image.asset(
-                      'assets/images/image.png',
-                      width: 300.0,
-                      fit: BoxFit.fill,
+                    emptyBuilder: () => Center(
+                      child: Image.asset(
+                        'assets/images/image.png',
+                        width: 300.0,
+                        fit: BoxFit.contain,
+                      ),
                     ),
                     paginated: false,
                     selectable: false,
