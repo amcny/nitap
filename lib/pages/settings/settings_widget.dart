@@ -139,7 +139,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                       type: PageTransitionType.fade,
                                       child: FlutterFlowExpandedImageView(
                                         image: Image.asset(
-                                          'assets/images/nit_app_logo_white_bg.png',
+                                          'assets/images/nit_app_icon.png',
                                           fit: BoxFit.contain,
                                         ),
                                         allowRotation: false,
@@ -155,7 +155,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                   child: ClipRRect(
                                     borderRadius: BorderRadius.circular(40.0),
                                     child: Image.asset(
-                                      'assets/images/nit_app_logo_white_bg.png',
+                                      'assets/images/nit_app_icon.png',
                                       fit: BoxFit.cover,
                                     ),
                                   ),
