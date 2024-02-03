@@ -187,6 +187,23 @@ class _TimetableWidgetState extends State<TimetableWidget>
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   children: [
+                    if ((dateTimeFormat('EEEE', getCurrentTimestamp) ==
+                            'Saturday') ||
+                        (dateTimeFormat('EEEE', getCurrentTimestamp) ==
+                            'Sunday'))
+                      Padding(
+                        padding:
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                        child: Text(
+                          'Choose a day to see the time table',
+                          style:
+                              FlutterFlowTheme.of(context).bodyLarge.override(
+                                    fontFamily: 'Poppins',
+                                    fontSize: 15.0,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                        ),
+                      ),
                     Padding(
                       padding:
                           const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
@@ -242,6 +259,25 @@ class _TimetableWidgetState extends State<TimetableWidget>
                                             .secondaryBackground;
                                       }
                                     }(),
+                                    boxShadow: [
+                                      BoxShadow(
+                                        blurRadius: 4.0,
+                                        color: () {
+                                          if (_model.day ==
+                                              dateTimeFormat(
+                                                  'EEEE', daysItem)) {
+                                            return const Color(0x421A73E8);
+                                          } else if (daysItem ==
+                                              getCurrentTimestamp) {
+                                            return const Color(0x442DB83D);
+                                          } else {
+                                            return const Color(0x38FFFFFF);
+                                          }
+                                        }(),
+                                        offset: const Offset(0.0, 2.0),
+                                        spreadRadius: 1.0,
+                                      )
+                                    ],
                                     borderRadius: BorderRadius.circular(12.0),
                                   ),
                                   child: Column(
@@ -461,7 +497,7 @@ class _TimetableWidgetState extends State<TimetableWidget>
                                   if (data.isEmpty) {
                                     return Center(
                                       child: SvgPicture.asset(
-                                        'assets/images/404.svg',
+                                        'assets/images/logout.svg',
                                         width:
                                             MediaQuery.sizeOf(context).width *
                                                 0.5,
