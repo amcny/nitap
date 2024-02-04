@@ -271,9 +271,7 @@ class _AttendancefeatureWidgetState extends State<AttendancefeatureWidget> {
                       FlutterFlowTheme.of(context).secondaryBackground,
                   borderRadius: BorderRadius.circular(0.0),
                   addHorizontalDivider: false,
-                  addVerticalDivider: true,
-                  verticalDividerColor: FlutterFlowTheme.of(context).accent3,
-                  verticalDividerThickness: 0.1,
+                  addVerticalDivider: false,
                 );
               },
             ),

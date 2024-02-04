@@ -327,14 +327,12 @@ class _MarksWidgetState extends State<MarksWidget> {
                     selectable: false,
                     headingRowHeight: 56.0,
                     dataRowHeight: 56.0,
-                    columnSpacing: 10.0,
+                    columnSpacing: 15.0,
                     headingRowColor:
                         FlutterFlowTheme.of(context).secondaryBackground,
                     borderRadius: BorderRadius.circular(0.0),
                     addHorizontalDivider: false,
-                    addVerticalDivider: true,
-                    verticalDividerColor: FlutterFlowTheme.of(context).accent3,
-                    verticalDividerThickness: 0.1,
+                    addVerticalDivider: false,
                   );
                 },
               ),
