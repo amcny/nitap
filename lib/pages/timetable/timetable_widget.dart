@@ -280,8 +280,8 @@ class _TimetableWidgetState extends State<TimetableWidget>
                                     ],
                                     borderRadius: BorderRadius.circular(12.0),
                                     border: Border.all(
-                                      color: const Color(0x67616161),
-                                      width: 0.3,
+                                      color: const Color(0x40616161),
+                                      width: 0.1,
                                     ),
                                   ),
                                   child: Column(

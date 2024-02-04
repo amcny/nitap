@@ -206,13 +206,14 @@ class _AttendancefeatureWidgetState extends State<AttendancefeatureWidget> {
                         style: FlutterFlowTheme.of(context).bodyMedium,
                       ),
                       Row(
-                        mainAxisSize: MainAxisSize.max,
+                        mainAxisSize: MainAxisSize.min,
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           Builder(
                             builder: (context) => FlutterFlowIconButton(
                               borderRadius: 0.0,
                               borderWidth: 0.0,
-                              buttonSize: 46.0,
+                              buttonSize: 45.0,
                               icon: Icon(
                                 FFIcons.kadd,
                                 color: FlutterFlowTheme.of(context).primary,
@@ -241,7 +242,7 @@ class _AttendancefeatureWidgetState extends State<AttendancefeatureWidget> {
                           FlutterFlowIconButton(
                             borderRadius: 0.0,
                             borderWidth: 0.0,
-                            buttonSize: 46.0,
+                            buttonSize: 45.0,
                             icon: Icon(
                               FFIcons.kdelete,
                               color: FlutterFlowTheme.of(context).error,
