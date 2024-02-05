@@ -30,19 +30,6 @@ class _HomePageWidgetState extends State<HomePageWidget>
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   final animationsMap = {
-    'rowOnPageLoadAnimation': AnimationInfo(
-      trigger: AnimationTrigger.onPageLoad,
-      effects: [
-        VisibilityEffect(duration: 100.ms),
-        MoveEffect(
-          curve: Curves.elasticOut,
-          delay: 100.ms,
-          duration: 900.ms,
-          begin: const Offset(50.0, 0.0),
-          end: const Offset(0.0, 0.0),
-        ),
-      ],
-    ),
     'containerOnPageLoadAnimation1': AnimationInfo(
       trigger: AnimationTrigger.onPageLoad,
       effects: [
@@ -52,6 +39,20 @@ class _HomePageWidgetState extends State<HomePageWidget>
           duration: 600.ms,
           color: const Color(0x80FFFFFF),
           angle: 0.524,
+        ),
+        FadeEffect(
+          curve: Curves.easeInOut,
+          delay: 0.ms,
+          duration: 600.ms,
+          begin: 0.0,
+          end: 1.0,
+        ),
+        MoveEffect(
+          curve: Curves.easeInOut,
+          delay: 0.ms,
+          duration: 600.ms,
+          begin: const Offset(30.0, 0.0),
+          end: const Offset(0.0, 0.0),
         ),
       ],
     ),
@@ -775,8 +776,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                     .divide(const SizedBox(width: 10.0))
                                     .around(const SizedBox(width: 10.0)),
                               ),
-                            ).animateOnPageLoad(
-                                animationsMap['rowOnPageLoadAnimation']!);
+                            );
                           },
                         ),
                       ),

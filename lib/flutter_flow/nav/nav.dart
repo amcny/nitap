@@ -250,6 +250,12 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               path: 'whatNew',
               requireAuth: true,
               builder: (context, params) => const WhatNewWidget(),
+            ),
+            FFRoute(
+              name: 'test',
+              path: 'test',
+              requireAuth: true,
+              builder: (context, params) => const TestWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),
@@ -435,7 +441,7 @@ class FFRoute {
                   color: FlutterFlowTheme.of(context).appbar,
                   child: Image.asset(
                     'assets/images/splash.png',
-                    fit: BoxFit.fitHeight,
+                    fit: BoxFit.contain,
                   ),
                 )
               : page;

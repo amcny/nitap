@@ -141,14 +141,14 @@ class _MarkssubWidgetState extends State<MarkssubWidget>
                           ),
                           errorBorder: UnderlineInputBorder(
                             borderSide: BorderSide(
-                              color: FlutterFlowTheme.of(context).alternate,
+                              color: FlutterFlowTheme.of(context).error,
                               width: 2.0,
                             ),
                             borderRadius: BorderRadius.circular(12.0),
                           ),
                           focusedErrorBorder: UnderlineInputBorder(
                             borderSide: BorderSide(
-                              color: FlutterFlowTheme.of(context).alternate,
+                              color: FlutterFlowTheme.of(context).error,
                               width: 2.0,
                             ),
                             borderRadius: BorderRadius.circular(12.0),

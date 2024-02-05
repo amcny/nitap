@@ -89,7 +89,7 @@ class _ConfirmDeleteWidgetState extends State<ConfirmDeleteWidget> {
                       color: FlutterFlowTheme.of(context).secondaryBackground,
                     ),
                     child: SvgPicture.asset(
-                      'assets/images/delete.svg',
+                      'assets/images/alert.svg',
                       width: 100.0,
                       height: 100.0,
                       fit: BoxFit.cover,
@@ -150,7 +150,7 @@ class _ConfirmDeleteWidgetState extends State<ConfirmDeleteWidget> {
                   padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
                   iconPadding:
                       const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                  color: FlutterFlowTheme.of(context).alternate,
+                  color: FlutterFlowTheme.of(context).error,
                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                         fontFamily: 'Poppins',
                         color: Colors.white,
@@ -178,7 +178,7 @@ class _ConfirmDeleteWidgetState extends State<ConfirmDeleteWidget> {
                   'Cancel',
                   style: FlutterFlowTheme.of(context).bodyMedium.override(
                         fontFamily: 'Poppins',
-                        color: FlutterFlowTheme.of(context).alternate,
+                        color: FlutterFlowTheme.of(context).error,
                       ),
                 ),
               ),
