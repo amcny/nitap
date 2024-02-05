@@ -229,8 +229,8 @@ class _MarksWidgetState extends State<MarksWidget> {
                             DataRow(
                       color: MaterialStateProperty.all(
                         table2Index % 2 == 0
-                            ? FlutterFlowTheme.of(context).secondaryBackground
-                            : FlutterFlowTheme.of(context).secondaryBackground,
+                            ? FlutterFlowTheme.of(context).bwgrey
+                            : FlutterFlowTheme.of(context).bwgrey,
                       ),
                       cells: [
                         Text(
@@ -328,8 +328,7 @@ class _MarksWidgetState extends State<MarksWidget> {
                     headingRowHeight: 56.0,
                     dataRowHeight: 56.0,
                     columnSpacing: 15.0,
-                    headingRowColor:
-                        FlutterFlowTheme.of(context).secondaryBackground,
+                    headingRowColor: FlutterFlowTheme.of(context).appbar,
                     borderRadius: BorderRadius.circular(0.0),
                     addHorizontalDivider: false,
                     addVerticalDivider: false,

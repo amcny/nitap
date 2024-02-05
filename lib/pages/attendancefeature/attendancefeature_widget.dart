@@ -193,8 +193,8 @@ class _AttendancefeatureWidgetState extends State<AttendancefeatureWidget> {
                           DataRow(
                     color: MaterialStateProperty.all(
                       table1Index % 2 == 0
-                          ? FlutterFlowTheme.of(context).secondaryBackground
-                          : FlutterFlowTheme.of(context).secondaryBackground,
+                          ? FlutterFlowTheme.of(context).bwgrey
+                          : FlutterFlowTheme.of(context).bwgrey,
                     ),
                     cells: [
                       Text(
@@ -268,8 +268,7 @@ class _AttendancefeatureWidgetState extends State<AttendancefeatureWidget> {
                   selectable: false,
                   headingRowHeight: 56.0,
                   dataRowHeight: 56.0,
-                  headingRowColor:
-                      FlutterFlowTheme.of(context).secondaryBackground,
+                  headingRowColor: FlutterFlowTheme.of(context).appbar,
                   borderRadius: BorderRadius.circular(0.0),
                   addHorizontalDivider: false,
                   addVerticalDivider: false,
