@@ -287,8 +287,8 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                               Padding(
                                 padding: const EdgeInsets.all(12.0),
                                 child: Container(
-                                  width: 53.0,
-                                  height: 54.0,
+                                  width: 52.0,
+                                  height: 53.0,
                                   decoration: BoxDecoration(
                                     gradient: const LinearGradient(
                                       colors: [
@@ -365,8 +365,8 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                               Padding(
                                 padding: const EdgeInsets.all(12.0),
                                 child: Container(
-                                  width: 53.0,
-                                  height: 54.0,
+                                  width: 52.0,
+                                  height: 53.0,
                                   decoration: BoxDecoration(
                                     gradient: const LinearGradient(
                                       colors: [
@@ -452,8 +452,8 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                               Padding(
                                 padding: const EdgeInsets.all(12.0),
                                 child: Container(
-                                  width: 53.0,
-                                  height: 54.0,
+                                  width: 52.0,
+                                  height: 53.0,
                                   decoration: BoxDecoration(
                                     gradient: const LinearGradient(
                                       colors: [
@@ -540,8 +540,8 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                               Padding(
                                 padding: const EdgeInsets.all(12.0),
                                 child: Container(
-                                  width: 53.0,
-                                  height: 54.0,
+                                  width: 52.0,
+                                  height: 53.0,
                                   decoration: BoxDecoration(
                                     gradient: const LinearGradient(
                                       colors: [
@@ -625,8 +625,8 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                 Padding(
                                   padding: const EdgeInsets.all(12.0),
                                   child: Container(
-                                    width: 53.0,
-                                    height: 54.0,
+                                    width: 52.0,
+                                    height: 53.0,
                                     decoration: BoxDecoration(
                                       gradient: const LinearGradient(
                                         colors: [
@@ -714,8 +714,8 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                               Padding(
                                 padding: const EdgeInsets.all(12.0),
                                 child: Container(
-                                  width: 53.0,
-                                  height: 54.0,
+                                  width: 52.0,
+                                  height: 53.0,
                                   decoration: BoxDecoration(
                                     gradient: const LinearGradient(
                                       colors: [
@@ -841,8 +841,8 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                               Padding(
                                 padding: const EdgeInsets.all(12.0),
                                 child: Container(
-                                  width: 53.0,
-                                  height: 54.0,
+                                  width: 52.0,
+                                  height: 53.0,
                                   decoration: BoxDecoration(
                                     gradient: const LinearGradient(
                                       colors: [
@@ -929,8 +929,8 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                               Padding(
                                 padding: const EdgeInsets.all(12.0),
                                 child: Container(
-                                  width: 53.0,
-                                  height: 54.0,
+                                  width: 52.0,
+                                  height: 53.0,
                                   decoration: BoxDecoration(
                                     gradient: const LinearGradient(
                                       colors: [
@@ -1017,8 +1017,8 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                               Padding(
                                 padding: const EdgeInsets.all(12.0),
                                 child: Container(
-                                  width: 53.0,
-                                  height: 54.0,
+                                  width: 52.0,
+                                  height: 53.0,
                                   decoration: BoxDecoration(
                                     gradient: const LinearGradient(
                                       colors: [

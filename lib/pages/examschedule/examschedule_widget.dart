@@ -151,20 +151,6 @@ class _ExamscheduleWidgetState extends State<ExamscheduleWidget> {
                                   fontWeight: FontWeight.w600,
                                 ),
                           ),
-                          Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                30.0, 10.0, 30.0, 0.0),
-                            child: Text(
-                              'Look\'s like you don\'t have\nany exams dates released yet. \nPlease check back later',
-                              textAlign: TextAlign.center,
-                              style: FlutterFlowTheme.of(context)
-                                  .titleMedium
-                                  .override(
-                                    fontFamily: 'Poppins',
-                                    fontWeight: FontWeight.w200,
-                                  ),
-                            ),
-                          ),
                         ],
                       ),
                     ),
