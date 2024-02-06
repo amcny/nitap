@@ -1,19 +1,15 @@
 // Export pages
-export '/pages/home_page/home_page_widget.dart' show HomePageWidget;
-export '/pages/academic_calendar/academic_calendar_widget.dart'
-    show AcademicCalendarWidget;
+export '/pages/homepage/homepage_widget.dart' show HomepageWidget;
+export '/features/academic/academic_widget.dart' show AcademicWidget;
 export '/pages/database/database_widget.dart' show DatabaseWidget;
 export '/pages/settings/settings_widget.dart' show SettingsWidget;
-export '/pages/appearance/appearance_widget.dart' show AppearanceWidget;
-export '/pages/manage_i_d_card/manage_i_d_card_widget.dart'
-    show ManageIDCardWidget;
-export '/pages/student_portal/student_portal_widget.dart'
-    show StudentPortalWidget;
+export '/features/appearace/appearace_widget.dart' show AppearaceWidget;
+export '/features/idcard/idcard_widget.dart' show IdcardWidget;
+export '/features/wsdc/wsdc_widget.dart' show WsdcWidget;
 export '/pages/onboarding/onboarding_widget.dart' show OnboardingWidget;
-export '/pages/examschedule/examschedule_widget.dart' show ExamscheduleWidget;
-export '/pages/facultyweb/facultyweb_widget.dart' show FacultywebWidget;
-export '/pages/attendancefeature/attendancefeature_widget.dart'
-    show AttendancefeatureWidget;
+export '/features/exam/exam_widget.dart' show ExamWidget;
+export '/features/deptview/deptview_widget.dart' show DeptviewWidget;
+export '/features/attendance/attendance_widget.dart' show AttendanceWidget;
 export '/exam/minor1/minor1_widget.dart' show Minor1Widget;
 export '/exam/minor2/minor2_widget.dart' show Minor2Widget;
 export '/exam/midsem/midsem_widget.dart' show MidsemWidget;
@@ -22,11 +18,11 @@ export '/pages/login/login_widget.dart' show LoginWidget;
 export '/pages/timetable/timetable_widget.dart' show TimetableWidget;
 export '/pages/choosesec/choosesec_widget.dart' show ChoosesecWidget;
 export '/pages/signup/signup_widget.dart' show SignupWidget;
-export '/pages/facultypage/facultypage_widget.dart' show FacultypageWidget;
-export '/pages/eceh/eceh_widget.dart' show EcehWidget;
-export '/pages/ecea/ecea_widget.dart' show EceaWidget;
-export '/pages/foryouinfo/foryouinfo_widget.dart' show ForyouinfoWidget;
-export '/pages/alumni/alumni_widget.dart' show AlumniWidget;
-export '/pages/marks/marks_widget.dart' show MarksWidget;
-export '/pages/what_new/what_new_widget.dart' show WhatNewWidget;
+export '/features/deptlist/deptlist_widget.dart' show DeptlistWidget;
+export '/features/eceh/eceh_widget.dart' show EcehWidget;
+export '/features/ecea/ecea_widget.dart' show EceaWidget;
+export '/features/foryouinfo/foryouinfo_widget.dart' show ForyouinfoWidget;
+export '/features/alumni/alumni_widget.dart' show AlumniWidget;
+export '/features/marks/marks_widget.dart' show MarksWidget;
+export '/features/whatnew/whatnew_widget.dart' show WhatnewWidget;
 export '/pages/test/test_widget.dart' show TestWidget;

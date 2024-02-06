@@ -1,8 +1,8 @@
 import '/auth/firebase_auth/auth_util.dart';
+import '/components/support/support_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import '/pages/support/support_widget.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:aligned_tooltip/aligned_tooltip.dart';
 import 'package:flutter/gestures.dart';
@@ -103,7 +103,7 @@ class _SignupWidgetState extends State<SignupWidget> {
                             highlightColor: Colors.transparent,
                             onTap: () async {
                               context.goNamed(
-                                'Onboarding',
+                                'onboarding',
                                 extra: <String, dynamic>{
                                   kTransitionInfoKey: const TransitionInfo(
                                     hasTransition: true,
@@ -368,7 +368,7 @@ class _SignupWidgetState extends State<SignupWidget> {
                                   }
 
                                   context.goNamedAuth(
-                                      'Choosesec', context.mounted);
+                                      'choosesec', context.mounted);
                                 } else {
                                   ScaffoldMessenger.of(context).showSnackBar(
                                     SnackBar(
@@ -455,7 +455,7 @@ class _SignupWidgetState extends State<SignupWidget> {
                                     recognizer: TapGestureRecognizer()
                                       ..onTap = () async {
                                         context.goNamed(
-                                          'Login',
+                                          'login',
                                           extra: <String, dynamic>{
                                             kTransitionInfoKey: const TransitionInfo(
                                               hasTransition: true,

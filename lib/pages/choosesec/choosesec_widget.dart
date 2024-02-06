@@ -137,7 +137,7 @@ class _ChoosesecWidgetState extends State<ChoosesecWidget> {
                     FFAppState().secname = _model.dropDownValue!;
                   });
 
-                  context.goNamed('HomePage');
+                  context.goNamed('homepage');
                 },
                 text: 'Save Changes',
                 options: FFButtonOptions(

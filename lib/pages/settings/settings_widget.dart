@@ -1,13 +1,13 @@
 import '/auth/firebase_auth/auth_util.dart';
+import '/components/confirm_delete/confirm_delete_widget.dart';
+import '/components/confirm_logout/confirm_logout_widget.dart';
+import '/components/dev/dev_widget.dart';
+import '/components/privacy/privacy_widget.dart';
+import '/components/support/support_widget.dart';
 import '/flutter_flow/flutter_flow_expanded_image_view.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import '/pages/confirm_delete/confirm_delete_widget.dart';
-import '/pages/confirm_logout/confirm_logout_widget.dart';
-import '/pages/devcny/devcny_widget.dart';
-import '/pages/privacy/privacy_widget.dart';
-import '/pages/support/support_widget.dart';
 import '/custom_code/actions/index.dart' as actions;
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
@@ -279,7 +279,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                           hoverColor: Colors.transparent,
                           highlightColor: Colors.transparent,
                           onTap: () async {
-                            context.pushNamed('Choosesec');
+                            context.pushNamed('choosesec');
                           },
                           child: Row(
                             mainAxisSize: MainAxisSize.min,
@@ -357,7 +357,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                           hoverColor: Colors.transparent,
                           highlightColor: Colors.transparent,
                           onTap: () async {
-                            context.pushNamed('Appearance');
+                            context.pushNamed('appearace');
                           },
                           child: Row(
                             mainAxisSize: MainAxisSize.min,
@@ -436,7 +436,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                           highlightColor: Colors.transparent,
                           onTap: () async {
                             context.pushNamed(
-                              'what_new',
+                              'whatnew',
                               extra: <String, dynamic>{
                                 kTransitionInfoKey: const TransitionInfo(
                                   hasTransition: true,
@@ -1139,7 +1139,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                           builder: (context) {
                             return Padding(
                               padding: MediaQuery.viewInsetsOf(context),
-                              child: const DevcnyWidget(),
+                              child: const DevWidget(),
                             );
                           },
                         ).then((value) => safeSetState(() {}));

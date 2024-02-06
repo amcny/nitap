@@ -1,8 +1,8 @@
 import '/auth/firebase_auth/auth_util.dart';
+import '/components/support/support_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import '/pages/support/support_widget.dart';
 import 'package:aligned_tooltip/aligned_tooltip.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -101,7 +101,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                             highlightColor: Colors.transparent,
                             onTap: () async {
                               context.goNamed(
-                                'Onboarding',
+                                'onboarding',
                                 extra: <String, dynamic>{
                                   kTransitionInfoKey: const TransitionInfo(
                                     hasTransition: true,
@@ -425,7 +425,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                 }
 
                                 context.goNamedAuth(
-                                    'Choosesec', context.mounted);
+                                    'choosesec', context.mounted);
                               },
                               text: 'Sign In',
                               options: FFButtonOptions(
@@ -528,7 +528,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                       recognizer: TapGestureRecognizer()
                                         ..onTap = () async {
                                           context.goNamed(
-                                            'Signup',
+                                            'signup',
                                             extra: <String, dynamic>{
                                               kTransitionInfoKey:
                                                   const TransitionInfo(

@@ -82,28 +82,28 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               appStateNotifier.loggedIn ? const NavBarPage() : const OnboardingWidget(),
           routes: [
             FFRoute(
-              name: 'HomePage',
-              path: 'homePage',
+              name: 'homepage',
+              path: 'homepage',
               requireAuth: true,
               builder: (context, params) => params.isEmpty
-                  ? const NavBarPage(initialPage: 'HomePage')
+                  ? const NavBarPage(initialPage: 'homepage')
                   : const NavBarPage(
-                      initialPage: 'HomePage',
-                      page: HomePageWidget(),
+                      initialPage: 'homepage',
+                      page: HomepageWidget(),
                     ),
             ),
             FFRoute(
-              name: 'AcademicCalendar',
-              path: 'academicCalendar',
+              name: 'academic',
+              path: 'academic',
               requireAuth: true,
-              builder: (context, params) => const AcademicCalendarWidget(),
+              builder: (context, params) => const AcademicWidget(),
             ),
             FFRoute(
-              name: 'Database',
+              name: 'database',
               path: 'database',
               requireAuth: true,
               builder: (context, params) => params.isEmpty
-                  ? const NavBarPage(initialPage: 'Database')
+                  ? const NavBarPage(initialPage: 'database')
                   : const DatabaseWidget(),
             ),
             FFRoute(
@@ -115,48 +115,48 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                   : const SettingsWidget(),
             ),
             FFRoute(
-              name: 'Appearance',
-              path: 'appearance',
+              name: 'appearace',
+              path: 'appearace',
               requireAuth: true,
-              builder: (context, params) => const AppearanceWidget(),
+              builder: (context, params) => const AppearaceWidget(),
             ),
             FFRoute(
-              name: 'ManageIDCard',
-              path: 'manageIDCard',
+              name: 'idcard',
+              path: 'idcard',
               requireAuth: true,
-              builder: (context, params) => const ManageIDCardWidget(),
+              builder: (context, params) => const IdcardWidget(),
             ),
             FFRoute(
-              name: 'StudentPortal',
-              path: 'studentPortal',
+              name: 'wsdc',
+              path: 'wsdc',
               requireAuth: true,
-              builder: (context, params) => const StudentPortalWidget(),
+              builder: (context, params) => const WsdcWidget(),
             ),
             FFRoute(
-              name: 'Onboarding',
+              name: 'onboarding',
               path: 'onboarding',
               builder: (context, params) => const OnboardingWidget(),
             ),
             FFRoute(
-              name: 'Examschedule',
-              path: 'examschedule',
+              name: 'exam',
+              path: 'exam',
               requireAuth: true,
-              builder: (context, params) => const ExamscheduleWidget(),
+              builder: (context, params) => const ExamWidget(),
             ),
             FFRoute(
-              name: 'facultyweb',
-              path: 'facultyweb',
+              name: 'deptview',
+              path: 'deptview',
               requireAuth: true,
-              builder: (context, params) => FacultywebWidget(
+              builder: (context, params) => DeptviewWidget(
                 pass: params.getParam(
                     'pass', ParamType.DocumentReference, false, ['faculty']),
               ),
             ),
             FFRoute(
-              name: 'Attendancefeature',
-              path: 'attendancefeature',
+              name: 'attendance',
+              path: 'attendance',
               requireAuth: true,
-              builder: (context, params) => const AttendancefeatureWidget(),
+              builder: (context, params) => const AttendanceWidget(),
             ),
             FFRoute(
               name: 'minor1',
@@ -183,34 +183,34 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => const EndsemWidget(),
             ),
             FFRoute(
-              name: 'Login',
+              name: 'login',
               path: 'login',
               builder: (context, params) => const LoginWidget(),
             ),
             FFRoute(
-              name: 'Timetable',
+              name: 'timetable',
               path: 'timetable',
               requireAuth: true,
               builder: (context, params) => params.isEmpty
-                  ? const NavBarPage(initialPage: 'Timetable')
+                  ? const NavBarPage(initialPage: 'timetable')
                   : const TimetableWidget(),
             ),
             FFRoute(
-              name: 'Choosesec',
+              name: 'choosesec',
               path: 'choosesec',
               requireAuth: true,
               builder: (context, params) => const ChoosesecWidget(),
             ),
             FFRoute(
-              name: 'Signup',
+              name: 'signup',
               path: 'signup',
               builder: (context, params) => const SignupWidget(),
             ),
             FFRoute(
-              name: 'Facultypage',
-              path: 'facultypage',
+              name: 'deptlist',
+              path: 'deptlist',
               requireAuth: true,
-              builder: (context, params) => const FacultypageWidget(),
+              builder: (context, params) => const DeptlistWidget(),
             ),
             FFRoute(
               name: 'eceh',
@@ -246,10 +246,10 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => const MarksWidget(),
             ),
             FFRoute(
-              name: 'what_new',
-              path: 'whatNew',
+              name: 'whatnew',
+              path: 'whatnew',
               requireAuth: true,
-              builder: (context, params) => const WhatNewWidget(),
+              builder: (context, params) => const WhatnewWidget(),
             ),
             FFRoute(
               name: 'test',
