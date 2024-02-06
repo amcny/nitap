@@ -399,7 +399,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                         FlutterFlowTheme.of(context).bodyMedium,
                                   ),
                                   Text(
-                                    'Customize as per your Needs',
+                                    'Customize as per your needs',
                                     style: FlutterFlowTheme.of(context)
                                         .bodySmall
                                         .override(
