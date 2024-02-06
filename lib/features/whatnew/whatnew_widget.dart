@@ -124,136 +124,126 @@ class _WhatnewWidgetState extends State<WhatnewWidget>
                 ),
               );
             }
-            List<WhatNewRecord> columnWhatNewRecordList = snapshot.data!;
-            return SingleChildScrollView(
-              primary: false,
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: List.generate(columnWhatNewRecordList.length,
-                        (columnIndex) {
-                  final columnWhatNewRecord =
-                      columnWhatNewRecordList[columnIndex];
-                  return Flexible(
-                    child: Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(15.0, 0.0, 15.0, 0.0),
-                      child: Container(
-                        width: MediaQuery.sizeOf(context).width * 1.0,
-                        constraints: const BoxConstraints(
-                          maxHeight: 650.0,
-                        ),
-                        decoration: BoxDecoration(
-                          color: const Color(0xFF101010),
-                          borderRadius: BorderRadius.circular(8.0),
-                          border: Border.all(
-                            color: const Color(0x67616161),
-                          ),
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.all(12.0),
-                          child: Column(
-                            mainAxisSize: MainAxisSize.min,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Flexible(
-                                child: Container(
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(14.0),
-                                    border: Border.all(
-                                      color: () {
-                                        if (columnWhatNewRecord.type == 'New') {
-                                          return FlutterFlowTheme.of(context)
-                                              .success;
-                                        } else if (columnWhatNewRecord.type ==
-                                            'Bug Smash') {
-                                          return FlutterFlowTheme.of(context)
-                                              .warning;
-                                        } else {
-                                          return const Color(0x00000000);
-                                        }
-                                      }(),
-                                    ),
-                                  ),
-                                  child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        10.0, 3.0, 10.0, 3.0),
-                                    child: Text(
-                                      columnWhatNewRecord.type,
-                                      textAlign: TextAlign.center,
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodySmall
-                                          .override(
-                                            fontFamily: 'Poppins',
-                                            color: Colors.white,
-                                            fontSize: 12.0,
-                                          ),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              Row(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  Flexible(
-                                    child: Text(
-                                      columnWhatNewRecord.title,
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            fontFamily: 'Poppins',
-                                            color: Colors.white,
-                                            fontSize: 13.0,
-                                            fontWeight: FontWeight.w600,
-                                          ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                              Row(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  Flexible(
-                                    child: Text(
-                                      columnWhatNewRecord.description,
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodySmall
-                                          .override(
-                                            fontFamily: 'Poppins',
-                                            color: const Color(0xFF95A1AC),
-                                            fontWeight: FontWeight.normal,
-                                          ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                              if (columnWhatNewRecord.image != '')
-                                Flexible(
-                                  child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(8.0),
-                                    child: CachedNetworkImage(
-                                      fadeInDuration: const Duration(milliseconds: 0),
-                                      fadeOutDuration:
-                                          const Duration(milliseconds: 0),
-                                      imageUrl: columnWhatNewRecord.image,
-                                      width: MediaQuery.sizeOf(context).width *
-                                          1.0,
-                                      height: 175.0,
-                                      fit: BoxFit.fill,
-                                    ),
-                                  ).animateOnPageLoad(animationsMap[
-                                      'imageOnPageLoadAnimation']!),
-                                ),
-                            ].divide(const SizedBox(height: 6.0)),
-                          ),
-                        ),
+            List<WhatNewRecord> listViewWhatNewRecordList = snapshot.data!;
+            return ListView.builder(
+              padding: EdgeInsets.zero,
+              scrollDirection: Axis.vertical,
+              itemCount: listViewWhatNewRecordList.length,
+              itemBuilder: (context, listViewIndex) {
+                final listViewWhatNewRecord =
+                    listViewWhatNewRecordList[listViewIndex];
+                return Padding(
+                  padding: const EdgeInsetsDirectional.fromSTEB(15.0, 0.0, 15.0, 0.0),
+                  child: Container(
+                    width: MediaQuery.sizeOf(context).width * 1.0,
+                    constraints: const BoxConstraints(
+                      maxHeight: 650.0,
+                    ),
+                    decoration: BoxDecoration(
+                      color: const Color(0xFF101010),
+                      borderRadius: BorderRadius.circular(8.0),
+                      border: Border.all(
+                        color: const Color(0x67616161),
                       ),
                     ),
-                  );
-                })
-                    .divide(const SizedBox(height: 15.0))
-                    .addToStart(const SizedBox(height: 10.0))
-                    .addToEnd(const SizedBox(height: 10.0)),
-              ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(12.0),
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Flexible(
+                            child: Container(
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(14.0),
+                                border: Border.all(
+                                  color: () {
+                                    if (listViewWhatNewRecord.type == 'New') {
+                                      return FlutterFlowTheme.of(context)
+                                          .success;
+                                    } else if (listViewWhatNewRecord.type ==
+                                        'Bug Smash') {
+                                      return FlutterFlowTheme.of(context)
+                                          .warning;
+                                    } else {
+                                      return const Color(0x00000000);
+                                    }
+                                  }(),
+                                ),
+                              ),
+                              child: Padding(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    10.0, 3.0, 10.0, 3.0),
+                                child: Text(
+                                  listViewWhatNewRecord.type,
+                                  textAlign: TextAlign.center,
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodySmall
+                                      .override(
+                                        fontFamily: 'Poppins',
+                                        color: Colors.white,
+                                        fontSize: 12.0,
+                                      ),
+                                ),
+                              ),
+                            ),
+                          ),
+                          Row(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Flexible(
+                                child: Text(
+                                  listViewWhatNewRecord.title,
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: 'Poppins',
+                                        color: Colors.white,
+                                        fontSize: 13.0,
+                                        fontWeight: FontWeight.w600,
+                                      ),
+                                ),
+                              ),
+                            ],
+                          ),
+                          Row(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Flexible(
+                                child: Text(
+                                  listViewWhatNewRecord.description,
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodySmall
+                                      .override(
+                                        fontFamily: 'Poppins',
+                                        color: const Color(0xFF95A1AC),
+                                        fontWeight: FontWeight.normal,
+                                      ),
+                                ),
+                              ),
+                            ],
+                          ),
+                          if (listViewWhatNewRecord.image != '')
+                            Flexible(
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(8.0),
+                                child: CachedNetworkImage(
+                                  fadeInDuration: const Duration(milliseconds: 0),
+                                  fadeOutDuration: const Duration(milliseconds: 0),
+                                  imageUrl: listViewWhatNewRecord.image,
+                                  width: MediaQuery.sizeOf(context).width * 1.0,
+                                  height: 175.0,
+                                  fit: BoxFit.fill,
+                                ),
+                              ).animateOnPageLoad(
+                                  animationsMap['imageOnPageLoadAnimation']!),
+                            ),
+                        ].divide(const SizedBox(height: 6.0)),
+                      ),
+                    ),
+                  ),
+                );
+              },
             );
           },
         ),

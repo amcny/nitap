@@ -25,4 +25,3 @@ export '/features/foryouinfo/foryouinfo_widget.dart' show ForyouinfoWidget;
 export '/features/alumni/alumni_widget.dart' show AlumniWidget;
 export '/features/marks/marks_widget.dart' show MarksWidget;
 export '/features/whatnew/whatnew_widget.dart' show WhatnewWidget;
-export '/pages/test/test_widget.dart' show TestWidget;
