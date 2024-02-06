@@ -29,4 +29,3 @@ export '/pages/foryouinfo/foryouinfo_widget.dart' show ForyouinfoWidget;
 export '/pages/alumni/alumni_widget.dart' show AlumniWidget;
 export '/pages/marks/marks_widget.dart' show MarksWidget;
 export '/pages/what_new/what_new_widget.dart' show WhatNewWidget;
-export '/pages/test/test_widget.dart' show TestWidget;
