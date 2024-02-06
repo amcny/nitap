@@ -287,12 +287,12 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                               Padding(
                                 padding: const EdgeInsets.all(12.0),
                                 child: Container(
-                                  width: 52.0,
-                                  height: 53.0,
+                                  width: 53.0,
+                                  height: 54.0,
                                   decoration: BoxDecoration(
                                     gradient: const LinearGradient(
                                       colors: [
-                                        Color(0xFF005C97),
+                                        Color(0xFF018CDD),
                                         Color(0xFF363795)
                                       ],
                                       stops: [0.0, 1.0],
@@ -321,7 +321,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                         FlutterFlowTheme.of(context).bodyMedium,
                                   ),
                                   Text(
-                                    'Select your class and section',
+                                    'Choose your class and section',
                                     style: FlutterFlowTheme.of(context)
                                         .bodySmall
                                         .override(
@@ -365,8 +365,8 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                               Padding(
                                 padding: const EdgeInsets.all(12.0),
                                 child: Container(
-                                  width: 52.0,
-                                  height: 53.0,
+                                  width: 53.0,
+                                  height: 54.0,
                                   decoration: BoxDecoration(
                                     gradient: const LinearGradient(
                                       colors: [
@@ -452,8 +452,8 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                               Padding(
                                 padding: const EdgeInsets.all(12.0),
                                 child: Container(
-                                  width: 52.0,
-                                  height: 53.0,
+                                  width: 53.0,
+                                  height: 54.0,
                                   decoration: BoxDecoration(
                                     gradient: const LinearGradient(
                                       colors: [
@@ -486,7 +486,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                         FlutterFlowTheme.of(context).bodyMedium,
                                   ),
                                   Text(
-                                    'Checkout What\'s New in this update',
+                                    'Check what\'s new in this update',
                                     style: FlutterFlowTheme.of(context)
                                         .bodySmall
                                         .override(
@@ -540,8 +540,8 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                               Padding(
                                 padding: const EdgeInsets.all(12.0),
                                 child: Container(
-                                  width: 52.0,
-                                  height: 53.0,
+                                  width: 53.0,
+                                  height: 54.0,
                                   decoration: BoxDecoration(
                                     gradient: const LinearGradient(
                                       colors: [
@@ -625,8 +625,8 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                 Padding(
                                   padding: const EdgeInsets.all(12.0),
                                   child: Container(
-                                    width: 52.0,
-                                    height: 53.0,
+                                    width: 53.0,
+                                    height: 54.0,
                                     decoration: BoxDecoration(
                                       gradient: const LinearGradient(
                                         colors: [
@@ -714,8 +714,8 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                               Padding(
                                 padding: const EdgeInsets.all(12.0),
                                 child: Container(
-                                  width: 52.0,
-                                  height: 53.0,
+                                  width: 53.0,
+                                  height: 54.0,
                                   decoration: BoxDecoration(
                                     gradient: const LinearGradient(
                                       colors: [
@@ -841,8 +841,8 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                               Padding(
                                 padding: const EdgeInsets.all(12.0),
                                 child: Container(
-                                  width: 52.0,
-                                  height: 53.0,
+                                  width: 53.0,
+                                  height: 54.0,
                                   decoration: BoxDecoration(
                                     gradient: const LinearGradient(
                                       colors: [
@@ -929,8 +929,8 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                               Padding(
                                 padding: const EdgeInsets.all(12.0),
                                 child: Container(
-                                  width: 52.0,
-                                  height: 53.0,
+                                  width: 53.0,
+                                  height: 54.0,
                                   decoration: BoxDecoration(
                                     gradient: const LinearGradient(
                                       colors: [
@@ -963,7 +963,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                         FlutterFlowTheme.of(context).bodyMedium,
                                   ),
                                   Text(
-                                    'Removes the account from the app',
+                                    'Removes account from the app',
                                     style: FlutterFlowTheme.of(context)
                                         .bodySmall
                                         .override(
@@ -1017,8 +1017,8 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                               Padding(
                                 padding: const EdgeInsets.all(12.0),
                                 child: Container(
-                                  width: 52.0,
-                                  height: 53.0,
+                                  width: 53.0,
+                                  height: 54.0,
                                   decoration: BoxDecoration(
                                     gradient: const LinearGradient(
                                       colors: [

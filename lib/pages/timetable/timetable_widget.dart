@@ -240,7 +240,7 @@ class _TimetableWidgetState extends State<TimetableWidget>
                                   }
                                 },
                                 child: AnimatedContainer(
-                                  duration: const Duration(milliseconds: 200),
+                                  duration: const Duration(milliseconds: 150),
                                   curve: Curves.linear,
                                   width: 60.0,
                                   height: 75.0,

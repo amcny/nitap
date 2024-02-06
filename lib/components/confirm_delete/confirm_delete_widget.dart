@@ -89,7 +89,7 @@ class _ConfirmDeleteWidgetState extends State<ConfirmDeleteWidget> {
                       color: FlutterFlowTheme.of(context).secondaryBackground,
                     ),
                     child: SvgPicture.asset(
-                      'assets/images/alert.svg',
+                      'assets/images/warn.svg',
                       width: 100.0,
                       height: 100.0,
                       fit: BoxFit.cover,
