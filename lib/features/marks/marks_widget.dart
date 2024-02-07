@@ -172,8 +172,8 @@ class _MarksWidgetState extends State<MarksWidget>
                   ),
                 );
               }
-              List<MarksRecord> columnMarksRecordList = snapshot.data!;
-              if (columnMarksRecordList.isEmpty) {
+              List<MarksRecord> listViewMarksRecordList = snapshot.data!;
+              if (listViewMarksRecordList.isEmpty) {
                 return Center(
                   child: Image.asset(
                     'assets/images/image.png',
@@ -182,626 +182,639 @@ class _MarksWidgetState extends State<MarksWidget>
                   ),
                 );
               }
-              return SingleChildScrollView(
-                child: Column(
-                  mainAxisSize: MainAxisSize.max,
-                  children: List.generate(columnMarksRecordList.length,
-                      (columnIndex) {
-                    final columnMarksRecord =
-                        columnMarksRecordList[columnIndex];
-                    return StickyHeader(
-                      overlapHeaders: false,
-                      header: Container(
-                        width: double.infinity,
-                        height: 50.0,
-                        decoration: BoxDecoration(
-                          color: FlutterFlowTheme.of(context).appbar,
-                        ),
-                        alignment: const AlignmentDirectional(-1.0, 0.0),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Align(
-                              alignment: const AlignmentDirectional(-1.0, 0.0),
-                              child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    16.0, 0.0, 0.0, 0.0),
-                                child: Text(
-                                  columnMarksRecord.courseName
-                                      .maybeHandleOverflow(
-                                    maxChars: 15,
-                                    replacement: '…',
-                                  ),
-                                  style: FlutterFlowTheme.of(context)
-                                      .titleLarge
-                                      .override(
-                                        fontFamily: 'Poppins',
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryText,
-                                        fontSize: 20.0,
-                                      ),
+              return ListView.builder(
+                padding: EdgeInsets.zero,
+                scrollDirection: Axis.vertical,
+                itemCount: listViewMarksRecordList.length,
+                itemBuilder: (context, listViewIndex) {
+                  final listViewMarksRecord =
+                      listViewMarksRecordList[listViewIndex];
+                  return StickyHeader(
+                    overlapHeaders: false,
+                    header: Container(
+                      width: double.infinity,
+                      height: 50.0,
+                      decoration: BoxDecoration(
+                        color: FlutterFlowTheme.of(context).appbar,
+                      ),
+                      alignment: const AlignmentDirectional(-1.0, 0.0),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Align(
+                            alignment: const AlignmentDirectional(-1.0, 0.0),
+                            child: Padding(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  16.0, 0.0, 0.0, 0.0),
+                              child: Text(
+                                listViewMarksRecord.courseName
+                                    .maybeHandleOverflow(
+                                  maxChars: 15,
+                                  replacement: '…',
                                 ),
+                                style: FlutterFlowTheme.of(context)
+                                    .titleLarge
+                                    .override(
+                                      fontFamily: 'Poppins',
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryText,
+                                      fontSize: 20.0,
+                                    ),
                               ),
                             ),
-                            Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 10.0, 0.0),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  Builder(
-                                    builder: (context) => InkWell(
-                                      splashColor: Colors.transparent,
-                                      focusColor: Colors.transparent,
-                                      hoverColor: Colors.transparent,
-                                      highlightColor: Colors.transparent,
-                                      onTap: () async {
-                                        await showDialog(
-                                          context: context,
-                                          builder: (dialogContext) {
-                                            return Dialog(
-                                              elevation: 0,
-                                              insetPadding: EdgeInsets.zero,
-                                              backgroundColor:
-                                                  Colors.transparent,
-                                              alignment: const AlignmentDirectional(
-                                                      0.0, -0.2)
-                                                  .resolve(Directionality.of(
-                                                      context)),
-                                              child: GestureDetector(
-                                                onTap: () => _model.unfocusNode
-                                                        .canRequestFocus
-                                                    ? FocusScope.of(context)
-                                                        .requestFocus(
-                                                            _model.unfocusNode)
-                                                    : FocusScope.of(context)
-                                                        .unfocus(),
-                                                child: MarksnoWidget(
-                                                  marksref: columnMarksRecord
-                                                      .reference,
-                                                ),
-                                              ),
-                                            );
-                                          },
-                                        ).then((value) => setState(() {}));
-                                      },
-                                      child: Icon(
-                                        FFIcons.kadd,
-                                        color: FlutterFlowTheme.of(context)
-                                            .primary,
-                                        size: 24.0,
-                                      ),
-                                    ),
-                                  ),
-                                  InkWell(
+                          ),
+                          Padding(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 10.0, 0.0),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Builder(
+                                  builder: (context) => InkWell(
                                     splashColor: Colors.transparent,
                                     focusColor: Colors.transparent,
                                     hoverColor: Colors.transparent,
                                     highlightColor: Colors.transparent,
                                     onTap: () async {
-                                      await columnMarksRecord.reference
-                                          .delete();
+                                      await showDialog(
+                                        context: context,
+                                        builder: (dialogContext) {
+                                          return Dialog(
+                                            elevation: 0,
+                                            insetPadding: EdgeInsets.zero,
+                                            backgroundColor: Colors.transparent,
+                                            alignment: const AlignmentDirectional(
+                                                    0.0, -0.2)
+                                                .resolve(
+                                                    Directionality.of(context)),
+                                            child: GestureDetector(
+                                              onTap: () => _model.unfocusNode
+                                                      .canRequestFocus
+                                                  ? FocusScope.of(context)
+                                                      .requestFocus(
+                                                          _model.unfocusNode)
+                                                  : FocusScope.of(context)
+                                                      .unfocus(),
+                                              child: MarksnoWidget(
+                                                marksref: listViewMarksRecord
+                                                    .reference,
+                                              ),
+                                            ),
+                                          );
+                                        },
+                                      ).then((value) => setState(() {}));
                                     },
                                     child: Icon(
-                                      FFIcons.kdelete,
-                                      color: FlutterFlowTheme.of(context).error,
+                                      FFIcons.kadd,
+                                      color:
+                                          FlutterFlowTheme.of(context).primary,
                                       size: 24.0,
                                     ),
                                   ),
-                                ].divide(const SizedBox(width: 15.0)),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      content: Column(
-                        mainAxisSize: MainAxisSize.max,
-                        children: [
-                          Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 0.0, 0.5),
-                            child: Container(
-                              width: double.infinity,
-                              height: 85.0,
-                              decoration: BoxDecoration(
-                                color: FlutterFlowTheme.of(context).bwgrey,
-                                boxShadow: [
-                                  BoxShadow(
-                                    blurRadius: 0.0,
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryBackground,
-                                    offset: const Offset(0.0, 1.0),
-                                  )
-                                ],
-                                borderRadius: BorderRadius.circular(1.0),
-                                border: Border.all(
-                                  color: FlutterFlowTheme.of(context)
-                                      .primaryBackground,
                                 ),
-                              ),
-                              alignment: const AlignmentDirectional(0.0, 0.0),
-                              child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 12.0, 16.0, 12.0),
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Expanded(
-                                      child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                            12.0, 0.0, 12.0, 0.0),
-                                        child: Container(
-                                          width: 100.0,
-                                          height: 100.0,
-                                          decoration: BoxDecoration(
-                                            color: FlutterFlowTheme.of(context)
-                                                .bwgrey,
-                                          ),
-                                          child: Align(
-                                            alignment:
-                                                const AlignmentDirectional(-1.0, 0.0),
-                                            child: Padding(
-                                              padding: const EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      15.0, 0.0, 0.0, 0.0),
-                                              child: Text(
-                                                'Minor 1',
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyLarge,
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          16.0, 0.0, 0.0, 0.0),
-                                      child: Container(
-                                        width: 80.0,
-                                        height: 80.0,
-                                        decoration: BoxDecoration(
-                                          color: FlutterFlowTheme.of(context)
-                                              .primary,
-                                          shape: BoxShape.circle,
-                                        ),
-                                        child: Align(
-                                          alignment:
-                                              const AlignmentDirectional(0.0, 0.0),
-                                          child: Text(
-                                            columnMarksRecord.minor1 ==
-                                                        ''
-                                                ? 'NIL'
-                                                : columnMarksRecord.minor1,
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyMedium
-                                                .override(
-                                                  fontFamily:
-                                                      'Plus Jakarta Sans',
-                                                  color: Colors.white,
-                                                  fontSize: 20.0,
-                                                ),
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ],
+                                InkWell(
+                                  splashColor: Colors.transparent,
+                                  focusColor: Colors.transparent,
+                                  hoverColor: Colors.transparent,
+                                  highlightColor: Colors.transparent,
+                                  onTap: () async {
+                                    await listViewMarksRecord.reference
+                                        .delete();
+                                  },
+                                  child: Icon(
+                                    FFIcons.kdelete,
+                                    color: FlutterFlowTheme.of(context).error,
+                                    size: 24.0,
+                                  ),
                                 ),
-                              ),
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 0.0, 0.5),
-                            child: Container(
-                              width: double.infinity,
-                              height: 85.0,
-                              decoration: BoxDecoration(
-                                color: FlutterFlowTheme.of(context).bwgrey,
-                                boxShadow: [
-                                  BoxShadow(
-                                    blurRadius: 0.0,
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryBackground,
-                                    offset: const Offset(0.0, 1.0),
-                                  )
-                                ],
-                                borderRadius: BorderRadius.circular(1.0),
-                                border: Border.all(
-                                  color: FlutterFlowTheme.of(context)
-                                      .primaryBackground,
-                                ),
-                              ),
-                              alignment: const AlignmentDirectional(0.0, 0.0),
-                              child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 12.0, 16.0, 12.0),
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Expanded(
-                                      child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                            12.0, 0.0, 12.0, 0.0),
-                                        child: Container(
-                                          width: 100.0,
-                                          height: 100.0,
-                                          decoration: BoxDecoration(
-                                            color: FlutterFlowTheme.of(context)
-                                                .bwgrey,
-                                          ),
-                                          child: Align(
-                                            alignment:
-                                                const AlignmentDirectional(-1.0, 0.0),
-                                            child: Padding(
-                                              padding: const EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      15.0, 0.0, 0.0, 0.0),
-                                              child: Text(
-                                                'MID - SEM',
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyLarge,
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          16.0, 0.0, 0.0, 0.0),
-                                      child: Container(
-                                        width: 80.0,
-                                        height: 80.0,
-                                        decoration: BoxDecoration(
-                                          color: FlutterFlowTheme.of(context)
-                                              .primary,
-                                          shape: BoxShape.circle,
-                                        ),
-                                        child: Align(
-                                          alignment:
-                                              const AlignmentDirectional(0.0, 0.0),
-                                          child: Text(
-                                            columnMarksRecord.mid == ''
-                                                ? 'NIL'
-                                                : columnMarksRecord.mid,
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyMedium
-                                                .override(
-                                                  fontFamily:
-                                                      'Plus Jakarta Sans',
-                                                  color: Colors.white,
-                                                  fontSize: 20.0,
-                                                ),
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 0.0, 0.5),
-                            child: Container(
-                              width: double.infinity,
-                              height: 85.0,
-                              decoration: BoxDecoration(
-                                color: FlutterFlowTheme.of(context).bwgrey,
-                                boxShadow: [
-                                  BoxShadow(
-                                    blurRadius: 0.0,
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryBackground,
-                                    offset: const Offset(0.0, 1.0),
-                                  )
-                                ],
-                                borderRadius: BorderRadius.circular(1.0),
-                                border: Border.all(
-                                  color: FlutterFlowTheme.of(context)
-                                      .primaryBackground,
-                                ),
-                              ),
-                              alignment: const AlignmentDirectional(0.0, 0.0),
-                              child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 12.0, 16.0, 12.0),
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Expanded(
-                                      child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                            12.0, 0.0, 12.0, 0.0),
-                                        child: Container(
-                                          width: 100.0,
-                                          height: 100.0,
-                                          decoration: BoxDecoration(
-                                            color: FlutterFlowTheme.of(context)
-                                                .bwgrey,
-                                          ),
-                                          child: Align(
-                                            alignment:
-                                                const AlignmentDirectional(-1.0, 0.0),
-                                            child: Padding(
-                                              padding: const EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      15.0, 0.0, 0.0, 0.0),
-                                              child: Text(
-                                                'Minor 2',
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyLarge,
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          16.0, 0.0, 0.0, 0.0),
-                                      child: Container(
-                                        width: 80.0,
-                                        height: 80.0,
-                                        decoration: BoxDecoration(
-                                          color: FlutterFlowTheme.of(context)
-                                              .primary,
-                                          shape: BoxShape.circle,
-                                        ),
-                                        child: Align(
-                                          alignment:
-                                              const AlignmentDirectional(0.0, 0.0),
-                                          child: Text(
-                                            columnMarksRecord.minor2 ==
-                                                        ''
-                                                ? 'NIL'
-                                                : columnMarksRecord.minor2,
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyMedium
-                                                .override(
-                                                  fontFamily:
-                                                      'Plus Jakarta Sans',
-                                                  color: Colors.white,
-                                                  fontSize: 20.0,
-                                                ),
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 0.0, 0.5),
-                            child: Container(
-                              width: double.infinity,
-                              height: 85.0,
-                              decoration: BoxDecoration(
-                                color: FlutterFlowTheme.of(context).bwgrey,
-                                boxShadow: [
-                                  BoxShadow(
-                                    blurRadius: 0.0,
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryBackground,
-                                    offset: const Offset(0.0, 1.0),
-                                  )
-                                ],
-                                borderRadius: BorderRadius.circular(1.0),
-                                border: Border.all(
-                                  color: FlutterFlowTheme.of(context)
-                                      .primaryBackground,
-                                ),
-                              ),
-                              alignment: const AlignmentDirectional(0.0, 0.0),
-                              child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 12.0, 16.0, 12.0),
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Expanded(
-                                      child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                            12.0, 0.0, 12.0, 0.0),
-                                        child: Container(
-                                          width: 100.0,
-                                          height: 100.0,
-                                          decoration: BoxDecoration(
-                                            color: FlutterFlowTheme.of(context)
-                                                .bwgrey,
-                                          ),
-                                          child: Align(
-                                            alignment:
-                                                const AlignmentDirectional(-1.0, 0.0),
-                                            child: Padding(
-                                              padding: const EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      15.0, 0.0, 0.0, 0.0),
-                                              child: Text(
-                                                'END - SEM',
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyLarge,
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          16.0, 0.0, 0.0, 0.0),
-                                      child: Container(
-                                        width: 80.0,
-                                        height: 80.0,
-                                        decoration: BoxDecoration(
-                                          color: FlutterFlowTheme.of(context)
-                                              .primary,
-                                          shape: BoxShape.circle,
-                                        ),
-                                        child: Align(
-                                          alignment:
-                                              const AlignmentDirectional(0.0, 0.0),
-                                          child: Text(
-                                            columnMarksRecord.end == ''
-                                                ? 'NIL'
-                                                : columnMarksRecord.end,
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyMedium
-                                                .override(
-                                                  fontFamily:
-                                                      'Plus Jakarta Sans',
-                                                  color: Colors.white,
-                                                  fontSize: 20.0,
-                                                ),
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 0.0, 0.5),
-                            child: Container(
-                              width: double.infinity,
-                              height: 85.0,
-                              decoration: BoxDecoration(
-                                color: FlutterFlowTheme.of(context).bwgrey,
-                                boxShadow: [
-                                  BoxShadow(
-                                    blurRadius: 0.0,
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryBackground,
-                                    offset: const Offset(0.0, 1.0),
-                                  )
-                                ],
-                                borderRadius: BorderRadius.circular(1.0),
-                                border: Border.all(
-                                  color: FlutterFlowTheme.of(context)
-                                      .primaryBackground,
-                                ),
-                              ),
-                              alignment: const AlignmentDirectional(0.0, 0.0),
-                              child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 12.0, 16.0, 12.0),
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Expanded(
-                                      child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                            12.0, 0.0, 12.0, 0.0),
-                                        child: Container(
-                                          width: 100.0,
-                                          height: 100.0,
-                                          decoration: BoxDecoration(
-                                            color: FlutterFlowTheme.of(context)
-                                                .bwgrey,
-                                          ),
-                                          child: Align(
-                                            alignment:
-                                                const AlignmentDirectional(-1.0, 0.0),
-                                            child: Padding(
-                                              padding: const EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      15.0, 0.0, 0.0, 0.0),
-                                              child: Text(
-                                                'Total Marks',
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyLarge,
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          16.0, 0.0, 0.0, 0.0),
-                                      child: Container(
-                                        width: 80.0,
-                                        height: 80.0,
-                                        decoration: BoxDecoration(
-                                          color: FlutterFlowTheme.of(context)
-                                              .primary,
-                                          shape: BoxShape.circle,
-                                        ),
-                                        child: Align(
-                                          alignment:
-                                              const AlignmentDirectional(0.0, 0.0),
-                                          child: Text(
-                                            valueOrDefault<String>(
-                                                          functions.addmarks(
-                                                              columnMarksRecord
-                                                                  .minor1,
-                                                              columnMarksRecord
-                                                                  .mid,
-                                                              columnMarksRecord
-                                                                  .minor2,
-                                                              columnMarksRecord
-                                                                  .end),
-                                                          'total',
-                                                        ) ==
-                                                        ''
-                                                ? 'NIL'
-                                                : valueOrDefault<String>(
-                                                    functions.addmarks(
-                                                        columnMarksRecord
-                                                            .minor1,
-                                                        columnMarksRecord.mid,
-                                                        columnMarksRecord
-                                                            .minor2,
-                                                        columnMarksRecord.end),
-                                                    'total',
-                                                  ),
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyMedium
-                                                .override(
-                                                  fontFamily:
-                                                      'Plus Jakarta Sans',
-                                                  color: Colors.white,
-                                                  fontSize: 20.0,
-                                                ),
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
+                              ].divide(const SizedBox(width: 15.0)),
                             ),
                           ),
                         ],
                       ),
-                    ).animateOnPageLoad(
-                        animationsMap['stickyHeaderOnPageLoadAnimation']!);
-                  }),
-                ),
+                    ),
+                    content: Column(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 0.0, 0.5),
+                          child: Container(
+                            width: double.infinity,
+                            height: 85.0,
+                            decoration: BoxDecoration(
+                              color: FlutterFlowTheme.of(context).bwgrey,
+                              boxShadow: [
+                                BoxShadow(
+                                  blurRadius: 0.0,
+                                  color: FlutterFlowTheme.of(context)
+                                      .primaryBackground,
+                                  offset: const Offset(0.0, 1.0),
+                                )
+                              ],
+                              borderRadius: BorderRadius.circular(1.0),
+                              border: Border.all(
+                                color: FlutterFlowTheme.of(context)
+                                    .primaryBackground,
+                              ),
+                            ),
+                            alignment: const AlignmentDirectional(0.0, 0.0),
+                            child: Padding(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 12.0, 16.0, 12.0),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Expanded(
+                                    child: Padding(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                          12.0, 0.0, 12.0, 0.0),
+                                      child: Container(
+                                        width: 100.0,
+                                        height: 100.0,
+                                        decoration: BoxDecoration(
+                                          color: FlutterFlowTheme.of(context)
+                                              .bwgrey,
+                                        ),
+                                        child: Align(
+                                          alignment:
+                                              const AlignmentDirectional(-1.0, 0.0),
+                                          child: Padding(
+                                            padding:
+                                                const EdgeInsetsDirectional.fromSTEB(
+                                                    15.0, 0.0, 0.0, 0.0),
+                                            child: Text(
+                                              'Minor 1',
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyLarge
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        fontSize: 17.0,
+                                                      ),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        16.0, 0.0, 0.0, 0.0),
+                                    child: Container(
+                                      width: 80.0,
+                                      height: 80.0,
+                                      decoration: BoxDecoration(
+                                        color: FlutterFlowTheme.of(context)
+                                            .primary,
+                                        shape: BoxShape.circle,
+                                      ),
+                                      child: Align(
+                                        alignment:
+                                            const AlignmentDirectional(0.0, 0.0),
+                                        child: Text(
+                                          listViewMarksRecord.minor1 ==
+                                                      ''
+                                              ? 'NIL'
+                                              : listViewMarksRecord.minor1,
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Montserrat',
+                                                color: Colors.white,
+                                                fontSize: 20.0,
+                                              ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 0.0, 0.5),
+                          child: Container(
+                            width: double.infinity,
+                            height: 85.0,
+                            decoration: BoxDecoration(
+                              color: FlutterFlowTheme.of(context).bwgrey,
+                              boxShadow: [
+                                BoxShadow(
+                                  blurRadius: 0.0,
+                                  color: FlutterFlowTheme.of(context)
+                                      .primaryBackground,
+                                  offset: const Offset(0.0, 1.0),
+                                )
+                              ],
+                              borderRadius: BorderRadius.circular(1.0),
+                              border: Border.all(
+                                color: FlutterFlowTheme.of(context)
+                                    .primaryBackground,
+                              ),
+                            ),
+                            alignment: const AlignmentDirectional(0.0, 0.0),
+                            child: Padding(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 12.0, 16.0, 12.0),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Expanded(
+                                    child: Padding(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                          12.0, 0.0, 12.0, 0.0),
+                                      child: Container(
+                                        width: 100.0,
+                                        height: 100.0,
+                                        decoration: BoxDecoration(
+                                          color: FlutterFlowTheme.of(context)
+                                              .bwgrey,
+                                        ),
+                                        child: Align(
+                                          alignment:
+                                              const AlignmentDirectional(-1.0, 0.0),
+                                          child: Padding(
+                                            padding:
+                                                const EdgeInsetsDirectional.fromSTEB(
+                                                    15.0, 0.0, 0.0, 0.0),
+                                            child: Text(
+                                              'MID - SEM',
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyLarge
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        fontSize: 17.0,
+                                                      ),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        16.0, 0.0, 0.0, 0.0),
+                                    child: Container(
+                                      width: 80.0,
+                                      height: 80.0,
+                                      decoration: BoxDecoration(
+                                        color: FlutterFlowTheme.of(context)
+                                            .primary,
+                                        shape: BoxShape.circle,
+                                      ),
+                                      child: Align(
+                                        alignment:
+                                            const AlignmentDirectional(0.0, 0.0),
+                                        child: Text(
+                                          listViewMarksRecord.mid == ''
+                                              ? 'NIL'
+                                              : listViewMarksRecord.mid,
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Montserrat',
+                                                color: Colors.white,
+                                                fontSize: 20.0,
+                                              ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 0.0, 0.5),
+                          child: Container(
+                            width: double.infinity,
+                            height: 85.0,
+                            decoration: BoxDecoration(
+                              color: FlutterFlowTheme.of(context).bwgrey,
+                              boxShadow: [
+                                BoxShadow(
+                                  blurRadius: 0.0,
+                                  color: FlutterFlowTheme.of(context)
+                                      .primaryBackground,
+                                  offset: const Offset(0.0, 1.0),
+                                )
+                              ],
+                              borderRadius: BorderRadius.circular(1.0),
+                              border: Border.all(
+                                color: FlutterFlowTheme.of(context)
+                                    .primaryBackground,
+                              ),
+                            ),
+                            alignment: const AlignmentDirectional(0.0, 0.0),
+                            child: Padding(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 12.0, 16.0, 12.0),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Expanded(
+                                    child: Padding(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                          12.0, 0.0, 12.0, 0.0),
+                                      child: Container(
+                                        width: 100.0,
+                                        height: 100.0,
+                                        decoration: BoxDecoration(
+                                          color: FlutterFlowTheme.of(context)
+                                              .bwgrey,
+                                        ),
+                                        child: Align(
+                                          alignment:
+                                              const AlignmentDirectional(-1.0, 0.0),
+                                          child: Padding(
+                                            padding:
+                                                const EdgeInsetsDirectional.fromSTEB(
+                                                    15.0, 0.0, 0.0, 0.0),
+                                            child: Text(
+                                              'Minor 2',
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyLarge
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        fontSize: 17.0,
+                                                      ),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        16.0, 0.0, 0.0, 0.0),
+                                    child: Container(
+                                      width: 80.0,
+                                      height: 80.0,
+                                      decoration: BoxDecoration(
+                                        color: FlutterFlowTheme.of(context)
+                                            .primary,
+                                        shape: BoxShape.circle,
+                                      ),
+                                      child: Align(
+                                        alignment:
+                                            const AlignmentDirectional(0.0, 0.0),
+                                        child: Text(
+                                          listViewMarksRecord.minor2 ==
+                                                      ''
+                                              ? 'NIL'
+                                              : listViewMarksRecord.minor2,
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Montserrat',
+                                                color: Colors.white,
+                                                fontSize: 20.0,
+                                              ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 0.0, 0.5),
+                          child: Container(
+                            width: double.infinity,
+                            height: 85.0,
+                            decoration: BoxDecoration(
+                              color: FlutterFlowTheme.of(context).bwgrey,
+                              boxShadow: [
+                                BoxShadow(
+                                  blurRadius: 0.0,
+                                  color: FlutterFlowTheme.of(context)
+                                      .primaryBackground,
+                                  offset: const Offset(0.0, 1.0),
+                                )
+                              ],
+                              borderRadius: BorderRadius.circular(1.0),
+                              border: Border.all(
+                                color: FlutterFlowTheme.of(context)
+                                    .primaryBackground,
+                              ),
+                            ),
+                            alignment: const AlignmentDirectional(0.0, 0.0),
+                            child: Padding(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 12.0, 16.0, 12.0),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Expanded(
+                                    child: Padding(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                          12.0, 0.0, 12.0, 0.0),
+                                      child: Container(
+                                        width: 100.0,
+                                        height: 100.0,
+                                        decoration: BoxDecoration(
+                                          color: FlutterFlowTheme.of(context)
+                                              .bwgrey,
+                                        ),
+                                        child: Align(
+                                          alignment:
+                                              const AlignmentDirectional(-1.0, 0.0),
+                                          child: Padding(
+                                            padding:
+                                                const EdgeInsetsDirectional.fromSTEB(
+                                                    15.0, 0.0, 0.0, 0.0),
+                                            child: Text(
+                                              'END - SEM',
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyLarge
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        fontSize: 17.0,
+                                                      ),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        16.0, 0.0, 0.0, 0.0),
+                                    child: Container(
+                                      width: 80.0,
+                                      height: 80.0,
+                                      decoration: BoxDecoration(
+                                        color: FlutterFlowTheme.of(context)
+                                            .primary,
+                                        shape: BoxShape.circle,
+                                      ),
+                                      child: Align(
+                                        alignment:
+                                            const AlignmentDirectional(0.0, 0.0),
+                                        child: Text(
+                                          listViewMarksRecord.end == ''
+                                              ? 'NIL'
+                                              : listViewMarksRecord.end,
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Montserrat',
+                                                color: Colors.white,
+                                                fontSize: 20.0,
+                                              ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 0.0, 0.5),
+                          child: Container(
+                            width: double.infinity,
+                            height: 85.0,
+                            decoration: BoxDecoration(
+                              color: FlutterFlowTheme.of(context).bwgrey,
+                              boxShadow: [
+                                BoxShadow(
+                                  blurRadius: 0.0,
+                                  color: FlutterFlowTheme.of(context)
+                                      .primaryBackground,
+                                  offset: const Offset(0.0, 1.0),
+                                )
+                              ],
+                              borderRadius: BorderRadius.circular(1.0),
+                              border: Border.all(
+                                color: FlutterFlowTheme.of(context)
+                                    .primaryBackground,
+                              ),
+                            ),
+                            alignment: const AlignmentDirectional(0.0, 0.0),
+                            child: Padding(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 12.0, 16.0, 12.0),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Expanded(
+                                    child: Padding(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                          12.0, 0.0, 12.0, 0.0),
+                                      child: Container(
+                                        width: 100.0,
+                                        height: 100.0,
+                                        decoration: BoxDecoration(
+                                          color: FlutterFlowTheme.of(context)
+                                              .bwgrey,
+                                        ),
+                                        child: Align(
+                                          alignment:
+                                              const AlignmentDirectional(-1.0, 0.0),
+                                          child: Padding(
+                                            padding:
+                                                const EdgeInsetsDirectional.fromSTEB(
+                                                    15.0, 0.0, 0.0, 0.0),
+                                            child: Text(
+                                              'Total Marks',
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyLarge
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        fontSize: 17.0,
+                                                      ),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        16.0, 0.0, 0.0, 0.0),
+                                    child: Container(
+                                      width: 80.0,
+                                      height: 80.0,
+                                      decoration: BoxDecoration(
+                                        color: FlutterFlowTheme.of(context)
+                                            .primary,
+                                        shape: BoxShape.circle,
+                                      ),
+                                      child: Align(
+                                        alignment:
+                                            const AlignmentDirectional(0.0, 0.0),
+                                        child: Text(
+                                          valueOrDefault<String>(
+                                                        functions.addmarks(
+                                                            listViewMarksRecord
+                                                                .minor1,
+                                                            listViewMarksRecord
+                                                                .mid,
+                                                            listViewMarksRecord
+                                                                .minor2,
+                                                            listViewMarksRecord
+                                                                .end),
+                                                        'total',
+                                                      ) ==
+                                                      ''
+                                              ? 'NIL'
+                                              : valueOrDefault<String>(
+                                                  functions.addmarks(
+                                                      listViewMarksRecord
+                                                          .minor1,
+                                                      listViewMarksRecord.mid,
+                                                      listViewMarksRecord
+                                                          .minor2,
+                                                      listViewMarksRecord.end),
+                                                  'total',
+                                                ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Montserrat',
+                                                color: Colors.white,
+                                                fontSize: 20.0,
+                                              ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ).animateOnPageLoad(
+                      animationsMap['stickyHeaderOnPageLoadAnimation']!);
+                },
               );
             },
           ),
