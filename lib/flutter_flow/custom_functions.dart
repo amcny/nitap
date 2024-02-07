@@ -41,3 +41,21 @@ List<DateTime> generateFutureDates(int numberOfDays) {
 
   return workdays;
 }
+
+String? addmarks(
+  String? minor1,
+  String? mid,
+  String? minor2,
+  String? end,
+) {
+  // funtion that performs addition of values
+  if (minor1 == null || mid == null || minor2 == null || end == null) {
+    return null;
+  }
+  final double m1 = double.tryParse(minor1) ?? 0.0;
+  final double m2 = double.tryParse(minor2) ?? 0.0;
+  final double md = double.tryParse(mid) ?? 0.0;
+  final double e = double.tryParse(end) ?? 0.0;
+  final double total = m1 + m2 + md + e;
+  return total.toStringAsFixed(2);
+}

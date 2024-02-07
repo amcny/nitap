@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:sticky_headers/sticky_headers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -662,6 +663,122 @@ class _MarksWidgetState extends State<MarksWidget>
                                             columnMarksRecord.end == ''
                                                 ? 'NIL'
                                                 : columnMarksRecord.end,
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily:
+                                                      'Plus Jakarta Sans',
+                                                  color: Colors.white,
+                                                  fontSize: 20.0,
+                                                ),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 0.0, 0.5),
+                            child: Container(
+                              width: double.infinity,
+                              height: 85.0,
+                              decoration: BoxDecoration(
+                                color: FlutterFlowTheme.of(context).bwgrey,
+                                boxShadow: [
+                                  BoxShadow(
+                                    blurRadius: 0.0,
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryBackground,
+                                    offset: const Offset(0.0, 1.0),
+                                  )
+                                ],
+                                borderRadius: BorderRadius.circular(1.0),
+                                border: Border.all(
+                                  color: FlutterFlowTheme.of(context)
+                                      .primaryBackground,
+                                ),
+                              ),
+                              alignment: const AlignmentDirectional(0.0, 0.0),
+                              child: Padding(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 12.0, 16.0, 12.0),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Expanded(
+                                      child: Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            12.0, 0.0, 12.0, 0.0),
+                                        child: Container(
+                                          width: 100.0,
+                                          height: 100.0,
+                                          decoration: BoxDecoration(
+                                            color: FlutterFlowTheme.of(context)
+                                                .bwgrey,
+                                          ),
+                                          child: Align(
+                                            alignment:
+                                                const AlignmentDirectional(-1.0, 0.0),
+                                            child: Padding(
+                                              padding: const EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      15.0, 0.0, 0.0, 0.0),
+                                              child: Text(
+                                                'Total Marks',
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyLarge,
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                          16.0, 0.0, 0.0, 0.0),
+                                      child: Container(
+                                        width: 80.0,
+                                        height: 80.0,
+                                        decoration: BoxDecoration(
+                                          color: FlutterFlowTheme.of(context)
+                                              .primary,
+                                          shape: BoxShape.circle,
+                                        ),
+                                        child: Align(
+                                          alignment:
+                                              const AlignmentDirectional(0.0, 0.0),
+                                          child: Text(
+                                            valueOrDefault<String>(
+                                                          functions.addmarks(
+                                                              columnMarksRecord
+                                                                  .minor1,
+                                                              columnMarksRecord
+                                                                  .mid,
+                                                              columnMarksRecord
+                                                                  .minor2,
+                                                              columnMarksRecord
+                                                                  .end),
+                                                          'total',
+                                                        ) ==
+                                                        ''
+                                                ? 'NIL'
+                                                : valueOrDefault<String>(
+                                                    functions.addmarks(
+                                                        columnMarksRecord
+                                                            .minor1,
+                                                        columnMarksRecord.mid,
+                                                        columnMarksRecord
+                                                            .minor2,
+                                                        columnMarksRecord.end),
+                                                    'total',
+                                                  ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
