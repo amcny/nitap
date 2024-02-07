@@ -321,7 +321,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                         FlutterFlowTheme.of(context).bodyMedium,
                                   ),
                                   Text(
-                                    'Choose your class and section',
+                                    'Select your class and section',
                                     style: FlutterFlowTheme.of(context)
                                         .bodySmall
                                         .override(
@@ -399,7 +399,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                         FlutterFlowTheme.of(context).bodyMedium,
                                   ),
                                   Text(
-                                    'Choose Light mode or Dark mode',
+                                    'Select Light mode or Dark mode',
                                     style: FlutterFlowTheme.of(context)
                                         .bodySmall
                                         .override(
@@ -486,7 +486,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                         FlutterFlowTheme.of(context).bodyMedium,
                                   ),
                                   Text(
-                                    'Check what\'s new in this update',
+                                    'See what’s new in this update',
                                     style: FlutterFlowTheme.of(context)
                                         .bodySmall
                                         .override(
@@ -574,7 +574,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                         FlutterFlowTheme.of(context).bodyMedium,
                                   ),
                                   Text(
-                                    'Report bug\'s and issues',
+                                    'Share feedback and concerns',
                                     style: FlutterFlowTheme.of(context)
                                         .bodySmall
                                         .override(
@@ -659,7 +659,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                           .bodyMedium,
                                     ),
                                     Text(
-                                      'Share the application now',
+                                      'Tell your friends about the app',
                                       style: FlutterFlowTheme.of(context)
                                           .bodySmall
                                           .override(
@@ -748,7 +748,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                         FlutterFlowTheme.of(context).bodyMedium,
                                   ),
                                   Text(
-                                    'Know about security',
+                                    'See how your data is encrypted',
                                     style: FlutterFlowTheme.of(context)
                                         .bodySmall
                                         .override(
@@ -963,7 +963,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                         FlutterFlowTheme.of(context).bodyMedium,
                                   ),
                                   Text(
-                                    'Removes account from the app',
+                                    'Remove account from app',
                                     style: FlutterFlowTheme.of(context)
                                         .bodySmall
                                         .override(
