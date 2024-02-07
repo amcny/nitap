@@ -270,7 +270,7 @@ class _DevWidgetState extends State<DevWidget> {
                             ),
                           ),
                         ),
-                      ].divide(const SizedBox(width: 2.0)),
+                      ].divide(const SizedBox(width: 10.0)),
                     ),
                   ],
                 ),

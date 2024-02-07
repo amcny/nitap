@@ -176,7 +176,8 @@ class _MarksWidgetState extends State<MarksWidget>
                 return Center(
                   child: Image.asset(
                     'assets/images/image.png',
-                    fit: BoxFit.cover,
+                    width: 300.0,
+                    fit: BoxFit.contain,
                   ),
                 );
               }
@@ -193,7 +194,7 @@ class _MarksWidgetState extends State<MarksWidget>
                         width: double.infinity,
                         height: 50.0,
                         decoration: BoxDecoration(
-                          color: FlutterFlowTheme.of(context).primary,
+                          color: FlutterFlowTheme.of(context).appbar,
                         ),
                         alignment: const AlignmentDirectional(-1.0, 0.0),
                         child: Row(
@@ -215,7 +216,8 @@ class _MarksWidgetState extends State<MarksWidget>
                                       .titleLarge
                                       .override(
                                         fontFamily: 'Poppins',
-                                        color: Colors.white,
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryText,
                                         fontSize: 20.0,
                                       ),
                                 ),
@@ -263,9 +265,10 @@ class _MarksWidgetState extends State<MarksWidget>
                                           },
                                         ).then((value) => setState(() {}));
                                       },
-                                      child: const Icon(
+                                      child: Icon(
                                         FFIcons.kadd,
-                                        color: Colors.white,
+                                        color: FlutterFlowTheme.of(context)
+                                            .primary,
                                         size: 24.0,
                                       ),
                                     ),
@@ -296,13 +299,12 @@ class _MarksWidgetState extends State<MarksWidget>
                         children: [
                           Padding(
                             padding: const EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 0.0, 1.0),
+                                0.0, 0.0, 0.0, 0.5),
                             child: Container(
                               width: double.infinity,
                               height: 85.0,
                               decoration: BoxDecoration(
-                                color: FlutterFlowTheme.of(context)
-                                    .secondaryBackground,
+                                color: FlutterFlowTheme.of(context).bwgrey,
                                 boxShadow: [
                                   BoxShadow(
                                     blurRadius: 0.0,
@@ -335,7 +337,7 @@ class _MarksWidgetState extends State<MarksWidget>
                                           height: 100.0,
                                           decoration: BoxDecoration(
                                             color: FlutterFlowTheme.of(context)
-                                                .secondaryBackground,
+                                                .bwgrey,
                                           ),
                                           child: Align(
                                             alignment:
@@ -393,13 +395,12 @@ class _MarksWidgetState extends State<MarksWidget>
                           ),
                           Padding(
                             padding: const EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 0.0, 1.0),
+                                0.0, 0.0, 0.0, 0.5),
                             child: Container(
                               width: double.infinity,
                               height: 85.0,
                               decoration: BoxDecoration(
-                                color: FlutterFlowTheme.of(context)
-                                    .secondaryBackground,
+                                color: FlutterFlowTheme.of(context).bwgrey,
                                 boxShadow: [
                                   BoxShadow(
                                     blurRadius: 0.0,
@@ -432,7 +433,7 @@ class _MarksWidgetState extends State<MarksWidget>
                                           height: 100.0,
                                           decoration: BoxDecoration(
                                             color: FlutterFlowTheme.of(context)
-                                                .secondaryBackground,
+                                                .bwgrey,
                                           ),
                                           child: Align(
                                             alignment:
@@ -489,13 +490,12 @@ class _MarksWidgetState extends State<MarksWidget>
                           ),
                           Padding(
                             padding: const EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 0.0, 1.0),
+                                0.0, 0.0, 0.0, 0.5),
                             child: Container(
                               width: double.infinity,
                               height: 85.0,
                               decoration: BoxDecoration(
-                                color: FlutterFlowTheme.of(context)
-                                    .secondaryBackground,
+                                color: FlutterFlowTheme.of(context).bwgrey,
                                 boxShadow: [
                                   BoxShadow(
                                     blurRadius: 0.0,
@@ -528,7 +528,7 @@ class _MarksWidgetState extends State<MarksWidget>
                                           height: 100.0,
                                           decoration: BoxDecoration(
                                             color: FlutterFlowTheme.of(context)
-                                                .secondaryBackground,
+                                                .bwgrey,
                                           ),
                                           child: Align(
                                             alignment:
@@ -586,13 +586,12 @@ class _MarksWidgetState extends State<MarksWidget>
                           ),
                           Padding(
                             padding: const EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 0.0, 1.0),
+                                0.0, 0.0, 0.0, 0.5),
                             child: Container(
                               width: double.infinity,
                               height: 85.0,
                               decoration: BoxDecoration(
-                                color: FlutterFlowTheme.of(context)
-                                    .secondaryBackground,
+                                color: FlutterFlowTheme.of(context).bwgrey,
                                 boxShadow: [
                                   BoxShadow(
                                     blurRadius: 0.0,
@@ -625,7 +624,7 @@ class _MarksWidgetState extends State<MarksWidget>
                                           height: 100.0,
                                           decoration: BoxDecoration(
                                             color: FlutterFlowTheme.of(context)
-                                                .secondaryBackground,
+                                                .bwgrey,
                                           ),
                                           child: Align(
                                             alignment:

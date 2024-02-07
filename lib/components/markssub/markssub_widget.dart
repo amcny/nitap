@@ -122,7 +122,7 @@ class _MarkssubWidgetState extends State<MarkssubWidget>
                         textCapitalization: TextCapitalization.characters,
                         obscureText: false,
                         decoration: InputDecoration(
-                          labelText: 'Course name',
+                          labelText: 'Course code',
                           labelStyle: FlutterFlowTheme.of(context).labelMedium,
                           alignLabelWithHint: false,
                           enabledBorder: UnderlineInputBorder(
