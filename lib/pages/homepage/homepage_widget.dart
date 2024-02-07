@@ -1,4 +1,5 @@
 import '/backend/backend.dart';
+import '/components/no_class/no_class_widget.dart';
 import '/flutter_flow/flutter_flow_ad_banner.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -324,6 +325,9 @@ class _HomepageWidgetState extends State<HomepageWidget>
                         }
                         List<TimetableRecord> rowTimetableRecordList =
                             snapshot.data!;
+                        if (rowTimetableRecordList.isEmpty) {
+                          return const NoClassWidget();
+                        }
                         final rowTimetableRecord =
                             rowTimetableRecordList.isNotEmpty
                                 ? rowTimetableRecordList.first
@@ -332,6 +336,9 @@ class _HomepageWidgetState extends State<HomepageWidget>
                           builder: (context) {
                             final data =
                                 rowTimetableRecord?.data.toList() ?? [];
+                            if (data.isEmpty) {
+                              return const NoClassWidget();
+                            }
                             return SingleChildScrollView(
                               scrollDirection: Axis.horizontal,
                               child: Row(
