@@ -1,3 +1,4 @@
+import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/components/marksno/marksno_widget.dart';
 import '/components/markssub/markssub_widget.dart';
@@ -124,8 +125,12 @@ class _TestWidgetState extends State<TestWidget> {
           top: true,
           child: StreamBuilder<List<MarksRecord>>(
             stream: queryMarksRecord(
-              queryBuilder: (marksRecord) =>
-                  marksRecord.orderBy('created_time'),
+              queryBuilder: (marksRecord) => marksRecord
+                  .where(
+                    'user',
+                    isEqualTo: currentUserReference,
+                  )
+                  .orderBy('created_time'),
             ),
             builder: (context, snapshot) {
               // Customize what your widget looks like when it's loading.
