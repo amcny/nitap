@@ -204,21 +204,16 @@ class _AttendanceWidgetState extends State<AttendanceWidget> {
                         style: FlutterFlowTheme.of(context).bodyMedium,
                       ),
                       Row(
-                        mainAxisSize: MainAxisSize.min,
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
                           Builder(
-                            builder: (context) => FlutterFlowIconButton(
-                              borderRadius: 0.0,
-                              borderWidth: 0.0,
-                              buttonSize: 45.0,
-                              icon: Icon(
-                                FFIcons.kadd,
-                                color: FlutterFlowTheme.of(context).primary,
-                                size: 24.0,
-                              ),
-                              showLoadingIndicator: true,
-                              onPressed: () async {
+                            builder: (context) => InkWell(
+                              splashColor: Colors.transparent,
+                              focusColor: Colors.transparent,
+                              hoverColor: Colors.transparent,
+                              highlightColor: Colors.transparent,
+                              onTap: () async {
                                 await showDialog(
                                   context: context,
                                   builder: (dialogContext) {
@@ -235,21 +230,26 @@ class _AttendanceWidgetState extends State<AttendanceWidget> {
                                   },
                                 ).then((value) => setState(() {}));
                               },
+                              child: Icon(
+                                FFIcons.kadd,
+                                color: FlutterFlowTheme.of(context).primary,
+                                size: 24.0,
+                              ),
                             ),
                           ),
-                          FlutterFlowIconButton(
-                            borderRadius: 0.0,
-                            borderWidth: 0.0,
-                            buttonSize: 45.0,
-                            icon: Icon(
+                          InkWell(
+                            splashColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            onTap: () async {
+                              await table1Item.reference.delete();
+                            },
+                            child: Icon(
                               FFIcons.kdelete,
                               color: FlutterFlowTheme.of(context).error,
                               size: 24.0,
                             ),
-                            showLoadingIndicator: true,
-                            onPressed: () async {
-                              await table1Item.reference.delete();
-                            },
                           ),
                         ],
                       ),

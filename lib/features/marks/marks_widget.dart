@@ -171,7 +171,7 @@ class _MarksWidgetState extends State<MarksWidget> {
                         label: DefaultTextStyle.merge(
                           softWrap: true,
                           child: AutoSizeText(
-                            'Course Name',
+                            'Course Code',
                             maxLines: 2,
                             style: FlutterFlowTheme.of(context).labelLarge,
                           ),
