@@ -100,7 +100,7 @@ class _PrivacyWidgetState extends State<PrivacyWidget> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  'Your academic data is secured',
+                  'Your academic data is encrypted',
                   style: FlutterFlowTheme.of(context).titleMedium.override(
                         fontFamily: 'Poppins',
                         fontSize: 18.0,
@@ -196,7 +196,7 @@ class _PrivacyWidgetState extends State<PrivacyWidget> {
                   Padding(
                     padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 0.0),
                     child: Text(
-                      'Attendance data',
+                      'Attendance and Marks data',
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                             fontFamily: 'Poppins',
                             color: const Color(0xFF95A1AC),

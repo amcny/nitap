@@ -115,7 +115,7 @@ class _SupportWidgetState extends State<SupportWidget> {
               mainAxisSize: MainAxisSize.max,
               children: [
                 Text(
-                  'Add a Short description of what you encountered\nand send an email by clicking the email id\nfor sure, we will fix/include as soon as possible.',
+                  'Click the email id to email us.\nSummarize the problem/feedback.\nWe will fix/implement it in no time.',
                   textAlign: TextAlign.center,
                   style: FlutterFlowTheme.of(context).bodyMedium.override(
                         fontFamily: 'Poppins',
