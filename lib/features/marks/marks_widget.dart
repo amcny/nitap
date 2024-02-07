@@ -187,7 +187,7 @@ class _MarksWidgetState extends State<MarksWidget>
                   0,
                   0,
                   0,
-                  50.0,
+                  45.0,
                 ),
                 scrollDirection: Axis.vertical,
                 itemCount: listViewMarksRecordList.length,
@@ -776,33 +776,29 @@ class _MarksWidgetState extends State<MarksWidget>
                                             const AlignmentDirectional(0.0, 0.0),
                                         child: Text(
                                           valueOrDefault<String>(
-                                            valueOrDefault<String>(
-                                                          functions.addmarks(
-                                                              listViewMarksRecord
-                                                                  .minor1,
-                                                              listViewMarksRecord
-                                                                  .mid,
-                                                              listViewMarksRecord
-                                                                  .minor2,
-                                                              listViewMarksRecord
-                                                                  .end),
-                                                          'total',
-                                                        ) ==
-                                                        ''
-                                                ? 'NIL'
-                                                : valueOrDefault<String>(
-                                                    functions.addmarks(
-                                                        listViewMarksRecord
-                                                            .minor1,
-                                                        listViewMarksRecord.mid,
-                                                        listViewMarksRecord
-                                                            .minor2,
-                                                        listViewMarksRecord
-                                                            .end),
-                                                    'total',
-                                                  ),
-                                            'NIL',
-                                          ),
+                                                        functions.addmarks(
+                                                            listViewMarksRecord
+                                                                .minor1,
+                                                            listViewMarksRecord
+                                                                .mid,
+                                                            listViewMarksRecord
+                                                                .minor2,
+                                                            listViewMarksRecord
+                                                                .end),
+                                                        'total',
+                                                      ) ==
+                                                      ''
+                                              ? 'NIL'
+                                              : valueOrDefault<String>(
+                                                  functions.addmarks(
+                                                      listViewMarksRecord
+                                                          .minor1,
+                                                      listViewMarksRecord.mid,
+                                                      listViewMarksRecord
+                                                          .minor2,
+                                                      listViewMarksRecord.end),
+                                                  'total',
+                                                ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
