@@ -56,6 +56,32 @@ class _HomepageWidgetState extends State<HomepageWidget>
       ],
     ),
     'containerOnPageLoadAnimation2': AnimationInfo(
+      trigger: AnimationTrigger.onPageLoad,
+      effects: [
+        ShimmerEffect(
+          curve: Curves.easeInOut,
+          delay: 0.ms,
+          duration: 600.ms,
+          color: const Color(0x80FFFFFF),
+          angle: 0.524,
+        ),
+        FadeEffect(
+          curve: Curves.easeInOut,
+          delay: 0.ms,
+          duration: 600.ms,
+          begin: 0.0,
+          end: 1.0,
+        ),
+        MoveEffect(
+          curve: Curves.easeInOut,
+          delay: 0.ms,
+          duration: 600.ms,
+          begin: const Offset(30.0, 0.0),
+          end: const Offset(0.0, 0.0),
+        ),
+      ],
+    ),
+    'containerOnPageLoadAnimation3': AnimationInfo(
       loop: true,
       trigger: AnimationTrigger.onPageLoad,
       effects: [
@@ -447,7 +473,8 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                         ),
                                       ],
                                     ),
-                                  );
+                                  ).animateOnPageLoad(animationsMap[
+                                      'containerOnPageLoadAnimation1']!);
                                 })
                                         .divide(const SizedBox(width: 15.0))
                                         .around(const SizedBox(width: 15.0)),
@@ -732,7 +759,7 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                         ),
                                       ),
                                     ).animateOnPageLoad(animationsMap[
-                                        'containerOnPageLoadAnimation1']!),
+                                        'containerOnPageLoadAnimation2']!),
                                   );
                                 })
                                     .divide(const SizedBox(width: 10.0))
@@ -1376,7 +1403,7 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                 ),
                               ),
                             ).animateOnPageLoad(animationsMap[
-                                'containerOnPageLoadAnimation2']!),
+                                'containerOnPageLoadAnimation3']!),
                           ),
                         ],
                       ),

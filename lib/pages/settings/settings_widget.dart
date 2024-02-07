@@ -399,7 +399,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                         FlutterFlowTheme.of(context).bodyMedium,
                                   ),
                                   Text(
-                                    'Customize as per your needs',
+                                    'Choose Light mode or Dark mode',
                                     style: FlutterFlowTheme.of(context)
                                         .bodySmall
                                         .override(
