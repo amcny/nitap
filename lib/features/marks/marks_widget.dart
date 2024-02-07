@@ -193,7 +193,7 @@ class _MarksWidgetState extends State<MarksWidget>
                         width: double.infinity,
                         height: 50.0,
                         decoration: BoxDecoration(
-                          color: FlutterFlowTheme.of(context).primaryBackground,
+                          color: FlutterFlowTheme.of(context).primary,
                         ),
                         alignment: const AlignmentDirectional(-1.0, 0.0),
                         child: Row(
@@ -215,6 +215,7 @@ class _MarksWidgetState extends State<MarksWidget>
                                       .titleLarge
                                       .override(
                                         fontFamily: 'Poppins',
+                                        color: Colors.white,
                                         fontSize: 20.0,
                                       ),
                                 ),
@@ -262,10 +263,9 @@ class _MarksWidgetState extends State<MarksWidget>
                                           },
                                         ).then((value) => setState(() {}));
                                       },
-                                      child: Icon(
+                                      child: const Icon(
                                         FFIcons.kadd,
-                                        color: FlutterFlowTheme.of(context)
-                                            .primary,
+                                        color: Colors.white,
                                         size: 24.0,
                                       ),
                                     ),
