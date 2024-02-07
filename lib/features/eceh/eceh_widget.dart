@@ -147,7 +147,7 @@ class _EcehWidgetState extends State<EcehWidget> {
                     padding:
                         const EdgeInsetsDirectional.fromSTEB(15.0, 0.0, 15.0, 0.0),
                     child: Text(
-                      'The ECE Herald is a biweekly magazine released by ECE Department, NIT Andhra Pradesh. The Newsletter has several contents like technical articles, non-technical articles, poems, career guidance from the department professors and placement stories from the students who got placed and more..',
+                      'The ECE Herald is a biweekly magazine released by ECE Department, NIT Andhra Pradesh. The Newsletter has several contents like technical articles, non-technical articles, poems, career guidance from the department professors and placement stories from the students',
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                             fontFamily: 'Poppins',
                             color: FlutterFlowTheme.of(context).secondaryText,

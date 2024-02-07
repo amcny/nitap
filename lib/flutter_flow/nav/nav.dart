@@ -250,6 +250,12 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               path: 'whatnew',
               requireAuth: true,
               builder: (context, params) => const WhatnewWidget(),
+            ),
+            FFRoute(
+              name: 'test',
+              path: 'test',
+              requireAuth: true,
+              builder: (context, params) => const TestWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),

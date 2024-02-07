@@ -103,6 +103,7 @@ dependencies:
   sign_in_with_apple_web: 1.0.1
   simple_gradient_text: 1.2.3
   sqflite: 2.2.6
+  sticky_headers: 0.3.0+2
   stream_transform: 2.1.0
   text_scroll: ^0.2.0
   timeago: 3.2.2
