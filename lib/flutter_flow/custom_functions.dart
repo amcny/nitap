@@ -57,5 +57,10 @@ String? addmarks(
   final double md = double.tryParse(mid) ?? 0.0;
   final double e = double.tryParse(end) ?? 0.0;
   final double total = m1 + m2 + md + e;
-  return total.toStringAsFixed(2);
+  if (total == total.toInt()) {
+    return total.toInt().toString();
+  } else {
+    // Convert the total to a string and remove trailing zeros
+    return total.toStringAsPrecision(total.toString().length - 1);
+  }
 }
