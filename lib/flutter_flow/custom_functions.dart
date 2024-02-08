@@ -64,3 +64,20 @@ String? addmarks(
     return total.toStringAsPrecision(total.toString().length - 1);
   }
 }
+
+Color color(
+  Color colorred,
+  Color colorpass,
+  String? total,
+) {
+  // if total value is less than 35.0 return colorred else return colorpass
+  if (total == null) {
+    return colorred;
+  }
+  double totalValue = double.tryParse(total) ?? 0.0;
+  if (totalValue < 35.0) {
+    return colorred;
+  } else {
+    return colorpass;
+  }
+}

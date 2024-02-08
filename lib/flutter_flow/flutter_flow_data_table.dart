@@ -196,9 +196,8 @@ class _FlutterFlowDataTableState<T> extends State<FlutterFlowDataTable<T>> {
   FlutterFlowDataTableController<T> get controller => widget.controller;
   int get rowCount => controller.rowCount;
 
-  int get initialRowsPerPage => !widget.paginated || rowCount > _kMinRowsPerPage
-      ? defaultRowsPerPage
-      : _kMinRowsPerPage;
+  int get initialRowsPerPage =>
+      rowCount > _kMinRowsPerPage ? defaultRowsPerPage : _kMinRowsPerPage;
 
   @override
   void initState() {
@@ -273,7 +272,7 @@ class _FlutterFlowDataTableState<T> extends State<FlutterFlowDataTable<T>> {
             source: controller,
             controller:
                 widget.paginated ? controller.paginatorController : null,
-            rowsPerPage: initialRowsPerPage,
+            rowsPerPage: widget.paginated ? initialRowsPerPage : rowCount,
             availableRowsPerPage: const [5, 10, 25, 50, 100],
             onPageChanged: widget.onPageChanged != null
                 ? (index) => widget.onPageChanged!(index)

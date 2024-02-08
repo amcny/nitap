@@ -383,7 +383,7 @@ class _MarksWidgetState extends State<MarksWidget>
                                             .override(
                                               fontFamily: 'Montserrat',
                                               color: Colors.white,
-                                              fontSize: 20.0,
+                                              fontSize: 18.5,
                                             ),
                                       ),
                                     ),
@@ -479,7 +479,7 @@ class _MarksWidgetState extends State<MarksWidget>
                                             .override(
                                               fontFamily: 'Montserrat',
                                               color: Colors.white,
-                                              fontSize: 20.0,
+                                              fontSize: 18.5,
                                             ),
                                       ),
                                     ),
@@ -575,7 +575,7 @@ class _MarksWidgetState extends State<MarksWidget>
                                             .override(
                                               fontFamily: 'Montserrat',
                                               color: Colors.white,
-                                              fontSize: 20.0,
+                                              fontSize: 18.5,
                                             ),
                                       ),
                                     ),
@@ -671,7 +671,7 @@ class _MarksWidgetState extends State<MarksWidget>
                                             .override(
                                               fontFamily: 'Montserrat',
                                               color: Colors.white,
-                                              fontSize: 20.0,
+                                              fontSize: 18.5,
                                             ),
                                       ),
                                     ),
@@ -752,8 +752,16 @@ class _MarksWidgetState extends State<MarksWidget>
                                     width: 85.0,
                                     height: 85.0,
                                     decoration: BoxDecoration(
-                                      color:
-                                          FlutterFlowTheme.of(context).primary,
+                                      color: functions.color(
+                                          FlutterFlowTheme.of(context)
+                                              .alternate,
+                                          FlutterFlowTheme.of(context)
+                                              .secondary,
+                                          functions.addmarks(
+                                              listViewMarksRecord.minor1,
+                                              listViewMarksRecord.mid,
+                                              listViewMarksRecord.minor2,
+                                              listViewMarksRecord.end)),
                                       shape: BoxShape.circle,
                                     ),
                                     child: Align(
@@ -772,7 +780,7 @@ class _MarksWidgetState extends State<MarksWidget>
                                             .override(
                                               fontFamily: 'Montserrat',
                                               color: Colors.white,
-                                              fontSize: 20.0,
+                                              fontSize: 18.5,
                                             ),
                                       ),
                                     ),
