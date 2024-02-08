@@ -776,29 +776,13 @@ class _MarksWidgetState extends State<MarksWidget>
                                             const AlignmentDirectional(0.0, 0.0),
                                         child: Text(
                                           valueOrDefault<String>(
-                                                        functions.addmarks(
-                                                            listViewMarksRecord
-                                                                .minor1,
-                                                            listViewMarksRecord
-                                                                .mid,
-                                                            listViewMarksRecord
-                                                                .minor2,
-                                                            listViewMarksRecord
-                                                                .end),
-                                                        'total',
-                                                      ) ==
-                                                      ''
-                                              ? 'NIL'
-                                              : valueOrDefault<String>(
-                                                  functions.addmarks(
-                                                      listViewMarksRecord
-                                                          .minor1,
-                                                      listViewMarksRecord.mid,
-                                                      listViewMarksRecord
-                                                          .minor2,
-                                                      listViewMarksRecord.end),
-                                                  'total',
-                                                ),
+                                            functions.addmarks(
+                                                listViewMarksRecord.minor1,
+                                                listViewMarksRecord.mid,
+                                                listViewMarksRecord.minor2,
+                                                listViewMarksRecord.end),
+                                            'total',
+                                          ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
