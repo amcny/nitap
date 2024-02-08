@@ -148,16 +148,18 @@ class _OnboardingWidgetState extends State<OnboardingWidget>
             ),
           ),
           Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
+            padding: const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Text(
-                  'By continuing you agree out',
+                  'By continuing you agree to our',
                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                        fontFamily: 'Poppins',
+                        fontFamily: 'Montserrat',
                         color: FlutterFlowTheme.of(context).secondaryText,
+                        fontSize: 13.0,
+                        fontWeight: FontWeight.w300,
                       ),
                 ),
                 InkWell(
@@ -169,16 +171,17 @@ class _OnboardingWidgetState extends State<OnboardingWidget>
                     await launchURL('https://nitapp.pages.dev/');
                   },
                   child: Text(
-                    'Terms of Services & Privacy Policy',
+                    'Privacy Policy & Terms of Services',
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
-                          fontFamily: 'Poppins',
+                          fontFamily: 'Montserrat',
                           color: FlutterFlowTheme.of(context).primaryText,
+                          fontSize: 13.0,
                           letterSpacing: 0.5,
-                          decoration: TextDecoration.underline,
+                          fontWeight: FontWeight.w300,
                         ),
                   ),
                 ),
-              ],
+              ].divide(const SizedBox(height: 5.0)),
             ),
           ),
         ],
