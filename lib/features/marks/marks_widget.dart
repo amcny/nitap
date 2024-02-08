@@ -770,7 +770,7 @@ class _MarksWidgetState extends State<MarksWidget>
                                                   listViewMarksRecord.minor2,
                                                   listViewMarksRecord.end))
                                           : FlutterFlowTheme.of(context)
-                                              .primary,
+                                              .warning,
                                       shape: BoxShape.circle,
                                     ),
                                     child: Align(
