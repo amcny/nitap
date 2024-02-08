@@ -307,7 +307,7 @@ class _MarksWidgetState extends State<MarksWidget>
                               0.0, 0.0, 0.0, 0.5),
                           child: Container(
                             width: double.infinity,
-                            height: 85.0,
+                            height: 80.0,
                             decoration: BoxDecoration(
                               color: FlutterFlowTheme.of(context).bwgrey,
                               boxShadow: [
@@ -370,8 +370,8 @@ class _MarksWidgetState extends State<MarksWidget>
                                     padding: const EdgeInsetsDirectional.fromSTEB(
                                         16.0, 0.0, 0.0, 0.0),
                                     child: Container(
-                                      width: 80.0,
-                                      height: 80.0,
+                                      width: 75.0,
+                                      height: 75.0,
                                       decoration: BoxDecoration(
                                         color: FlutterFlowTheme.of(context)
                                             .primary,
@@ -390,7 +390,7 @@ class _MarksWidgetState extends State<MarksWidget>
                                               .override(
                                                 fontFamily: 'Montserrat',
                                                 color: Colors.white,
-                                                fontSize: 20.0,
+                                                fontSize: 18.0,
                                               ),
                                         ),
                                       ),
@@ -406,7 +406,7 @@ class _MarksWidgetState extends State<MarksWidget>
                               0.0, 0.0, 0.0, 0.5),
                           child: Container(
                             width: double.infinity,
-                            height: 85.0,
+                            height: 80.0,
                             decoration: BoxDecoration(
                               color: FlutterFlowTheme.of(context).bwgrey,
                               boxShadow: [
@@ -469,8 +469,8 @@ class _MarksWidgetState extends State<MarksWidget>
                                     padding: const EdgeInsetsDirectional.fromSTEB(
                                         16.0, 0.0, 0.0, 0.0),
                                     child: Container(
-                                      width: 80.0,
-                                      height: 80.0,
+                                      width: 75.0,
+                                      height: 75.0,
                                       decoration: BoxDecoration(
                                         color: FlutterFlowTheme.of(context)
                                             .primary,
@@ -488,7 +488,7 @@ class _MarksWidgetState extends State<MarksWidget>
                                               .override(
                                                 fontFamily: 'Montserrat',
                                                 color: Colors.white,
-                                                fontSize: 20.0,
+                                                fontSize: 18.0,
                                               ),
                                         ),
                                       ),
@@ -504,7 +504,7 @@ class _MarksWidgetState extends State<MarksWidget>
                               0.0, 0.0, 0.0, 0.5),
                           child: Container(
                             width: double.infinity,
-                            height: 85.0,
+                            height: 80.0,
                             decoration: BoxDecoration(
                               color: FlutterFlowTheme.of(context).bwgrey,
                               boxShadow: [
@@ -567,8 +567,8 @@ class _MarksWidgetState extends State<MarksWidget>
                                     padding: const EdgeInsetsDirectional.fromSTEB(
                                         16.0, 0.0, 0.0, 0.0),
                                     child: Container(
-                                      width: 80.0,
-                                      height: 80.0,
+                                      width: 75.0,
+                                      height: 75.0,
                                       decoration: BoxDecoration(
                                         color: FlutterFlowTheme.of(context)
                                             .primary,
@@ -587,7 +587,7 @@ class _MarksWidgetState extends State<MarksWidget>
                                               .override(
                                                 fontFamily: 'Montserrat',
                                                 color: Colors.white,
-                                                fontSize: 20.0,
+                                                fontSize: 18.0,
                                               ),
                                         ),
                                       ),
@@ -603,7 +603,7 @@ class _MarksWidgetState extends State<MarksWidget>
                               0.0, 0.0, 0.0, 0.5),
                           child: Container(
                             width: double.infinity,
-                            height: 85.0,
+                            height: 80.0,
                             decoration: BoxDecoration(
                               color: FlutterFlowTheme.of(context).bwgrey,
                               boxShadow: [
@@ -666,8 +666,8 @@ class _MarksWidgetState extends State<MarksWidget>
                                     padding: const EdgeInsetsDirectional.fromSTEB(
                                         16.0, 0.0, 0.0, 0.0),
                                     child: Container(
-                                      width: 80.0,
-                                      height: 80.0,
+                                      width: 75.0,
+                                      height: 75.0,
                                       decoration: BoxDecoration(
                                         color: FlutterFlowTheme.of(context)
                                             .primary,
@@ -685,7 +685,7 @@ class _MarksWidgetState extends State<MarksWidget>
                                               .override(
                                                 fontFamily: 'Montserrat',
                                                 color: Colors.white,
-                                                fontSize: 20.0,
+                                                fontSize: 18.0,
                                               ),
                                         ),
                                       ),
@@ -701,7 +701,7 @@ class _MarksWidgetState extends State<MarksWidget>
                               0.0, 0.0, 0.0, 0.5),
                           child: Container(
                             width: double.infinity,
-                            height: 85.0,
+                            height: 80.0,
                             decoration: BoxDecoration(
                               color: FlutterFlowTheme.of(context).bwgrey,
                               boxShadow: [
@@ -764,8 +764,8 @@ class _MarksWidgetState extends State<MarksWidget>
                                     padding: const EdgeInsetsDirectional.fromSTEB(
                                         16.0, 0.0, 0.0, 0.0),
                                     child: Container(
-                                      width: 80.0,
-                                      height: 80.0,
+                                      width: 75.0,
+                                      height: 75.0,
                                       decoration: BoxDecoration(
                                         color: FlutterFlowTheme.of(context)
                                             .primary,
@@ -788,7 +788,7 @@ class _MarksWidgetState extends State<MarksWidget>
                                               .override(
                                                 fontFamily: 'Montserrat',
                                                 color: Colors.white,
-                                                fontSize: 20.0,
+                                                fontSize: 18.0,
                                               ),
                                         ),
                                       ),
