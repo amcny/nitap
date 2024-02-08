@@ -752,16 +752,25 @@ class _MarksWidgetState extends State<MarksWidget>
                                     width: 85.0,
                                     height: 85.0,
                                     decoration: BoxDecoration(
-                                      color: functions.color(
-                                          FlutterFlowTheme.of(context)
-                                              .alternate,
-                                          FlutterFlowTheme.of(context)
-                                              .secondary,
-                                          functions.addmarks(
-                                              listViewMarksRecord.minor1,
-                                              listViewMarksRecord.mid,
-                                              listViewMarksRecord.minor2,
-                                              listViewMarksRecord.end)),
+                                      color: (listViewMarksRecord.minor1 !=
+                                                      '') &&
+                                              (listViewMarksRecord.mid !=
+                                                      '') &&
+                                              (listViewMarksRecord.minor2 !=
+                                                      '') &&
+                                              (listViewMarksRecord.end != '')
+                                          ? functions.color(
+                                              FlutterFlowTheme.of(context)
+                                                  .alternate,
+                                              FlutterFlowTheme.of(context)
+                                                  .secondary,
+                                              functions.addmarks(
+                                                  listViewMarksRecord.minor1,
+                                                  listViewMarksRecord.mid,
+                                                  listViewMarksRecord.minor2,
+                                                  listViewMarksRecord.end))
+                                          : FlutterFlowTheme.of(context)
+                                              .primary,
                                       shape: BoxShape.circle,
                                     ),
                                     child: Align(
