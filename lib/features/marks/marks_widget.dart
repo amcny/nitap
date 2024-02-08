@@ -304,7 +304,7 @@ class _MarksWidgetState extends State<MarksWidget>
                       children: [
                         Container(
                           width: double.infinity,
-                          height: 85.0,
+                          height: 75.0,
                           decoration: BoxDecoration(
                             color: FlutterFlowTheme.of(context).bwgrey,
                             boxShadow: [
@@ -383,7 +383,7 @@ class _MarksWidgetState extends State<MarksWidget>
                                             .override(
                                               fontFamily: 'Montserrat',
                                               color: Colors.white,
-                                              fontSize: 18.0,
+                                              fontSize: 20.0,
                                             ),
                                       ),
                                     ),
@@ -400,7 +400,7 @@ class _MarksWidgetState extends State<MarksWidget>
                         ),
                         Container(
                           width: double.infinity,
-                          height: 85.0,
+                          height: 75.0,
                           decoration: BoxDecoration(
                             color: FlutterFlowTheme.of(context).bwgrey,
                             boxShadow: [
@@ -479,7 +479,7 @@ class _MarksWidgetState extends State<MarksWidget>
                                             .override(
                                               fontFamily: 'Montserrat',
                                               color: Colors.white,
-                                              fontSize: 18.0,
+                                              fontSize: 20.0,
                                             ),
                                       ),
                                     ),
@@ -496,7 +496,7 @@ class _MarksWidgetState extends State<MarksWidget>
                         ),
                         Container(
                           width: double.infinity,
-                          height: 85.0,
+                          height: 75.0,
                           decoration: BoxDecoration(
                             color: FlutterFlowTheme.of(context).bwgrey,
                             boxShadow: [
@@ -575,7 +575,7 @@ class _MarksWidgetState extends State<MarksWidget>
                                             .override(
                                               fontFamily: 'Montserrat',
                                               color: Colors.white,
-                                              fontSize: 18.0,
+                                              fontSize: 20.0,
                                             ),
                                       ),
                                     ),
@@ -592,7 +592,7 @@ class _MarksWidgetState extends State<MarksWidget>
                         ),
                         Container(
                           width: double.infinity,
-                          height: 85.0,
+                          height: 75.0,
                           decoration: BoxDecoration(
                             color: FlutterFlowTheme.of(context).bwgrey,
                             boxShadow: [
@@ -671,7 +671,7 @@ class _MarksWidgetState extends State<MarksWidget>
                                             .override(
                                               fontFamily: 'Montserrat',
                                               color: Colors.white,
-                                              fontSize: 18.0,
+                                              fontSize: 20.0,
                                             ),
                                       ),
                                     ),
@@ -688,7 +688,7 @@ class _MarksWidgetState extends State<MarksWidget>
                         ),
                         Container(
                           width: double.infinity,
-                          height: 85.0,
+                          height: 75.0,
                           decoration: BoxDecoration(
                             color: FlutterFlowTheme.of(context).bwgrey,
                             boxShadow: [
@@ -772,7 +772,7 @@ class _MarksWidgetState extends State<MarksWidget>
                                             .override(
                                               fontFamily: 'Montserrat',
                                               color: Colors.white,
-                                              fontSize: 18.0,
+                                              fontSize: 20.0,
                                             ),
                                       ),
                                     ),
