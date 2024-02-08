@@ -770,7 +770,7 @@ class _MarksWidgetState extends State<MarksWidget>
                                                   listViewMarksRecord.mid,
                                                   listViewMarksRecord.minor2,
                                                   listViewMarksRecord.end))
-                                          : const Color(0xFFB3C100),
+                                          : const Color(0xFFD32D41),
                                       shape: BoxShape.circle,
                                     ),
                                     child: Align(
