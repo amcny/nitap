@@ -543,7 +543,7 @@ class _EceaWidgetState extends State<EceaWidget> {
                               padding: const EdgeInsets.all(0.0),
                               iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
-                              color: const Color(0xFFC4302B),
+                              color: const Color(0xFFA60000),
                               textStyle: FlutterFlowTheme.of(context)
                                   .titleMedium
                                   .override(

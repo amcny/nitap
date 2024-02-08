@@ -539,7 +539,7 @@ class _EcehWidgetState extends State<EcehWidget> {
                               padding: const EdgeInsets.all(0.0),
                               iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
-                              color: const Color(0xFFBB001B),
+                              color: const Color(0xFFA60000),
                               textStyle: FlutterFlowTheme.of(context)
                                   .titleMedium
                                   .override(

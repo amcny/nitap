@@ -752,25 +752,25 @@ class _MarksWidgetState extends State<MarksWidget>
                                     width: 85.0,
                                     height: 85.0,
                                     decoration: BoxDecoration(
-                                      color: (listViewMarksRecord.minor1 !=
+                                      color: (listViewMarksRecord
+                                                          .minor1 !=
                                                       '') &&
-                                              (listViewMarksRecord.mid !=
+                                              (listViewMarksRecord
+                                                          .mid !=
                                                       '') &&
                                               (listViewMarksRecord.minor2 !=
                                                       '') &&
                                               (listViewMarksRecord.end != '')
                                           ? functions.color(
+                                              const Color(0xFFD32D41),
                                               FlutterFlowTheme.of(context)
-                                                  .alternate,
-                                              FlutterFlowTheme.of(context)
-                                                  .secondary,
+                                                  .success,
                                               functions.addmarks(
                                                   listViewMarksRecord.minor1,
                                                   listViewMarksRecord.mid,
                                                   listViewMarksRecord.minor2,
                                                   listViewMarksRecord.end))
-                                          : FlutterFlowTheme.of(context)
-                                              .warning,
+                                          : const Color(0xFFB3C100),
                                       shape: BoxShape.circle,
                                     ),
                                     child: Align(

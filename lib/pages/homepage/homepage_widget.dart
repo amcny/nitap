@@ -1498,7 +1498,7 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                 gradient: LinearGradient(
                                   colors: [
                                     FlutterFlowTheme.of(context).primary,
-                                    FlutterFlowTheme.of(context).alternate
+                                    const Color(0xFFF93E46)
                                   ],
                                   stops: const [0.0, 1.0],
                                   begin: const AlignmentDirectional(1.0, -1.0),
