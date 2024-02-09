@@ -497,7 +497,7 @@ class _HomepageWidgetState extends State<HomepageWidget>
                   if (getRemoteConfigBool('ad'))
                     const Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(5.0, 5.0, 5.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
                       child: FlutterFlowAdBanner(
                         height: 60.0,
                         showsTestAd: false,
@@ -510,8 +510,8 @@ class _HomepageWidgetState extends State<HomepageWidget>
                     Align(
                       alignment: const AlignmentDirectional(-1.0, 0.0),
                       child: Padding(
-                        padding:
-                            const EdgeInsetsDirectional.fromSTEB(15.0, 5.0, 0.0, 5.0),
+                        padding: const EdgeInsetsDirectional.fromSTEB(
+                            15.0, 10.0, 0.0, 5.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.min,
                           children: [
