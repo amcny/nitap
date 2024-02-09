@@ -16,7 +16,7 @@ Future<String> versionActual() async {
 
   PackageInfo packageInfo = await PackageInfo.fromPlatform();
 
-  return 'V. ${packageInfo.version} (${packageInfo.buildNumber})';
+  return 'Version ${packageInfo.version}';
 }
 
 // Set your action name, define your arguments and return parameter,

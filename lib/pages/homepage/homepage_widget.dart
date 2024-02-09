@@ -783,7 +783,7 @@ class _HomepageWidgetState extends State<HomepageWidget>
                     alignment: const AlignmentDirectional(-1.0, 0.0),
                     child: Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(15.0, 5.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(15.0, 10.0, 0.0, 0.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.min,
                         children: [
