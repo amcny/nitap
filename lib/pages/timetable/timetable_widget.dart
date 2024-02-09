@@ -530,6 +530,8 @@ class _TimetableWidgetState extends State<TimetableWidget>
                                           Expanded(
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
                                               children: [
                                                 Text(
                                                   dataItem.course,
