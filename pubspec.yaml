@@ -105,7 +105,6 @@ dependencies:
   sqflite: 2.2.6
   sticky_headers: 0.3.0+2
   stream_transform: 2.1.0
-  text_scroll: ^0.2.0
   timeago: 3.2.2
   url_launcher: 6.1.10
   url_launcher_android: 6.0.27
