@@ -214,7 +214,7 @@ class _DevWidgetState extends State<DevWidget> {
                           text: 'Linkedin',
                           icon: const FaIcon(
                             FontAwesomeIcons.linkedinIn,
-                            size: 24.0,
+                            size: 22.0,
                           ),
                           options: FFButtonOptions(
                             width: 150.0,

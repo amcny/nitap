@@ -210,7 +210,7 @@ class _SignupWidgetState extends State<SignupWidget> {
                                     showDuration: const Duration(milliseconds: 1500),
                                     triggerMode: TooltipTriggerMode.tap,
                                     child: Icon(
-                                      Icons.info_outlined,
+                                      FFIcons.kinfo,
                                       color: FlutterFlowTheme.of(context)
                                           .secondaryText,
                                       size: 19.0,

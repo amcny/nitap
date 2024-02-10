@@ -149,9 +149,9 @@ class _SupportWidgetState extends State<SupportWidget> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const Icon(
-                    Icons.email_rounded,
-                    color: Color(0x9895A1AC),
-                    size: 15.0,
+                    FFIcons.kmail,
+                    color: Color(0xFF95A1AC),
+                    size: 19.0,
                   ),
                   Padding(
                     padding:
@@ -161,7 +161,7 @@ class _SupportWidgetState extends State<SupportWidget> {
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                             fontFamily: 'Poppins',
                             color: const Color(0xFF95A1AC),
-                            fontWeight: FontWeight.w600,
+                            fontWeight: FontWeight.w500,
                           ),
                     ),
                   ),

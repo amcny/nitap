@@ -164,9 +164,9 @@ flutter:
     - family: Iconpack
       fonts:
         - asset: assets/fonts/iconpack.ttf
-    - family: Ico
+    - family: Icons
       fonts:
-        - asset: assets/fonts/Ico.ttf
+        - asset: assets/fonts/Icons.ttf
 
   
   # An image asset can refer to one or more resolution-specific "variants", see

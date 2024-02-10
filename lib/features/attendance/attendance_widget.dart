@@ -231,7 +231,7 @@ class _AttendanceWidgetState extends State<AttendanceWidget> {
                                 ).then((value) => setState(() {}));
                               },
                               child: Icon(
-                                FFIcons.kadd,
+                                FFIcons.kedit,
                                 color: FlutterFlowTheme.of(context).primary,
                                 size: 24.0,
                               ),

@@ -244,7 +244,8 @@ class _AlumnicardWidgetState extends State<AlumnicardWidget> {
                                   },
                                   text: 'Linkedin',
                                   icon: const FaIcon(
-                                    FontAwesomeIcons.linkedin,
+                                    FontAwesomeIcons.linkedinIn,
+                                    size: 22.0,
                                   ),
                                   options: FFButtonOptions(
                                     width: 135.0,

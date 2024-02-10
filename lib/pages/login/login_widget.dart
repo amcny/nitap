@@ -177,8 +177,12 @@ class _LoginWidgetState extends State<LoginWidget> {
                               children: [
                                 Text(
                                   'Using Institute E-mail credentials',
-                                  style:
-                                      FlutterFlowTheme.of(context).labelMedium,
+                                  style: FlutterFlowTheme.of(context)
+                                      .labelMedium
+                                      .override(
+                                        fontFamily: 'Poppins',
+                                        fontSize: 12.0,
+                                      ),
                                 ),
                                 Padding(
                                   padding: const EdgeInsetsDirectional.fromSTEB(
@@ -209,7 +213,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                     showDuration: const Duration(milliseconds: 1500),
                                     triggerMode: TooltipTriggerMode.tap,
                                     child: Icon(
-                                      Icons.info_outlined,
+                                      FFIcons.kinfo,
                                       color: FlutterFlowTheme.of(context)
                                           .secondaryText,
                                       size: 19.0,
