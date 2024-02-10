@@ -1,4 +1,4 @@
-import '/components/nodetails_widget.dart';
+import '/components/nodetails/nodetails_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'exam_widget.dart' show ExamWidget;
 import 'package:flutter/material.dart';

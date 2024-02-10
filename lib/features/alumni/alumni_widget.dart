@@ -1,6 +1,6 @@
 import '/backend/backend.dart';
 import '/components/alumnicard/alumnicard_widget.dart';
-import '/components/nodetails_widget.dart';
+import '/components/nodetails/nodetails_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
