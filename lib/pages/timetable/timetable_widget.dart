@@ -447,7 +447,7 @@ class _TimetableWidgetState extends State<TimetableWidget>
                                                                 .primary,
                                                         fontSize: 17.0,
                                                         fontWeight:
-                                                            FontWeight.normal,
+                                                            FontWeight.w500,
                                                       ),
                                                 ),
                                               ),
@@ -495,7 +495,7 @@ class _TimetableWidgetState extends State<TimetableWidget>
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
-                                                                .primary,
+                                                                .accent1,
                                                         size: 20.0,
                                                       ),
                                                     ),
