@@ -1,4 +1,5 @@
 import '/backend/backend.dart';
+import '/components/nodetails_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -125,6 +126,11 @@ class _WhatnewWidgetState extends State<WhatnewWidget>
               );
             }
             List<WhatNewRecord> listViewWhatNewRecordList = snapshot.data!;
+            if (listViewWhatNewRecordList.isEmpty) {
+              return const Center(
+                child: NodetailsWidget(),
+              );
+            }
             return ListView.separated(
               padding: const EdgeInsets.symmetric(vertical: 15.0),
               scrollDirection: Axis.vertical,

@@ -1,4 +1,5 @@
 import '/backend/backend.dart';
+import '/components/nodetails_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_expanded_image_view.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
@@ -9,7 +10,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
 import 'academic_model.dart';
 export 'academic_model.dart';
@@ -126,13 +126,8 @@ class _AcademicWidgetState extends State<AcademicWidget>
             }
             List<AcademicRecord> listViewAcademicRecordList = snapshot.data!;
             if (listViewAcademicRecordList.isEmpty) {
-              return Center(
-                child: SvgPicture.asset(
-                  'assets/images/404.svg',
-                  width: MediaQuery.sizeOf(context).width * 0.8,
-                  height: MediaQuery.sizeOf(context).height * 0.8,
-                  fit: BoxFit.contain,
-                ),
+              return const Center(
+                child: NodetailsWidget(),
               );
             }
             return ListView.builder(

@@ -1,5 +1,6 @@
 import '/backend/backend.dart';
 import '/components/alumnicard/alumnicard_widget.dart';
+import '/components/nodetails_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -8,7 +9,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
 import 'alumni_model.dart';
 export 'alumni_model.dart';
@@ -139,13 +139,8 @@ class _AlumniWidgetState extends State<AlumniWidget>
             }
             List<AlumniRecord> listViewAlumniRecordList = snapshot.data!;
             if (listViewAlumniRecordList.isEmpty) {
-              return Center(
-                child: SvgPicture.asset(
-                  'assets/images/404.svg',
-                  width: MediaQuery.sizeOf(context).width * 0.8,
-                  height: MediaQuery.sizeOf(context).height * 0.8,
-                  fit: BoxFit.contain,
-                ),
+              return const Center(
+                child: NodetailsWidget(),
               );
             }
             return ListView.builder(
