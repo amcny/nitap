@@ -752,25 +752,8 @@ class _MarksWidgetState extends State<MarksWidget>
                                     width: 85.0,
                                     height: 85.0,
                                     decoration: BoxDecoration(
-                                      color: (listViewMarksRecord
-                                                          .minor1 !=
-                                                      '') &&
-                                              (listViewMarksRecord
-                                                          .mid !=
-                                                      '') &&
-                                              (listViewMarksRecord.minor2 !=
-                                                      '') &&
-                                              (listViewMarksRecord.end != '')
-                                          ? functions.color(
-                                              const Color(0xFFD32D41),
-                                              FlutterFlowTheme.of(context)
-                                                  .success,
-                                              functions.addmarks(
-                                                  listViewMarksRecord.minor1,
-                                                  listViewMarksRecord.mid,
-                                                  listViewMarksRecord.minor2,
-                                                  listViewMarksRecord.end))
-                                          : const Color(0xFFD32D41),
+                                      color:
+                                          FlutterFlowTheme.of(context).primary,
                                       shape: BoxShape.circle,
                                     ),
                                     child: Align(
