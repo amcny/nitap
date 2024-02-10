@@ -27,9 +27,9 @@ class _TimetableWidgetState extends State<TimetableWidget>
   late TimetableModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
-  var hasColumnTriggered = false;
+  var hasContainerTriggered = false;
   final animationsMap = {
-    'columnOnPageLoadAnimation1': AnimationInfo(
+    'columnOnPageLoadAnimation': AnimationInfo(
       trigger: AnimationTrigger.onPageLoad,
       effects: [
         FadeEffect(
@@ -41,7 +41,7 @@ class _TimetableWidgetState extends State<TimetableWidget>
         ),
       ],
     ),
-    'columnOnPageLoadAnimation2': AnimationInfo(
+    'containerOnPageLoadAnimation': AnimationInfo(
       trigger: AnimationTrigger.onPageLoad,
       applyInitialState: false,
       effects: [
@@ -61,7 +61,7 @@ class _TimetableWidgetState extends State<TimetableWidget>
         ),
       ],
     ),
-    'columnOnActionTriggerAnimation': AnimationInfo(
+    'containerOnActionTriggerAnimation': AnimationInfo(
       trigger: AnimationTrigger.onActionTrigger,
       applyInitialState: false,
       effects: [
@@ -96,7 +96,7 @@ class _TimetableWidgetState extends State<TimetableWidget>
     );
 
     SchedulerBinding.instance.addPostFrameCallback((_) {
-      animationsMap['columnOnPageLoadAnimation2']!
+      animationsMap['containerOnPageLoadAnimation']!
           .controller
           .forward(from: 0.0);
     });
@@ -229,12 +229,13 @@ class _TimetableWidgetState extends State<TimetableWidget>
                                         dateTimeFormat('EEEE', daysItem);
                                   });
                                   if (animationsMap[
-                                          'columnOnActionTriggerAnimation'] !=
+                                          'containerOnActionTriggerAnimation'] !=
                                       null) {
-                                    setState(() => hasColumnTriggered = true);
+                                    setState(
+                                        () => hasContainerTriggered = true);
                                     SchedulerBinding.instance.addPostFrameCallback(
-                                        (_) async => await animationsMap[
-                                                'columnOnActionTriggerAnimation']!
+                                        (_) async => animationsMap[
+                                                'containerOnActionTriggerAnimation']!
                                             .controller
                                             .forward(from: 0.0));
                                   }
@@ -379,7 +380,7 @@ class _TimetableWidgetState extends State<TimetableWidget>
                           );
                         }
                         return Column(
-                          mainAxisSize: MainAxisSize.min,
+                          mainAxisSize: MainAxisSize.max,
                           children: List.generate(data.length, (dataIndex) {
                             final dataItem = data[dataIndex];
                             return Padding(
@@ -495,7 +496,7 @@ class _TimetableWidgetState extends State<TimetableWidget>
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
-                                                                .accent1,
+                                                                .primary,
                                                         size: 20.0,
                                                       ),
                                                     ),
@@ -541,14 +542,14 @@ class _TimetableWidgetState extends State<TimetableWidget>
                                                             ),
                                                           )
                                                         ],
-                                                        style:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Open Sans',
-                                                                ),
+                                                        style: FlutterFlowTheme
+                                                                .of(context)
+                                                            .bodyMedium
+                                                            .override(
+                                                              fontFamily:
+                                                                  'Open Sans',
+                                                              fontSize: 14.0,
+                                                            ),
                                                       ),
                                                     ),
                                                   ],
@@ -561,21 +562,21 @@ class _TimetableWidgetState extends State<TimetableWidget>
                                     ],
                                   ),
                                 ),
-                              ),
+                              )
+                                  .animateOnPageLoad(animationsMap[
+                                      'containerOnPageLoadAnimation']!)
+                                  .animateOnActionTrigger(
+                                      animationsMap[
+                                          'containerOnActionTriggerAnimation']!,
+                                      hasBeenTriggered: hasContainerTriggered),
                             );
                           }).addToEnd(const SizedBox(height: 20.0)),
-                        )
-                            .animateOnPageLoad(
-                                animationsMap['columnOnPageLoadAnimation2']!)
-                            .animateOnActionTrigger(
-                                animationsMap[
-                                    'columnOnActionTriggerAnimation']!,
-                                hasBeenTriggered: hasColumnTriggered);
+                        );
                       },
                     ),
                   ],
                 ),
-              ).animateOnPageLoad(animationsMap['columnOnPageLoadAnimation1']!),
+              ).animateOnPageLoad(animationsMap['columnOnPageLoadAnimation']!),
             ),
           ),
         );
