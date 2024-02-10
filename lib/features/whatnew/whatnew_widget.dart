@@ -125,10 +125,11 @@ class _WhatnewWidgetState extends State<WhatnewWidget>
               );
             }
             List<WhatNewRecord> listViewWhatNewRecordList = snapshot.data!;
-            return ListView.builder(
-              padding: EdgeInsets.zero,
+            return ListView.separated(
+              padding: const EdgeInsets.symmetric(vertical: 15.0),
               scrollDirection: Axis.vertical,
               itemCount: listViewWhatNewRecordList.length,
+              separatorBuilder: (_, __) => const SizedBox(height: 15.0),
               itemBuilder: (context, listViewIndex) {
                 final listViewWhatNewRecord =
                     listViewWhatNewRecordList[listViewIndex];

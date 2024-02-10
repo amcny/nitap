@@ -353,19 +353,15 @@ class _TimetableWidgetState extends State<TimetableWidget>
                       ),
                     ),
                     if (getRemoteConfigBool('ad'))
-                      const Align(
-                        alignment: AlignmentDirectional(0.0, 0.97),
-                        child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              5.0, 20.0, 5.0, 0.0),
-                          child: FlutterFlowAdBanner(
-                            height: 60.0,
-                            showsTestAd: false,
-                            iOSAdUnitID:
-                                'ca-app-pub-3991707481593664/6921520622',
-                            androidAdUnitID:
-                                'ca-app-pub-3991707481593664/3272729973',
-                          ),
+                      const Padding(
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(5.0, 20.0, 5.0, 0.0),
+                        child: FlutterFlowAdBanner(
+                          height: 60.0,
+                          showsTestAd: false,
+                          iOSAdUnitID: 'ca-app-pub-3991707481593664/6921520622',
+                          androidAdUnitID:
+                              'ca-app-pub-3991707481593664/3272729973',
                         ),
                       ),
                     Padding(
@@ -405,7 +401,7 @@ class _TimetableWidgetState extends State<TimetableWidget>
                                 child: Text(
                                   valueOrDefault<String>(
                                     timetableTimetableRecord?.day,
-                                    'day',
+                                    'No Classes Today',
                                   ),
                                   style: FlutterFlowTheme.of(context)
                                       .bodyLarge
@@ -504,13 +500,13 @@ class _TimetableWidgetState extends State<TimetableWidget>
                                 if (data.isEmpty) {
                                   return Center(
                                     child: SvgPicture.asset(
-                                      'assets/images/logout.svg',
+                                      'assets/images/tt_noclass.svg',
                                       width: MediaQuery.sizeOf(context).width *
-                                          0.5,
+                                          1.0,
                                       height:
                                           MediaQuery.sizeOf(context).height *
-                                              0.35,
-                                      fit: BoxFit.cover,
+                                              0.3,
+                                      fit: BoxFit.contain,
                                     ),
                                   );
                                 }
