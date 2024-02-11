@@ -96,7 +96,7 @@ class _SyllabusinfoWidgetState extends State<SyllabusinfoWidget> {
               },
             ),
             title: Text(
-              syllabusinfoSyllabusRecord.yearname,
+              'Syllabus',
               style: FlutterFlowTheme.of(context).headlineMedium.override(
                     fontFamily: 'Poppins',
                     color: FlutterFlowTheme.of(context).primaryText,

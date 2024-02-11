@@ -151,7 +151,7 @@ class _ExamWidgetState extends State<ExamWidget> {
                       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                         crossAxisCount: 2,
                         crossAxisSpacing: 15.0,
-                        mainAxisSpacing: 17.0,
+                        mainAxisSpacing: 15.0,
                         childAspectRatio: 1.0,
                       ),
                       scrollDirection: Axis.vertical,
@@ -170,8 +170,16 @@ class _ExamWidgetState extends State<ExamWidget> {
                               width: 160.0,
                               height: 145.0,
                               decoration: BoxDecoration(
-                                color: FlutterFlowTheme.of(context).primary,
-                                borderRadius: BorderRadius.circular(25.0),
+                                gradient: LinearGradient(
+                                  colors: [
+                                    const Color(0xCB1A73E8),
+                                    FlutterFlowTheme.of(context).primary
+                                  ],
+                                  stops: const [0.0, 1.0],
+                                  begin: const AlignmentDirectional(-1.0, -1.0),
+                                  end: const AlignmentDirectional(1.0, 1.0),
+                                ),
+                                borderRadius: BorderRadius.circular(24.0),
                               ),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
@@ -210,8 +218,16 @@ class _ExamWidgetState extends State<ExamWidget> {
                               width: 160.0,
                               height: 145.0,
                               decoration: BoxDecoration(
-                                color: FlutterFlowTheme.of(context).primary,
-                                borderRadius: BorderRadius.circular(25.0),
+                                gradient: LinearGradient(
+                                  colors: [
+                                    const Color(0xCB1A73E8),
+                                    FlutterFlowTheme.of(context).primary
+                                  ],
+                                  stops: const [0.0, 1.0],
+                                  begin: const AlignmentDirectional(-1.0, -1.0),
+                                  end: const AlignmentDirectional(1.0, 1.0),
+                                ),
+                                borderRadius: BorderRadius.circular(24.0),
                               ),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
@@ -250,8 +266,16 @@ class _ExamWidgetState extends State<ExamWidget> {
                               width: 160.0,
                               height: 145.0,
                               decoration: BoxDecoration(
-                                color: FlutterFlowTheme.of(context).primary,
-                                borderRadius: BorderRadius.circular(25.0),
+                                gradient: LinearGradient(
+                                  colors: [
+                                    const Color(0xCB1A73E8),
+                                    FlutterFlowTheme.of(context).primary
+                                  ],
+                                  stops: const [0.0, 1.0],
+                                  begin: const AlignmentDirectional(-1.0, -1.0),
+                                  end: const AlignmentDirectional(1.0, 1.0),
+                                ),
+                                borderRadius: BorderRadius.circular(24.0),
                               ),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
@@ -291,8 +315,16 @@ class _ExamWidgetState extends State<ExamWidget> {
                               width: 160.0,
                               height: 145.0,
                               decoration: BoxDecoration(
-                                color: FlutterFlowTheme.of(context).primary,
-                                borderRadius: BorderRadius.circular(25.0),
+                                gradient: LinearGradient(
+                                  colors: [
+                                    const Color(0xCB1A73E8),
+                                    FlutterFlowTheme.of(context).primary
+                                  ],
+                                  stops: const [0.0, 1.0],
+                                  begin: const AlignmentDirectional(-1.0, -1.0),
+                                  end: const AlignmentDirectional(1.0, 1.0),
+                                ),
+                                borderRadius: BorderRadius.circular(24.0),
                               ),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,

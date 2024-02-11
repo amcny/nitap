@@ -88,41 +88,43 @@ class _SyllabusWidgetState extends State<SyllabusWidget> {
           mainAxisSize: MainAxisSize.max,
           children: [
             Expanded(
-              child: StreamBuilder<List<SyllabusRecord>>(
-                stream: querySyllabusRecord(
-                  queryBuilder: (syllabusRecord) =>
-                      syllabusRecord.orderBy('order'),
-                ),
-                builder: (context, snapshot) {
-                  // Customize what your widget looks like when it's loading.
-                  if (!snapshot.hasData) {
-                    return Center(
-                      child: SizedBox(
-                        width: 30.0,
-                        height: 30.0,
-                        child: SpinKitThreeBounce(
-                          color: FlutterFlowTheme.of(context).primary,
-                          size: 30.0,
+              child: Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: StreamBuilder<List<SyllabusRecord>>(
+                  stream: querySyllabusRecord(
+                    queryBuilder: (syllabusRecord) =>
+                        syllabusRecord.orderBy('order'),
+                  ),
+                  builder: (context, snapshot) {
+                    // Customize what your widget looks like when it's loading.
+                    if (!snapshot.hasData) {
+                      return Center(
+                        child: SizedBox(
+                          width: 30.0,
+                          height: 30.0,
+                          child: SpinKitThreeBounce(
+                            color: FlutterFlowTheme.of(context).primary,
+                            size: 30.0,
+                          ),
                         ),
+                      );
+                    }
+                    List<SyllabusRecord> gridViewSyllabusRecordList =
+                        snapshot.data!;
+                    return GridView.builder(
+                      padding: EdgeInsets.zero,
+                      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 2,
+                        crossAxisSpacing: 20.0,
+                        mainAxisSpacing: 20.0,
+                        childAspectRatio: 1.05,
                       ),
-                    );
-                  }
-                  List<SyllabusRecord> gridViewSyllabusRecordList =
-                      snapshot.data!;
-                  return GridView.builder(
-                    padding: EdgeInsets.zero,
-                    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2,
-                      childAspectRatio: 1.0,
-                    ),
-                    scrollDirection: Axis.vertical,
-                    itemCount: gridViewSyllabusRecordList.length,
-                    itemBuilder: (context, gridViewIndex) {
-                      final gridViewSyllabusRecord =
-                          gridViewSyllabusRecordList[gridViewIndex];
-                      return Padding(
-                        padding: const EdgeInsets.all(20.0),
-                        child: InkWell(
+                      scrollDirection: Axis.vertical,
+                      itemCount: gridViewSyllabusRecordList.length,
+                      itemBuilder: (context, gridViewIndex) {
+                        final gridViewSyllabusRecord =
+                            gridViewSyllabusRecordList[gridViewIndex];
+                        return InkWell(
                           splashColor: Colors.transparent,
                           focusColor: Colors.transparent,
                           hoverColor: Colors.transparent,
@@ -147,7 +149,6 @@ class _SyllabusWidgetState extends State<SyllabusWidget> {
                           },
                           child: Container(
                             width: MediaQuery.sizeOf(context).width * 0.5,
-                            height: 150.0,
                             decoration: BoxDecoration(
                               gradient: LinearGradient(
                                 colors: [
@@ -158,7 +159,7 @@ class _SyllabusWidgetState extends State<SyllabusWidget> {
                                 begin: const AlignmentDirectional(-1.0, -1.0),
                                 end: const AlignmentDirectional(1.0, 1.0),
                               ),
-                              borderRadius: BorderRadius.circular(12.0),
+                              borderRadius: BorderRadius.circular(24.0),
                             ),
                             child: Align(
                               alignment: const AlignmentDirectional(-1.0, -1.0),
@@ -179,11 +180,11 @@ class _SyllabusWidgetState extends State<SyllabusWidget> {
                               ),
                             ),
                           ),
-                        ),
-                      );
-                    },
-                  );
-                },
+                        );
+                      },
+                    );
+                  },
+                ),
               ),
             ),
           ],
