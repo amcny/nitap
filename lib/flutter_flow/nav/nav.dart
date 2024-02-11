@@ -121,10 +121,10 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => const AppearaceWidget(),
             ),
             FFRoute(
-              name: 'curriculum',
-              path: 'curriculum',
+              name: 'syllabus',
+              path: 'syllabus',
               requireAuth: true,
-              builder: (context, params) => const CurriculumWidget(),
+              builder: (context, params) => const SyllabusWidget(),
             ),
             FFRoute(
               name: 'wsdc',
@@ -250,6 +250,15 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               path: 'whatnew',
               requireAuth: true,
               builder: (context, params) => const WhatnewWidget(),
+            ),
+            FFRoute(
+              name: 'syllabusinfo',
+              path: 'syllabusinfo',
+              requireAuth: true,
+              builder: (context, params) => SyllabusinfoWidget(
+                url: params.getParam(
+                    'url', ParamType.DocumentReference, false, ['syllabus']),
+              ),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),

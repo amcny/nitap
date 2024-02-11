@@ -1250,7 +1250,7 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                       hoverColor: Colors.transparent,
                                       highlightColor: Colors.transparent,
                                       onTap: () async {
-                                        context.pushNamed('curriculum');
+                                        context.pushNamed('syllabus');
                                       },
                                       child: Column(
                                         mainAxisSize: MainAxisSize.min,

@@ -1,8 +1,8 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'curriculum_widget.dart' show CurriculumWidget;
+import 'syllabusinfo_widget.dart' show SyllabusinfoWidget;
 import 'package:flutter/material.dart';
 
-class CurriculumModel extends FlutterFlowModel<CurriculumWidget> {
+class SyllabusinfoModel extends FlutterFlowModel<SyllabusinfoWidget> {
   /// Initialization and disposal methods.
 
   @override

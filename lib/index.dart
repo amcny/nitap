@@ -4,7 +4,7 @@ export '/features/academic/academic_widget.dart' show AcademicWidget;
 export '/pages/database/database_widget.dart' show DatabaseWidget;
 export '/pages/settings/settings_widget.dart' show SettingsWidget;
 export '/features/appearace/appearace_widget.dart' show AppearaceWidget;
-export '/features/curriculum/curriculum_widget.dart' show CurriculumWidget;
+export '/features/syllabus/syllabus_widget.dart' show SyllabusWidget;
 export '/features/wsdc/wsdc_widget.dart' show WsdcWidget;
 export '/pages/onboarding/onboarding_widget.dart' show OnboardingWidget;
 export '/features/exam/exam_widget.dart' show ExamWidget;
@@ -25,3 +25,5 @@ export '/features/foryouinfo/foryouinfo_widget.dart' show ForyouinfoWidget;
 export '/features/alumni/alumni_widget.dart' show AlumniWidget;
 export '/features/marks/marks_widget.dart' show MarksWidget;
 export '/features/whatnew/whatnew_widget.dart' show WhatnewWidget;
+export '/features/syllabusinfo/syllabusinfo_widget.dart'
+    show SyllabusinfoWidget;
