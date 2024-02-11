@@ -80,6 +80,33 @@ class _CurriculumWidgetState extends State<CurriculumWidget> {
         centerTitle: false,
         elevation: 0.0,
       ),
+      body: SafeArea(
+        top: true,
+        child: Column(
+          mainAxisSize: MainAxisSize.max,
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Container(
+                width: MediaQuery.sizeOf(context).width * 1.0,
+                height: 100.0,
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    colors: [
+                      const Color(0xCB1A73E8),
+                      FlutterFlowTheme.of(context).primary
+                    ],
+                    stops: const [0.0, 1.0],
+                    begin: const AlignmentDirectional(-1.0, -1.0),
+                    end: const AlignmentDirectional(1.0, 1.0),
+                  ),
+                  borderRadius: BorderRadius.circular(12.0),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
