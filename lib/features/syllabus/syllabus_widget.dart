@@ -37,9 +37,8 @@ class _SyllabusWidgetState extends State<SyllabusWidget>
         ),
       ],
     ),
-    'containerOnActionTriggerAnimation': AnimationInfo(
-      trigger: AnimationTrigger.onActionTrigger,
-      applyInitialState: true,
+    'containerOnPageLoadAnimation': AnimationInfo(
+      trigger: AnimationTrigger.onPageLoad,
       effects: [
         ScaleEffect(
           curve: Curves.easeInOut,
@@ -56,13 +55,6 @@ class _SyllabusWidgetState extends State<SyllabusWidget>
   void initState() {
     super.initState();
     _model = createModel(context, () => SyllabusModel());
-
-    setupAnimations(
-      animationsMap.values.where((anim) =>
-          anim.trigger == AnimationTrigger.onActionTrigger ||
-          !anim.applyInitialState),
-      this,
-    );
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
@@ -147,8 +139,8 @@ class _SyllabusWidgetState extends State<SyllabusWidget>
                 padding: EdgeInsets.zero,
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
-                  crossAxisSpacing: 15.0,
-                  mainAxisSpacing: 15.0,
+                  crossAxisSpacing: 20.0,
+                  mainAxisSpacing: 20.0,
                   childAspectRatio: 1.0,
                 ),
                 scrollDirection: Axis.vertical,
@@ -211,9 +203,8 @@ class _SyllabusWidgetState extends State<SyllabusWidget>
                         ),
                       ),
                     ),
-                  ).animateOnActionTrigger(
-                    animationsMap['containerOnActionTriggerAnimation']!,
-                  );
+                  ).animateOnPageLoad(
+                      animationsMap['containerOnPageLoadAnimation']!);
                 },
               ).animateOnPageLoad(
                   animationsMap['gridViewOnPageLoadAnimation']!);
