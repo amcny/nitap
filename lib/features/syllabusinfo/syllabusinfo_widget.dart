@@ -96,10 +96,8 @@ class _SyllabusinfoWidgetState extends State<SyllabusinfoWidget> {
               },
             ),
             title: Text(
-              syllabusinfoSyllabusRecord.yearname.maybeHandleOverflow(
-                maxChars: 6,
-                replacement: '…',
-              ),
+              syllabusinfoSyllabusRecord.yearname
+                  .maybeHandleOverflow(maxChars: 6),
               style: FlutterFlowTheme.of(context).headlineMedium.override(
                     fontFamily: 'Poppins',
                     color: FlutterFlowTheme.of(context).primaryText,
