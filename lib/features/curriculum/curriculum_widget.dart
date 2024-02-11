@@ -68,7 +68,7 @@ class _CurriculumWidgetState extends State<CurriculumWidget> {
           },
         ),
         title: Text(
-          'ECE Curriculum',
+          'ECE Syllabus',
           style: FlutterFlowTheme.of(context).headlineMedium.override(
                 fontFamily: 'Poppins',
                 color: FlutterFlowTheme.of(context).primaryText,

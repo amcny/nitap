@@ -151,9 +151,6 @@ flutter:
     - family: Icons
       fonts:
         - asset: assets/fonts/Icons.ttf
-    - family: File
-      fonts:
-        - asset: assets/fonts/File.ttf
 
   
   # An image asset can refer to one or more resolution-specific "variants", see

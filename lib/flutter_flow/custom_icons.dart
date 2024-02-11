@@ -5,7 +5,6 @@ class FFIcons {
 
   static const String _iconpackFamily = 'Iconpack';
   static const String _iconsFamily = 'Icons';
-  static const String _fileFamily = 'File';
 
   // iconpack
   static const IconData kprofileFilled =
@@ -30,7 +29,4 @@ class FFIcons {
   static const IconData kdelete = IconData(0xe801, fontFamily: _iconsFamily);
   static const IconData kedit = IconData(0xe802, fontFamily: _iconsFamily);
   static const IconData kinfo = IconData(0xe803, fontFamily: _iconsFamily);
-
-  // File
-  static const IconData kfile = IconData(0xe800, fontFamily: _fileFamily);
 }
