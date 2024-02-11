@@ -1268,11 +1268,11 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                             alignment:
                                                 const AlignmentDirectional(0.0, 0.0),
                                             child: FaIcon(
-                                              FontAwesomeIcons.solidIdCard,
+                                              FontAwesomeIcons.fileAlt,
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primary,
-                                              size: 20.0,
+                                              size: 24.0,
                                             ),
                                           ),
                                           Padding(
@@ -1280,7 +1280,7 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                                 const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 5.0, 0.0, 0.0),
                                             child: Text(
-                                              'ID Card',
+                                              'Syllabus',
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .bodySmall
