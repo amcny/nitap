@@ -121,10 +121,10 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => const AppearaceWidget(),
             ),
             FFRoute(
-              name: 'idcard',
-              path: 'idcard',
+              name: 'curriculum',
+              path: 'curriculum',
               requireAuth: true,
-              builder: (context, params) => const IdcardWidget(),
+              builder: (context, params) => const CurriculumWidget(),
             ),
             FFRoute(
               name: 'wsdc',
