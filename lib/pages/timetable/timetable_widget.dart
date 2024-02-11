@@ -502,7 +502,7 @@ class _TimetableWidgetState extends State<TimetableWidget>
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .primary,
-                                                          size: 20.0,
+                                                          size: 19.0,
                                                         ),
                                                       ),
                                                       RichText(
@@ -525,10 +525,10 @@ class _TimetableWidgetState extends State<TimetableWidget>
                                                                             context)
                                                                         .success,
                                                                     fontSize:
-                                                                        14.5,
+                                                                        15.0,
                                                                     fontWeight:
                                                                         FontWeight
-                                                                            .w600,
+                                                                            .w500,
                                                                   ),
                                                             ),
                                                             TextSpan(
@@ -539,7 +539,7 @@ class _TimetableWidgetState extends State<TimetableWidget>
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primaryText,
-                                                                fontSize: 14.5,
+                                                                fontSize: 15.0,
                                                               ),
                                                             ),
                                                             TextSpan(
@@ -555,10 +555,10 @@ class _TimetableWidgetState extends State<TimetableWidget>
                                                                             context)
                                                                         .alternate,
                                                                     fontSize:
-                                                                        14.5,
+                                                                        15.0,
                                                                     fontWeight:
                                                                         FontWeight
-                                                                            .w600,
+                                                                            .w500,
                                                                   ),
                                                             )
                                                           ],
