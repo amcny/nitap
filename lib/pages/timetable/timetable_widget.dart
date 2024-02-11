@@ -538,7 +538,7 @@ class _TimetableWidgetState extends State<TimetableWidget>
                                                                 'Open Sans',
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .primaryText,
+                                                                    .secondaryText,
                                                                 fontSize: 15.0,
                                                               ),
                                                             ),
