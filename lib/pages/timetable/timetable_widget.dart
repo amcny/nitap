@@ -524,9 +524,11 @@ class _TimetableWidgetState extends State<TimetableWidget>
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .success,
+                                                                    fontSize:
+                                                                        14.5,
                                                                     fontWeight:
                                                                         FontWeight
-                                                                            .w500,
+                                                                            .w600,
                                                                   ),
                                                             ),
                                                             TextSpan(
@@ -537,6 +539,7 @@ class _TimetableWidgetState extends State<TimetableWidget>
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primaryText,
+                                                                fontSize: 14.5,
                                                               ),
                                                             ),
                                                             TextSpan(
@@ -551,9 +554,11 @@ class _TimetableWidgetState extends State<TimetableWidget>
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .alternate,
+                                                                    fontSize:
+                                                                        14.5,
                                                                     fontWeight:
                                                                         FontWeight
-                                                                            .w500,
+                                                                            .w600,
                                                                   ),
                                                             )
                                                           ],
