@@ -1,9 +1,11 @@
 import '/backend/backend.dart';
+import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:provider/provider.dart';
 import 'syllabus_model.dart';
@@ -16,15 +18,51 @@ class SyllabusWidget extends StatefulWidget {
   State<SyllabusWidget> createState() => _SyllabusWidgetState();
 }
 
-class _SyllabusWidgetState extends State<SyllabusWidget> {
+class _SyllabusWidgetState extends State<SyllabusWidget>
+    with TickerProviderStateMixin {
   late SyllabusModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
+
+  final animationsMap = {
+    'gridViewOnPageLoadAnimation': AnimationInfo(
+      trigger: AnimationTrigger.onPageLoad,
+      effects: [
+        FadeEffect(
+          curve: Curves.easeInOut,
+          delay: 0.ms,
+          duration: 350.ms,
+          begin: 0.0,
+          end: 1.0,
+        ),
+      ],
+    ),
+    'containerOnActionTriggerAnimation': AnimationInfo(
+      trigger: AnimationTrigger.onActionTrigger,
+      applyInitialState: true,
+      effects: [
+        ScaleEffect(
+          curve: Curves.easeInOut,
+          delay: 0.ms,
+          duration: 200.ms,
+          begin: const Offset(0.8, 0.8),
+          end: const Offset(1.0, 1.0),
+        ),
+      ],
+    ),
+  };
 
   @override
   void initState() {
     super.initState();
     _model = createModel(context, () => SyllabusModel());
+
+    setupAnimations(
+      animationsMap.values.where((anim) =>
+          anim.trigger == AnimationTrigger.onActionTrigger ||
+          !anim.applyInitialState),
+      this,
+    );
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
@@ -84,110 +122,103 @@ class _SyllabusWidgetState extends State<SyllabusWidget> {
       ),
       body: SafeArea(
         top: true,
-        child: Column(
-          mainAxisSize: MainAxisSize.max,
-          children: [
-            Expanded(
-              child: Padding(
-                padding: const EdgeInsets.all(20.0),
-                child: StreamBuilder<List<SyllabusRecord>>(
-                  stream: querySyllabusRecord(
-                    queryBuilder: (syllabusRecord) =>
-                        syllabusRecord.orderBy('order'),
+        child: Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: StreamBuilder<List<SyllabusRecord>>(
+            stream: querySyllabusRecord(
+              queryBuilder: (syllabusRecord) => syllabusRecord.orderBy('order'),
+            ),
+            builder: (context, snapshot) {
+              // Customize what your widget looks like when it's loading.
+              if (!snapshot.hasData) {
+                return Center(
+                  child: SizedBox(
+                    width: 30.0,
+                    height: 30.0,
+                    child: SpinKitThreeBounce(
+                      color: FlutterFlowTheme.of(context).primary,
+                      size: 30.0,
+                    ),
                   ),
-                  builder: (context, snapshot) {
-                    // Customize what your widget looks like when it's loading.
-                    if (!snapshot.hasData) {
-                      return Center(
-                        child: SizedBox(
-                          width: 30.0,
-                          height: 30.0,
-                          child: SpinKitThreeBounce(
-                            color: FlutterFlowTheme.of(context).primary,
-                            size: 30.0,
+                );
+              }
+              List<SyllabusRecord> gridViewSyllabusRecordList = snapshot.data!;
+              return GridView.builder(
+                padding: EdgeInsets.zero,
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  crossAxisSpacing: 15.0,
+                  mainAxisSpacing: 15.0,
+                  childAspectRatio: 1.0,
+                ),
+                scrollDirection: Axis.vertical,
+                itemCount: gridViewSyllabusRecordList.length,
+                itemBuilder: (context, gridViewIndex) {
+                  final gridViewSyllabusRecord =
+                      gridViewSyllabusRecordList[gridViewIndex];
+                  return InkWell(
+                    splashColor: Colors.transparent,
+                    focusColor: Colors.transparent,
+                    hoverColor: Colors.transparent,
+                    highlightColor: Colors.transparent,
+                    onTap: () async {
+                      context.pushNamed(
+                        'syllabusinfo',
+                        queryParameters: {
+                          'url': serializeParam(
+                            gridViewSyllabusRecord.reference,
+                            ParamType.DocumentReference,
+                          ),
+                        }.withoutNulls,
+                        extra: <String, dynamic>{
+                          kTransitionInfoKey: const TransitionInfo(
+                            hasTransition: true,
+                            transitionType: PageTransitionType.rightToLeft,
+                          ),
+                        },
+                      );
+                    },
+                    child: Container(
+                      width: MediaQuery.sizeOf(context).width * 0.5,
+                      decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                          colors: [
+                            const Color(0xCB1A73E8),
+                            FlutterFlowTheme.of(context).primary
+                          ],
+                          stops: const [0.0, 1.0],
+                          begin: const AlignmentDirectional(-1.0, -1.0),
+                          end: const AlignmentDirectional(1.0, 1.0),
+                        ),
+                        borderRadius: BorderRadius.circular(24.0),
+                      ),
+                      child: Align(
+                        alignment: const AlignmentDirectional(-1.0, -1.0),
+                        child: Padding(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              15.0, 15.0, 0.0, 0.0),
+                          child: Text(
+                            gridViewSyllabusRecord.yearname,
+                            style: FlutterFlowTheme.of(context)
+                                .headlineSmall
+                                .override(
+                                  fontFamily: 'Poppins',
+                                  color: Colors.white,
+                                  fontSize: 23.0,
+                                  fontWeight: FontWeight.w600,
+                                ),
                           ),
                         ),
-                      );
-                    }
-                    List<SyllabusRecord> gridViewSyllabusRecordList =
-                        snapshot.data!;
-                    return GridView.builder(
-                      padding: EdgeInsets.zero,
-                      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: 2,
-                        crossAxisSpacing: 20.0,
-                        mainAxisSpacing: 20.0,
-                        childAspectRatio: 1.05,
                       ),
-                      scrollDirection: Axis.vertical,
-                      itemCount: gridViewSyllabusRecordList.length,
-                      itemBuilder: (context, gridViewIndex) {
-                        final gridViewSyllabusRecord =
-                            gridViewSyllabusRecordList[gridViewIndex];
-                        return InkWell(
-                          splashColor: Colors.transparent,
-                          focusColor: Colors.transparent,
-                          hoverColor: Colors.transparent,
-                          highlightColor: Colors.transparent,
-                          onTap: () async {
-                            context.pushNamed(
-                              'syllabusinfo',
-                              queryParameters: {
-                                'url': serializeParam(
-                                  gridViewSyllabusRecord.reference,
-                                  ParamType.DocumentReference,
-                                ),
-                              }.withoutNulls,
-                              extra: <String, dynamic>{
-                                kTransitionInfoKey: const TransitionInfo(
-                                  hasTransition: true,
-                                  transitionType:
-                                      PageTransitionType.rightToLeft,
-                                ),
-                              },
-                            );
-                          },
-                          child: Container(
-                            width: MediaQuery.sizeOf(context).width * 0.5,
-                            decoration: BoxDecoration(
-                              gradient: LinearGradient(
-                                colors: [
-                                  const Color(0xCB1A73E8),
-                                  FlutterFlowTheme.of(context).primary
-                                ],
-                                stops: const [0.0, 1.0],
-                                begin: const AlignmentDirectional(-1.0, -1.0),
-                                end: const AlignmentDirectional(1.0, 1.0),
-                              ),
-                              borderRadius: BorderRadius.circular(24.0),
-                            ),
-                            child: Align(
-                              alignment: const AlignmentDirectional(-1.0, -1.0),
-                              child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    15.0, 15.0, 0.0, 0.0),
-                                child: Text(
-                                  gridViewSyllabusRecord.yearname,
-                                  style: FlutterFlowTheme.of(context)
-                                      .headlineSmall
-                                      .override(
-                                        fontFamily: 'Poppins',
-                                        color: Colors.white,
-                                        fontSize: 23.0,
-                                        fontWeight: FontWeight.w600,
-                                      ),
-                                ),
-                              ),
-                            ),
-                          ),
-                        );
-                      },
-                    );
-                  },
-                ),
-              ),
-            ),
-          ],
+                    ),
+                  ).animateOnActionTrigger(
+                    animationsMap['containerOnActionTriggerAnimation']!,
+                  );
+                },
+              ).animateOnPageLoad(
+                  animationsMap['gridViewOnPageLoadAnimation']!);
+            },
+          ),
         ),
       ),
     );
