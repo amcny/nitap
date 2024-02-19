@@ -171,7 +171,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                           ),
                           Padding(
                             padding: const EdgeInsetsDirectional.fromSTEB(
-                                0.0, 10.0, 0.0, 24.0),
+                                0.0, 5.0, 0.0, 24.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.min,
                               children: [
@@ -181,7 +181,10 @@ class _LoginWidgetState extends State<LoginWidget> {
                                       .labelMedium
                                       .override(
                                         fontFamily: 'Poppins',
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondaryText,
                                         fontSize: 12.0,
+                                        fontWeight: FontWeight.normal,
                                       ),
                                 ),
                                 Padding(
@@ -235,8 +238,12 @@ class _LoginWidgetState extends State<LoginWidget> {
                                 obscureText: false,
                                 decoration: InputDecoration(
                                   labelText: 'Email',
-                                  labelStyle:
-                                      FlutterFlowTheme.of(context).bodyMedium,
+                                  labelStyle: FlutterFlowTheme.of(context)
+                                      .labelMedium
+                                      .override(
+                                        fontFamily: 'Poppins',
+                                        fontWeight: FontWeight.normal,
+                                      ),
                                   enabledBorder: UnderlineInputBorder(
                                     borderSide: BorderSide(
                                       color:
@@ -295,8 +302,12 @@ class _LoginWidgetState extends State<LoginWidget> {
                                 obscureText: !_model.passwordVisibility,
                                 decoration: InputDecoration(
                                   labelText: 'Password',
-                                  labelStyle:
-                                      FlutterFlowTheme.of(context).labelMedium,
+                                  labelStyle: FlutterFlowTheme.of(context)
+                                      .labelMedium
+                                      .override(
+                                        fontFamily: 'Poppins',
+                                        fontWeight: FontWeight.normal,
+                                      ),
                                   enabledBorder: UnderlineInputBorder(
                                     borderSide: BorderSide(
                                       color:

@@ -172,14 +172,20 @@ class _SignupWidgetState extends State<SignupWidget> {
                           ),
                           Padding(
                             padding: const EdgeInsetsDirectional.fromSTEB(
-                                0.0, 10.0, 0.0, 24.0),
+                                0.0, 5.0, 0.0, 24.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.min,
                               children: [
                                 Text(
                                   'Using Institute E-mail credentials',
-                                  style:
-                                      FlutterFlowTheme.of(context).labelMedium,
+                                  style: FlutterFlowTheme.of(context)
+                                      .labelMedium
+                                      .override(
+                                        fontFamily: 'Poppins',
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondaryText,
+                                        fontWeight: FontWeight.normal,
+                                      ),
                                 ),
                                 Padding(
                                   padding: const EdgeInsetsDirectional.fromSTEB(
@@ -232,8 +238,12 @@ class _SignupWidgetState extends State<SignupWidget> {
                                 obscureText: false,
                                 decoration: InputDecoration(
                                   labelText: 'Email',
-                                  labelStyle:
-                                      FlutterFlowTheme.of(context).labelMedium,
+                                  labelStyle: FlutterFlowTheme.of(context)
+                                      .labelMedium
+                                      .override(
+                                        fontFamily: 'Poppins',
+                                        fontWeight: FontWeight.normal,
+                                      ),
                                   enabledBorder: UnderlineInputBorder(
                                     borderSide: BorderSide(
                                       color:
@@ -273,7 +283,12 @@ class _SignupWidgetState extends State<SignupWidget> {
                                     size: 22.0,
                                   ),
                                 ),
-                                style: FlutterFlowTheme.of(context).bodyMedium,
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: 'Poppins',
+                                      fontWeight: FontWeight.normal,
+                                    ),
                                 keyboardType: TextInputType.emailAddress,
                                 validator: _model
                                     .emailAddressControllerValidator
@@ -292,8 +307,12 @@ class _SignupWidgetState extends State<SignupWidget> {
                                 obscureText: !_model.passwordVisibility,
                                 decoration: InputDecoration(
                                   labelText: 'Password',
-                                  labelStyle:
-                                      FlutterFlowTheme.of(context).labelMedium,
+                                  labelStyle: FlutterFlowTheme.of(context)
+                                      .labelMedium
+                                      .override(
+                                        fontFamily: 'Poppins',
+                                        fontWeight: FontWeight.normal,
+                                      ),
                                   enabledBorder: UnderlineInputBorder(
                                     borderSide: BorderSide(
                                       color:
