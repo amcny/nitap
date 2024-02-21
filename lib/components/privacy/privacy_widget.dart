@@ -223,7 +223,7 @@ class _PrivacyWidgetState extends State<PrivacyWidget> {
                   Padding(
                     padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 0.0),
                     child: Text(
-                      'Your institute mail',
+                      'Email address and password',
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                             fontFamily: 'Poppins',
                             color: const Color(0xFF95A1AC),
