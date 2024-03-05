@@ -136,6 +136,8 @@ class FlutterFlowDataTable<T> extends StatefulWidget {
     this.sortIconColor,
     this.borderRadius,
     this.addHorizontalDivider = true,
+    this.addTopAndBottomDivider = false,
+    this.hideDefaultHorizontalDivider = false,
     this.addVerticalDivider = false,
     this.horizontalDividerColor,
     this.horizontalDividerThickness,
@@ -175,6 +177,8 @@ class FlutterFlowDataTable<T> extends StatefulWidget {
   final Color? sortIconColor;
   final BorderRadius? borderRadius;
   final bool addHorizontalDivider;
+  final bool addTopAndBottomDivider;
+  final bool hideDefaultHorizontalDivider;
   final Color? horizontalDividerColor;
   final double? horizontalDividerThickness;
   final bool addVerticalDivider;
@@ -236,6 +240,34 @@ class _FlutterFlowDataTableState<T> extends State<FlutterFlowDataTable<T>> {
       },
     );
 
+    final checkboxThemeData = CheckboxThemeData(
+      checkColor: MaterialStateProperty.all(
+        widget.checkboxCheckColor ?? Colors.black54,
+      ),
+      fillColor: MaterialStateProperty.resolveWith(
+        (states) => states.contains(MaterialState.selected)
+            ? widget.checkboxSelectedFillColor ?? Colors.white.withOpacity(0.01)
+            : widget.checkboxUnselectedFillColor ??
+                Colors.white.withOpacity(0.01),
+      ),
+      side: MaterialStateBorderSide.resolveWith(
+        (states) => BorderSide(
+          width: 2.0,
+          color: states.contains(MaterialState.selected)
+              ? widget.checkboxSelectedBorderColor ?? Colors.black54
+              : widget.checkboxUnselectedBorderColor ?? Colors.black54,
+        ),
+      ),
+      overlayColor: MaterialStateProperty.all(Colors.transparent),
+    );
+
+    final horizontalBorder = widget.addHorizontalDivider
+        ? BorderSide(
+            color: widget.horizontalDividerColor ?? Colors.transparent,
+            width: widget.horizontalDividerThickness ?? 1.0,
+          )
+        : BorderSide.none;
+
     return ClipRRect(
       borderRadius: widget.borderRadius ?? BorderRadius.zero,
       child: SizedBox(
@@ -246,27 +278,6 @@ class _FlutterFlowDataTableState<T> extends State<FlutterFlowDataTable<T>> {
             iconTheme: widget.sortIconColor != null
                 ? IconThemeData(color: widget.sortIconColor)
                 : null,
-            checkboxTheme: CheckboxThemeData(
-              checkColor: MaterialStateProperty.all(
-                widget.checkboxCheckColor ?? Colors.black54,
-              ),
-              fillColor: MaterialStateProperty.resolveWith(
-                (states) => states.contains(MaterialState.selected)
-                    ? widget.checkboxSelectedFillColor ??
-                        Colors.white.withOpacity(0.01)
-                    : widget.checkboxUnselectedFillColor ??
-                        Colors.white.withOpacity(0.01),
-              ),
-              side: MaterialStateBorderSide.resolveWith(
-                (states) => BorderSide(
-                  width: 2.0,
-                  color: states.contains(MaterialState.selected)
-                      ? widget.checkboxSelectedBorderColor ?? Colors.black54
-                      : widget.checkboxUnselectedBorderColor ?? Colors.black54,
-                ),
-              ),
-              overlayColor: MaterialStateProperty.all(Colors.transparent),
-            ),
           ),
           child: PaginatedDataTable2(
             source: controller,
@@ -291,24 +302,24 @@ class _FlutterFlowDataTableState<T> extends State<FlutterFlowDataTable<T>> {
             sortColumnIndex: controller.sortColumnIndex,
             sortAscending: controller.sortAscending,
             showCheckboxColumn: widget.selectable,
+            datarowCheckboxTheme: checkboxThemeData,
+            headingCheckboxTheme: checkboxThemeData,
             hidePaginator: !widget.paginated || widget.hidePaginator,
             wrapInCard: false,
             renderEmptyRowsInTheEnd: false,
             border: TableBorder(
-              horizontalInside: widget.addHorizontalDivider
-                  ? BorderSide(
-                      color:
-                          widget.horizontalDividerColor ?? Colors.transparent,
-                      width: widget.horizontalDividerThickness ?? 1.0,
-                    )
-                  : BorderSide.none,
+              horizontalInside: horizontalBorder,
               verticalInside: widget.addVerticalDivider
                   ? BorderSide(
                       color: widget.verticalDividerColor ?? Colors.transparent,
                       width: widget.verticalDividerThickness ?? 1.0,
                     )
                   : BorderSide.none,
+              bottom: widget.addTopAndBottomDivider
+                  ? horizontalBorder
+                  : BorderSide.none,
             ),
+            dividerThickness: widget.hideDefaultHorizontalDivider ? 0.0 : null,
             headingRowColor: MaterialStateProperty.all(widget.headingRowColor),
             headingRowHeight: widget.headingRowHeight,
             dataRowHeight: widget.dataRowHeight,

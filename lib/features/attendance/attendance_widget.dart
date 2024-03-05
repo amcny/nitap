@@ -8,7 +8,6 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:provider/provider.dart';
 import 'attendance_model.dart';
@@ -43,15 +42,6 @@ class _AttendanceWidgetState extends State<AttendanceWidget> {
 
   @override
   Widget build(BuildContext context) {
-    if (isiOS) {
-      SystemChrome.setSystemUIOverlayStyle(
-        SystemUiOverlayStyle(
-          statusBarBrightness: Theme.of(context).brightness,
-          systemStatusBarContrastEnforced: true,
-        ),
-      );
-    }
-
     context.watch<FFAppState>();
 
     return StreamBuilder<List<AttendanceRecord>>(
@@ -269,6 +259,8 @@ class _AttendanceWidgetState extends State<AttendanceWidget> {
                   headingRowColor: FlutterFlowTheme.of(context).appbar,
                   borderRadius: BorderRadius.circular(0.0),
                   addHorizontalDivider: false,
+                  addTopAndBottomDivider: false,
+                  hideDefaultHorizontalDivider: false,
                   addVerticalDivider: false,
                 );
               },
