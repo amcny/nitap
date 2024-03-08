@@ -391,7 +391,7 @@ class _TimetableWidgetState extends State<TimetableWidget>
                                                 fontFamily: 'Open Sans',
                                                 color:
                                                     FlutterFlowTheme.of(context)
-                                                        .secondaryText,
+                                                        .success,
                                               ),
                                         ),
                                         Text(
@@ -402,7 +402,7 @@ class _TimetableWidgetState extends State<TimetableWidget>
                                                 fontFamily: 'Open Sans',
                                                 color:
                                                     FlutterFlowTheme.of(context)
-                                                        .secondaryText,
+                                                        .alternate,
                                               ),
                                         ),
                                       ].divide(const SizedBox(height: 45.0)),
@@ -410,7 +410,7 @@ class _TimetableWidgetState extends State<TimetableWidget>
                                     Flexible(
                                       child: Padding(
                                         padding: const EdgeInsetsDirectional.fromSTEB(
-                                            10.0, 0.0, 0.0, 0.0),
+                                            12.0, 0.0, 0.0, 0.0),
                                         child: ClipRRect(
                                           borderRadius:
                                               BorderRadius.circular(8.0),
