@@ -8,7 +8,6 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:provider/provider.dart';
 import 'whatnew_model.dart';
 export 'whatnew_model.dart';
 
@@ -57,8 +56,6 @@ class _WhatnewWidgetState extends State<WhatnewWidget>
 
   @override
   Widget build(BuildContext context) {
-    context.watch<FFAppState>();
-
     return Scaffold(
       key: scaffoldKey,
       backgroundColor: Colors.black,
@@ -84,7 +81,7 @@ class _WhatnewWidgetState extends State<WhatnewWidget>
             icon: const Icon(
               Icons.close,
               color: Colors.white,
-              size: 24.0,
+              size: 30.0,
             ),
             onPressed: () async {
               context.pop();

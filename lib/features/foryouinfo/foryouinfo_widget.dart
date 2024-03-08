@@ -8,7 +8,6 @@ import 'dart:ui';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:provider/provider.dart';
 import 'foryouinfo_model.dart';
 export 'foryouinfo_model.dart';
 
@@ -46,8 +45,6 @@ class _ForyouinfoWidgetState extends State<ForyouinfoWidget> {
 
   @override
   Widget build(BuildContext context) {
-    context.watch<FFAppState>();
-
     return StreamBuilder<ForyouRecord>(
       stream: ForyouRecord.getDocument(widget.pass!),
       builder: (context, snapshot) {

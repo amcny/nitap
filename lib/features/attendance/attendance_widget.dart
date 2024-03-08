@@ -9,7 +9,6 @@ import '/flutter_flow/flutter_flow_util.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:provider/provider.dart';
 import 'attendance_model.dart';
 export 'attendance_model.dart';
 
@@ -42,8 +41,6 @@ class _AttendanceWidgetState extends State<AttendanceWidget> {
 
   @override
   Widget build(BuildContext context) {
-    context.watch<FFAppState>();
-
     return StreamBuilder<List<AttendanceRecord>>(
       stream: queryAttendanceRecord(
         queryBuilder: (attendanceRecord) => attendanceRecord

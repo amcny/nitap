@@ -6,7 +6,6 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:provider/provider.dart';
 import 'marksno_model.dart';
 export 'marksno_model.dart';
 
@@ -87,8 +86,6 @@ class _MarksnoWidgetState extends State<MarksnoWidget>
 
   @override
   Widget build(BuildContext context) {
-    context.watch<FFAppState>();
-
     return StreamBuilder<MarksRecord>(
       stream: MarksRecord.getDocument(widget.marksref!),
       builder: (context, snapshot) {

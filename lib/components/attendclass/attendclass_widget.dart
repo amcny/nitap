@@ -6,7 +6,6 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:provider/provider.dart';
 import 'attendclass_model.dart';
 export 'attendclass_model.dart';
 
@@ -81,8 +80,6 @@ class _AttendclassWidgetState extends State<AttendclassWidget>
 
   @override
   Widget build(BuildContext context) {
-    context.watch<FFAppState>();
-
     return StreamBuilder<AttendanceRecord>(
       stream: AttendanceRecord.getDocument(widget.classref!),
       builder: (context, snapshot) {

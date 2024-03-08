@@ -423,9 +423,9 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                                             .fromSTEB(15.0, 0.0,
                                                                 0.0, 0.0),
                                                     child: RichText(
-                                                      textScaleFactor:
+                                                      textScaler:
                                                           MediaQuery.of(context)
-                                                              .textScaleFactor,
+                                                              .textScaler,
                                                       text: TextSpan(
                                                         children: [
                                                           TextSpan(

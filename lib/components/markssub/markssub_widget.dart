@@ -6,7 +6,6 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:provider/provider.dart';
 import 'markssub_model.dart';
 export 'markssub_model.dart';
 
@@ -77,8 +76,6 @@ class _MarkssubWidgetState extends State<MarkssubWidget>
 
   @override
   Widget build(BuildContext context) {
-    context.watch<FFAppState>();
-
     return Container(
       width: 345.0,
       height: 245.0,

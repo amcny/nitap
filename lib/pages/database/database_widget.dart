@@ -2,7 +2,6 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/custom_code/widgets/index.dart' as custom_widgets;
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'database_model.dart';
 export 'database_model.dart';
 
@@ -35,8 +34,6 @@ class _DatabaseWidgetState extends State<DatabaseWidget> {
 
   @override
   Widget build(BuildContext context) {
-    context.watch<FFAppState>();
-
     return WillPopScope(
       onWillPop: () async => false,
       child: Scaffold(
