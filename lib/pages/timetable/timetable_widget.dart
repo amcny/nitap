@@ -394,6 +394,46 @@ class _TimetableWidgetState extends State<TimetableWidget>
                                                         .success,
                                               ),
                                         ),
+                                        SizedBox(
+                                          width: 24.0,
+                                          child: Stack(
+                                            alignment:
+                                                const AlignmentDirectional(0.0, -1.0),
+                                            children: [
+                                              Align(
+                                                alignment: const AlignmentDirectional(
+                                                    0.0, 0.0),
+                                                child: Container(
+                                                  width: 12.0,
+                                                  height: 12.0,
+                                                  decoration: BoxDecoration(
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primary,
+                                                    shape: BoxShape.circle,
+                                                  ),
+                                                ),
+                                              ),
+                                              Row(
+                                                mainAxisSize: MainAxisSize.max,
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.center,
+                                                children: [
+                                                  SizedBox(
+                                                    height: 50.0,
+                                                    child: VerticalDivider(
+                                                      thickness: 2.0,
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primary,
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ],
+                                          ),
+                                        ),
                                         Text(
                                           dataItem.end,
                                           style: FlutterFlowTheme.of(context)
@@ -405,7 +445,7 @@ class _TimetableWidgetState extends State<TimetableWidget>
                                                         .alternate,
                                               ),
                                         ),
-                                      ].divide(const SizedBox(height: 45.0)),
+                                      ].divide(const SizedBox(height: 4.0)),
                                     ),
                                     Flexible(
                                       child: Padding(
