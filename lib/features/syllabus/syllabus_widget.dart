@@ -23,18 +23,6 @@ class _SyllabusWidgetState extends State<SyllabusWidget>
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   final animationsMap = {
-    'gridViewOnPageLoadAnimation': AnimationInfo(
-      trigger: AnimationTrigger.onPageLoad,
-      effects: [
-        FadeEffect(
-          curve: Curves.easeInOut,
-          delay: 0.ms,
-          duration: 350.ms,
-          begin: 0.0,
-          end: 1.0,
-        ),
-      ],
-    ),
     'containerOnPageLoadAnimation': AnimationInfo(
       trigger: AnimationTrigger.onPageLoad,
       effects: [
@@ -44,6 +32,13 @@ class _SyllabusWidgetState extends State<SyllabusWidget>
           duration: 200.ms,
           begin: const Offset(0.8, 0.8),
           end: const Offset(1.0, 1.0),
+        ),
+        FadeEffect(
+          curve: Curves.easeInOut,
+          delay: 0.ms,
+          duration: 350.ms,
+          begin: 0.0,
+          end: 1.0,
         ),
       ],
     ),
@@ -193,8 +188,7 @@ class _SyllabusWidgetState extends State<SyllabusWidget>
                   ).animateOnPageLoad(
                       animationsMap['containerOnPageLoadAnimation']!);
                 },
-              ).animateOnPageLoad(
-                  animationsMap['gridViewOnPageLoadAnimation']!);
+              );
             },
           ),
         ),

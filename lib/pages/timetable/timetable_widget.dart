@@ -272,7 +272,7 @@ class _TimetableWidgetState extends State<TimetableWidget>
                                         spreadRadius: 1.0,
                                       )
                                     ],
-                                    borderRadius: BorderRadius.circular(12.0),
+                                    borderRadius: BorderRadius.circular(24.0),
                                     border: Border.all(
                                       color: const Color(0x40616161),
                                       width: 0.1,
@@ -376,7 +376,7 @@ class _TimetableWidgetState extends State<TimetableWidget>
                               final dataItem = data[dataIndex];
                               return Padding(
                                 padding: const EdgeInsetsDirectional.fromSTEB(
-                                    12.0, 20.0, 16.0, 0.0),
+                                    16.0, 20.0, 16.0, 0.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
@@ -453,12 +453,12 @@ class _TimetableWidgetState extends State<TimetableWidget>
                                                 fontWeight: FontWeight.w500,
                                               ),
                                         ),
-                                      ].divide(const SizedBox(height: 4.0)),
+                                      ].divide(const SizedBox(height: 3.0)),
                                     ),
                                     Flexible(
                                       child: Padding(
                                         padding: const EdgeInsetsDirectional.fromSTEB(
-                                            12.0, 0.0, 0.0, 0.0),
+                                            16.0, 0.0, 0.0, 0.0),
                                         child: ClipRRect(
                                           borderRadius:
                                               BorderRadius.circular(8.0),
