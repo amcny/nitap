@@ -447,7 +447,7 @@ class _TimetableWidgetState extends State<TimetableWidget>
                                                 fontWeight: FontWeight.w600,
                                               ),
                                         ),
-                                      ].divide(const SizedBox(height: 4.0)),
+                                      ].divide(const SizedBox(height: 1.0)),
                                     ),
                                     Flexible(
                                       child: Padding(
@@ -460,7 +460,7 @@ class _TimetableWidgetState extends State<TimetableWidget>
                                             width: MediaQuery.sizeOf(context)
                                                     .width *
                                                 1.0,
-                                            height: 90.0,
+                                            height: 80.0,
                                             decoration: BoxDecoration(
                                               color:
                                                   FlutterFlowTheme.of(context)
@@ -523,7 +523,7 @@ class _TimetableWidgetState extends State<TimetableWidget>
                                                                         10.0,
                                                                         0.0,
                                                                         0.0,
-                                                                        5.0),
+                                                                        10.0),
                                                             child: Text(
                                                               dataItem.course
                                                                   .maybeHandleOverflow(
@@ -551,37 +551,32 @@ class _TimetableWidgetState extends State<TimetableWidget>
                                                           ),
                                                         ),
                                                         Flexible(
-                                                          child: Align(
-                                                            alignment:
-                                                                const AlignmentDirectional(
-                                                                    1.0, 1.0),
-                                                            child: Padding(
-                                                              padding:
-                                                                  const EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          10.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
-                                                              child: Text(
-                                                                dataItem
-                                                                    .instructor,
-                                                                style: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .titleMedium
-                                                                    .override(
-                                                                      fontFamily:
-                                                                          'Poppins',
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .secondaryText,
-                                                                      fontSize:
-                                                                          15.0,
-                                                                      fontWeight:
-                                                                          FontWeight
-                                                                              .w300,
-                                                                    ),
-                                                              ),
+                                                          child: Padding(
+                                                            padding:
+                                                                const EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        10.0,
+                                                                        0.0,
+                                                                        0.0,
+                                                                        0.0),
+                                                            child: Text(
+                                                              dataItem
+                                                                  .instructor,
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .titleMedium
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Poppins',
+                                                                    color: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .secondaryText,
+                                                                    fontSize:
+                                                                        15.0,
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .w300,
+                                                                  ),
                                                             ),
                                                           ),
                                                         ),
