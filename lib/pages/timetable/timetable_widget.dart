@@ -392,47 +392,53 @@ class _TimetableWidgetState extends State<TimetableWidget>
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .success,
-                                                fontWeight: FontWeight.w600,
+                                                fontWeight: FontWeight.w500,
                                               ),
                                         ),
-                                        SizedBox(
-                                          width: 24.0,
-                                          child: Stack(
-                                            alignment:
-                                                const AlignmentDirectional(0.0, -1.0),
-                                            children: [
-                                              Align(
-                                                alignment: const AlignmentDirectional(
-                                                    0.0, 0.0),
-                                                child: Container(
-                                                  width: 12.0,
-                                                  height: 12.0,
-                                                  decoration: BoxDecoration(
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .primary,
-                                                    shape: BoxShape.circle,
-                                                  ),
-                                                ),
-                                              ),
-                                              Row(
-                                                mainAxisSize: MainAxisSize.max,
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.center,
-                                                children: [
-                                                  SizedBox(
-                                                    height: 50.0,
-                                                    child: VerticalDivider(
-                                                      thickness: 2.0,
+                                        Padding(
+                                          padding:
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 2.0, 0.0, 2.0),
+                                          child: SizedBox(
+                                            width: 24.0,
+                                            child: Stack(
+                                              alignment: const AlignmentDirectional(
+                                                  0.0, -1.0),
+                                              children: [
+                                                Align(
+                                                  alignment:
+                                                      const AlignmentDirectional(
+                                                          0.0, 0.0),
+                                                  child: Container(
+                                                    width: 12.0,
+                                                    height: 12.0,
+                                                    decoration: BoxDecoration(
                                                       color:
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .primary,
+                                                      shape: BoxShape.circle,
                                                     ),
                                                   ),
-                                                ],
-                                              ),
-                                            ],
+                                                ),
+                                                const Row(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.center,
+                                                  children: [
+                                                    SizedBox(
+                                                      height: 50.0,
+                                                      child: VerticalDivider(
+                                                        thickness: 2.0,
+                                                        color:
+                                                            Color(0xCD1A73E8),
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ],
+                                            ),
                                           ),
                                         ),
                                         Text(
@@ -444,10 +450,10 @@ class _TimetableWidgetState extends State<TimetableWidget>
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .alternate,
-                                                fontWeight: FontWeight.w600,
+                                                fontWeight: FontWeight.w500,
                                               ),
                                         ),
-                                      ].divide(const SizedBox(height: 1.0)),
+                                      ].divide(const SizedBox(height: 4.0)),
                                     ),
                                     Flexible(
                                       child: Padding(
@@ -460,7 +466,7 @@ class _TimetableWidgetState extends State<TimetableWidget>
                                             width: MediaQuery.sizeOf(context)
                                                     .width *
                                                 1.0,
-                                            height: 80.0,
+                                            height: 85.0,
                                             decoration: BoxDecoration(
                                               color:
                                                   FlutterFlowTheme.of(context)
@@ -482,12 +488,10 @@ class _TimetableWidgetState extends State<TimetableWidget>
                                                 Container(
                                                   width: 4.5,
                                                   height: double.infinity,
-                                                  decoration: BoxDecoration(
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .primary,
+                                                  decoration: const BoxDecoration(
+                                                    color: Color(0xA11A73E8),
                                                     borderRadius:
-                                                        const BorderRadius.only(
+                                                        BorderRadius.only(
                                                       bottomLeft:
                                                           Radius.circular(8.0),
                                                       bottomRight:
@@ -527,7 +531,7 @@ class _TimetableWidgetState extends State<TimetableWidget>
                                                             child: Text(
                                                               dataItem.course
                                                                   .maybeHandleOverflow(
-                                                                maxChars: 35,
+                                                                maxChars: 33,
                                                                 replacement:
                                                                     '…',
                                                               ),
@@ -561,7 +565,12 @@ class _TimetableWidgetState extends State<TimetableWidget>
                                                                         0.0),
                                                             child: Text(
                                                               dataItem
-                                                                  .instructor,
+                                                                  .instructor
+                                                                  .maybeHandleOverflow(
+                                                                maxChars: 33,
+                                                                replacement:
+                                                                    '…',
+                                                              ),
                                                               style: FlutterFlowTheme
                                                                       .of(context)
                                                                   .titleMedium
