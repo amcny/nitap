@@ -485,7 +485,7 @@ class _TimetableWidgetState extends State<TimetableWidget>
                                                             child: Text(
                                                               dataItem.course
                                                                   .maybeHandleOverflow(
-                                                                maxChars: 30,
+                                                                maxChars: 35,
                                                                 replacement:
                                                                     '…',
                                                               ),
