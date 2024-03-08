@@ -365,7 +365,7 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                                   15.0, 15.0, 0.0, 0.0),
                                           child: Text(
                                             dataItem.course.maybeHandleOverflow(
-                                              maxChars: 15,
+                                              maxChars: 25,
                                               replacement: '…',
                                             ),
                                             style: FlutterFlowTheme.of(context)
