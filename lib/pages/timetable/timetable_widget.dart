@@ -392,6 +392,7 @@ class _TimetableWidgetState extends State<TimetableWidget>
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .success,
+                                                fontWeight: FontWeight.w600,
                                               ),
                                         ),
                                         SizedBox(
@@ -443,6 +444,7 @@ class _TimetableWidgetState extends State<TimetableWidget>
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .alternate,
+                                                fontWeight: FontWeight.w600,
                                               ),
                                         ),
                                       ].divide(const SizedBox(height: 4.0)),
