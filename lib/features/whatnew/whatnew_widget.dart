@@ -96,7 +96,7 @@ class _WhatnewWidgetState extends State<WhatnewWidget>
         child: StreamBuilder<List<WhatNewRecord>>(
           stream: queryWhatNewRecord(
             queryBuilder: (whatNewRecord) =>
-                whatNewRecord.orderBy('created_time'),
+                whatNewRecord.orderBy('created_time', descending: true),
           ),
           builder: (context, snapshot) {
             // Customize what your widget looks like when it's loading.
