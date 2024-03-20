@@ -396,41 +396,23 @@ class _TimetableWidgetState extends State<TimetableWidget>
                                                 fontWeight: FontWeight.w500,
                                               ),
                                         ),
-                                        Padding(
-                                          padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 2.0, 0.0, 2.0),
-                                          child: SizedBox(
-                                            width: 24.0,
-                                            child: Stack(
-                                              alignment: const AlignmentDirectional(
-                                                  0.0, 1.0),
-                                              children: [
-                                                Row(
-                                                  mainAxisSize:
-                                                      MainAxisSize.max,
-                                                  mainAxisAlignment:
-                                                      MainAxisAlignment.center,
-                                                  children: [
-                                                    SizedBox(
-                                                      height: 50.0,
-                                                      child:
-                                                          StyledVerticalDivider(
-                                                        thickness: 2.0,
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .secondaryText,
-                                                        lineStyle:
-                                                            DividerLineStyle
-                                                                .dotted,
-                                                      ),
-                                                    ),
-                                                  ],
-                                                ),
-                                              ],
+                                        Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            SizedBox(
+                                              height: 50.0,
+                                              child: StyledVerticalDivider(
+                                                thickness: 2.0,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryText,
+                                                lineStyle:
+                                                    DividerLineStyle.dotted,
+                                              ),
                                             ),
-                                          ),
+                                          ],
                                         ),
                                         Text(
                                           dataItem.end,
