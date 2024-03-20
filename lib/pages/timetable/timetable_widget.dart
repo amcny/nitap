@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
+import 'package:styled_divider/styled_divider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -405,23 +406,7 @@ class _TimetableWidgetState extends State<TimetableWidget>
                                               alignment: const AlignmentDirectional(
                                                   0.0, 1.0),
                                               children: [
-                                                Align(
-                                                  alignment:
-                                                      const AlignmentDirectional(
-                                                          0.0, 0.0),
-                                                  child: Container(
-                                                    width: 12.0,
-                                                    height: 12.0,
-                                                    decoration: BoxDecoration(
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .primary,
-                                                      shape: BoxShape.circle,
-                                                    ),
-                                                  ),
-                                                ),
-                                                const Row(
+                                                Row(
                                                   mainAxisSize:
                                                       MainAxisSize.max,
                                                   mainAxisAlignment:
@@ -429,10 +414,16 @@ class _TimetableWidgetState extends State<TimetableWidget>
                                                   children: [
                                                     SizedBox(
                                                       height: 50.0,
-                                                      child: VerticalDivider(
+                                                      child:
+                                                          StyledVerticalDivider(
                                                         thickness: 2.0,
                                                         color:
-                                                            Color(0xCD1A73E8),
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .secondaryText,
+                                                        lineStyle:
+                                                            DividerLineStyle
+                                                                .dotted,
                                                       ),
                                                     ),
                                                   ],
